@@ -48,7 +48,7 @@ td{
 }
 .space{
 	position:fixed;
-	margin-left:90%;
+	
 	width:10%;
 	height:100vh;
 	z-index: 4;
@@ -95,21 +95,27 @@ td{
 
 }
 .sidebutton:hover{
-	background-color: #334722;
+	background-color: #8c5a00;
 	transform: translate(20%, 0px);
 }
 .sidebutton:active{
 	
 }
 .gallery{
+	margin-bottom: 5%;
 	column-count: 3;
 }
 .image{
 	height:100%;
 	width:100%;
-	margin-top: 1%;
-	border-radius: 2.5%;
+}
+.projectimage{
+	width: 100%;
+	height: 100%;
+	background-color: #171717;
+	margin: 5%;
 	box-shadow: 5px 5px 5px black;
+	text-align: center;
 }
 .roadmap{
 	width:100%;
