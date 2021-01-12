@@ -1,0 +1,151 @@
+body{
+	font-family: Helvetica;
+	background-color: #242424;
+	color:#ededed;
+	margin: 0%;
+}
+.sidebar{
+	position:fixed;
+	background-color: #8EC760;
+	min-height: 100vh;
+	max-height: 100vh;
+	min-width: 15%;
+	max-width: 15%;
+	z-index: 5;
+}
+.main{
+	position: absolute;
+	background-color: #242424;
+	min-height: 100vh;
+	max-height: 100vh;
+	width:75%;
+	z-index: 1;
+}
+.content{
+	position: absolute;
+	animation-name: slideInFromLeft;
+	animation-duration: 1s;
+
+	color:#ededed;
+	background-color: #242424;
+	margin: 5%;
+	width: 90%;
+	margin-left: 25%;
+	z-index: 1;
+}
+.space{
+	position:fixed;
+	margin-left:90%;
+	width:10%;
+	height:100vh;
+	z-index: 4;
+	background-color: #242424;
+}
+.header{
+	padding-top: 5%;
+	color: white;
+	font-family: Helvetica;
+	font-size: 48px;
+	font-size: 2.5vw;
+}
+.logo{
+	width: 50%;
+}
+.footer{
+	position:fixed;
+	color: white;
+	background-color: #6A9447;
+	bottom: 0px;
+	width:13%;
+	padding: 1%;
+}
+.sidebutton{
+	display: inline-block;
+	color:white;
+	text-decoration: none;
+	margin-left: 10%;
+	margin-top: 1%;
+	padding:10px;
+	background-color:#7CAD53;
+	width:75%;
+	box-shadow: 2px 2px 5px black;
+	font-size: 2vw;
+	text-align: left;
+	transition: background-color 0.3s, transform 0.3s;
+	transition-delay: 0.1s;
+	
+}
+.sidebutton:link{
+	
+}
+.sidebutton:visited{
+
+}
+.sidebutton:hover{
+	background-color: #334722;
+	transform: translate(20%, 0px);
+}
+.sidebutton:active{
+	
+}
+.gallery{
+	column-count: 3;
+}
+.image{
+	height:100%;
+	width:100%;
+	margin-top: 1%;
+	border-radius: 2.5%;
+	box-shadow: 5px 5px 5px black;
+}
+.roadmap{
+	width:100%;
+}
+.todolist, th, td{
+	border: 1px solid black;
+	margin-bottom: 5%;
+}
+.todolist img{
+	width:30%;
+	margin-left: 35%;
+}
+.blogpost{
+	box-shadow: 5px 5px 5px black;
+	height:25%;
+	width:30%;
+	background-color: black;
+}
+
+.comparison-container{
+	margin-top: 1%;
+	box-shadow: 5px 5px 5px black;
+}
+
+.link{
+	text-decoration: none;
+	color:#8EC760;
+}
+
+.download{
+	font-size:24px;
+	font-weight: bold;
+	color:white;
+	text-decoration: none;
+	margin-top: 1%;
+	padding:10px;
+	background-color:#7CAD53;
+	box-shadow: 0px 0px 0px black;
+	transition: background-color 0.3s, box-shadow 0.3s;
+}
+.download:hover{
+	background-color: #334722;
+	box-shadow: 2px 2px 2px black;
+}
+
+/* Animations and stuff beyond this point */
+@keyframes slideInFromLeft{
+	0%{	transform: translateX(-100%); }
+	100%{ transform: translateX(0%); }
+}
+
+/* Modal Stuff */
