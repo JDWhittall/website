@@ -67,7 +67,7 @@ td{
 .footer{
 	position:fixed;
 	color: white;
-	background-color: #6A9447;
+	background-color: #a56b00;
 	bottom: 0px;
 	width:13%;
 	padding: 1%;
@@ -79,7 +79,7 @@ td{
 	margin-left: 10%;
 	margin-top: 1%;
 	padding:10px;
-	background-color:#7CAD53;
+	background-color:#bf7b00;
 	width:75%;
 	box-shadow: 2px 2px 5px black;
 	font-size: 2vw;
