@@ -2,11 +2,13 @@
 
 	<head>
 
-		<title>Just Another Stylized Pack</title>
+		<title>JDWhittall</title>
 
 		<meta name="description" content="The official grounds for the mincraft resource pack known as Just Another Resource Pack (or JASP for short)">
 
 		<meta name="author" content="Jathulioh">
+
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
 
 		<link rel="stylesheet" href="style\stylesheet.css">
 
@@ -19,7 +21,9 @@
 	<body>
 		
 		<div class="sidebar">
-
+			<!--<script type="text/javascript" src="external\sidebar.js"></script>-->
+			<div w3-include-html="sidebar.html"></div>
+			<!--
 			<center><a href="index.html"><img class="logo" src="resources/Logo.png" alt="El Logo"></a></center>
 			<center style="color:white;"><b>Just Another Stylized Pack</b></center>
 
@@ -37,7 +41,10 @@
 				<a class="sidebutton" href="downloads.html">Downloads</a>
 			</div>
 			<div class="footer"><center></center></div>
-
+			-->
+			<script>
+				w3.includeHTML();
+			</script>
 		</div>
 
 		<div class="space">
