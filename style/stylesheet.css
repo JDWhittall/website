@@ -4,6 +4,19 @@ body{
 	color:#ededed;
 	margin: 0%;
 }
+table{
+	border: 0px solid white;
+	width:66%;
+}
+th{
+	border: 0px solid white;
+	font-size: 30px;
+	width:33%;
+}
+td{
+	border: 0px solid white;
+	font-size: 24px;
+}
 .sidebar{
 	position:fixed;
 	background-color: #8EC760;
