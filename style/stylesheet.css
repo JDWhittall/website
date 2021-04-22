@@ -118,6 +118,7 @@ td{
 	box-shadow: 5px 5px 5px black;
 	text-align: center;
 	padding-bottom: 100px
+	break-inside: avoid;
 }
 .roadmap{
 	width:100%;
