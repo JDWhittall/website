@@ -63,6 +63,7 @@ td{
 }
 .logo{
 	width: 50%;
+	border-radius: 100%;
 }
 .footer{
 	position:fixed;
@@ -102,22 +103,29 @@ td{
 	
 }
 .gallery{
+	display: flex;
+	align-items: left;
+	justify-content: left;
+	flex-direction: row;
+	flex-wrap:wrap;
+	flex-flow: row wrap;
+	align-content: flex-end;
 	margin-bottom: 5%;
-	column-count: 3;
+	/*column-count: 3;*/
 }
 .image{
-	height:100%;
-	width:100%;
+	/*height:100%;*/
+	/*width:100%;*/
 }
 .projectimage{
-	column-fill: auto;
-	width: 100%;
-	height: 500px;
+
+	width: 512px;
+	height: 512px + 5%;
 	background-color: #171717;
-	margin: 5%;
+	margin: 10px;
 	box-shadow: 5px 5px 5px black;
 	text-align: center;
-	padding-bottom: 25%;
+	/*padding-bottom: 25%;*/
 	break-inside: avoid;
 }
 .roadmap{
