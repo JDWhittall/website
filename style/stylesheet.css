@@ -110,14 +110,14 @@ td{
 	width:100%;
 }
 .projectimage{
-	column-fill: auto;
+	/*column-fill: auto;*/
 	width: 100%;
 	height: 500px;
 	background-color: #171717;
 	margin: 5%;
 	box-shadow: 5px 5px 5px black;
 	text-align: center;
-	padding-bottom: 100px
+	/*padding-bottom: 100px;*/
 	break-inside: avoid;
 }
 .roadmap{
