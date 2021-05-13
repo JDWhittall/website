@@ -133,4 +133,21 @@ body{
 	margin-right: auto;
 	left: 20%;
 	right: 20%;
+	background-color: red;
+}
+.BlogThumbnail{
+	display:inline-block;
+	border-style: solid;
+	border-color: gray;
+	background: black;
+	width:256px;
+	height:256px;
+}
+.BlogThumbnail:hover{
+	border-color: yellow;
+}
+.BlogHeader{
+	display: inline-block;
+	color:yellow;
+	font-family: Semplicita Pro;
 }
