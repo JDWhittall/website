@@ -1,0 +1,136 @@
+@font-face{
+	font-family: Semplicita Pro;
+	src: url(SemplicitaPro.otf);
+}
+body{
+	background-image: url("RI8Q9HOWY4U01465961118458.jpg"), url("Pane-dirtLight.18def74ed60ab9f1f4139f87349d2f79.jpg");
+	background-color: black, black;
+	background-repeat: no-repeat, repeat;
+	background-size: 100%;
+	background-position: center top, center bottom;
+	background-blend-mode: lighten;
+	transform: scale(1);
+   	transform-origin: 0 0;
+}
+.Nav{
+	display:block;
+	margin: 3% 0 0;
+	max-width: 1460px;
+	max-height: 80px;
+	background: #211510 url(sitenav-bar-bg.1fce1b9a3f4b7c90fb331726baa8c3ed.jpg) repeat-x 80px 0;
+	background-size: auto 100%;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+	height: 80px;
+	width: 1460px;
+	padding: 0;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+}
+.NavLogo{
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	width: 272px;
+	height: ;
+	z-index: 1
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	position:absolute;
+	top: -14px;
+	left: 50px;
+	transition: filter 0.3s;
+}
+.NavLogo:hover{
+	filter: brightness(122%);
+}
+.NavSectionLeft{
+	position: absolute;
+	left: 198px;
+	top: 0;
+	height: 100%;
+}
+
+.NavMenuList{
+	position: relative;
+	/*background: rgba(68, 47, 38, .5);*/
+	left: auto;
+	right: -1px;
+	height: 100%;
+	border-color: rgba(50, 50, 50, 0.3);
+	border-style: none none none groove;
+	border-spacing: 0;
+	border-radius: 0;
+	border-width: 4px;
+}
+
+.NavMenuListItem{
+	font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	font-size: 1.44rem;
+	/*-webkit-transition: all .25s cubic-bezier(.23, 1, .32, 1) 0s;
+	transition: all .25s cubic-bezier(.23, 1, .32, 1) 0s;*/
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-image: -webkit-linear-gradient(top, #efd100, #e2a233 19%, #f0c328 30%, #fff1a3 43%, #ffe13e 50%, #fff 51%, #fff);
+	background-size: 3em 5em;
+	color: #f8b700;
+	display: inline-block;
+	line-height: 3.5em;
+	position: relative;
+	z-index: auto;
+	background-position: center 0;
+	height: 100%;
+	margin-top: 0;
+	padding: 0 8px;
+	vertical-align: middle;
+	top: ;
+	text-decoration: none;
+	border-color: rgba(50, 50, 50, 0.3);
+	border-style: none groove none none;
+	border-spacing: 0;
+	border-radius: 0;
+	border-width: 4px;
+	transition: background-size 0.3s;
+}
+.NavMenuListItem:hover{
+	background-size: 1em 2.5em;
+}
+.NavMenuListLink{
+	height: 100%;
+	text-decoration: none;
+}
+.Featured{
+	font-family: Semplicita Pro, Open Sans, Arial, Helvetica, sans-serif;
+	color:white;
+	margin-top: 10%;
+	margin-left: 20%;
+	margin-right: 20%;
+	display:block;
+	background-color: rgba(25, 20, 15, 0.7);
+	width:1400px;
+	height:800px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .6);
+}
+.Blog{
+	display: block;
+	margin-top: 45%;
+	margin-left: 20%;
+	margin-right: 20%;
+	color:white;
+	font-size: 40px;
+	position:absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 20%;
+	right: 20%;
+}
