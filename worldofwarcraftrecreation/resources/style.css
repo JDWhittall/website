@@ -133,21 +133,77 @@ body{
 	margin-right: auto;
 	left: 20%;
 	right: 20%;
-	background-color: red;
+	
+	padding-bottom: 10%;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: gray;
+}
+.BlogPost{
+	height:100%;
+	
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: gray;
+
+	transition: all 0.25s;
+}
+.BlogPost:Hover{
+	background-color: #211510;
+}
+.BlogPost:hover .BlogThumbnail{
+	border-color: #f8b700;
+}
+.BlogPost:hover .BlogHeader{
+	color: #fff;
+}
+.BlogLink{
+	display: inline-block;
+	text-decoration: none;
+	height:100%;
+	width:100%;
 }
 .BlogThumbnail{
+	position: relative;
 	display:inline-block;
+	float:left;
 	border-style: solid;
 	border-color: gray;
+	border-width: 1px;
 	background: black;
-	width:256px;
-	height:256px;
-}
-.BlogThumbnail:hover{
-	border-color: yellow;
+	width:298px;
+	height:167.63px;
+	margin:2%;
+
+	transition: all 0.25s;
 }
 .BlogHeader{
+	position: relative;
 	display: inline-block;
 	color:yellow;
 	font-family: Semplicita Pro;
+	
+	vertical-align: top;
+	padding: 0;
+	margin: 0;
+	margin-top: 2%;
+	font-size: 1.728rem;
+	line-height: 1.5;
+	color: #f8b700;
+	text-shadow: 0 0 1px transparent, 0 1px 2px rgba(0, 0, 0, .8);
+	font-weight: 700;
+	text-shadow: none;
+	
+	transition: all 0.25s;
+}
+.BlogDesc{
+	font-family: Semplicita Pro;
+	color: #ebdec2;
+	font-size: 1.2rem;
+	margin-right:33%;
+}
+.BlogDate{
+	font-family: Semplicita Pro;
+	color: #b1997f;
+	font-size: 1rem;
 }

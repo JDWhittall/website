@@ -2,6 +2,7 @@
 	<head>
 		<title>JDWhittall</title>
 		<link rel="stylesheet" href="resources/style.css">
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
 	</head>
 	<body>
 		<div class="Body">
@@ -25,11 +26,10 @@
 					<p style="margin-left: 2%; margin-right: 2%;">Was originally made for a university research project and has since turned into a continued passion project to explore how to (re)create the mechanics in an MMO and to test out new or 
 					different mechanics in different areas. The project is purely for learning purposes and hopefully will come with some insight for others.</p>
 				</div>
-				<div class="Blog">
-					<div class="BlogPost">
-						<img class="BlogThumbnail" src="" alt="thumbnail">
-						<h1 class="BlogHeader">Blog Header</h1>
-					</div>
+				<div class="Blog" w3-include-html="blogposts/blogposts.html">
+					<script>
+						w3.includeHTML();
+					</script>
 				</div>
 			</div>
 		</div>
