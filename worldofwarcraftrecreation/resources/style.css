@@ -2,6 +2,10 @@
 	font-family: Semplicita Pro;
 	src: url(SemplicitaPro.otf);
 }
+@font-face{
+	font-family: opensans;
+	src: url(OpenSans-Regular.ttf);
+}
 body{
 	background-image: url("RI8Q9HOWY4U01465961118458.jpg"), url("Pane-dirtLight.18def74ed60ab9f1f4139f87349d2f79.jpg");
 	background-color: black, black;
@@ -11,10 +15,12 @@ body{
 	background-blend-mode: lighten;
 	transform: scale(1);
    	transform-origin: 0 0;
+   	padding: 0 0 0 0;
+   	margin: 0 0 0 0;
 }
 .Nav{
 	display:block;
-	margin: 80px 0 0;
+	margin-top: 40px;
 	max-width: 1460px;
 	max-height: 80px;
 	background: #211510 url(sitenav-bar-bg.1fce1b9a3f4b7c90fb331726baa8c3ed.jpg) repeat-x 80px 0;
@@ -208,4 +214,58 @@ body{
 	font-family: Semplicita Pro;
 	color: #b1997f;
 	font-size: 1rem;
+}
+.BlogPostHeader{
+	display:block;
+	background-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+	background-position: 0 100px;
+	background-repeat: no-repeat;
+	height:880px;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: rgba(50,50,50,0.5);
+}
+.BlogPostDate{
+	font-size: 1.44rem;
+	line-height: 1.5;
+    font-family: Open Sans,Arial,Helvetica,sans-serif;
+    color: #ebdec2;
+    text-shadow: 0 0 1px transparent, 0 1px 2px rgb(0 0 0 / 80%);
+    font-weight: 400;
+    margin-left: auto;
+	margin-right: auto;
+	max-width: 1600px;
+	position: relative;
+}
+.BlogHeaderDetail{
+	max-width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	font-size: 2.986rem;
+	line-height: 1.5;
+	color: white;
+	font-weight: 700;
+	font-family: Semplicita Pro;
+	vertical-align: bottom;
+	text-shadow: 0 0 1px transparent,0 1px 2px rgba(0,0,0,.8);
+}
+.BlogPostContent{
+	display:flex;
+	background-image: url(../resources/Pane-dirtDark.ea235926d6487091ac2d6786fd7d2615.jpg);
+	color: #ebdec2;
+	font-size: 16px;
+	font-family: opensans, sans-serif;
+	line-height: 1.75;
+	font-weight: 200;
+	margin-top:0px;
+	height:100%;
+
+}
+.BlogPostDetail{
+	
+	width:980px;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
 }
