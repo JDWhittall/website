@@ -1,0 +1,17 @@
+{
+"companyName": "JDW",
+"productName": "Twist'n Seek",
+"productVersion": "0.1",
+"dataUrl": "v5.data.unityweb",
+"wasmCodeUrl": "v5.wasm.code.unityweb",
+"wasmFrameworkUrl": "v5.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "v5.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.18f1"
+}
