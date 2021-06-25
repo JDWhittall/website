@@ -17,6 +17,7 @@
 			var videos=[];
 			var pages;
 			var currentPage;
+			var descending;
 
 			function loadClient() {
     			gapi.client.setApiKey('AIzaSyBzwpMSGuPd17Bsg1r3Hainyu9TaNTCPaQ');
@@ -55,8 +56,8 @@
                 		if(response.result.items.length < 50){
                 			console.log("loaded all videos");
                 			finishedLoading = true;
-                			pages = Math.ceil(videos.length / 9);
-                			currentPage = pages;
+                			pages = Math.ceil(videos.length / 9) - 1;
+                			currentPage = 0;
                 			console.log(videos);
                 			console.log(pages);
                 			loadVid();
@@ -78,7 +79,7 @@
     			var link = 'https://www.youtube.com/embed/' + video;
     			var element = document.getElementById("latestVid");
 
-    			element.innerHTML = '<center><iframe width="1024px" height="576px" src=' + link +'  title="YouTube video player" frameborder="0" allowfullscreen></iframe></center>';
+    			element.innerHTML = '<center><iframe width="1024px" height="576px" src=' + link + '  title="YouTube video player" frameborder="0" allowfullscreen></iframe></center>';
     			VideoGalleryDescend();
     		}
 
@@ -87,23 +88,32 @@
     			var link = 'https://www.youtube.com/embed/' + video;
     			var element = document.getElementById("latestVid");
 
-    			element.innerHTML = '<center><iframe width="1024px" height="576px" src=' + link +'  title="YouTube video player" frameborder="0" allowfullscreen></iframe></center>';
+    			element.innerHTML = '<center><iframe width="1024px" height="576px" src=' + link + '  title="YouTube video player" frameborder="0" allowfullscreen></iframe></center>';
     			window.scrollTo({top: 0, behavior: 'smooth'});
     		}
 
     		function VideoGallery(){
+    			console.log("Ascend");
     			var element = document.getElementById("gallery");
     			element.innerHTML = '';
-    			for (var i = 0; i < 9; i++) {
+    			var startFrom = currentPage*9;
+    			console.log(startFrom + " " + (startFrom+8));
+    			for (var i = startFrom; i < startFrom+9; i++) {
+    				if(i > videos.length - 1) return;
     				element.innerHTML += '<div class="video"><a onclick="CurrentVideo(' + (i + 1) + ')" style="cursor:pointer;"><img class="image" src="' + videos[i].snippet.thumbnails.high.url + '" alt=""></a></div>';
     			}
     		}
 
     		function VideoGalleryDescend(){
+    			console.log("Descend");
     			var element = document.getElementById("gallery");
     			element.innerHTML = '';
-    			for (var i = currentPage*9 - 1; i >= 0; i--) {
-    				element.innerHTML += '<div class="video"><a onclick="CurrentVideo(' + (i + 1) + ')" style="cursor:pointer;"><img class="image" src="' + videos[i].snippet.thumbnails.high.url + '" alt=""></a></div>';
+    			var startFrom = currentPage*9;
+    			var reversedVideos = videos.reverse();
+    			console.log(startFrom + " " + (startFrom+8));
+    			for (var i = startFrom; i < startFrom+9; i++) {
+    				if(i > reversedVideos.length - 1) return;
+    				element.innerHTML += '<div class="video"><a onclick="CurrentVideo(' + (i + 1) + ')" style="cursor:pointer;"><img class="image" src="' + reversedVideos[i].snippet.thumbnails.high.url + '" alt=""></a></div>';
     			}
     		}
 
@@ -120,7 +130,7 @@
     			}
 
     			console.log(currentPage);
-    			VideoGallery();
+    			VideoGalleryDescend();
     		}
 
     	</script>
