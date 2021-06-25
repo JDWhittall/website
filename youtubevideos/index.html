@@ -15,6 +15,7 @@
 			var loaded = false;
 			var finishedLoading = false;
 			var videos=[];
+			var reverseVideos=[];
 			var pages;
 			var currentPage;
 			var descending;
@@ -58,8 +59,11 @@
                 			finishedLoading = true;
                 			pages = Math.ceil(videos.length / 9) - 1;
                 			currentPage = 0;
-                			console.log(videos);
-                			console.log(pages);
+                			for (var i = 0; i < videos.length; i++) {
+                				reverseVideos.push(videos[videos.length - i - 1]);
+                			}
+                			console.log(videos[0]);
+                			console.log(reverseVideos[0]);
                 			loadVid();
                 		}else{
                 			execute();
@@ -80,11 +84,17 @@
     			var element = document.getElementById("latestVid");
 
     			element.innerHTML = '<center><iframe width="1024px" height="576px" src=' + link + '  title="YouTube video player" frameborder="0" allowfullscreen></iframe></center>';
-    			VideoGalleryDescend();
+    			testPage(true);
+    			VideoGallery();
     		}
 
     		function CurrentVideo(videoLink){
-    			var video = videos[videoLink - 1].snippet.resourceId.videoId;
+    			if(descending){
+    				videoList = reverseVideos;
+    			}else{
+    				videoList = videos;
+    			}
+    			var video = videoList[videoLink - 1].snippet.resourceId.videoId;
     			var link = 'https://www.youtube.com/embed/' + video;
     			var element = document.getElementById("latestVid");
 
@@ -98,22 +108,15 @@
     			element.innerHTML = '';
     			var startFrom = currentPage*9;
     			console.log(startFrom + " " + (startFrom+8));
-    			for (var i = startFrom; i < startFrom+9; i++) {
-    				if(i > videos.length - 1) return;
-    				element.innerHTML += '<div class="video"><a onclick="CurrentVideo(' + (i + 1) + ')" style="cursor:pointer;"><img class="image" src="' + videos[i].snippet.thumbnails.high.url + '" alt=""></a></div>';
+    			var videoList;
+    			if(descending){
+    				videoList = reverseVideos;
+    			}else{
+    				videoList = videos;
     			}
-    		}
-
-    		function VideoGalleryDescend(){
-    			console.log("Descend");
-    			var element = document.getElementById("gallery");
-    			element.innerHTML = '';
-    			var startFrom = currentPage*9;
-    			var reversedVideos = videos.reverse();
-    			console.log(startFrom + " " + (startFrom+8));
     			for (var i = startFrom; i < startFrom+9; i++) {
-    				if(i > reversedVideos.length - 1) return;
-    				element.innerHTML += '<div class="video"><a onclick="CurrentVideo(' + (i + 1) + ')" style="cursor:pointer;"><img class="image" src="' + reversedVideos[i].snippet.thumbnails.high.url + '" alt=""></a></div>';
+    				if(i > videoList.length - 1) return;
+    				element.innerHTML += '<div class="video"><a onclick="CurrentVideo(' + (i + 1) + ')" style="cursor:pointer;"><img class="image" src="' + videoList[i].snippet.thumbnails.high.url + '" alt=""></a></div>';
     			}
     		}
 
@@ -129,8 +132,21 @@
     				currentPage = 0;
     			}
 
+    			var element = document.getElementById("pagenumber");
+    			element.innerHTML = (currentPage+1) + "/" + (pages+1);
+
     			console.log(currentPage);
-    			VideoGalleryDescend();
+    			VideoGallery();
+    		}
+
+    		function order(){
+    			if(descending)
+    				descending = false;
+    			else
+    				descending = true;
+
+    			currentPage = 0;
+    			VideoGallery();
     		}
 
     	</script>
@@ -140,6 +156,9 @@
 		<div id="latestVid" class="FeaturedVideo">
 
 		</div>
+		<div class="orderbutton">
+				<button onclick="order()">Order</button>
+		</div>
 		<div id="gallery" class="videoGallery">
 			<div class="video">
 				<a onclick="CurrentVideo(143)" style="cursor:pointer;">
@@ -148,10 +167,11 @@
 			</div>
 		</div>
 		<center>
-		<div class="pagination">
-			<a onclick="testPage(true)"><</a>
-			<a onclick="testPage(false)">></a>
-		</div>
+			<div class="pagination">
+				<a onclick="testPage(true)"><</a>
+				<span id="pagenumber"></span>
+				<a onclick="testPage(false)">></a>
+			</div>
 		</center>
 	</body>
 </html>
