@@ -1,0 +1,153 @@
+<html>
+	<head>
+		<title>JDWhittall</title>
+		<link rel="stylesheet" href="resources/style.css">
+		<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+		<!-- Featured Video Test -->
+
+		<script src="https://apis.google.com/js/api.js"></script>
+
+		<script>
+
+			
+
+			function loadClient() {
+    			gapi.client.setApiKey('AIzaSyBzwpMSGuPd17Bsg1r3Hainyu9TaNTCPaQ');
+    			return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+    				.then(function() { console.log("GAPI client loaded for API"); },
+    					function(err) { console.error("Error loading GAPI client for API", err); });
+    			}
+
+    		
+    		var test;
+
+    			// Make sure the client is loaded before calling this method.
+  			function execute() {
+    			
+				var rpp = 50;
+				//var nextPage;
+				var tempRequest;
+
+				var request = gapi.client.youtube.playlistItems.list({
+    				"part": [
+    					"snippet"
+    				],
+    				"maxResults": rpp,
+    				"playlistId": "PL1tiwbzkOjQxD0jjAE7PsWoaCrs0EkBH2"
+    			})
+
+    			var videoIDs = [];
+    			var videoNames = [];
+    			var videoDesc = [];
+
+				var totalVideos;
+				var pages;
+
+    			request.execute(function(response){
+					console.log(response);
+					totalVideos = response.result.pageInfo.totalResults;
+					pages = Math.ceil(totalVideos / rpp);
+					nextPage = response.result.nextPageToken;
+					var tempVideos = 0;
+					var currentPage = 1;
+					
+					while(tempVideos < response.result.items.length){
+
+						videoIDs.push(response.result.items[tempVideos].id);
+						videoNames.push(response.result.items[tempVideos].snippet.title);
+						videoDesc.push(response.result.items[tempVideos].snippet.description);
+						
+						tempVideos++;
+					}
+					
+					
+
+					if(currentPage != pages){
+						console.log("currentPage", nextPage);
+						while(currentPage != pages){
+								tempRequest = gapi.client.youtube.playlistItems.list({
+    							"part": [
+    								"snippet"
+    							],
+    							"maxResults": rpp,
+    							"pageToken": nextPage,
+    							"playlistId": "PL1tiwbzkOjQxD0jjAE7PsWoaCrs0EkBH2"
+    						})
+
+							var tempVideos = 0;
+
+    						tempRequest.execute(function(tempResponse){
+    							
+    							console.log(tempResponse);
+    							
+    							while(tempVideos < tempResponse.result.items.length){
+
+    								videoIDs.push(response.result.items[tempVideos].id);
+    								videoNames.push(response.result.items[tempVideos].snippet.title);
+    								videoNames.push(response.result.items[tempVideos].snippet.description);
+    								tempVideos++;
+    							}
+    							nextPage = tempResponse.result.nextPageToken;
+    							console.log("Next page ", nextPage);
+    						})
+    						
+    						currentPage++;
+    						console.log(currentPage);
+    						console.log(tempResponse.result);
+						}
+					}
+
+
+
+				})
+
+    		}
+    			gapi.load("client");
+
+
+    		function loadVid(response){
+    			var video = response.result.items[0].snippet.resourceId.videoId;
+    			var link = 'https://www.youtube.com/embed/' + video;
+    			var element = document.getElementById("vid");
+    			var videos = response.result.items;
+
+    			element.innerHTML = '<center><iframe width="100%" height="100%" src=' + link +'  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>';
+
+    		}
+
+    		</script>
+
+	</head>
+	<body onload="loadClient().then(execute)">
+		<div class="Body">
+				<div class="Nav" w3-include-html="navbar.html">
+					<script>
+						w3.includeHTML();
+					</script>
+				</div>
+			
+			<div class="Content">
+				<div class="Featured">
+					<h1 style="margin-left: 2%; margin-right: 2%;">World of Warcraft Recreation</h1>
+					<p style="margin-left: 2%; margin-right: 2%; color: #ebdec2;">Was originally made for a university research project and has since turned into a continued passion project to explore how to (re)create the mechanics in an MMO and to test out new or 
+					different mechanics in different areas. The project is purely for learning purposes and hopefully will come with some insight for others.</p>
+
+					<h1 style="margin-left: 16%;" >Featured Video</h1>
+
+					
+
+					<div id="vid" class="FeaturedVideo">
+
+					</div>
+
+				</div>
+				<div class="Blog" w3-include-html="blogposts/blogposts.html">
+					<script>
+						w3.includeHTML();
+					</script>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
