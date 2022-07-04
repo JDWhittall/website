@@ -6,10 +6,10 @@
     <title>Unity WebGL Player | Twist'n Seek</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      UnityLoader.instantiate("unityContainer", "Build/WebGL-Buildv2.json");
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebGL-Buildv2.json", {onProgress: UnityProgress});
     </script>
   </head>
   <body>
-    <div id="unityContainer" style="width: 100vw; height: 56.25vw;"></div>
+      <div id="unityContainer" style="width: 100vw; height: 56.25vw;"></div>
   </body>
 </html>
