@@ -161,15 +161,61 @@ td{
 	font-weight: bold;
 	color:white;
 	text-decoration: none;
-	margin-top: 1%;
-	padding:10px;
-	background-color:#7CAD53;
+	/*margin-top: 1%;
+	padding:10px;*/
+	background-color:#bf7b00;
 	box-shadow: 0px 0px 0px black;
 	transition: background-color 0.3s, box-shadow 0.3s;
 }
 .download:hover{
-	background-color: #334722;
+	background-color: #8c5a00;
 	box-shadow: 2px 2px 2px black;
+}
+
+.gameInfo{
+	background-color: #333333;
+	float:left;
+	width: 49%;
+	border-radius: 25px;
+	padding:0px;
+}
+.gameAbout{
+	background-color: #333333;
+	float:right;
+	width: 49%;
+	border-radius: 25px;
+	padding:0px;
+}
+.gameDownload{
+	background-color: #333333;
+	width:100%;
+	border-radius: 25px;
+	padding:1px;
+	margin-top: 1%;
+}
+.gameheader{
+	color:#F29D00;
+	font-family: VE;
+}
+h1.gameHeader{
+	color:#F29D00;
+	font-size: 50pt;
+}
+h2.gameHeader{
+	color:#F29D00;
+	font-size: 30pt;
+	padding-left: 50px;
+}
+
+.row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@font-face{
+	font-family: VE;
+	src: url(../resources/Fonts/BauhausClosed.ttf);
 }
 
 /* Animations and stuff beyond this point */

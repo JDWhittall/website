@@ -1,0 +1,55 @@
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 Ti (ID=0x1e07)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   31.0.15.2756
+Begin MonoManager ReloadAssembly
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.214 seconds
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: Q:\Repos\website\resources\Games\Arcadia\Arcadia_Data\Managed\System.dll (this message is harmless)
+desktop: 2560x1440 144Hz; virtual: 8200x2880 at -3840,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.734700 ms
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerScript.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Player Damaged
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player Damaged
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.308600 ms
+
+Unloading 82 unused Assets to reduce memory usage. Loaded Objects now: 256.
+Total: 1.495500 ms (FindLiveObjects: 0.012900 ms CreateObjectMapping: 0.009900 ms MarkObjects: 0.098800 ms  DeleteObjects: 1.373400 ms)
+
+Setting up 8 worker threads for Enlighten.
+  Thread -> id: 2d80 -> priority: 1 
+  Thread -> id: 6e8 -> priority: 1 
+  Thread -> id: 2110 -> priority: 1 
+  Thread -> id: c114 -> priority: 1 
+  Thread -> id: c3e8 -> priority: 1 
+  Thread -> id: 69dc -> priority: 1 
+  Thread -> id: c118 -> priority: 1 
+  Thread -> id: c1b8 -> priority: 1 
