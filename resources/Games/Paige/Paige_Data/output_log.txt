@@ -1,0 +1,185 @@
+Initialize engine version: 5.6.3f1 (d3101c3b8468)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 Ti (ID=0x1e07)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   31.0.15.3640
+Begin MonoManager ReloadAssembly
+Platform assembly: P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.015 seconds
+Platform assembly: P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: P:\Websites\website\resources\Games\Paige\Paige_Data\Managed\System.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 2560x1440 144Hz; virtual: 7750x2543 at -3840,-23
+<RI> Initialized touch support.
+UnloadTime: 1.114500 ms
+Setting up 8 worker threads for Enlighten.
+  Thread -> id: 9bfc -> priority: 1 
+  Thread -> id: c114 -> priority: 1 
+  Thread -> id: cc6c -> priority: 1 
+  Thread -> id: 8910 -> priority: 1 
+  Thread -> id: 9488 -> priority: 1 
+  Thread -> id: 80d0 -> priority: 1 
+  Thread -> id: ab18 -> priority: 1 
+  Thread -> id: adf8 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.605100 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 4105.
+Total: 0.479300 ms (FindLiveObjects: 0.130400 ms CreateObjectMapping: 0.021600 ms MarkObjects: 0.321200 ms  DeleteObjects: 0.005700 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at EventListener.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
