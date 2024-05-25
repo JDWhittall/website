@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Textured Sphere</title>
+    <style>
+        body { margin: 0; }
+        canvas { display: block; }
+    </style>
+    <!-- Include the main Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Include the DDSLoader from the Three.js examples directory -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DDSLoader.js"></script>
+</head>
+<body>
+    <script>
+        // Initialize scene
+        const scene = new THREE.Scene();
+
+        // Initialize camera (Field of View, Aspect Ratio, Near Clipping Plane, Far Clipping Plane)
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 2, 5);
+        camera.lookAt(0, 0, 0);
+
+        // Initialize renderer
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Load DDS textures
+        const ddsLoader = new THREE.DDSLoader();
+
+        // Material initialization (textures will be added after loading)
+        const material = new THREE.MeshStandardMaterial({
+            roughness: 0.5, // Initial roughness value
+            metalness: 0.5  // Initial metalness value
+        });
+
+        // Load and process the diffuse DDS texture
+        ddsLoader.load('textures/planets/continental_05_diffuse.dds', (texture) => {
+            material.map = texture;
+            material.needsUpdate = true;
+            console.log('Diffuse texture loaded successfully');
+        }, undefined, (error) => {
+            console.error('Error loading diffuse texture:', error);
+        });
+
+        // Load and process the normal DDS texture
+        ddsLoader.load('textures/planets/continental_05_normals.dds', (texture) => {
+            processNormalDDS(texture);
+            material.needsUpdate = true;
+            console.log('Normal texture loaded successfully');
+        }, undefined, (error) => {
+            console.error('Error loading normal texture:', error);
+        });
+
+        // Load and process the specular DDS texture
+        ddsLoader.load('textures/planets/continental_05_spec.dds', (texture) => {
+            processSpecularDDS(texture);
+            material.needsUpdate = true;
+            console.log('Specular texture loaded successfully');
+        }, undefined, (error) => {
+            console.error('Error loading specular texture:', error);
+        });
+
+        function processNormalDDS(texture) {
+            const width = texture.image.width;
+            const height = texture.image.height;
+
+            // Extract RG channels for Normal, B for Emissive, and Alpha for Normal G
+            const normalData = new Uint8Array(4 * width * height);
+            const emissiveData = new Uint8Array(3 * width * height);
+
+            const data = texture.image.data;
+            for (let i = 0; i < width * height; i++) {
+                normalData[4 * i] = data[4 * i]; // R -> R
+                normalData[4 * i + 1] = data[4 * i + 3]; // Alpha -> G
+                normalData[4 * i + 2] = 0; // B -> 0 (not used)
+                normalData[4 * i + 3] = 255; // A -> 1 (full opacity)
+
+                emissiveData[3 * i] = data[4 * i + 2]; // B -> R
+                emissiveData[3 * i + 1] = 0; // G -> 0 (not used)
+                emissiveData[3 * i + 2] = 0; // B -> 0 (not used)
+            }
+
+            const normalTexture = new THREE.DataTexture(normalData, width, height, THREE.RGBAFormat);
+            normalTexture.needsUpdate = true;
+
+            const emissiveTexture = new THREE.DataTexture(emissiveData, width, height, THREE.RGBFormat);
+            emissiveTexture.needsUpdate = true;
+
+            // Apply these textures to the material
+            material.normalMap = normalTexture;
+            material.emissiveMap = emissiveTexture;
+        }
+
+        function processSpecularDDS(texture) {
+            const width = texture.image.width;
+            const height = texture.image.height;
+
+            // Extract G for Specular, B for Metal, and Alpha for Gloss
+            const roughnessData = new Uint8Array(3 * width * height);
+            const metalnessData = new Uint8Array(3 * width * height);
+
+            const data = texture.image.data;
+            for (let i = 0; i < width * height; i++) {
+                roughnessData[3 * i] = data[4 * i + 1]; // G -> R
+                roughnessData[3 * i + 1] = data[4 * i + 1]; // G -> G
+                roughnessData[3 * i + 2] = data[4 * i + 1]; // G -> B
+
+                metalnessData[3 * i] = data[4 * i + 2]; // B -> R
+                metalnessData[3 * i + 1] = data[4 * i + 2]; // B -> G
+                metalnessData[3 * i + 2] = data[4 * i + 2]; // B -> B
+            }
+
+            const roughnessTexture = new THREE.DataTexture(roughnessData, width, height, THREE.RGBFormat);
+            roughnessTexture.needsUpdate = true;
+
+            const metalnessTexture = new THREE.DataTexture(metalnessData, width, height, THREE.RGBFormat);
+            metalnessTexture.needsUpdate = true;
+
+            // Apply these textures to the material
+            material.roughnessMap = roughnessTexture;
+            material.metalnessMap = metalnessTexture;
+        }
+
+        // Create sphere geometry
+        const geometry = new THREE.SphereGeometry(1, 32, 32);
+
+        // Create mesh
+        const sphere = new THREE.Mesh(geometry, material);
+        scene.add(sphere);
+
+        // Add directional light
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(1, 0.5, 0.5).normalize();
+        scene.add(directionalLight);
+
+        // Animation function
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate sphere
+            sphere.rotation.y += 0.001;
+
+            // Render the scene from the perspective of the camera
+            renderer.render(scene, camera);
+        }
+
+        // Start animation
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Function to update camera position from the console
+        window.updateCameraPosition = function(x, y, z) {
+            camera.position.set(x, y, z);
+            camera.lookAt(0, 0, 0);
+            console.log(`Camera position updated to: x=${x}, y=${y}, z=${z}`);
+        };
+
+        // Function to update directional light position from the console
+        window.updateLightPosition = function(x, y, z) {
+            directionalLight.position.set(x, y, z).normalize();
+            console.log(`Light position updated to: x=${x}, y=${y}, z=${z}`);
+        };
+
+        console.log("Use the updateCameraPosition(x, y, z) function to change the camera position.");
+        console.log("Use the updateLightPosition(x, y, z) function to change the light position.");
+
+    </script>
+</body>
+</html>
