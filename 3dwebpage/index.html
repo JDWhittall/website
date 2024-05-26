@@ -5,116 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rotating Textured Sphere</title>
     <style>
-        body { margin: 0; }
-        #container { width: 256px; height: 256px; background-color: rgb(29, 41, 29);}
+        body { margin: 0; background-color: black; }
+        #container { width: 256px; height: 256px; background-color: rgb(29, 41, 29); }
         canvas { display: block; }
     </style>
     <!-- Include the main Three.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Include the DDSLoader from the Three.js examples directory -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DDSLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/FBXLoader.js"></script>
 </head>
 <body>
     <div id="container"></div>
     <script>
-        // Select the container element
         const container = document.getElementById('container');
 
-        // Initialize scene
         const scene = new THREE.Scene();
-
-        // Initialize camera (Field of View, Aspect Ratio, Near Clipping Plane, Far Clipping Plane)
         const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
         camera.position.set(0, 1, 2);
         camera.lookAt(0, 0, 0);
 
-        // Initialize renderer
-        const renderer = new THREE.WebGLRenderer({alpha:true});
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
 
-        // Load DDS textures
         const ddsLoader = new THREE.DDSLoader();
+        const fbxLoader = new THREE.FBXLoader();
 
-        // Material initialization (textures will be added after loading)
-        const material = new THREE.MeshStandardMaterial({
-            roughness: 0.8, // Initial roughness value
-            metalness: 0.5  // Initial metalness value
-        });
+        let diffuseTexture, normalTexture, roughnessTexture;
+        let material;
 
-        // Load and process the diffuse DDS texture
-        ddsLoader.load('textures/planets/continental_05_diffuse.dds', (texture) => {
-            texture.flipX = false;
-            material.map = texture;
-            material.needsUpdate = true;
-            console.log('Diffuse texture loaded successfully');
-        }, undefined, (error) => {
-            console.error('Error loading diffuse texture:', error);
-        });
-
-        // Load and process the normal DDS texture
-        ddsLoader.load('textures/planets/continental_05_normals.dds', (texture) => {
-            texture.flipX = false;
-            processNormalDDS(texture);
-            material.needsUpdate = true;
-            console.log('Normal texture loaded successfully');
-        }, undefined, (error) => {
-            console.error('Error loading normal texture:', error);
-        });
-
-        // Load and process the specular DDS texture
-        ddsLoader.load('textures/planets/continental_05_spec.dds', (texture) => {
-            texture.flipX = false;
-            material.roughnessMap = texture;
-            material.metalnessMap = texture;
-            material.needsUpdate = true;
-            console.log('Specular texture loaded successfully');
-        }, undefined, (error) => {
-            console.error('Error loading specular texture:', error);
-        });
-
-        function processNormalDDS(texture) {
-            const width = texture.image.width;
-            const height = texture.image.height;
-
-            // Extract RG channels for Normal, B for Emissive, and Alpha for Normal G
-            const normalData = new Uint8Array(4 * width * height);
-            const emissiveData = new Uint8Array(3 * width * height);
-
-            const data = texture.image.data;
-            for (let i = 0; i < width * height; i++) {
-                normalData[4 * i] = data[4 * i]; // R -> R
-                normalData[4 * i + 1] = data[4 * i + 3]; // Alpha -> G
-                normalData[4 * i + 2] = 0; // B -> 0 (not used)
-                normalData[4 * i + 3] = 255; // A -> 1 (full opacity)
-
-                emissiveData[3 * i] = data[4 * i + 2]; // B -> R
-                emissiveData[3 * i + 1] = 0; // G -> 0 (not used)
-                emissiveData[3 * i + 2] = 0; // B -> 0 (not used)
-            }
-
-            const normalTexture = new THREE.DataTexture(normalData, width, height, THREE.RGBAFormat);
-            normalTexture.needsUpdate = true;
-
-            const emissiveTexture = new THREE.DataTexture(emissiveData, width, height, THREE.RGBFormat);
-            emissiveTexture.needsUpdate = true;
-
-            // Apply these textures to the material
-            material.normalMap = normalTexture;
-            material.emissiveMap = emissiveTexture;
+        // Load Textures and Initialize Material
+        function loadTexturesAndInitialize() {
+            return Promise.all([
+                new Promise((resolve, reject) => {
+                    ddsLoader.load('textures/planets/continental_05_diffuse.dds', resolve, undefined, reject);
+                }).then((texture) => {
+                    diffuseTexture = texture;
+                    console.log('Diffuse texture loaded successfully');
+                }),
+                new Promise((resolve, reject) => {
+                    ddsLoader.load('textures/planets/continental_05_normals.dds', resolve, undefined, reject);
+                }).then((texture) => {
+                    normalTexture = texture;
+                    console.log('Normal texture loaded successfully');
+                }),
+                new Promise((resolve, reject) => {
+                    ddsLoader.load('textures/planets/continental_05_spec.dds', resolve, undefined, reject);
+                }).then((texture) => {
+                    roughnessTexture = texture;
+                    console.log('Roughness texture loaded successfully');
+                })
+            ]).then(() => {
+                material = new THREE.MeshStandardMaterial({
+                    map: diffuseTexture,
+                    normalMap: normalTexture,
+                    roughnessMap: roughnessTexture,
+                    roughness: 1.0,
+                    metalness: 0.5
+                });
+                loadFBXModel();
+            }).catch((error) => {
+                console.error('Error loading textures:', error);
+            });
         }
 
-        // Create sphere geometry
-        const geometry = new THREE.SphereGeometry(1, 32, 32);
+        // Load FBX model and apply material
+        function loadFBXModel() {
+            fbxLoader.load('models/planet.fbx', (fbx) => {
+                fbx.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material = material;
+                    }
+                });
+                scene.add(fbx);
+                console.log('FBX model loaded successfully');
+            }, undefined, (error) => {
+                console.error('Error loading FBX model:', error);
+            });
+        }
 
-        // Create mesh
-        const sphere = new THREE.Mesh(geometry, material);
-        scene.add(sphere);
+        // Function to update textures dynamically
+        function updateTextures(diffusePath, normalPath, roughnessPath) {
+            Promise.all([
+                new Promise((resolve, reject) => {
+                    ddsLoader.load(diffusePath, resolve, undefined, reject);
+                }).then((texture) => {
+                    diffuseTexture = texture;
+                    material.map = diffuseTexture;
+                }),
+                new Promise((resolve, reject) => {
+                    ddsLoader.load(normalPath, resolve, undefined, reject);
+                }).then((texture) => {
+                    normalTexture = texture;
+                    material.normalMap = normalTexture;
+                }),
+                new Promise((resolve, reject) => {
+                    ddsLoader.load(roughnessPath, resolve, undefined, reject);
+                }).then((texture) => {
+                    roughnessTexture = texture;
+                    material.roughnessMap = roughnessTexture;
+                })
+            ]).then(() => {
+                material.needsUpdate = true;
+                console.log('Textures updated successfully');
+            }).catch((error) => {
+                console.error('Error updating textures:', error);
+            });
+        }
 
         // Ambient atmosphere light
         const atmosphereLight = new THREE.RectAreaLight(0x0000ff, 1, 2, 2);
         atmosphereLight.position.set(-1, 0, 0);
-        atmosphereLight.lookAt(0,0,0);
+        atmosphereLight.lookAt(0, 0, 0);
         scene.add(atmosphereLight);
 
         // Add directional light
@@ -122,15 +125,9 @@
         directionalLight.position.set(1, 0.5, 0.5).normalize();
         scene.add(directionalLight);
 
-
         // Animation function
         function animate() {
             requestAnimationFrame(animate);
-
-            // Rotate sphere
-            sphere.rotation.y += 0.001;
-
-            // Render the scene from the perspective of the camera
             renderer.render(scene, camera);
         }
 
@@ -160,6 +157,8 @@
         console.log("Use the updateCameraPosition(x, y, z) function to change the camera position.");
         console.log("Use the updateLightPosition(x, y, z) function to change the light position.");
 
+        // Load initial textures and initialize scene
+        loadTexturesAndInitialize();
     </script>
 </body>
 </html>
