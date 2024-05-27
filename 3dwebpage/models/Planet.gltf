@@ -26,9 +26,10 @@
 					"attributes":{
 						"POSITION":0,
 						"NORMAL":1,
-						"TEXCOORD_0":2
+						"TEXCOORD_0":2,
+						"TANGENT":3
 					},
-					"indices":3
+					"indices":4
 				}
 			]
 		}
@@ -64,6 +65,12 @@
 		},
 		{
 			"bufferView":3,
+			"componentType":5126,
+			"count":559,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":4,
 			"componentType":5123,
 			"count":2880,
 			"type":"SCALAR"
@@ -90,14 +97,20 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":5760,
+			"byteLength":8944,
 			"byteOffset":17888,
+			"target":34962
+		},
+		{
+			"buffer":0,
+			"byteLength":5760,
+			"byteOffset":26832,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":23648,
+			"byteLength":32592,
 			"uri":"Planet.bin"
 		}
 	]
