@@ -89,7 +89,7 @@
                             normalMap: normalTexture,
                             roughnessMap: specTexture, // Using roughnessMap for specular
                             metalnessMap: specTexture, // Assuming metalness is also in the spec map
-                            roughness: 1, // Adjust based on your needs
+                            //roughness: 1, // Adjust based on your needs
                             metalness: 0.5,  // Adjust based on your needs
                         });
                     }
@@ -163,22 +163,19 @@
             const textureLoader = new THREE.DDSLoader();
 
             const newDiffuseTexture = textureLoader.load(diffuse);
-            const newNormalTexture = textureLoader.load(normalMap, function(texture) {
-                const processedNormalTexture = processNormalDDS(texture);
-                planet.traverse(function (child) {
-                    if (child.isMesh) {
-                        child.material.normalMap = processedNormalTexture;
-                    }
-                });
-            });
+            const newNormalTexture = textureLoader.load(normalMap);
             const newSpecTexture = textureLoader.load(specMap);
 
             planet.traverse(function (child) {
                 if (child.isMesh) {
-                    child.material.map = newDiffuseTexture;
-                    child.material.roughnessMap = newSpecTexture;
-                    child.material.metalnessMap = newSpecTexture;
-                    child.material.needsUpdate = true;
+                    child.material = new THREE.MeshStandardMaterial({
+                            map: newDiffuseTexture,
+                            normalMap: newNormalTexture,
+                            roughnessMap: newSpecTexture, // Using roughnessMap for specular
+                            metalnessMap: newSpecTexture, // Assuming metalness is also in the spec map
+                            //roughness: 1, // Adjust based on your needs
+                            //metalness: 0.5,  // Adjust based on your needs
+                        });
                 }
             });
         }
