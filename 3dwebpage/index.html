@@ -72,9 +72,9 @@
             composer.addPass(renderPass);
 
             outlinePass = new THREE.OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
-            outlinePass.edgeStrength = 2;
-            outlinePass.edgeGlow = 1;
-            outlinePass.edgeThickness = 1;
+            outlinePass.edgeStrength = 5;
+            outlinePass.edgeGlow = 1.5;
+            outlinePass.edgeThickness = 4;
             outlinePass.visibleEdgeColor.set('#6aabb4');
             outlinePass.hiddenEdgeColor.set('#190a05');
             composer.addPass(outlinePass);
