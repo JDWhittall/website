@@ -1,0 +1,60 @@
+@font-face{
+    font-family: AmaticSC;
+    src: url(AmaticSC-Regular.ttf);
+}
+
+body{
+    background-color: black;
+    background-image: url(background3.jpg);
+    background-repeat: repeat;
+    background-size: contain;
+    color:white;
+}
+
+h1{
+    font-family: AmaticSC;
+    font-size: 120px;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.taskpanel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border-color: gray;
+    border-width: 10px;
+    border-style: solid;
+    width:90%;
+    height:80%;
+    margin:auto;
+    background-color: rgba(0,255,255,0.5);
+}
+
+.tasktable{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-spacing: 25px;
+}
+
+.tasktable td{
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    font-family: AmaticSC;
+    font-size:50px;
+    text-shadow: 0 0 10px black;
+    cursor:pointer;
+    user-select: none;
+    transition: background-color 0.5s ease;
+}
+
+.highlight{
+    background-color: rgba(0,255,0,0.5) !important;
+}
