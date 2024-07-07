@@ -28,8 +28,13 @@
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/loaders/DDSLoader.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/helpers/DirectionalLightHelper.js"></script>
     <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/helpers/CameraHelper.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/postprocessing/OutlinePass.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="https://cdn.rawgit.com/mrdoob/three.js/r128/examples/js/shaders/CopyShader.js"></script>
     <script>
-        let scene, camera, renderer, controls, planet, cloud;
+        let scene, camera, renderer, controls, planet, cloud, composer, outlinePass;
         const container = document.getElementById('planet-container');
 
         // Initialize the scene
@@ -59,11 +64,20 @@
             scene.add(atmosphereLight);
 
             const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-            directionalLight.position.set(1, 0.5, 0.5).normalize();
+            directionalLight.position.set(1, 0.0, 0.5).normalize();
             scene.add(directionalLight);
-            // If you have shadows enabled and want to see the shadow camera frustum
-            // const shadowCameraHelper = new THREE.CameraHelper(directionalLight.shadow.camera);
-            // scene.add(shadowCameraHelper);
+
+            composer = new THREE.EffectComposer(renderer);
+            const renderPass = new THREE.RenderPass(scene, camera);
+            composer.addPass(renderPass);
+
+            outlinePass = new THREE.OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+            outlinePass.edgeStrength = 5;
+            outlinePass.edgeGlow = 1.5;
+            outlinePass.edgeThickness = 4;
+            outlinePass.visibleEdgeColor.set('#6aabb4');
+            outlinePass.hiddenEdgeColor.set('#190a05');
+            composer.addPass(outlinePass);
 
             loadModel();
 
@@ -77,7 +91,7 @@
 
             loader.load('models/Planet.gltf', function (gltf) {
                 planet = gltf.scene;
-                
+                //outlinePass.selectedObjects = [planet];
                 planet.traverse(function (child) {
                     if (child.isMesh) {
                         const diffuseTexture = textureLoader.load('textures/planets/continental_05_diffuse.dds');
@@ -89,8 +103,8 @@
                             normalMap: normalTexture,
                             roughnessMap: specTexture, // Using roughnessMap for specular
                             metalnessMap: specTexture, // Assuming metalness is also in the spec map
-                            //roughness: 1, // Adjust based on your needs
-                            metalness: 0.5,  // Adjust based on your needs
+                            //roughness: 0.75, // Adjust based on your needs
+                            //metalness: 1,  // Adjust based on your needs
                         });
                     }
                 });
@@ -99,20 +113,24 @@
             });
 
             // Uncomment and update path if you want to load clouds
-            /*
-            loader.load('path/to/cloud.gltf', function (gltf) {
+            
+            loader.load('models/clouds.gltf', function (gltf) {
                 cloud = gltf.scene;
-
+                outlinePass.selectedObjects = [cloud];
                 cloud.traverse(function (child) {
                     if (child.isMesh) {
-                        child.material.transparent = true;
-                        child.material.opacity = 0.5;
+                        const diffuseCloudTexture = textureLoader.load('textures/clouds/clouds_thin_diffuse.dds');
+
+                        child.material = new THREE.MeshStandardMaterial({
+                            map: diffuseCloudTexture,
+                            transparent: true
+                        });
                     }
                 });
 
+                //cloud.scale.set(1.01, 1.01, 1.01); // Ensure clouds are slightly larger than the planet
                 scene.add(cloud);
             });
-            */
         }
 
         function processNormalDDS(texture) {
@@ -153,10 +171,10 @@
             requestAnimationFrame(animate);
 
             if (planet) planet.rotation.y += 0.001;
-            if (cloud) cloud.rotation.y += 0.01;
+            if (cloud) cloud.rotation.y += 0.002;
 
             //controls.update();
-            renderer.render(scene, camera);
+            composer.render(scene, camera);
         }
 
         function updateTextures(diffuse, normalMap, specMap) {
