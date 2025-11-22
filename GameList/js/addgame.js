@@ -1,7 +1,7 @@
 // js/addgame.js
 
 // Same URL as in games.js
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec"; // your URL
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("game-form");
@@ -11,14 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     statusEl.textContent = "Submitting…";
 
-    const formData = Object.fromEntries(new FormData(form));
+    const formData = new FormData(form);
 
     try {
+      // Send as a regular form POST (no custom headers, no JSON)
+      const body = new URLSearchParams(formData);
+
       await fetch(SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors", // Apps Script doesn't send CORS headers; this still appends the row
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body // application/x-www-form-urlencoded, which is CORS-simple
       });
 
       statusEl.textContent = "Game added.";
