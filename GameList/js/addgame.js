@@ -1,7 +1,6 @@
 // js/addgame.js
 
-// Same URL as in games.js
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec"; // your URL
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("game-form");
@@ -12,21 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
     statusEl.textContent = "Submitting…";
 
     const formData = new FormData(form);
+    const body = new URLSearchParams(formData);
 
     try {
-      // Send as a regular form POST (no custom headers, no JSON)
-      const body = new URLSearchParams(formData);
-
       await fetch(SCRIPT_URL, {
         method: "POST",
-        body // application/x-www-form-urlencoded, which is CORS-simple
+        mode: "no-cors",          // <- IMPORTANT
+        body                      // sends as application/x-www-form-urlencoded
       });
 
-      statusEl.textContent = "Game added.";
+      statusEl.textContent = "Game submitted. Check the sheet.";
       form.reset();
     } catch (err) {
       console.error(err);
-      statusEl.textContent = "Error adding game.";
+      statusEl.textContent = "Error submitting game.";
     }
   });
 });
