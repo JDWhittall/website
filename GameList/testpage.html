@@ -24,6 +24,9 @@
     <button type="submit">Send</button>
   </form>
 
+  <button onclick="loadGames()">Load Games</button>
+	<pre id="output"></pre>
+
   <p id="status"></p>
 
   <script>
@@ -56,6 +59,21 @@
         document.getElementById("status").textContent = "Error: " + err.message;
       }
     });
+
+	async function loadGames() {
+	const URL = "YOUR_WEB_APP_URL_HERE";
+
+	const res = await fetch(URL, {
+		method: "GET"
+	});
+
+	const data = await res.json();
+	console.log("Games:", data);
+
+	document.getElementById("output").textContent =
+		JSON.stringify(data, null, 2);
+	}
+
   </script>
 
 </body>
