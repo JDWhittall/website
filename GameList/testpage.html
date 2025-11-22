@@ -32,11 +32,11 @@
     document.getElementById("testForm").addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const payload = {
-        name: document.getElementById("name").value,
-        value: Number(document.getElementById("value").value),
-        timestamp: Date.now()
-      };
+		const payload = {
+		name: document.getElementById("name").value,
+		score: Number(document.getElementById("value").value),
+		timestamp: Date.now()
+		};
 
       document.getElementById("status").textContent = "Sending…";
 
