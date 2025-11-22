@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Google Sheet Test</title>
+</head>
+<body>
+
+  <h2>Send Test Data to Google Sheets</h2>
+
+  <form id="testForm">
+    <label>
+      Name:
+      <input type="text" id="name" required>
+    </label>
+    <br><br>
+
+    <label>
+      Value:
+      <input type="number" id="value" required>
+    </label>
+    <br><br>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script>
+    const URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+
+    document.getElementById("testForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const payload = {
+        name: document.getElementById("name").value,
+        value: Number(document.getElementById("value").value),
+        timestamp: Date.now()
+      };
+
+      document.getElementById("status").textContent = "Sending…";
+
+      try {
+        // Must use no-cors to bypass Apps Script CORS restrictions
+        await fetch(URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        document.getElementById("status").textContent = "Sent! Check your sheet.";
+      } catch (err) {
+        document.getElementById("status").textContent = "Error: " + err.message;
+      }
+    });
+  </script>
+
+</body>
+</html>
