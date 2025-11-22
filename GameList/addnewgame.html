@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f5;
+      color: #111827;
+    }
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    header nav a {
+      color: #e5e7eb;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 1rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    form {
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+      display: grid;
+      gap: 0.75rem;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      gap: 0.25rem;
+    }
+    input, textarea {
+      padding: 0.45rem 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 0.35rem;
+      border: 1px solid #d4d4d8;
+    }
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    button[type="submit"] {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.9rem;
+      border-radius: 0.4rem;
+      border: none;
+      background: #4f46e5;
+      color: #f9fafb;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: #4338ca;
+    }
+    #form-status {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Add New Game</h1>
+    <nav>
+      <a href="index.html">Back to Games</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="game-form">
+      <label>
+        Game Name
+        <input name="gameName" required>
+      </label>
+
+      <label>
+        Description
+        <textarea name="description" placeholder="Short summary of the game"></textarea>
+      </label>
+
+      <label>
+        Owners (comma-separated)
+        <input name="owners" placeholder="Alice, Ben" required>
+      </label>
+
+      <label>
+        Player Count
+        <input name="playerCount" placeholder="2–4">
+      </label>
+
+      <label>
+        Playtime
+        <input name="playtime" placeholder="45–60 min">
+      </label>
+
+      <label>
+        Genre
+        <input name="genre" placeholder="Co-op, party, deduction">
+      </label>
+
+      <label>
+        Notes
+        <textarea name="notes" placeholder="Expansions, house rules, etc."></textarea>
+      </label>
+
+      <label>
+        Image URL
+        <input name="imageUrl" placeholder="https://…/catan.jpg">
+      </label>
+
+      <button type="submit">Add Game</button>
+      <div id="form-status"></div>
+    </form>
+  </main>
+
+  <script src="js/addgame.js"></script>
+</body>
+</html>
