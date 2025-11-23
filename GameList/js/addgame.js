@@ -4,10 +4,10 @@
       e.preventDefault();
 
 		const payload = {
-		name: document.getElementByName("gameName").value,
-    description: document.getElementByName("description").value,
+		name: document.getElementsByName("gameName").value,
+    description: document.getElementsByName("description").value,
     owners: document.getElementsByName("owners").value,
-    playerCount: document.getElementByName("playerCount").value,
+    playerCount: document.getElementsByName("playerCount").value,
     playtime: document.getElementsByName("playtime").value,
     genre: document.getElementsByName("genre").value,
     notes: document.getElementsByName("notes").value,
@@ -15,7 +15,7 @@
 		timestamp: Date.now()
 		};
 
-      document.getElementById("status").textContent = "Sending…";
+      document.getElementById("form-status").textContent = "Sending…";
 
       try {
         // Must use no-cors to bypass Apps Script CORS restrictions
