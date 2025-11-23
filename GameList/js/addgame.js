@@ -1,30 +1,35 @@
-// js/addgame.js
+    const URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+    document.getElementById("game-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("game-form");
-  const statusEl = document.getElementById("form-status");
+		const payload = {
+		name: document.getElementByName("gameName").value,
+    description: document.getElementByName("description").value,
+    owners: document.getElementsByName("owners").value,
+    playerCount: document.getElementByName("playerCount").value,
+    playtime: document.getElementsByName("playtime").value,
+    genre: document.getElementsByName("genre").value,
+    notes: document.getElementsByName("notes").value,
+    imageUrl: document.getElementsByName("imageUrl").value,
+		timestamp: Date.now()
+		};
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    statusEl.textContent = "Submitting…";
+      document.getElementById("status").textContent = "Sending…";
 
-    const formData = new FormData(form);
-    const body = new URLSearchParams(formData);
+      try {
+        // Must use no-cors to bypass Apps Script CORS restrictions
+        await fetch(URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
 
-    try {
-      await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",          // <- IMPORTANT
-        body                      // sends as application/x-www-form-urlencoded
-      });
-
-      statusEl.textContent = "Game submitted. Check the sheet.";
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      statusEl.textContent = "Error submitting game.";
-    }
-  });
-});
+        document.getElementById("status").textContent = "Success! Game added.";
+      } catch (err) {
+        document.getElementById("status").textContent = "Error: " + err.message;
+      }
+    });
