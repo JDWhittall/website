@@ -1,84 +1,121 @@
-// js/games.js
-
-// Replace this with your deployed Apps Script Web App URL
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
 
 let allGames = [];
 
-async function fetchGames() {
-  const statusEl = document.getElementById("games-status");
-  try {
-    statusEl.textContent = "Loading games…";
-    const response = await fetch(SCRIPT_URL);
-    const games = await response.json();
+// Entry point
+document.addEventListener("DOMContentLoaded", () => {
+  const ownerFilter = document.getElementById("owner-filter");
+  const searchInput = document.getElementById("search-input");
 
-    allGames = games || [];
-    statusEl.textContent = `${allGames.length} game${allGames.length === 1 ? "" : "s"} loaded.`;
-    populateOwnerFilter();
-    renderGames();
-  } catch (err) {
-    console.error(err);
-    statusEl.textContent = "Failed to load games.";
+  ownerFilter.addEventListener("change", renderGames);
+  searchInput.addEventListener("input", renderGames);
+
+  loadGames();
+});
+
+function loadGames() {
+  const statusEl = document.getElementById("games-status");
+  statusEl.textContent = "Loading games…";
+
+  // JSONP: we add a <script> tag with ?callback=handleGames
+  const script = document.createElement("script");
+  const callbackName = "handleGamesFromSheet";
+
+  // Remove any previous script to avoid duplicates
+  const oldScript = document.getElementById("games-jsonp-script");
+  if (oldScript) {
+    oldScript.remove();
   }
+
+  script.id = "games-jsonp-script";
+  script.src = `${WEB_APP_URL}?callback=${callbackName}`;
+  script.onerror = () => {
+    statusEl.textContent = "Error loading games.";
+  };
+
+  document.body.appendChild(script);
 }
 
+// JSONP callback – must be global
+window.handleGamesFromSheet = function(rows) {
+  const statusEl = document.getElementById("games-status");
+  allGames = Array.isArray(rows) ? rows : [];
+
+  if (!allGames.length) {
+    statusEl.textContent = "No games found.";
+  } else {
+    statusEl.textContent = `Loaded ${allGames.length} games.`;
+  }
+
+  populateOwnerFilter();
+  renderGames();
+};
+
 function populateOwnerFilter() {
+  const ownerFilter = document.getElementById("owner-filter");
+
+  // Clear existing (keep the "All owners" option)
+  ownerFilter.innerHTML = "";
+  const allOption = document.createElement("option");
+  allOption.value = "";
+  allOption.textContent = "All owners";
+  ownerFilter.appendChild(allOption);
+
   const ownerSet = new Set();
 
   allGames.forEach(game => {
-    const ownersRaw = game["Owners"] || "";
-    ownersRaw.split(",").forEach(o => {
-      const trimmed = o.trim();
-      if (trimmed) ownerSet.add(trimmed);
+    const ownersField = (game.owners || game.Owners || "").toString();
+    ownersField.split(",").forEach(raw => {
+      const o = raw.trim();
+      if (o) ownerSet.add(o);
     });
   });
 
-  const filter = document.getElementById("owner-filter");
-  // Clear existing (keep first "All owners")
-  while (filter.options.length > 1) {
-    filter.remove(1);
-  }
-
-  Array.from(ownerSet)
-    .sort((a, b) => a.localeCompare(b))
-    .forEach(owner => {
-      const opt = document.createElement("option");
-      opt.value = owner;
-      opt.textContent = owner;
-      filter.appendChild(opt);
-    });
+  Array.from(ownerSet).sort().forEach(owner => {
+    const opt = document.createElement("option");
+    opt.value = owner;
+    opt.textContent = owner;
+    ownerFilter.appendChild(opt);
+  });
 }
 
 function renderGames() {
-  const container = document.getElementById("games-list");
-  container.innerHTML = "";
+  const listEl = document.getElementById("games-list");
+  const ownerFilter = document.getElementById("owner-filter");
+  const searchInput = document.getElementById("search-input");
 
-  const ownerFilter = document.getElementById("owner-filter").value.trim();
-  const search = document.getElementById("search-input").value.trim().toLowerCase();
+  const ownerFilterValue = ownerFilter.value.trim().toLowerCase();
+  const query = searchInput.value.trim().toLowerCase();
+
+  listEl.innerHTML = "";
 
   const filtered = allGames.filter(game => {
+    const name = (game.name || game.Name || "").toString();
+    const description = (game.description || game.Description || "").toString();
+    const owners = (game.owners || game.Owners || "").toString();
+    const genre = (game.genre || game.Genre || "").toString();
+    const notes = (game.notes || game.Notes || "").toString();
+
     // Owner filter
-    if (ownerFilter) {
-      const ownersRaw = (game["Owners"] || "").toLowerCase();
-      if (!ownersRaw.split(",").map(o => o.trim()).includes(ownerFilter.toLowerCase())) {
-        return false;
-      }
+    if (ownerFilterValue) {
+      const ownerMatch = owners
+        .split(",")
+        .map(o => o.trim().toLowerCase())
+        .includes(ownerFilterValue);
+      if (!ownerMatch) return false;
     }
 
-    // Text search
-    if (search) {
-      const fields = [
-        game["Game Name"],
-        game["Description"],
-        game["Owners"],
-        game["Genre"],
-        game["Notes"]
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
+    // Search filter
+    if (query) {
+      const haystack = [
+        name,
+        description,
+        owners,
+        genre,
+        notes
+      ].join(" ").toLowerCase();
 
-      if (!fields.includes(search)) return false;
+      if (!haystack.includes(query)) return false;
     }
 
     return true;
@@ -88,50 +125,71 @@ function renderGames() {
     const card = document.createElement("article");
     card.className = "game-card";
 
-    const name = game["Game Name"] || "Untitled";
-    const description = game["Description"] || "";
-    const owners = game["Owners"] || "";
-    const playerCount = game["Player Count"] || "";
-    const playtime = game["Playtime"] || "";
-    const genre = game["Genre"] || "";
-    const notes = game["Notes"] || "";
-    const imageUrl = game["Image URL"] || "";
+    const imageUrl = game.imageUrl || game.ImageUrl || game["Image URL"] || "";
+    if (imageUrl) {
+      const img = document.createElement("img");
+      img.className = "game-cover";
+      img.src = imageUrl;
+      img.alt = (game.name || game.Name || "Game cover").toString();
+      card.appendChild(img);
+    }
 
-    let metaParts = [];
-    if (playerCount) metaParts.push(`${playerCount} players`);
-    if (playtime) metaParts.push(playtime);
+    const title = document.createElement("h2");
+    title.textContent = (game.name || game.Name || "Untitled game").toString();
+    card.appendChild(title);
 
-    const metaText = metaParts.join(" • ");
+    const metaParts = [];
 
-    card.innerHTML = `
-      ${imageUrl ? `<img src="${imageUrl}" alt="${name} cover" class="game-cover">` : ""}
-      <h2>${name}</h2>
-      ${description ? `<p class="meta">${description}</p>` : ""}
-      <p class="meta"><strong>Owners:</strong> ${owners || "—"}</p>
-      ${metaText ? `<p class="meta">${metaText}</p>` : ""}
-      ${
-        genre
-          ? `<p class="tags">
-               <span class="pill">${genre}</span>
-             </p>`
-          : ""
-      }
-      ${notes ? `<p class="notes"><strong>Notes:</strong> ${notes}</p>` : ""}
-    `;
+    const owners = (game.owners || game.Owners || "").toString();
+    if (owners) metaParts.push(`Owners: ${owners}`);
 
-    container.appendChild(card);
+    const playerCount = (game.playerCount || game.PlayerCount || "").toString();
+    if (playerCount) metaParts.push(`Players: ${playerCount}`);
+
+    const playtime = (game.playtime || game.Playtime || "").toString();
+    if (playtime) metaParts.push(`Playtime: ${playtime}`);
+
+    if (metaParts.length) {
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = metaParts.join(" · ");
+      card.appendChild(meta);
+    }
+
+    const genre = (game.genre || game.Genre || "").toString();
+    if (genre) {
+      const tags = document.createElement("div");
+      tags.className = "tags";
+
+      genre.split(",").forEach(raw => {
+        const g = raw.trim();
+        if (!g) return;
+        const pill = document.createElement("span");
+        pill.className = "pill";
+        pill.textContent = g;
+        tags.appendChild(pill);
+      });
+
+      card.appendChild(tags);
+    }
+
+    const notes = (game.notes || game.Notes || "").toString();
+    if (notes) {
+      const notesEl = document.createElement("div");
+      notesEl.className = "notes";
+      notesEl.textContent = notes;
+      card.appendChild(notesEl);
+    }
+
+    listEl.appendChild(card);
   });
+
+  const statusEl = document.getElementById("games-status");
+  if (!filtered.length && allGames.length) {
+    statusEl.textContent = "No games match your filters.";
+  } else if (!allGames.length) {
+    statusEl.textContent = "No games found.";
+  } else {
+    statusEl.textContent = `Showing ${filtered.length} of ${allGames.length} games.`;
+  }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const ownerFilter = document.getElementById("owner-filter");
-  const searchInput = document.getElementById("search-input");
-
-  ownerFilter.addEventListener("change", renderGames);
-  searchInput.addEventListener("input", () => {
-    // Simple debounce not strictly necessary; list is small
-    renderGames();
-  });
-
-  fetchGames();
-});
