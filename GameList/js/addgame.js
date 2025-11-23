@@ -1,35 +1,40 @@
-    const URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+const URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
 
-    document.getElementById("game-form").addEventListener("submit", async (e) => {
-      e.preventDefault();
+document.getElementById("game-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-		const payload = {
-		name: document.getElementById("gameName").value,
-    description: document.getElementById("description").value,
-    owners: document.getElementById("owners").value,
-    playerCount: document.getElementById("playerCount").value,
-    playtime: document.getElementById("playtime").value,
-    genre: document.getElementById("genre").value,
-    notes: document.getElementById("notes").value,
-    imageUrl: document.getElementById("imageUrl").value,
-		timestamp: Date.now()
-		};
+  const form = e.target;
+  const formData = new FormData(form);
 
-      document.getElementById("form-status").textContent = "Sending…";
+  const payload = {
+    name: formData.get("gameName") || "",
+    description: formData.get("description") || "",
+    owners: formData.get("owners") || "",
+    playerCount: formData.get("playerCount") || "",
+    playtime: formData.get("playtime") || "",
+    genre: formData.get("genre") || "",
+    notes: formData.get("notes") || "",
+    imageUrl: formData.get("imageUrl") || "",
+    timestamp: Date.now()
+  };
 
-      try {
-        // Must use no-cors to bypass Apps Script CORS restrictions
-        await fetch(URL, {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
+  console.log("Payload being sent:", payload); // for debugging
 
-        document.getElementById("form-status").textContent = "Success! Game added.";
-      } catch (err) {
-        document.getElementById("form-status").textContent = "Error: " + err.message;
-      }
+  document.getElementById("form-status").textContent = "Sending…";
+
+  try {
+    await fetch(URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
     });
+
+    document.getElementById("form-status").textContent = "Success! Game added.";
+    form.reset();
+  } catch (err) {
+    document.getElementById("form-status").textContent = "Error: " + err.message;
+  }
+});
