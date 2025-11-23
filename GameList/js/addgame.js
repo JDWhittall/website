@@ -28,8 +28,8 @@
           body: JSON.stringify(payload)
         });
 
-        document.getElementById("status").textContent = "Success! Game added.";
+        document.getElementById("form-status").textContent = "Success! Game added.";
       } catch (err) {
-        document.getElementById("status").textContent = "Error: " + err.message;
+        document.getElementById("form-status").textContent = "Error: " + err.message;
       }
     });
