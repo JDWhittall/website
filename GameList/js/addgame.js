@@ -4,14 +4,14 @@
       e.preventDefault();
 
 		const payload = {
-		name: document.getElementsByName("gameName").value,
-    description: document.getElementsByName("description").value,
-    owners: document.getElementsByName("owners").value,
-    playerCount: document.getElementsByName("playerCount").value,
-    playtime: document.getElementsByName("playtime").value,
-    genre: document.getElementsByName("genre").value,
-    notes: document.getElementsByName("notes").value,
-    imageUrl: document.getElementsByName("imageUrl").value,
+		name: document.getElementById("gameName").value,
+    description: document.getElementById("description").value,
+    owners: document.getElementById("owners").value,
+    playerCount: document.getElementById("playerCount").value,
+    playtime: document.getElementById("playtime").value,
+    genre: document.getElementById("genre").value,
+    notes: document.getElementById("notes").value,
+    imageUrl: document.getElementById("imageUrl").value,
 		timestamp: Date.now()
 		};
 
