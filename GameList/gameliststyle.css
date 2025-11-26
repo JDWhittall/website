@@ -1,0 +1,215 @@
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #252529;
+      color: #111827;
+    }
+    header {
+      background: #3f1313;
+      color: #f9fafb;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+    header nav a {
+      color: #e5e7eb;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+    #controls label {
+      font-size: 0.9rem;
+    }
+    #controls select,
+    #controls input {
+      padding: 0.4rem 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 0.35rem;
+      border: 1px solid #d4d4d8;
+      min-width: 160px;
+    }
+    #games-status {
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      color: #6b7280;
+    }
+    .game-grid {
+      
+      gap: 0.75rem;
+    }
+    .game-card {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-rows: 1fr;
+      gap:0px;
+      background: #34343b;
+      color: white;
+      border-radius: 0.5rem;
+      padding: 0.75rem 0.75rem 0.75rem;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+      margin-bottom: 10px;
+    }
+    .cover-div{
+      grid-column: 1;
+      width: fit-content;
+    }
+    .game-cover {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 25px;
+      background: #e5e7eb;
+    }
+    .game-description{
+      grid-column: 2;
+      position: relative;
+    }
+    .game-info{
+      position: absolute;
+      bottom:0;
+      left:0;
+      width: auto;
+    }
+    .other-info{
+      position: absolute;
+      bottom:0;
+      right:0;
+      width: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .other-info a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .other-info a:hover {
+      text-decoration: underline;
+    }
+    .game-card h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: white;
+    }
+    .tags {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    .pill {
+      display: inline-block;
+      background: #eef2ff;
+      color: #4338ca;
+      padding: 0.1rem 0.35rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-right: 0.25rem;
+    }
+    .notes {
+      font-size: 0.8rem;
+      color: #4b5563;
+      margin-top: 0.25rem;
+    }
+    .owner-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+    .owner-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      border-radius: 50%;
+      background: #2f2f35;
+      color: #e5e7eb;
+      font-size: 0.85rem;
+      overflow: hidden;
+    }
+    .owner-chip img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #4b5563;
+    }
+    .owner-chip--missing {
+      background: #3f1313;
+      color: #f9fafb;
+      border: 1px solid #4b5563;
+    }
+    .owner-initial {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+	form {
+      background: #34343b;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+      display: grid;
+      gap: 0.75rem;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+      gap: 0.25rem;
+	  color:white;
+    }
+    input, textarea {
+      padding: 0.45rem 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 0.35rem;
+      border: 1px solid #d4d4d8;
+    }
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+    button[type="submit"] {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.9rem;
+      border-radius: 0.4rem;
+      border: none;
+      background: #4f46e5;
+      color: #f9fafb;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: #4338ca;
+    }
+    #form-status {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }

@@ -4,113 +4,7 @@
   <meta charset="UTF-8">
   <title>Game Library</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f5;
-      color: #111827;
-    }
-    header {
-      background: #111827;
-      color: #f9fafb;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.25rem;
-    }
-    header nav a {
-      color: #e5e7eb;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    header nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 1rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    #controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      align-items: center;
-    }
-    #controls label {
-      font-size: 0.9rem;
-    }
-    #controls select,
-    #controls input {
-      padding: 0.4rem 0.5rem;
-      font-size: 0.9rem;
-      border-radius: 0.35rem;
-      border: 1px solid #d4d4d8;
-      min-width: 160px;
-    }
-    #games-status {
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-      color: #6b7280;
-    }
-    .game-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 0.75rem;
-    }
-    .game-card {
-      background: #ffffff;
-      border-radius: 0.5rem;
-      padding: 0.75rem 0.75rem 0.85rem;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .game-cover {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 0.35rem;
-      margin-bottom: 0.35rem;
-      background: #e5e7eb;
-    }
-    .game-card h2 {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.3;
-    }
-    .meta {
-      font-size: 0.85rem;
-      color: #4b5563;
-    }
-    .tags {
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
-    .pill {
-      display: inline-block;
-      background: #eef2ff;
-      color: #4338ca;
-      padding: 0.1rem 0.35rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      margin-right: 0.25rem;
-    }
-    .notes {
-      font-size: 0.8rem;
-      color: #4b5563;
-      margin-top: 0.25rem;
-    }
-  </style>
+  <link rel="stylesheet" href="gameliststyle.css">
 </head>
 <body>
   <header>
@@ -139,10 +33,104 @@
     <section id="games-list" class="game-grid"></section>
 	<pre id="output"></pre>
 
-	<script>loadGames()</script>
-
   </main>
 
-  <script src="js/games.js"></script>
+  <script>
+const BASE_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+
+async function fetchOwners() {
+  const res = await fetch(`${BASE_URL}?type=owners`);
+  const owners = await res.json();
+  const map = new Map();
+
+  owners.forEach((owner) => {
+    const key = (owner.name || "").trim().toLowerCase();
+    if (key) {
+      map.set(key, owner.avatarUrl || "");
+    }
+  });
+
+  return map;
+}
+
+async function fetchGames() {
+  const res = await fetch(BASE_URL, { method: "GET" });
+  return res.json();
+}
+
+function renderOwners(rawOwners, ownersMap) {
+  const names = (rawOwners || "")
+    .split(",")
+    .map((n) => n.trim())
+    .filter(Boolean);
+
+  if (!names.length) {
+    return `<span class="owner-chip owner-chip--missing" title="Owner unknown"><span class="owner-initial">?</span></span>`;
+  }
+
+  return names
+    .map((name) => {
+      const avatar = ownersMap.get(name.toLowerCase());
+      if (avatar) {
+        return `<span class="owner-chip owner-chip--avatar" title="${name}">
+          <img src="${avatar}" alt="${name} avatar">
+        </span>`;
+      }
+      const initial = name.charAt(0).toUpperCase() || "?";
+      return `<span class="owner-chip owner-chip--missing" title="${name}">
+        <span class="owner-initial">${initial}</span>
+      </span>`;
+    })
+    .join("");
+}
+
+async function loadGames() {
+  const statusEl = document.getElementById("games-status");
+  const listEl = document.getElementById("games-list");
+  statusEl.textContent = "Loading games...";
+
+  try {
+    const [ownersMap, games] = await Promise.all([fetchOwners(), fetchGames()]);
+    listEl.innerHTML = "";
+
+    games.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+
+      card.innerHTML = `
+  <div class="cover-div">
+    <img src="${item.imageUrl}"
+         class="game-cover"
+         alt="Cover image for ${item.gameName}">
+  </div>
+
+  <div class="game-description">
+    <h2>${item.gameName}</h2>
+    <p>${item.description}</p>
+    <div class="game-info">
+      <span><img src="images/players.png" style="height:1.5rem; width:auto;"><span style="vertical-align: top;"> ${item.players} players</span></span>
+      <span style="vertical-align: top;margin-left:1rem;margin-right:1rem;"> | </span>
+      <span><img src="images/timer.png" style="height:1.5rem; width:auto;"><span style="vertical-align: top;"> ${item.playtime} minutes</span></span>
+    </div>
+    <div class="other-info">
+      ${item.scoreSheet ? `<a href="${item.scoreSheet}" target="_blank" rel="noopener">Score Sheet</a>` : ""}
+      <div class="owner-list">${renderOwners(item.owners, ownersMap)}</div>
+    </div>
+    
+  </div>
+`;
+
+      listEl.appendChild(card);
+    });
+
+    statusEl.textContent = "";
+  } catch (err) {
+    statusEl.textContent = "Error loading data";
+    console.error(err);
+  }
+}
+
+window.onload = loadGames;
+  </script>
 </body>
 </html>
