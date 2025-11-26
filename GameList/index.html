@@ -10,6 +10,7 @@
   <header>
     <h1>Game Library</h1>
     <nav>
+      <a href="addowner.html">Add New Profile</a>
       <a href="addnewgame.html">Add New Game</a>
     </nav>
   </header>
@@ -27,6 +28,15 @@
         Search:
         <input id="search-input" type="search" placeholder="Name, genre, notes…">
       </label>
+
+      <label>
+        Players:
+        <span class="player-filter">
+          <input id="players-max" type="number" min="1" inputmode="numeric" placeholder="Max">
+        </span>
+      </label>
+
+      <button id="clear-filters" type="button">Clear filters</button>
     </section>
 
     <div id="games-status">Loading games…</div>
@@ -38,24 +48,50 @@
   <script>
 const BASE_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
 
+let ownersMap = new Map();
+let gamesCache = [];
+
+const filters = {
+  search: "",
+  owner: "",
+  maxPlayers: null
+};
+
+const elements = {
+  status: document.getElementById("games-status"),
+  list: document.getElementById("games-list"),
+  search: document.getElementById("search-input"),
+  ownerFilter: document.getElementById("owner-filter"),
+  playersMin: document.getElementById("players-min"),
+  playersMax: document.getElementById("players-max"),
+  clearBtn: document.getElementById("clear-filters")
+};
+
+function normalizeName(name) {
+  return (name || "").trim().toLowerCase();
+}
+
 async function fetchOwners() {
   const res = await fetch(`${BASE_URL}?type=owners`);
-  const owners = await res.json();
-  const map = new Map();
-
-  owners.forEach((owner) => {
-    const key = (owner.name || "").trim().toLowerCase();
-    if (key) {
-      map.set(key, owner.avatarUrl || "");
-    }
-  });
-
-  return map;
+  return res.json();
 }
 
 async function fetchGames() {
   const res = await fetch(BASE_URL, { method: "GET" });
   return res.json();
+}
+
+function populateOwnerFilter(owners) {
+  const select = elements.ownerFilter;
+  select.innerHTML = `<option value="">All owners</option>`;
+  owners.forEach((owner) => {
+    const name = (owner.name || "").trim();
+    if (!name) return;
+    const opt = document.createElement("option");
+    opt.value = name;
+    opt.textContent = name;
+    select.appendChild(opt);
+  });
 }
 
 function renderOwners(rawOwners, ownersMap) {
@@ -84,20 +120,80 @@ function renderOwners(rawOwners, ownersMap) {
     .join("");
 }
 
-async function loadGames() {
-  const statusEl = document.getElementById("games-status");
-  const listEl = document.getElementById("games-list");
-  statusEl.textContent = "Loading games...";
+function parsePlayersRange(playersValue) {
+  const numbers = String(playersValue || "").match(/\d+/g);
+  if (!numbers || !numbers.length) return null;
+  const nums = numbers.map((n) => Number(n)).filter((n) => !Number.isNaN(n));
+  if (!nums.length) return null;
+  return {
+    min: Math.min(...nums),
+    max: Math.max(...nums)
+  };
+}
 
-  try {
-    const [ownersMap, games] = await Promise.all([fetchOwners(), fetchGames()]);
-    listEl.innerHTML = "";
+function matchesFilters(game) {
+  // Owner filter
+  if (filters.owner) {
+    const ownersList = (game.owners || "")
+      .split(",")
+      .map((n) => normalizeName(n))
+      .filter(Boolean);
+    if (!ownersList.includes(normalizeName(filters.owner))) {
+      return false;
+    }
+  }
 
-    games.forEach((item) => {
-      const card = document.createElement("div");
-      card.className = "game-card";
+  // Search filter
+  if (filters.search) {
+    const haystack = [
+      game.gameName,
+      game.description,
+      game.genre,
+      game.notes,
+      game.owners
+    ]
+      .map((v) => (v || "").toLowerCase())
+      .join(" ");
+    if (!haystack.includes(filters.search)) {
+      return false;
+    }
+  }
 
-      card.innerHTML = `
+  // Player range filter
+  const hasPlayerFilter = filters.maxPlayers !== null;
+  if (hasPlayerFilter) {
+    const range = parsePlayersRange(game.players || game.playerCount || "");
+    if (!range) {
+      return false;
+    }
+    if (range.max < filters.maxPlayers) {
+      return false;
+    }
+    if (range.min > filters.maxPlayers) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function renderGames() {
+  elements.list.innerHTML = "";
+
+  const filtered = gamesCache.filter((game) => matchesFilters(game));
+
+  if (!filtered.length) {
+    elements.status.textContent = "No games match these filters.";
+    return;
+  }
+
+  elements.status.textContent = "";
+
+  filtered.forEach((item) => {
+    const card = document.createElement("div");
+    card.className = "game-card";
+
+    card.innerHTML = `
   <div class="cover-div">
     <img src="${item.imageUrl}"
          class="game-cover"
@@ -120,15 +216,62 @@ async function loadGames() {
   </div>
 `;
 
-      listEl.appendChild(card);
-    });
+    elements.list.appendChild(card);
+  });
+}
 
-    statusEl.textContent = "";
+async function loadGames() {
+  elements.status.textContent = "Loading games...";
+
+  try {
+    const [owners, games] = await Promise.all([fetchOwners(), fetchGames()]);
+
+    ownersMap = new Map(
+      owners.map((o) => [normalizeName(o.name), o.avatarUrl || ""])
+    );
+
+    populateOwnerFilter(owners);
+    gamesCache = games;
+
+    renderGames();
   } catch (err) {
-    statusEl.textContent = "Error loading data";
+    elements.status.textContent = "Error loading data";
     console.error(err);
   }
 }
+
+elements.search.addEventListener("input", (e) => {
+  filters.search = e.target.value.toLowerCase();
+  renderGames();
+});
+
+elements.ownerFilter.addEventListener("change", (e) => {
+  filters.owner = e.target.value;
+  renderGames();
+});
+
+function setPlayerFilter(which, value) {
+  const num = Number(value);
+  filters[which] = Number.isNaN(num) || value === "" ? null : num;
+  renderGames();
+}
+
+elements.playersMax.addEventListener("input", (e) =>
+  setPlayerFilter("maxPlayers", e.target.value)
+);
+
+elements.clearBtn.addEventListener("click", () => {
+  filters.search = "";
+  filters.owner = "";
+  filters.maxPlayers = null;
+
+  elements.search.value = "";
+  elements.ownerFilter.value = "";
+  elements.playersMin.value = "";
+  elements.playersMax.value = "";
+
+  renderGames();
+});
 
 window.onload = loadGames;
   </script>
