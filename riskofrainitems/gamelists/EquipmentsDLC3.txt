@@ -1,0 +1,36 @@
+equipments["Faulty Conductor"] = {
+	Rarity = "Equipment",
+	Quote = "Survivor and drone attacks apply the Electrocuted debuff on hit, which can spread to nearby enemies when they are damaged.",
+	Desc = "{{Color|d|Electrocutes}} enemies hit by the survivor or their drones for {{Color|d|+300%}} damage every {{Color|u|1s}}. Lasts {{Color|u|5s}}. Electrocuted enemies have a small chance of {{Color|d|Electrocuting}} nearby enemies when taking damage. Electrical damage increases this chance.",
+	ID = "DroneShockDamage",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_DRONESHOCKDAMAGE",
+	Expansion = "AC",
+	}
+equipments["Of One Mind"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of the Collective.",
+	Desc = "???",
+	ID = "EliteCollectiveEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXCOLLECTIVE",
+	Expansion = "AC",
+	}
+equipments["G-Force Accelerator"] = {
+	Rarity = "Equipment",
+	Quote = "Bring enemies down to the ground, dealing damage and slowing nearby enemies.",
+	Desc = "Bring enemies within a {{Color|u|10m}} radius down to the ground and {{Color|u|slow}} them. If falling distance is greater than {{Color|u|2.5m}}, does {{Color|d|10% damage}} for each meter of falling. Lasts for {{Color|u|10s}}.",
+	ID = "GroundEnemies",
+	Cooldown = 30,
+	LocalizationInternalName = "EQUIPMENT_GROUNDENEMIES",
+	Expansion = "AC",
+	}
+equipments["Deus Ex Machina"] = {
+	Rarity = "Equipment",
+	Quote = "Counter any damage. Successful counters {{Color|boss|bless}} your next attack, ensuring your on-hit effects ALWAYS activate.",
+	Desc = "Briefly enter a countering stance that lets you parry {{Color|u|any and ALL}} damage. A successful parry {{Color|h|nullifies incoming damage}}, reduces your equipment cooldown by {{Color|d|75%}}, and grants {{Color|boss|Blessing}}, causing your next attack to ALWAYS activate your on-hit effects.",
+	ID = "Parry",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_PARRY",
+	Expansion = "AC",
+	}

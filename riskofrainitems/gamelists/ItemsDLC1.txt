@@ -1,0 +1,854 @@
+items["Mocha"] = {
+	Rarity = "Common",
+	Quote = "Slightly increase attack speed and movement speed.",
+	Desc = "Increases {{Color|d|attack speed}} by {{Color|d|7.5%}} {{Stack|(+7.5% per stack)}} and {{Color|u|movement speed}} by {{Color|u|7%}} {{Stack|(+7% per stack)}}.",
+	Category = { "Damage","Utility","FoodRelated","MobilityRelated","CanBeTemporary" },
+	ID = "AttackSpeedAndMoveSpeed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ATTACKSPEEDANDMOVESPEED",
+	Expansion = "SotV",
+	}
+items["Safer Spaces"] = {
+	Rarity = "Void",
+	Quote = "Block the next source of damage. {{Color|v|Corrupts all Tougher Times}}.",
+	Desc = "{{Color|h|Blocks}} incoming damage once. Recharges after {{Color|u|15 seconds}} {{Stack|(-10% per stack)}}. {{Color|v|Corrupts all Tougher Times}}.",
+	Category = { "Utility","BrotherBlacklist","RebirthBlacklist","CanBeTemporary" },
+	ID = "BearVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BEARVOID",
+	Expansion = "SotV",
+	}
+items["Needletick"] = {
+	Rarity = "Void",
+	Quote = "Chance to collapse enemies on hit. {{Color|v|Corrupts all Tri-Tip Daggers}}.",
+	Desc = "{{Color|d|10%}} {{Stack|(+10% per stack)}} chance to {{Color|d|collapse}} an enemy for {{Color|d|400%}} base damage. {{Color|v|Corrupts all Tri-Tip Daggers}}.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "BleedOnHitVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BLEEDONHITVOID",
+	Expansion = "SotV",
+	}
+items["Polylute"] = {
+	Rarity = "Void",
+	Quote = "Chance to repeatedly strike a single enemy with lightning. {{Color|v|Corrupts all Ukuleles}}.",
+	Desc = "{{Color|d|25%}} chance to fire {{Color|d|lightning}} for {{Color|d|60%}} TOTAL damage up to {{Color|d|3 {{Stack|(+3 per stack)}}}} times. {{Color|v|Corrupts all Ukuleles}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "ChainLightningVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CHAINLIGHTNINGVOID",
+	Expansion = "SotV",
+	}
+items["Benthic Bloom"] = {
+	Rarity = "Void",
+	Quote = "Upgrades your items at the start of each stage. {{Color|v|Corrupts all 57 Leaf Clovers}}.",
+	Desc = "{{Color|u|Upgrades 3}} {{Stack|(+3 per stack)}} random items to items of the next {{Color|u|higher rarity}} at the {{Color|u|start of each stage}}. {{Color|v|Corrupts all 57 Leaf Clovers}}.",
+	Category = { "Utility","OnStageBeginEffect","FoodRelated","CanBeTemporary" },
+	ID = "CloverVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CLOVERVOID",
+	Expansion = "SotV",
+	}
+items["ITEM_CONVERTCRITCHANCETOCRITDAMAGE_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_CONVERTCRITCHANCETOCRITDAMAGE_PICKUP",
+	Desc = "ITEM_CONVERTCRITCHANCETOCRITDAMAGE_DESC",
+	Category = { "Damage" },
+	ID = "ConvertCritChanceToCritDamage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CONVERTCRITCHANCETOCRITDAMAGE",
+	Expansion = "SotV",
+	}
+items["Laser Scope"] = {
+	Rarity = "Legendary",
+	Quote = "Your 'Critical Strikes' deal an additional 100% damage.",
+	Desc = "{{Color|d|Critical Strikes}} deal an additional {{Color|d|100% damage}}{{Stack|(+100% per stack)}}.",
+	Category = { "Damage","CanBeTemporary","Technology" },
+	ID = "CritDamage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CRITDAMAGE",
+	Expansion = "SotV",
+	}
+items["Lost Seer's Lenses"] = {
+	Rarity = "Void",
+	Quote = "Gain a 0.5% chance to instantly kill a non-boss enemy. {{Color|v|Corrupts all Lens-Maker's Glasses}}.",
+	Desc = "Your attacks have a {{Color|d|0.5%}} {{Stack|(+0.5% per stack)}} chance to {{Color|d|instantly kill}} a {{Color|d|non-Boss enemy}}. {{Color|v|Corrupts all Lens-Maker's Glasses}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "CritGlassesVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CRITGLASSESVOID",
+	Expansion = "SotV",
+	}
+items["Spare Drone Parts"] = {
+	Rarity = "Legendary",
+	Quote = "Your drones fire faster, have less cooldowns, shoot missiles, and gain a bonus chaingun.",
+	Desc = "Gain {{Color|d|Col. Droneman}}. 
+Drones gain {{Color|d|+25%}} {{Stack|(+25% per stack)}} attack speed and cooldown reduction. 
+Drones gain {{Color|d|10%}} chance to fire a {{Color|d|missile}} on hit, dealing {{Color|d|150%}} TOTAL damage. 
+Drones gain an {{Color|d|automatic chain gun}} that deals {{Color|d|6x50%}} damage, bouncing to {{Color|d|2}} enemies.",
+	Category = { "Damage","CannotCopy","AIBlacklist","BrotherBlacklist","ExtractorUnitBlacklist","CanBeTemporary","Technology" },
+	ID = "DroneWeapons",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRONEWEAPONS",
+	Expansion = "SotV",
+	}
+items["ITEM_DRONEWEAPONSBOOST_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_DRONEWEAPONSBOOST_PICKUP",
+	Desc = "ITEM_DRONEWEAPONSBOOST_DESC",
+	Category = {  },
+	ID = "DroneWeaponsBoost",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRONEWEAPONSBOOST",
+	Expansion = "SotV",
+	}
+items["ITEM_DRONEWEAPONSDISPLAY1_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_DRONEWEAPONSDISPLAY1_PICKUP",
+	Desc = "ITEM_DRONEWEAPONSDISPLAY1_DESC",
+	Category = {  },
+	ID = "DroneWeaponsDisplay1",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRONEWEAPONSDISPLAY1",
+	Expansion = "SotV",
+	}
+items["ITEM_DRONEWEAPONSDISPLAY2_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_DRONEWEAPONSDISPLAY2_PICKUP",
+	Desc = "ITEM_DRONEWEAPONSDISPLAY2_DESC",
+	Category = {  },
+	ID = "DroneWeaponsDisplay2",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRONEWEAPONSDISPLAY2",
+	Expansion = "SotV",
+	}
+items["Singularity Band"] = {
+	Rarity = "Void",
+	Quote = "High damage hits also create unstable black holes. Recharges over time. {{Color|v|Corrupts all Runald's and Kjaro's Bands}}.",
+	Desc = "Hits that deal {{Color|d|more than 400% damage}} also fire a black hole that {{Color|u|draws enemies within 15m into its center}}. Lasts {{Color|u|5}} seconds before collapsing, dealing {{Color|d|100%}} {{Stack|(+100% per stack)}} TOTAL damage. Recharges every {{Color|u|20}} seconds. {{Color|v|Corrupts all Runald's and Kjaro's Bands}}.",
+	Category = { "Damage","Utility","CanBeTemporary" },
+	ID = "ElementalRingVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ELEMENTALRINGVOID",
+	Expansion = "SotV",
+	}
+items["ITEM_EMPOWERALWAYS_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_EMPOWERALWAYS_PICKUP",
+	Desc = "ITEM_EMPOWERALWAYS_DESC",
+	Category = { "Utility","BrotherBlacklist","RebirthBlacklist" },
+	ID = "EmpowerAlways",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EMPOWERALWAYS",
+	Expansion = "SotV",
+	}
+items["Lysate Cell"] = {
+	Rarity = "Void",
+	Quote = "Add an extra charge of your Special skill. {{Color|v|Corrupts all Fuel Cells}}.",
+	Desc = "Add {{Color|u|+1}} {{Stack|(+1 per stack)}} charge of your {{Color|u|Special skill}}. {{Color|v|Corrupts all Fuel Cells.}}.",
+	Category = { "Utility","CanBeTemporary" },
+	ID = "EquipmentMagazineVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EQUIPMENTMAGAZINEVOID",
+	Expansion = "SotV",
+	}
+items["Voidsent Flame"] = {
+	Rarity = "Void",
+	Quote = "Full health enemies detonate on hit. {{Color|v|Corrupts all Will-o'-the-wisps}}.",
+	Desc = "Upon hitting an enemy at or above {{Color|d|100% health}}, {{Color|d|detonate}} them in a {{Color|d|12m}} {{Stack|(+2.4m per stack)}} radius burst for {{Color|d|260%}} {{Stack|(+156% per stack)}} base damage. {{Color|v|Corrupts all Will-o'-the-wisps}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "ExplodeOnDeathVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXPLODEONDEATHVOID",
+	Expansion = "SotV",
+	}
+items["Pluripotent Larva"] = {
+	Rarity = "Void",
+	Quote = "Get a {{Color|v|corrupted}} extra life. Consumed on use. {{Color|v|Corrupts all Dio's Best Friends.}}.",
+	Desc = "{{Color|u|Upon death}}, this item will be {{Color|u|consumed}} and you will {{Color|h|return to life}} with {{Color|h|3 seconds of invulnerability}}, and all of your items that can be {{Color|u|corrupted}} will be. {{Color|v|Corrupts all Dio's Best Friends}}.",
+	Category = { "Utility","FoodRelated","ExtractorUnitBlacklist","CanBeTemporary" },
+	ID = "ExtraLifeVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRALIFEVOID",
+	Expansion = "SotV",
+	}
+items["Pluripotent Larva (Consumed)"] = {
+	Rarity = "Untiered",
+	Quote = "A spent item with no remaining power.",
+	Desc = "A spent item with no remaining power.",
+	Category = { "Utility","AllowedForUseAsCraftingIngredient" },
+	ID = "ExtraLifeVoidConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRALIFEVOIDCONSUMED",
+	Expansion = "SotV",
+	}
+items["Delicate Watch"] = {
+	Rarity = "Common",
+	Quote = "Deal bonus damage. Breaks at low health.",
+	Desc = "Increase damage by {{Color|d|20%}} {{Stack|(+20% per stack)}}. Taking damage to below {{Color|hp|25% health}} {{Color|u|breaks}} this item.",
+	Category = { "Damage","LowHealth","CanBeTemporary","ExtractorUnitBlacklist" },
+	ID = "FragileDamageBonus",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FRAGILEDAMAGEBONUS",
+	Expansion = "SotV",
+	}
+items["Delicate Watch (Broken)"] = {
+	Rarity = "Untiered",
+	Quote = "...well, it's still right twice a day.",
+	Desc = "A spent item with no remaining power.",
+	Category = { "AllowedForUseAsCraftingIngredient" },
+	ID = "FragileDamageBonusConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FRAGILEDAMAGEBONUSCONSUMED",
+	Expansion = "SotV",
+	}
+items["Shipping Request Form"] = {
+	Rarity = "Uncommon",
+	Quote = "Get a delivery each stage that contains powerful items.",
+	Desc = "A {{Color|u|delivery}} containing 2 items (79%/{{Color|h|20%}}/{{Color|hp|1%}}) will appear in a random location {{Color|u|on each stage}}. {{Stack|(Increases rarity chances of the items per stack).}}",
+	Category = { "Utility","OnStageBeginEffect","AIBlacklist","CanBeTemporary" },
+	ID = "FreeChest",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FREECHEST",
+	Expansion = "SotV",
+	}
+items["Roll of Pennies"] = {
+	Rarity = "Common",
+	Quote = "Gain gold on taking damage.",
+	Desc = "Gain {{Color|u|3 {{Stack|(+3 per stack)}} gold}} on {{Color|d|taking damage}} from an enemy. {{Color|u|Scales over time.}}",
+	Category = { "Utility","AIBlacklist","CanBeTemporary" },
+	ID = "GoldOnHurt",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_GOLDONHURT",
+	Expansion = "SotV",
+	}
+items["ITEM_GUMMYCLONEIDENTIFIER_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_GUMMYCLONEIDENTIFIER_PICKUP",
+	Desc = "ITEM_GUMMYCLONEIDENTIFIER_DESC",
+	Category = {  },
+	ID = "GummyCloneIdentifier",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_GUMMYCLONEIDENTIFIER",
+	}
+items["Light Flux Pauldron"] = {
+	Rarity = "Lunar",
+	Quote = "Halve your cooldowns.. <color=#FF7F7F>BUT halve your attack speed.</color>
+",
+	Desc = "Decrease {{Color|u|skill cooldowns}} by {{Color|u|50% {{Stack|(+50% per stack)}}}}. Decrease {{Color|d|attack speed}} by {{Color|d|50%}} {{Stack|(+50% per stack)}}.",
+	Category = { "Utility" },
+	ID = "HalfAttackSpeedHalfCooldowns",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HALFATTACKSPEEDHALFCOOLDOWNS",
+	Expansion = "SotV",
+	}
+items["Stone Flux Pauldron"] = {
+	Rarity = "Lunar",
+	Quote = "Double your health... <color=#FF7F7F>BUT halve your speed.</color>
+",
+	Desc = "Increase {{Color|h|max health}} by {{Color|h|100% {{Stack|(+100% per stack)}}}}. Reduce {{Color|u|movement speed}} by {{Color|u|50%}} {{Stack|(+50% per stack)}}.",
+	Category = { "Utility" },
+	ID = "HalfSpeedDoubleHealth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HALFSPEEDDOUBLEHEALTH",
+	Expansion = "SotV",
+	}
+items["Power Elixir"] = {
+	Rarity = "Common",
+	Quote = "Receive an instant heal at low health. Consumed on use.",
+	Desc = "Taking damage to below {{Color|hp|25% health}} {{Color|u|consumes}} this item, {{Color|h|healing}} you for {{Color|h|75%}} of {{Color|h|maximum health}}.",
+	Category = { "Healing","LowHealth","AIBlacklist","FoodRelated","CanBeTemporary","ExtractorUnitBlacklist" },
+	ID = "HealingPotion",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HEALINGPOTION",
+	Expansion = "SotV",
+	}
+items["Empty Bottle"] = {
+	Rarity = "Untiered",
+	Quote = "An empty container for an Elixir. Does nothing.",
+	Desc = "An empty container for an Elixir. Does nothing.",
+	Category = { "Healing","AllowedForUseAsCraftingIngredient" },
+	ID = "HealingPotionConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HEALINGPOTIONCONSUMED",
+	Expansion = "SotV",
+	}
+items["Ben's Raincoat"] = {
+	Rarity = "Legendary",
+	Quote = "Prevent debuffs, instead gaining a temporary barrier.  Recharges over time.",
+	Desc = "Prevents {{Color|u|1 {{Stack|(+1 per stack)}}}} {{Color|d|debuff}} and instead grants a {{Color|h|temporary barrier}} for {{Color|h|10%}} of {{Color|h|maximum health}}. Recharges every {{Color|u|5}} seconds}}.",
+	Category = { "Utility","Healing","CanBeTemporary" },
+	ID = "ImmuneToDebuff",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_IMMUNETODEBUFF",
+	Expansion = "SotV",
+	}
+items["Egocentrism"] = {
+	Rarity = "Lunar",
+	Quote = "Gain multiple orbiting bombs. <color=#FF7F7F>Every minute, assimilate another item into Egocentrism.</color>",
+	Desc = "Every {{Color|u|3}}{{Stack|(-50% per stack)}} seconds, gain an {{Color|d|orbiting bomb}} that detonates on impact for {{Color|d|360%}} damage, up to a maximum of {{Color|u|3{{Stack|(+1 per stack)}} bombs}}. Every {{Color|u|60}} seconds, a random item is {{Color|u|converted}} into this item.",
+	Category = { "Utility" },
+	ID = "LunarSun",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARSUN",
+	Expansion = "SotV",
+	}
+items["Blessings of Terafirmae"] = {
+	Rarity = "Untiered",
+	Quote = "PLACEHOLDER PICKUP DESCRIPTION",
+	Desc = "PLACEHOLDER DESCRIPTION",
+	Category = { "Utility" },
+	ID = "LunarWings",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARWINGS",
+	Expansion = "SotV",
+	}
+items["Defense Nucleus"] = {
+	Rarity = "Boss",
+	Quote = "Summon an Alpha Construct on killing an elite.",
+	Desc = "Killing elite monsters spawns an {{Color|d|Alpha Construct}} with bonus {{Color|d|300%}} damage and {{Color|h|300% health}}. Limited to {{Color|u|4}} {{Stack|(+4 per stack)}}.",
+	Category = { "OnKillEffect","CanBeTemporary" },
+	ID = "MinorConstructOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MINORCONSTRUCTONKILL",
+	Expansion = "SotV",
+	}
+items["Plasma Shrimp"] = {
+	Rarity = "Void",
+	Quote = "While you have shield, fire missiles on every hit. {{Color|v|Corrupts all AtG Missile Mk. 1s}}.",
+	Desc = "Gain a {{Color|h|shield}} equal to {{Color|h|10%}} of your maximum health. While you have a {{Color|h|shield}}, hitting an enemy fires a missile that deals {{Color|d|40%}} {{Stack|(+50% per stack)}} TOTAL damage. {{Color|v|Corrupts all AtG Missile Mk. 1s}}.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "MissileVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MISSILEVOID",
+	Expansion = "SotV",
+	}
+items["Pocket I.C.B.M."] = {
+	Rarity = "Legendary",
+	Quote = "All Missile items deal more damage and fire an additional two missiles.",
+	Desc = "All missile items and equipment fire an additional {{Color|d|2}} {{Color|d|missiles}}. Increase missile damage by {{Color|d|0%}} {{Stack|(+50% per stack)}}",
+	Category = { "Damage","CanBeTemporary","Technology" },
+	ID = "MoreMissile",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MOREMISSILE",
+	Expansion = "SotV",
+	}
+items["Hunter's Harpoon"] = {
+	Rarity = "Uncommon",
+	Quote = "Killing an enemy gives you a burst of movement speed.",
+	Desc = "Killing an enemy increases {{Color|u|movement speed}} by {{Color|u|125%}}, fading over {{Color|u|1}} {{Stack|(+0.5 per stack)}} seconds.",
+	Category = { "Utility","MobilityRelated","CanBeTemporary" },
+	ID = "MoveSpeedOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MOVESPEEDONKILL",
+	Expansion = "SotV",
+	}
+items["Weeping Fungus"] = {
+	Rarity = "Void",
+	Quote = "Heal while sprinting. {{Color|v|Corrupts all Bustling Fungi}}.",
+	Desc = "{{Color|h|Heals}} for {{Color|h|2%}} {{Stack|(+2% per stack)}} of your {{Color|h|health}} every second {{Color|u|while sprinting}}. {{Color|v|Corrupts all Bustling Fungi}}.",
+	Category = { "Healing","FoodRelated","MobilityRelated","CanBeTemporary" },
+	ID = "MushroomVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MUSHROOMVOID",
+	Expansion = "SotV",
+	}
+items["Oddly-shaped Opal"] = {
+	Rarity = "Common",
+	Quote = "Reduce damage the first time you are hit.",
+	Desc = "{{Color|h|Increase armor}} by {{Color|h|100}} {{Stack|(+100 per stack)}} while out of danger.",
+	Category = { "Utility","CanBeTemporary" },
+	ID = "OutOfCombatArmor",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_OUTOFCOMBATARMOR",
+	Expansion = "SotV",
+	}
+items["Symbiotic Scorpion"] = {
+	Rarity = "Legendary",
+	Quote = "Permanently reduce armor on hit.",
+	Desc = "{{Color|d|100%}} chance on hit to reduce {{Color|d|armor}} by {{Color|d|2}} {{Stack|(+2 per stack)}} {{Color|d|permanently}}.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "PermanentDebuffOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PERMANENTDEBUFFONHIT",
+	Expansion = "SotV",
+	}
+items["Shuriken"] = {
+	Rarity = "Uncommon",
+	Quote = "Activating your Primary skill also throws a shuriken. Recharges over time.",
+	Desc = "Activating your {{Color|u|Primary skill}} also throws a {{Color|d|shuriken}} that deals {{Color|d|400%}} {{Stack|(+100% per stack)}} base damage. You can hold up to {{Color|u|3}} {{Stack|(+1 per stack)}} {{Color|d|shurikens}} which all reload over {{Color|u|10}} seconds.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "PrimarySkillShuriken",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PRIMARYSKILLSHURIKEN",
+	Expansion = "SotV",
+	}
+items["Bottled Chaos"] = {
+	Rarity = "Legendary",
+	Quote = "Activating your Equipment triggers an additional, random Equipment effect.",
+	Desc = "Trigger a {{Color|d|random equipment}} effect {{Color|d|1}} {{Stack|(+1 per stack)}} time(s).",
+	Category = { "Utility","EquipmentRelated","FoodRelated","CanBeTemporary" },
+	ID = "RandomEquipmentTrigger",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_RANDOMEQUIPMENTTRIGGER",
+	Expansion = "SotV",
+	}
+items["Eulogy Zero"] = {
+	Rarity = "Lunar",
+	Quote = "Items and equipment have a small chance to transform into a Lunar item instead.",
+	Desc = "Items have a {{Color|u|5% {{Stack|(+5% per stack)}}}} chance to become a {{Color|lunar|Lunar}} item instead.",
+	Category = { "Utility","BrotherBlacklist","RebirthBlacklist" },
+	ID = "RandomlyLunar",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_RANDOMLYLUNAR",
+	Expansion = "SotV",
+	}
+items["Regenerating Scrap"] = {
+	Rarity = "Uncommon",
+	Quote = "Prioritized when used with {{Color|h|Uncommon}} 3D Printers. Usable once per stage.",
+	Desc = "Does nothing. Prioritized when used with {{Color|h|Uncommon}} 3D Printers. At the start of each stage, it regenerates.",
+	Category = { "Utility","PriorityScrap","CannotDuplicate","OnStageBeginEffect","CommandArtifactBlacklist","AIBlacklist" },
+	ID = "RegeneratingScrap",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_REGENERATINGSCRAP",
+	Expansion = "SotV",
+	}
+items["Regenerating Scrap (Consumed)"] = {
+	Rarity = "Untiered",
+	Quote = "At the start of each stage, it transforms into Regenerating Scrap.",
+	Desc = "At the start of each stage, it transforms into Regenerating Scrap.",
+	Category = { "Utility","OnStageBeginEffect" },
+	ID = "RegeneratingScrapConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_REGENERATINGSCRAPCONSUMED",
+	Expansion = "SotV",
+	}
+items["Strange Scrap, Green"] = {
+	Rarity = "Untiered",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapGreenSuppressed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPGREENSUPPRESSED",
+	Expansion = "SotV",
+	}
+items["Strange Scrap, Red"] = {
+	Rarity = "Untiered",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapRedSuppressed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPREDSUPPRESSED",
+	Expansion = "SotV",
+	}
+items["Strange Scrap, White"] = {
+	Rarity = "Untiered",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapWhiteSuppressed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPWHITESUPPRESSED",
+	Expansion = "SotV",
+	}
+items["Tentabauble"] = {
+	Rarity = "Void",
+	Quote = "Chance to root enemies on hit. {{Color|v|Corrupts all Chronobaubles}}.",
+	Desc = "{{Color|u|5%}} {{Stack|(+5% per stack)}} chance on hit to {{Color|d|root}} enemies for {{Color|u|1s}} {{Stack|(+1s per stack)}}. {{Color|v|Corrupts all Chronobaubles}}.",
+	Category = { "Utility","CanBeTemporary" },
+	ID = "SlowOnHitVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SLOWONHITVOID",
+	Expansion = "SotV",
+	}
+items["Ignition Tank"] = {
+	Rarity = "Uncommon",
+	Quote = "Your ignite effects deal quadruple damage.",
+	Desc = "Ignite effects deal {{Color|d|+300%}} {{Stack|(+300% per stack)}} more damage over time.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "StrengthenBurn",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_STRENGTHENBURN",
+	Expansion = "SotV",
+	}
+items["Encrusted Key"] = {
+	Rarity = "Void",
+	Quote = "Gain access to an Encrusted Cache that contains a void item. {{Color|v|Corrupts all Rusted Keys}}.",
+	Desc = "A {{Color|u|hidden cache}} containing an item (60%/{{Color|h|30%}}/{{Color|hp|10%}}) will appear in a random location {{Color|u|on each stage}}. Opening the cache {{Color|u|consumes}} this item. {{Color|v|Corrupts all Rusted Keys}}.",
+	Category = { "Utility","AIBlacklist","OnStageBeginEffect","CanBeTemporary" },
+	ID = "TreasureCacheVoid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TREASURECACHEVOID",
+	Expansion = "SotV",
+	}
+items[""] = {
+	Rarity = "Untiered",
+	Quote = "",
+	Desc = "",
+	Category = {  },
+	ID = "VoidmanPassiveItem",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "",
+	Expansion = "SotV",
+	}
+items["Newly Hatched Zoea"] = {
+	Rarity = "Void",
+	Quote = "Periodically recruit allies from the {{Color|v|Void}}.  {{Color|v|Corrupts all }}<style=cIsTierBoss>yellow items}}{{Color|v|}}.",
+	Desc = "Every {{Color|u|60}}{{Stack|(-50% per stack)}} seconds, gain a random {{Color|v|Void}} ally. Can have up to {{Color|u|1}}{{Stack|(+1 per stack)}} allies at a time. {{Color|v|Corrupts all }}<style=cIsTierBoss>yellow items}}{{Color|v|}}.",
+	Category = { "Utility","CannotCopy","FoodRelated","ExtractorUnitBlacklist","CanBeTemporary" },
+	ID = "VoidMegaCrabItem",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_VOIDMEGACRABITEM",
+	Expansion = "SotV",
+	}

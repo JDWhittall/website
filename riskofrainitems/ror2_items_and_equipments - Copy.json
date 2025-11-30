@@ -1,0 +1,3622 @@
+[
+  {
+    "name": "ITEM_ADAPTIVEARMOR_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_ADAPTIVEARMOR_PICKUP",
+    "desc": "ITEM_ADAPTIVEARMOR_DESC",
+    "category": [
+      "Utility"
+    ],
+    "id": "AdaptiveArmor",
+    "dlc": 0
+  },
+  {
+    "name": "Alien Head",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Reduces cooldowns for your skills.",
+    "desc": "{{Color|u|Reduce skill cooldowns}} by {{Color|u|25%}} {{Stack|(+25% per stack)}}.",
+    "category": [
+      "Utility",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "AlienHead",
+    "dlc": 0
+  },
+  {
+    "name": "Repulsion Armor Plate",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Receive flat damage reduction from all attacks.",
+    "desc": "Reduce all {{Color|d|incoming damage}} by {{Color|d|5{{Stack| (+5 per stack)}}}}. Cannot be reduced below {{Color|d|1}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "ArmorPlate",
+    "dlc": 0
+  },
+  {
+    "name": "Shattering Justice",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Reduce the armor of enemies after repeatedly striking them.",
+    "desc": "After hitting an enemy {{Color|d|5}} times, reduce their {{Color|d|armor}} by {{Color|d|60}} for {{Color|d|8}}{{Stack| (+8 per stack)}} seconds.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "ArmorReductionOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Artifact Key",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "A stone shard with immense power.",
+    "desc": "A stone shard with immense power.",
+    "category": [
+      "WorldUnique",
+      "CanBeTemporary",
+      "ObjectiveRelated"
+    ],
+    "id": "ArtifactKey",
+    "dlc": 0
+  },
+  {
+    "name": "Predatory Instincts",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "'Critical Strikes' increase attack speed. Stacks 3 times.",
+    "desc": "{{Color|d|Critical strikes}} increase {{Color|d|attack speed}} by {{Color|d|12%}}. Maximum cap of {{Color|d|36% {{Stack|(+24% per stack)}} attack speed}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "AttackSpeedOnCrit",
+    "dlc": 0
+  },
+  {
+    "name": "Gesture of the Drowned",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Dramatically reduce Equipment cooldown... <color=#FF7F7F>BUT it automatically activates.</color>",
+    "desc": "{{Color|u|Reduce Equipment cooldown}} by {{Color|u|50%}} {{Stack|(+15% per stack)}}. Forces your Equipment to {{Color|u|activate}} whenever it is off {{Color|u|cooldown}}.",
+    "category": [
+      "Utility",
+      "EquipmentRelated"
+    ],
+    "id": "AutoCastEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "Bandolier",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Chance on kill to drop an ammo pack that resets all skill cooldowns.",
+    "desc": "{{Color|u|18%}} {{Stack|(+10% per stack)}} chance on kill to drop an ammo pack that {{Color|u|resets all skill cooldowns}}.",
+    "category": [
+      "Utility",
+      "OnKillEffect",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "Bandolier",
+    "dlc": 0
+  },
+  {
+    "name": "Topaz Brooch",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain a temporary barrier on kill.",
+    "desc": "Gain a {{Color|h|temporary barrier}} on kill for {{Color|h|15 health {{Stack|(+15 per stack)}}}}.",
+    "category": [
+      "Utility",
+      "Healing",
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "BarrierOnKill",
+    "dlc": 0
+  },
+  {
+    "name": "Aegis",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Healing past full grants you a temporary barrier.",
+    "desc": "Healing past full grants you a {{Color|h|temporary barrier}} for {{Color|h|50% {{Stack|(+50% per stack)}}}} of the amount you {{Color|h|healed}}.",
+    "category": [
+      "Utility",
+      "Healing",
+      "CanBeTemporary"
+    ],
+    "id": "BarrierOnOverHeal",
+    "dlc": 0
+  },
+  {
+    "name": "Tougher Times",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Chance to block incoming damage.",
+    "desc": "{{Color|h|15%}} {{Stack|(+15% per stack)}} chance to {{Color|h|block}} incoming damage. {{Color|u|Unaffected by luck}}.",
+    "category": [
+      "Utility",
+      "BrotherBlacklist",
+      "RebirthBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "Bear",
+    "dlc": 0
+  },
+  {
+    "name": "Queen's Gland",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Recruit a Beetle Guard.",
+    "desc": "Every 30 seconds, {{Color|u|summon a Beetle Guard}} with bonus {{Color|d|300%}} damage and {{Color|h|100% health}}. Can have up to {{Color|u|1}} {{Stack|(+1 per stack)}} Guards at a time.",
+    "category": [
+      "Utility",
+      "CannotCopy",
+      "FoodRelated",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "BeetleGland",
+    "dlc": 0
+  },
+  {
+    "name": "Brilliant Behemoth",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "All your attacks explode!",
+    "desc": "All your {{Color|d|attacks explode}} in a {{Color|d|4m }} {{Stack|(+1.5m per stack)}} radius for a bonus {{Color|d|60%}} TOTAL damage to nearby enemies.",
+    "category": [
+      "Damage",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "Behemoth",
+    "dlc": 0
+  },
+  {
+    "name": "Tri-Tip Dagger",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain +10% chance to bleed enemies on hit.",
+    "desc": "{{Color|d|10%}} {{Stack|(+10% per stack)}} chance to {{Color|d|bleed}} an enemy for {{Color|d|240%}} base damage.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "BleedOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Shatterspleen",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Critical strikes always bleed enemies. Bleeding enemies now explode.",
+    "desc": "{{Color|d|Critical Strikes bleed}} enemies for {{Color|d|240%}} base damage. {{Color|d|Bleeding}} enemies {{Color|d|explode}} on death for {{Color|d|400%}} {{Stack|(+400% per stack)}} damage, plus an additional {{Color|d|15%}} {{Stack|(+15% per stack)}} of their maximum health.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "BleedOnHitAndExplode",
+    "dlc": 0
+  },
+  {
+    "name": "Ghor's Tome",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Chance on kill to drop a treasure.",
+    "desc": "{{Color|u|4%}} {{Stack|(+4% per stack)}} chance on kill to drop a treasure worth {{Color|u|25 gold}}. {{Color|u|Scales over time.}}",
+    "category": [
+      "Utility",
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "BonusGoldPackOnKill",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_BOOSTATTACKSPEED_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_BOOSTATTACKSPEED_PICKUP",
+    "desc": "ITEM_BOOSTATTACKSPEED_DESC",
+    "category": [
+      "Damage"
+    ],
+    "id": "BoostAttackSpeed",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_BOOSTDAMAGE_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_BOOSTDAMAGE_PICKUP",
+    "desc": "ITEM_BOOSTDAMAGE_DESC",
+    "category": [
+      "Damage"
+    ],
+    "id": "BoostDamage",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_BOOSTEQUIPMENTRECHARGE_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_BOOSTEQUIPMENTRECHARGE_PICKUP",
+    "desc": "ITEM_BOOSTEQUIPMENTRECHARGE_DESC",
+    "category": [
+      "EquipmentRelated",
+      "HiddenForDroneBuffIcon"
+    ],
+    "id": "BoostEquipmentRecharge",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_BOOSTHP_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_BOOSTHP_PICKUP",
+    "desc": "ITEM_BOOSTHP_DESC",
+    "category": [
+      "Utility"
+    ],
+    "id": "BoostHp",
+    "dlc": 0
+  },
+  {
+    "name": "Armor-Piercing Rounds",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Deal extra damage to bosses.",
+    "desc": "Deal an additional {{Color|d|20%}} damage {{Stack|(+20% per stack)}} to bosses.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "BossDamageBonus",
+    "dlc": 0
+  },
+  {
+    "name": "Sentient Meat Hook",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Chance to hook all nearby enemies.",
+    "desc": "{{Color|d|20%}} {{Stack|(+20% per stack)}} chance on hit to {{Color|d|fire homing hooks}} at up to {{Color|d|10}} {{Stack|(+5 per stack)}} enemies for {{Color|d|100%}} TOTAL damage.",
+    "category": [
+      "Damage",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "BounceNearby",
+    "dlc": 0
+  },
+  {
+    "name": "Defensive Microbots",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Shoot down nearby projectiles. Recharge rate scales with attack speed.",
+    "desc": "Shoot down {{Color|d|1}} {{Stack|(+1 per stack)}} projectiles within {{Color|d|20m}} every {{Color|d|0.5 seconds}}. {{Color|u|Recharge rate scales with attack speed}}.",
+    "category": [
+      "Utility",
+      "WorldUnique",
+      "RebirthBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "CaptainDefenseMatrix",
+    "dlc": 0
+  },
+  {
+    "name": "Ukulele",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "...and his music was electric.",
+    "desc": "{{Color|d|25%}} chance to fire {{Color|d|chain lightning}} for {{Color|d|80%}} TOTAL damage on up to {{Color|d|3 {{Stack|(+2 per stack)}}}} targets within {{Color|d|20m}} {{Stack|(+2m per stack)}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "ChainLightning",
+    "dlc": 0
+  },
+  {
+    "name": "57 Leaf Clover",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Luck is on your side.",
+    "desc": "All random effects are rolled {{Color|u|+1}} {{Stack|(+1 per stack)}}times for a {{Color|u|favorable outcome}}.",
+    "category": [
+      "Utility",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Clover",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_CRIPPLEWARDONLEVEL_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_CRIPPLEWARDONLEVEL_PICKUP",
+    "desc": "ITEM_CRIPPLEWARDONLEVEL_DESC",
+    "category": [
+      "Utility",
+      "CannotCopy"
+    ],
+    "id": "CrippleWardOnLevel",
+    "dlc": 0
+  },
+  {
+    "name": "Lens-Maker's Glasses",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain 10% chance for hits to 'Critically Strike', dealing double damage.",
+    "desc": "Your attacks have a {{Color|d|10%}} {{Stack|(+10% per stack)}} chance to '{{Color|d|Critically Strike}}', dealing {{Color|d|double damage}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "CritGlasses",
+    "dlc": 0
+  },
+  {
+    "name": "Crowbar",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Deal bonus damage to enemies above 90% health.",
+    "desc": "Deal {{Color|d|+75%}} {{Stack|(+75% per stack)}} damage to enemies above {{Color|d|90% health}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "Crowbar",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_CUTHP_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_CUTHP_PICKUP",
+    "desc": "ITEM_CUTHP_DESC",
+    "category": [],
+    "id": "CutHp",
+    "dlc": 0
+  },
+  {
+    "name": "Ceremonial Dagger",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Killing an enemy releases homing daggers.",
+    "desc": "Killing an enemy fires out {{Color|d|3}} {{Color|d|homing daggers}} that deal {{Color|d|150%}} {{Stack|(+150% per stack)}} base damage.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "Dagger",
+    "dlc": 0
+  },
+  {
+    "name": "Death Mark",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Enemies with 4 or more debuffs are marked for death, taking bonus damage.",
+    "desc": "Enemies with {{Color|d|4}} or more debuffs are {{Color|d|marked for death}}, increasing damage taken by {{Color|d|50%}} from all sources for {{Color|u|7}} {{Stack|(+7 per stack)}} seconds.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "DeathMark",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_DRIZZLEPLAYERHELPER_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_DRIZZLEPLAYERHELPER_PICKUP",
+    "desc": "ITEM_DRIZZLEPLAYERHELPER_DESC",
+    "category": [],
+    "id": "DrizzlePlayerHelper",
+    "dlc": 0
+  },
+  {
+    "name": "War Horn",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Activating your Equipment gives you a burst of attack speed.",
+    "desc": "Activating your Equipment gives you {{Color|d|+70% attack speed}} for {{Color|d|8s}} {{Stack|(+4s per stack)}}.",
+    "category": [
+      "Damage",
+      "EquipmentRelated",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "EnergizedOnEquipmentUse",
+    "dlc": 0
+  },
+  {
+    "name": "Fuel Cell",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Hold an additional equipment charge. Reduce equipment cooldown.",
+    "desc": "Hold an {{Color|u|additional equipment charge}} {{Stack|(+1 per stack)}}. {{Color|u|Reduce equipment cooldown}} by {{Color|u|15%}} {{Stack|(+15% per stack)}}.",
+    "category": [
+      "Utility",
+      "EquipmentRelated",
+      "AIBlacklist",
+      "Technology",
+      "CanBeTemporary"
+    ],
+    "id": "EquipmentMagazine",
+    "dlc": 0
+  },
+  {
+    "name": "Old Guillotine",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Instantly kill low health Elite monsters.",
+    "desc": "Instantly kill Elite monsters below {{Color|hp|13% {{Stack|(+13% per stack)}} health}}.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "ExecuteLowHealthElite",
+    "dlc": 0
+  },
+  {
+    "name": "Will-o'-the-wisp",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Detonate enemies on kill.",
+    "desc": "On killing an enemy, spawn a {{Color|d|lava pillar}} in a {{Color|d|12m}} {{Stack|(+2.4m per stack)}} radius for {{Color|d|350%}} {{Stack|(+280% per stack)}} base damage.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "ExplodeOnDeath",
+    "dlc": 0
+  },
+  {
+    "name": "Dio's Best Friend",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Cheat death. Consumed on use.",
+    "desc": "{{Color|u|Upon death}}, this item will be {{Color|u|consumed}} and you will {{Color|h|return to life}} with {{Color|h|3 seconds of invulnerability}}.",
+    "category": [
+      "Utility",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "ExtraLife",
+    "dlc": 0
+  },
+  {
+    "name": "Dio's Best Friend (Consumed)",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "A spent item with no remaining power.",
+    "desc": "A spent item with no remaining power.",
+    "category": [
+      "Utility",
+      "AllowedForUseAsCraftingIngredient"
+    ],
+    "id": "ExtraLifeConsumed",
+    "dlc": 0
+  },
+  {
+    "name": "H3AD-5T v2",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Increase jump height. Hold 'Interact' to slam down to the ground.",
+    "desc": "Increase {{Color|u|jump height}}. Creates a {{Color|d|5m-100m}} radius {{Color|d|kinetic explosion}} on hitting the ground, dealing {{Color|d|1000%-10000%}} base damage that scales up with {{Color|d|fall distance}}. Recharges in {{Color|d|10}} {{Stack|(-50% per stack)}} seconds.",
+    "category": [
+      "Utility",
+      "Damage",
+      "AIBlacklist",
+      "MobilityRelated",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "FallBoots",
+    "dlc": 0
+  },
+  {
+    "name": "Hopoo Feather",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Gain an extra jump.",
+    "desc": "Gain {{Color|u|+1}} {{Stack|(+1 per stack)}} maximum {{Color|u|jump count}}.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Feather",
+    "dlc": 0
+  },
+  {
+    "name": "Molten Perforator",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Chance on hit to fire magma balls.",
+    "desc": "{{Color|d|10%}} chance on hit to call forth {{Color|d|3 magma balls}} from an enemy, dealing {{Color|d|300%}} {{Stack|(+300% per stack)}} damage and {{Color|d|igniting}} all enemies.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "FireballsOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Kjaro's Band",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "High damage hits also blasts enemies with a runic flame tornado. Recharges over time.",
+    "desc": "Hits that deal {{Color|d|more than 400% damage}} also blasts enemies with a {{Color|d|runic flame tornado}}, dealing {{Color|d|300%}} {{Stack|(+300% per stack)}} TOTAL damage over time. Recharges every {{Color|u|10}} seconds.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "FireRing",
+    "dlc": 0
+  },
+  {
+    "name": "Bundle of Fireworks",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Activating an interactable launches fireworks at nearby enemies.",
+    "desc": "Activating an interactable {{Color|d|launches 8 {{Stack|(+4 per stack)}} fireworks}} that deal {{Color|d|300%}} base damage.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "InteractableRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Firework",
+    "dlc": 0
+  },
+  {
+    "name": "Bison Steak",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain 25 max health.",
+    "desc": "Increases {{Color|h|maximum health}} by {{Color|h|25}} {{Stack|(+25 per stack)}}.",
+    "category": [
+      "Healing",
+      "OnKillEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "FlatHealth",
+    "dlc": 0
+  },
+  {
+    "name": "Focused Convergence",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Increase the speed of Teleporter charging... <color=#FF7F7F>BUT reduce the size of the zone</color>.",
+    "desc": "Teleporters charge {{Color|u|30% {{Stack|(+30% per stack)}} faster}}, but the size of the Teleporter zone is {{Color|hp|50%}} {{Stack|(-50% per stack)}} smaller.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "CannotCopy",
+      "HoldoutZoneRelated"
+    ],
+    "id": "FocusConvergence",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_GHOST_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_GHOST_PICKUP",
+    "desc": "ITEM_GHOST_DESC",
+    "category": [],
+    "id": "Ghost",
+    "dlc": 0
+  },
+  {
+    "name": "Happiest Mask",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Chance on killing an enemy to summon a ghost.",
+    "desc": "Killing enemies has a {{Color|d|7%}} chance to {{Color|d|spawn a ghost}} of the killed enemy with {{Color|d|1500%}} damage. Lasts {{Color|d|30s}} {{Stack|(+30s per stack)}}.",
+    "category": [
+      "Utility",
+      "Damage",
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "GhostOnKill",
+    "dlc": 0
+  },
+  {
+    "name": "Brittle Crown",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Gain gold on hit... <color=#FF7F7F>BUT lose gold on getting hit.</color>",
+    "desc": "{{Color|u|30% chance on hit}} to gain {{Color|u|2{{Stack| (+2 per stack)}} gold}}. {{Color|u|Scales over time.}}\n\nOn taking damage, {{Color|hp|lose gold}} equal to {{Color|hp|100%{{Stack| (+100% per stack)}}}} of the {{Color|hp|maximum health percentage you lost}}.",
+    "category": [
+      "Utility"
+    ],
+    "id": "GoldOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Wake of Vultures",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Temporarily steal the power of slain elites.",
+    "desc": "Gain the {{Color|d|power}} of any killed elite monster for {{Color|d|8s}} {{Stack|(+5s per stack)}}.",
+    "category": [
+      "Utility",
+      "Damage",
+      "AIBlacklist",
+      "OnKillEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "HeadHunter",
+    "dlc": 0
+  },
+  {
+    "name": "Harvester's Scythe",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "'Critical Strikes' heal you.",
+    "desc": "Gain {{Color|d|5% critical chance}}. {{Color|d|Critical strikes}} {{Color|h|heal}} for {{Color|h|8}} {{Stack|(+4 per stack)}} {{Color|h|health}}.",
+    "category": [
+      "Healing",
+      "CanBeTemporary"
+    ],
+    "id": "HealOnCrit",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_HEALTHDECAY_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_HEALTHDECAY_PICKUP",
+    "desc": "ITEM_HEALTHDECAY_DESC",
+    "category": [],
+    "id": "HealthDecay",
+    "dlc": 0
+  },
+  {
+    "name": "Cautious Slug",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Rapidly heal outside of danger.",
+    "desc": "Increases {{Color|h|base health regeneration}} by {{Color|h|+3 hp/s}} {{Stack|(+3 hp/s per stack)}}while outside of combat.",
+    "category": [
+      "Healing",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "HealWhileSafe",
+    "dlc": 0
+  },
+  {
+    "name": "Paul's Goat Hoof",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Increase movement speed.",
+    "desc": "Increases {{Color|u|movement speed}} by {{Color|u|14%}} {{Stack|(+14% per stack)}}.",
+    "category": [
+      "Utility",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Hoof",
+    "dlc": 0
+  },
+  {
+    "name": "Runald's Band",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "High damage hits also blasts enemies with runic ice. Recharges over time.",
+    "desc": "Hits that deal {{Color|d|more than 400% damage}} also blasts enemies with a {{Color|d|runic ice blast}}, {{Color|u|slowing}} them by {{Color|u|80%}} for {{Color|u|3s}} {{Stack|(+3s per stack)}} and dealing {{Color|d|250%}} {{Stack|(+250% per stack)}} TOTAL damage. Recharges every {{Color|u|10}} seconds.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "IceRing",
+    "dlc": 0
+  },
+  {
+    "name": "Frost Relic",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Killing enemies surrounds you with an ice storm.",
+    "desc": "Killing an enemy surrounds you with an {{Color|d|ice storm}} that deals {{Color|d|1200% damage per second}} and {{Color|u|slows}} enemies by {{Color|u|80%}} for {{Color|u|1.5s}}. The storm {{Color|d|grows with every kill}}, increasing its radius by {{Color|d|2m}}. Stacks up to {{Color|d|18m}} {{Stack|(+12m per stack)}}.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Icicle",
+    "dlc": 0
+  },
+  {
+    "name": "Gasoline",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Killing an enemy ignites other nearby enemies.",
+    "desc": "Killing an enemy {{Color|d|ignites}} all enemies within {{Color|d|12m}} {{Stack|(+4m per stack)}} for {{Color|d|150%}} base damage. Additionally, enemies {{Color|d|burn}} for {{Color|d|150%}} {{Stack|(+75% per stack)}} base damage.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "IgniteOnKill",
+    "dlc": 0
+  },
+  {
+    "name": "Rejuvenation Rack",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Double the strength of healing.",
+    "desc": "{{Color|h|Heal +100%}} {{Stack|(+100% per stack)}} more.",
+    "category": [
+      "Healing",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "IncreaseHealing",
+    "dlc": 0
+  },
+  {
+    "name": "Infusion",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Killing an enemy permanently increases your maximum health, up to 100.",
+    "desc": "Killing an enemy increases your {{Color|h|health permanently}} by {{Color|h|1}} {{Stack|(+1 per stack)}}, up to a {{Color|h|maximum}} of {{Color|h|100 {{Stack|(+100 per stack)}} health}}.",
+    "category": [
+      "Utility",
+      "Healing",
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "Infusion",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_INVADINGDOPPELGANGER_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_INVADINGDOPPELGANGER_PICKUP",
+    "desc": "ITEM_INVADINGDOPPELGANGER_DESC",
+    "category": [],
+    "id": "InvadingDoppelganger",
+    "dlc": 0
+  },
+  {
+    "name": "Wax Quail",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Jumping while sprinting boosts you forward.",
+    "desc": "{{Color|u|Jumping}} while {{Color|u|sprinting}} boosts you forward by {{Color|u|10m}}{{Stack|(+10m per stack)}}.",
+    "category": [
+      "Utility",
+      "SprintRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "JumpBoost",
+    "dlc": 0
+  },
+  {
+    "name": "Brainstalks",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Skills have NO cooldowns for a short period after killing an elite.",
+    "desc": "Upon killing an elite monster, {{Color|d|enter a frenzy}} for {{Color|d|4s}} {{Stack|(+4s per stack)}} where {{Color|u|skills have no cooldowns}}.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "OnKillEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "KillEliteFrenzy",
+    "dlc": 0
+  },
+  {
+    "name": "Titanic Knurl",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Boosts health and regeneration.",
+    "desc": "{{Color|h|Increase maximum health}} by {{Color|h|40}} {{Stack|(+40 per stack)}} and {{Color|h|base health regeneration}} by {{Color|h|+1.6 hp/s{{Stack|(+1.6 hp/s per stack)}}.",
+    "category": [
+      "Utility",
+      "Healing",
+      "CanBeTemporary"
+    ],
+    "id": "Knurl",
+    "dlc": 0
+  },
+  {
+    "name": "Resonance Disc",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Obtain a Resonance Disc charged by killing enemies. Fires automatically when fully charged.",
+    "desc": "Killing {{Color|d|4}} enemies in {{Color|u|7 seconds}} charges the Resonance Disc. The disc launches itself toward a target for {{Color|d|300%}} base damage {{Stack|(+300% per stack)}}, piercing all enemies it doesn't kill, and then explodes for {{Color|d|1000%}} base damage {{Stack|(+1000% per stack)}}. Returns to the user, striking all enemies along the way for {{Color|d|300%}} base damage {{Stack|(+300% per stack)}}.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "LaserTurbine",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_LEVELBONUS_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_LEVELBONUS_PICKUP",
+    "desc": "ITEM_LEVELBONUS_DESC",
+    "category": [
+      "Utility"
+    ],
+    "id": "LevelBonus",
+    "dlc": 0
+  },
+  {
+    "name": "Charged Perforator",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Chance on hit to call down a lightning strike.",
+    "desc": "{{Color|d|10%}} chance on hit to call down a lightning strike, dealing {{Color|d|500%}} {{Stack|(+500% per stack)}} damage.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "LightningStrikeOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Purity",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Reduce your skill cooldowns by 2 seconds. <color=#FF7F7F>You are unlucky.</color>",
+    "desc": "All skill cooldowns are reduced by {{Color|u|2}} {{Stack|(+1 per stack)}} seconds. All random effects are rolled {{Color|u|+1}} {{Stack|(+1 per stack)}} times for an {{Color|hp|unfavorable outcome}}.",
+    "category": [
+      "Utility",
+      "FoodRelated"
+    ],
+    "id": "LunarBadLuck",
+    "dlc": 0
+  },
+  {
+    "name": "Shaped Glass",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Double your damage... <color=#FF7F7F>BUT halve your health.</color>",
+    "desc": "Increase base damage by {{Color|d|100%}} {{Stack|(+100% per stack)}}. {{Color|h|Reduce maximum health by 50%}} {{Stack|(+50% per stack)}}.",
+    "category": [
+      "Damage"
+    ],
+    "id": "LunarDagger",
+    "dlc": 0
+  },
+  {
+    "name": "Visions of Heresy",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Replace your Primary Skill with 'Hungering Gaze'.",
+    "desc": "{{Color|u|Replace your Primary Skill}} with {{Color|u|Hungering Gaze}}. \n\nFire a flurry of {{Color|u|tracking shards}} that detonate after a delay, dealing {{Color|d|120%}} base damage. Hold up to 12 charges {{Stack|(+12 per stack)}} that reload after 2 seconds {{Stack|(+2 per stack)}}.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CannotSteal",
+      "FoodRelated",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "LunarPrimaryReplacement",
+    "dlc": 0
+  },
+  {
+    "name": "Hooks of Heresy",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Replace your Secondary Skill with 'Slicing Maelstrom'.",
+    "desc": "{{Color|u|Replace your Secondary Skill }} with {{Color|u|Slicing Maelstrom}}. \n\nCharge up a projectile that deals {{Color|d|875% damage per second}} to nearby enemies, exploding after {{Color|u|3}} seconds to deal {{Color|d|700% damage}} and {{Color|d|root}} enemies for {{Color|u|3}} {{Stack|(+3 per stack)}} seconds. Recharges after 5 {{Stack|(+5 per stack)}} seconds.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CannotSteal",
+      "FoodRelated",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "LunarSecondaryReplacement",
+    "dlc": 0
+  },
+  {
+    "name": "Essence of Heresy",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Replace your Special Skill with 'Ruin'.",
+    "desc": "{{Color|u|Replace your Special Skill}} with {{Color|u|Ruin}}. \n\nDealing damage adds a stack of {{Color|d|Ruin}} for 10 {{Stack|(+10 per stack)}} seconds. Activating the skill {{Color|d|detonates}} all Ruin stacks at unlimited range, dealing {{Color|d|300% damage}} plus {{Color|d|120% damage per stack of Ruin}}. Recharges after 8 {{Stack|(+8 per stack)}} seconds.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CannotSteal",
+      "FoodRelated",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "LunarSpecialReplacement",
+    "dlc": 0
+  },
+  {
+    "name": "Beads of Fealty",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Seems to do nothing... <color=#FF7F7F>but...</color>",
+    "desc": "Seems to do nothing... <color=#FF7F7F>but...</color>",
+    "category": [
+      "ObliterationRelated"
+    ],
+    "id": "LunarTrinket",
+    "dlc": 0
+  },
+  {
+    "name": "Strides of Heresy",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Replace your Utility Skill with 'Shadowfade'.",
+    "desc": "{{Color|u|Replace your Utility Skill}} with {{Color|u|Shadowfade}}. \n\nFade away, becoming {{Color|u|intangible}} and gaining {{Color|u|+30% movement speed}}. {{Color|h|Heal}} for {{Color|h|25% {{Stack|(+25% per stack)}} of your maximum health}}. Lasts 3 {{Stack|(+3 per stack)}} seconds.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "CannotSteal",
+      "FoodRelated",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "LunarUtilityReplacement",
+    "dlc": 0
+  },
+  {
+    "name": "Medkit",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Receive a delayed heal after taking damage.",
+    "desc": "2 seconds after getting hurt, {{Color|h|heal}} for {{Color|h|20}} plus an additional {{Color|h|5% {{Stack|(+5% per stack)}}}} of {{Color|h|maximum health}}.",
+    "category": [
+      "Healing",
+      "CanBeTemporary"
+    ],
+    "id": "Medkit",
+    "dlc": 0
+  },
+  {
+    "name": "",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "",
+    "desc": "",
+    "category": [],
+    "id": "MinHealthPercentage",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_MINIONLEASH_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_MINIONLEASH_PICKUP",
+    "desc": "ITEM_MINIONLEASH_DESC",
+    "category": [
+      "HiddenForDroneBuffIcon"
+    ],
+    "id": "MinionLeash",
+    "dlc": 0
+  },
+  {
+    "name": "AtG Missile Mk. 1",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Chance to fire a missile.",
+    "desc": "{{Color|d|10%}} chance to fire a missile that deals {{Color|d|300%}} {{Stack|(+300% per stack)}} TOTAL damage.",
+    "category": [
+      "Damage",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "Missile",
+    "dlc": 0
+  },
+  {
+    "name": "ITEM_MONSOONPLAYERHELPER_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_MONSOONPLAYERHELPER_PICKUP",
+    "desc": "ITEM_MONSOONPLAYERHELPER_DESC",
+    "category": [],
+    "id": "MonsoonPlayerHelper",
+    "dlc": 0
+  },
+  {
+    "name": "Defiant Gouge",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Using a Shrine summons enemies nearby.",
+    "desc": "Using a Shrine summons {{Color|hp|enemies}} nearby. {{Color|u|Scales over time.}}",
+    "category": [
+      "Utility",
+      "AIBlacklist"
+    ],
+    "id": "MonstersOnShrineUse",
+    "dlc": 0
+  },
+  {
+    "name": "Bustling Fungus",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Heal all nearby allies after standing still for 1 second.",
+    "desc": "After standing still for {{Color|h|1}} second, create a zone that {{Color|h|heals}} for {{Color|h|4.5%}} {{Stack|(+2.25% per stack)}} of your {{Color|h|health}} every second to all allies within {{Color|h|3m}} {{Stack|(+1.5m per stack)}}.",
+    "category": [
+      "Healing",
+      "AIBlacklist",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Mushroom",
+    "dlc": 0
+  },
+  {
+    "name": "Focus Crystal",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Deal bonus damage to nearby enemies.",
+    "desc": "Increase damage to enemies within {{Color|d|13m}} by {{Color|d|20%}} {{Stack|(+20% per stack)}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "NearbyDamageBonus",
+    "dlc": 0
+  },
+  {
+    "name": "N'kuhana's Opinion",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Fire haunting skulls when healed.",
+    "desc": "Store {{Color|h|100%}} {{Stack|(+100% per stack)}} of healing as {{Color|h|Soul Energy}}. After your {{Color|h|Soul Energy}} reaches {{Color|h|10%}} of your {{Color|h|maximum health}}, {{Color|d|fire a skull}} that deals {{Color|d|250%}} of your {{Color|h|Soul Energy}} as {{Color|d|damage}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "NovaOnHeal",
+    "dlc": 0
+  },
+  {
+    "name": "Genesis Loop",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Fire an electric nova at low health.",
+    "desc": "Falling below {{Color|hp|25% health}} causes you to explode, dealing {{Color|d|6000% base damage}}. Recharges every {{Color|u|30 seconds}} {{Stack|(-50% per stack)}}.",
+    "category": [
+      "Damage",
+      "LowHealth",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "NovaOnLowHealth",
+    "dlc": 0
+  },
+  {
+    "name": "Planula",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Receive flat healing when attacked.",
+    "desc": "Heal from {{Color|d|incoming damage}} for {{Color|h|15{{Stack| (+15 per stack)}}}}.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "ParentEgg",
+    "dlc": 0
+  },
+  {
+    "name": "Pearl",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Increase your maximum health.",
+    "desc": "Increases {{Color|h|maximum health}} by {{Color|h|10%}} {{Stack|(+10% per stack)}}.",
+    "category": [
+      "Utility",
+      "WorldUnique",
+      "CanBeTemporary"
+    ],
+    "id": "Pearl",
+    "dlc": 0
+  },
+  {
+    "name": "Personal Shield Generator",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain a recharging shield.",
+    "desc": "Gain a {{Color|h|shield}} equal to {{Color|h|8%}} {{Stack|(+8% per stack)}} of your maximum health. Recharges outside of danger.",
+    "category": [
+      "Utility",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "PersonalShield",
+    "dlc": 0
+  },
+  {
+    "name": "Old War Stealthkit",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Turn invisible at low health.",
+    "desc": "Falling below {{Color|hp|25% health}} causes you to gain {{Color|u|40% movement speed}} and {{Color|u|invisibility}} for {{Color|u|5s}}. Recharges every {{Color|u|30 seconds}} {{Stack|(-50% per stack)}}.",
+    "category": [
+      "Utility",
+      "LowHealth",
+      "MobilityRelated",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "Phasing",
+    "dlc": 0
+  },
+  {
+    "name": "Interstellar Desk Plant",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Plant a healing fruit on kill.",
+    "desc": "On kill, plant a {{Color|h|healing}} fruit seed that grows into a plant after {{Color|u|5}} seconds. \n\nThe plant {{Color|h|heals}} for {{Color|h|10%}} of {{Color|h|maximum health}} every second to all allies within {{Color|h|5m}} {{Stack|(+5m per stack)}}. Lasts {{Color|u|10}} seconds.",
+    "category": [
+      "Healing",
+      "OnKillEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Plant",
+    "dlc": 0
+  },
+  {
+    "name": "Mercurial Rachis",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Randomly create a Ward of Power. ALL characters deal bonus damage while in the Ward.",
+    "desc": "Creates a Ward of Power in a random location nearby that buffs both enemies and allies within {{Color|u|16m}} {{Stack|(+50% per stack)}}, causing them to deal {{Color|d|+50%}} damage.",
+    "category": [
+      "Utility"
+    ],
+    "id": "RandomDamageZone",
+    "dlc": 0
+  },
+  {
+    "name": "Corpsebloom",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Double your healing... <color=#FF7F7F>BUT it's applied over time.</color>",
+    "desc": "{{Color|h|Heal +100%}} {{Stack|(+100% per stack)}} more. {{Color|h|All healing is applied over time}}. Can {{Color|h|heal}} for a {{Color|h|maximum}} of {{Color|h|10%}} {{Stack|(-50% per stack)}} of your {{Color|h|health per second}}.",
+    "category": [
+      "Healing",
+      "FoodRelated"
+    ],
+    "id": "RepeatHeal",
+    "dlc": 0
+  },
+  {
+    "name": "Empathy Cores",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Recruit a pair of Solus Probes that gain power with more allies.",
+    "desc": "Every 30 seconds, {{Color|u|summon two Solus Probes}} that gain {{Color|d|+100%}} {{Stack|(+100% per stack)}} damage per {{Color|u|ally on your team}}.",
+    "category": [
+      "Utility",
+      "CannotCopy",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "RoboBallBuddy",
+    "dlc": 0
+  },
+  {
+    "name": "Item Scrap, Green",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapGreen",
+    "dlc": 0
+  },
+  {
+    "name": "Item Scrap, Red",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapRed",
+    "dlc": 0
+  },
+  {
+    "name": "Item Scrap, White",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapWhite",
+    "dlc": 0
+  },
+  {
+    "name": "Item Scrap, Yellow",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapYellow",
+    "dlc": 0
+  },
+  {
+    "name": "Backup Magazine",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Add an extra charge of your Secondary skill.",
+    "desc": "Add {{Color|u|+1}} {{Stack|(+1 per stack)}} charge of your {{Color|u|Secondary skill}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "SecondarySkillMagazine",
+    "dlc": 0
+  },
+  {
+    "name": "Leeching Seed",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Dealing damage heals you.",
+    "desc": "Dealing damage {{Color|h|heals}} you for {{Color|h|1 {{Stack|(+1 per stack)}} health}}.",
+    "category": [
+      "Healing",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Seed",
+    "dlc": 0
+  },
+  {
+    "name": "Transcendence",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Convert all your health into shield. Increase maximum health.",
+    "desc": "{{Color|h|Convert}} all but {{Color|h|1 health}} into {{Color|h|regenerating shields}}. {{Color|h|Gain 50% {{Stack|(+25% per stack)}} maximum health}}.",
+    "category": [
+      "Utility",
+      "FoodRelated"
+    ],
+    "id": "ShieldOnly",
+    "dlc": 0
+  },
+  {
+    "name": "Irradiant Pearl",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Increase ALL of your stats.",
+    "desc": "Increases {{Color|u|ALL stats}} by {{Color|u|10%}} {{Stack|(+10% per stack)}}.",
+    "category": [
+      "Damage",
+      "Healing",
+      "Utility",
+      "WorldUnique",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "ShinyPearl",
+    "dlc": 0
+  },
+  {
+    "name": "Unstable Tesla Coil",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Shock all nearby enemies every 10 seconds.",
+    "desc": "Fire out {{Color|d|lightning}} that hits {{Color|d|3}} {{Stack|(+2 per stack)}} enemies for {{Color|d|200%}} base damage every {{Color|d|0.5s}}. The Tesla Coil switches off every {{Color|d|10 seconds}}.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "ShockNearby",
+    "dlc": 0
+  },
+  {
+    "name": "Mired Urn",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Siphon health from nearby enemies while in combat.",
+    "desc": "While in combat, the nearest 1{{Stack|(+1 per stack)}} enemies to you within {{Color|d|13m}} will be 'tethered' to you, dealing {{Color|d|100%}} damage per second, applying {{Color|d|tar}}, and {{Color|h|healing}} you for {{Color|h|100%}} of the damage dealt.",
+    "category": [
+      "Healing",
+      "BrotherBlacklist",
+      "RebirthBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "SiphonOnLowHealth",
+    "dlc": 0
+  },
+  {
+    "name": "Chronobauble",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Slow enemies on hit.",
+    "desc": "{{Color|u|Slow}} enemies on hit for {{Color|u|-60% movement speed}} for {{Color|u|2s}} {{Stack|(+2s per stack)}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "SlowOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Rose Buckler",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Reduce incoming damage while sprinting.",
+    "desc": "{{Color|h|Increase armor}} by {{Color|h|30}} {{Stack|(+30 per stack)}} {{Color|u|while sprinting}}.",
+    "category": [
+      "Utility",
+      "SprintRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "SprintArmor",
+    "dlc": 0
+  },
+  {
+    "name": "Energy Drink",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Increase sprint speed by +25%.",
+    "desc": "{{Color|u|Sprint speed}} is improved by {{Color|u|25%}} {{Stack|(+25% per stack)}}.",
+    "category": [
+      "Utility",
+      "SprintRelated",
+      "FoodRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "SprintBonus",
+    "dlc": 0
+  },
+  {
+    "name": "Red Whip",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Move fast out of combat.",
+    "desc": "Leaving combat boosts your {{Color|u|movement speed}} by {{Color|u|30%}} {{Stack|(+30% per stack)}}.",
+    "category": [
+      "Utility",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "SprintOutOfCombat",
+    "dlc": 0
+  },
+  {
+    "name": "Little Disciple",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Fire tracking wisps while sprinting.",
+    "desc": "Fire a {{Color|d|tracking wisp}} for {{Color|d|300% {{Stack|(+300% per stack)}} damage}}. Fires every {{Color|u|1.6}} seconds while sprinting. Fire rate increases with {{Color|u|movement speed}}.",
+    "category": [
+      "Damage",
+      "SprintRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "SprintWisp",
+    "dlc": 0
+  },
+  {
+    "name": "Squid Polyp",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Activating an interactable summons a Squid Turret nearby.",
+    "desc": "Activating an interactable summons a {{Color|d|Squid Turret}} that attacks nearby enemies at {{Color|d|100% {{Stack|(+100% per stack)}} attack speed}}. Lasts {{Color|u|30}} seconds.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "InteractableRelated",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Squid",
+    "dlc": 0
+  },
+  {
+    "name": "Sticky Bomb",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Chance on hit to attach a bomb to enemies.",
+    "desc": "{{Color|d|5%}} {{Stack|(+5% per stack)}} chance on hit to attach a {{Color|d|bomb}} to an enemy, detonating for {{Color|d|180%}} TOTAL damage.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "StickyBomb",
+    "dlc": 0
+  },
+  {
+    "name": "Stun Grenade",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Chance to stun on hit.",
+    "desc": "{{Color|u|5%}} {{Stack|(+5% per stack)}} chance on hit to {{Color|u|stun}} enemies for {{Color|u|2 seconds}}.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "StunChanceOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Soldier's Syringe",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Increase attack speed.",
+    "desc": "Increases {{Color|d|attack speed}} by {{Color|d|15% {{Stack|(+15% per stack)}}}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "Syringe",
+    "dlc": 0
+  },
+  {
+    "name": "Soulbound Catalyst",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Kills reduce equipment cooldown.",
+    "desc": "{{Color|d|Kills reduce}} {{Color|u|equipment cooldown}} by {{Color|u|4s}} {{Stack|(+2s per stack)}}.",
+    "category": [
+      "Utility",
+      "OnKillEffect",
+      "EquipmentRelated",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "Talisman",
+    "dlc": 0
+  },
+  {
+    "name": "",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "",
+    "desc": "",
+    "category": [
+      "Damage"
+    ],
+    "id": "TeamSizeDamageBonus",
+    "dlc": 0
+  },
+  {
+    "name": "",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "",
+    "desc": "",
+    "category": [],
+    "id": "TeleportWhenOob",
+    "dlc": 0
+  },
+  {
+    "name": "Razorwire",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Retaliate in a burst of razors on taking damage.",
+    "desc": "Getting hit causes you to explode in a burst of razors, dealing {{Color|d|160% damage}}. Hits up to {{Color|d|5}} {{Stack|(+2 per stack)}} targets in a {{Color|d|25m}} {{Stack|(+10m per stack)}} radius",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "Thorns",
+    "dlc": 0
+  },
+  {
+    "name": "Halcyon Seed",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Summon Aurelionite during the Teleporter event.",
+    "desc": "Summon {{Color|d|Aurelionite}} during the teleporter event. It has {{Color|d|100% {{Stack|(+50% per stack)}} damage}} and {{Color|h|100% {{Stack|(+100% per stack)}} health}}.",
+    "category": [
+      "Utility",
+      "WorldUnique",
+      "CannotSteal",
+      "CannotCopy",
+      "HoldoutZoneRelated",
+      "CanBeTemporary",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "TitanGoldDuringTP",
+    "dlc": 0
+  },
+  {
+    "name": "Tonic Affliction",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "<color=#FF7F7F>Reduce ALL stats when not under the effects of Spinel Tonic.</color>",
+    "desc": "Reduces ALL stats by {{Color|hp|-5%}} {{Stack|(-5% per stack)}}",
+    "category": [
+      "Cleansable"
+    ],
+    "id": "TonicAffliction",
+    "dlc": 0
+  },
+  {
+    "name": "Monster Tooth",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Drop a healing orb on kill.",
+    "desc": "Killing an enemy spawns a {{Color|h|healing orb}} that heals for {{Color|h|8}} plus an additional {{Color|h|2% {{Stack|(+2% per stack)}}}} of {{Color|h|maximum health}}.",
+    "category": [
+      "Healing",
+      "OnKillEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "Tooth",
+    "dlc": 0
+  },
+  {
+    "name": "Lepton Daisy",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Periodically release a healing nova during the Teleporter event.",
+    "desc": "Release a {{Color|h|healing nova }}during the Teleporter event, {{Color|h|healing}} all nearby allies for {{Color|h|50%}} of their maximum health. Occurs {{Color|h|1}} {{Stack|(+1 per stack)}} times.",
+    "category": [
+      "Healing",
+      "AIBlacklist",
+      "CannotCopy",
+      "HoldoutZoneRelated",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "TPHealingNova",
+    "dlc": 0
+  },
+  {
+    "name": "Rusted Key",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain access to a Rusty Lockbox that contains a powerful item.",
+    "desc": "A {{Color|u|hidden cache}} containing an item ({{Color|h|80%}}/{{Color|hp|20%}}) will appear in a random location {{Color|u|on each stage}}. Opening the cache {{Color|u|consumes}} this item.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "OnStageBeginEffect",
+      "CanBeTemporary"
+    ],
+    "id": "TreasureCache",
+    "dlc": 0
+  },
+  {
+    "name": "",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "",
+    "desc": "",
+    "category": [
+      "CannotSteal",
+      "CannotCopy",
+      "HiddenForDroneBuffIcon"
+    ],
+    "id": "UseAmbientLevel",
+    "dlc": 0
+  },
+  {
+    "name": "Hardlight Afterburner",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Add 2 extra charges of your Utility skill. Reduce Utility skill cooldown.",
+    "desc": "Add {{Color|u|+2}} {{Stack|(+2 per stack)}} charges of your {{Color|u|Utility skill}}. {{Color|u|Reduces Utility skill cooldown}} by {{Color|u|33%}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "UtilitySkillMagazine",
+    "dlc": 0
+  },
+  {
+    "name": "Berzerker's Pauldron",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Enter a frenzy after killing 4 enemies in quick succession.",
+    "desc": "{{Color|d|Killing 4 enemies}} within {{Color|d|1}} second sends you into a {{Color|d|frenzy}} for {{Color|d|6s}} {{Stack|(+4s per stack)}}. Increases {{Color|u|movement speed}} by {{Color|u|50%}} and {{Color|d|attack speed}} by {{Color|d|100%}}.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "WarCryOnMultiKill",
+    "dlc": 0
+  },
+  {
+    "name": "Warbanner",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Drop a Warbanner on level up or starting the Teleporter event. Grants allies attack and movement speed.",
+    "desc": "On {{Color|u|level up}} or starting the {{Color|u|Teleporter event}}, drop a banner that strengthens all allies within {{Color|u|16m}} {{Stack|(+8m per stack)}}. Raise {{Color|d|attack}} and {{Color|u|movement speed}} by {{Color|d|30%}}.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "CannotCopy",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "WardOnLevel",
+    "dlc": 0
+  },
+  {
+    "name": "Mocha",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Slightly increase attack speed and movement speed.",
+    "desc": "Increases {{Color|d|attack speed}} by {{Color|d|7.5%}} {{Stack|(+7.5% per stack)}} and {{Color|u|movement speed}} by {{Color|u|7%}} {{Stack|(+7% per stack)}}.",
+    "category": [
+      "Damage",
+      "Utility",
+      "FoodRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "AttackSpeedAndMoveSpeed",
+    "dlc": 1
+  },
+  {
+    "name": "Safer Spaces",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Block the next source of damage. {{Color|v|Corrupts all Tougher Times}}.",
+    "desc": "{{Color|h|Blocks}} incoming damage once. Recharges after {{Color|u|15 seconds}} {{Stack|(-10% per stack)}}. {{Color|v|Corrupts all Tougher Times}}.",
+    "category": [
+      "Utility",
+      "BrotherBlacklist",
+      "RebirthBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "BearVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Needletick",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Chance to collapse enemies on hit. {{Color|v|Corrupts all Tri-Tip Daggers}}.",
+    "desc": "{{Color|d|10%}} {{Stack|(+10% per stack)}} chance to {{Color|d|collapse}} an enemy for {{Color|d|400%}} base damage. {{Color|v|Corrupts all Tri-Tip Daggers}}.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "BleedOnHitVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Polylute",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Chance to repeatedly strike a single enemy with lightning. {{Color|v|Corrupts all Ukuleles}}.",
+    "desc": "{{Color|d|25%}} chance to fire {{Color|d|lightning}} for {{Color|d|60%}} TOTAL damage up to {{Color|d|3 {{Stack|(+3 per stack)}}}} times. {{Color|v|Corrupts all Ukuleles}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "ChainLightningVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Benthic Bloom",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Upgrades your items at the start of each stage. {{Color|v|Corrupts all 57 Leaf Clovers}}.",
+    "desc": "{{Color|u|Upgrades 3}} {{Stack|(+3 per stack)}} random items to items of the next {{Color|u|higher rarity}} at the {{Color|u|start of each stage}}. {{Color|v|Corrupts all 57 Leaf Clovers}}.",
+    "category": [
+      "Utility",
+      "OnStageBeginEffect",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "CloverVoid",
+    "dlc": 1
+  },
+  {
+    "name": "ITEM_CONVERTCRITCHANCETOCRITDAMAGE_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_CONVERTCRITCHANCETOCRITDAMAGE_PICKUP",
+    "desc": "ITEM_CONVERTCRITCHANCETOCRITDAMAGE_DESC",
+    "category": [
+      "Damage"
+    ],
+    "id": "ConvertCritChanceToCritDamage",
+    "dlc": 1
+  },
+  {
+    "name": "Laser Scope",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Your 'Critical Strikes' deal an additional 100% damage.",
+    "desc": "{{Color|d|Critical Strikes}} deal an additional {{Color|d|100% damage}}{{Stack|(+100% per stack)}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "CritDamage",
+    "dlc": 1
+  },
+  {
+    "name": "Lost Seer's Lenses",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Gain a 0.5% chance to instantly kill a non-boss enemy. {{Color|v|Corrupts all Lens-Maker's Glasses}}.",
+    "desc": "Your attacks have a {{Color|d|0.5%}} {{Stack|(+0.5% per stack)}} chance to {{Color|d|instantly kill}} a {{Color|d|non-Boss enemy}}. {{Color|v|Corrupts all Lens-Maker's Glasses}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "CritGlassesVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Spare Drone Parts",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Your drones fire faster, have less cooldowns, shoot missiles, and gain a bonus chaingun.",
+    "desc": "Gain {{Color|d|Col. Droneman}}. \nDrones gain {{Color|d|+25%}} {{Stack|(+25% per stack)}} attack speed and cooldown reduction. \nDrones gain {{Color|d|10%}} chance to fire a {{Color|d|missile}} on hit, dealing {{Color|d|150%}} TOTAL damage. \nDrones gain an {{Color|d|automatic chain gun}} that deals {{Color|d|6x50%}} damage, bouncing to {{Color|d|2}} enemies.",
+    "category": [
+      "Damage",
+      "CannotCopy",
+      "AIBlacklist",
+      "BrotherBlacklist",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "DroneWeapons",
+    "dlc": 1
+  },
+  {
+    "name": "ITEM_DRONEWEAPONSBOOST_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_DRONEWEAPONSBOOST_PICKUP",
+    "desc": "ITEM_DRONEWEAPONSBOOST_DESC",
+    "category": [],
+    "id": "DroneWeaponsBoost",
+    "dlc": 1
+  },
+  {
+    "name": "ITEM_DRONEWEAPONSDISPLAY1_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_DRONEWEAPONSDISPLAY1_PICKUP",
+    "desc": "ITEM_DRONEWEAPONSDISPLAY1_DESC",
+    "category": [],
+    "id": "DroneWeaponsDisplay1",
+    "dlc": 1
+  },
+  {
+    "name": "ITEM_DRONEWEAPONSDISPLAY2_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_DRONEWEAPONSDISPLAY2_PICKUP",
+    "desc": "ITEM_DRONEWEAPONSDISPLAY2_DESC",
+    "category": [],
+    "id": "DroneWeaponsDisplay2",
+    "dlc": 1
+  },
+  {
+    "name": "Singularity Band",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "High damage hits also create unstable black holes. Recharges over time. {{Color|v|Corrupts all Runald's and Kjaro's Bands}}.",
+    "desc": "Hits that deal {{Color|d|more than 400% damage}} also fire a black hole that {{Color|u|draws enemies within 15m into its center}}. Lasts {{Color|u|5}} seconds before collapsing, dealing {{Color|d|100%}} {{Stack|(+100% per stack)}} TOTAL damage. Recharges every {{Color|u|20}} seconds. {{Color|v|Corrupts all Runald's and Kjaro's Bands}}.",
+    "category": [
+      "Damage",
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "ElementalRingVoid",
+    "dlc": 1
+  },
+  {
+    "name": "ITEM_EMPOWERALWAYS_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_EMPOWERALWAYS_PICKUP",
+    "desc": "ITEM_EMPOWERALWAYS_DESC",
+    "category": [
+      "Utility",
+      "BrotherBlacklist",
+      "RebirthBlacklist"
+    ],
+    "id": "EmpowerAlways",
+    "dlc": 1
+  },
+  {
+    "name": "Lysate Cell",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Add an extra charge of your Special skill. {{Color|v|Corrupts all Fuel Cells}}.",
+    "desc": "Add {{Color|u|+1}} {{Stack|(+1 per stack)}} charge of your {{Color|u|Special skill}}. {{Color|v|Corrupts all Fuel Cells.}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "EquipmentMagazineVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Voidsent Flame",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Full health enemies detonate on hit. {{Color|v|Corrupts all Will-o'-the-wisps}}.",
+    "desc": "Upon hitting an enemy at or above {{Color|d|100% health}}, {{Color|d|detonate}} them in a {{Color|d|12m}} {{Stack|(+2.4m per stack)}} radius burst for {{Color|d|260%}} {{Stack|(+156% per stack)}} base damage. {{Color|v|Corrupts all Will-o'-the-wisps}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "ExplodeOnDeathVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Pluripotent Larva",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Get a {{Color|v|corrupted}} extra life. Consumed on use. {{Color|v|Corrupts all Dio's Best Friends.}}.",
+    "desc": "{{Color|u|Upon death}}, this item will be {{Color|u|consumed}} and you will {{Color|h|return to life}} with {{Color|h|3 seconds of invulnerability}}, and all of your items that can be {{Color|u|corrupted}} will be. {{Color|v|Corrupts all Dio's Best Friends}}.",
+    "category": [
+      "Utility",
+      "FoodRelated",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "ExtraLifeVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Pluripotent Larva (Consumed)",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "A spent item with no remaining power.",
+    "desc": "A spent item with no remaining power.",
+    "category": [
+      "Utility",
+      "AllowedForUseAsCraftingIngredient"
+    ],
+    "id": "ExtraLifeVoidConsumed",
+    "dlc": 1
+  },
+  {
+    "name": "Delicate Watch",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Deal bonus damage. Breaks at low health.",
+    "desc": "Increase damage by {{Color|d|20%}} {{Stack|(+20% per stack)}}. Taking damage to below {{Color|hp|25% health}} {{Color|u|breaks}} this item.",
+    "category": [
+      "Damage",
+      "LowHealth",
+      "CanBeTemporary",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "FragileDamageBonus",
+    "dlc": 1
+  },
+  {
+    "name": "Delicate Watch (Broken)",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "...well, it's still right twice a day.",
+    "desc": "A spent item with no remaining power.",
+    "category": [
+      "AllowedForUseAsCraftingIngredient"
+    ],
+    "id": "FragileDamageBonusConsumed",
+    "dlc": 1
+  },
+  {
+    "name": "Shipping Request Form",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Get a delivery each stage that contains powerful items.",
+    "desc": "A {{Color|u|delivery}} containing 2 items (79%/{{Color|h|20%}}/{{Color|hp|1%}}) will appear in a random location {{Color|u|on each stage}}. {{Stack|(Increases rarity chances of the items per stack).}}",
+    "category": [
+      "Utility",
+      "OnStageBeginEffect",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "FreeChest",
+    "dlc": 1
+  },
+  {
+    "name": "Roll of Pennies",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain gold on taking damage.",
+    "desc": "Gain {{Color|u|3 {{Stack|(+3 per stack)}} gold}} on {{Color|d|taking damage}} from an enemy. {{Color|u|Scales over time.}}",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "GoldOnHurt",
+    "dlc": 1
+  },
+  {
+    "name": "ITEM_GUMMYCLONEIDENTIFIER_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_GUMMYCLONEIDENTIFIER_PICKUP",
+    "desc": "ITEM_GUMMYCLONEIDENTIFIER_DESC",
+    "category": [],
+    "id": "GummyCloneIdentifier",
+    "dlc": 1
+  },
+  {
+    "name": "Light Flux Pauldron",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Halve your cooldowns.. <color=#FF7F7F>BUT halve your attack speed.</color>",
+    "desc": "Decrease {{Color|u|skill cooldowns}} by {{Color|u|50% {{Stack|(+50% per stack)}}}}. Decrease {{Color|d|attack speed}} by {{Color|d|50%}} {{Stack|(+50% per stack)}}.",
+    "category": [
+      "Utility"
+    ],
+    "id": "HalfAttackSpeedHalfCooldowns",
+    "dlc": 1
+  },
+  {
+    "name": "Stone Flux Pauldron",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Double your health... <color=#FF7F7F>BUT halve your speed.</color>",
+    "desc": "Increase {{Color|h|max health}} by {{Color|h|100% {{Stack|(+100% per stack)}}}}. Reduce {{Color|u|movement speed}} by {{Color|u|50%}} {{Stack|(+50% per stack)}}.",
+    "category": [
+      "Utility"
+    ],
+    "id": "HalfSpeedDoubleHealth",
+    "dlc": 1
+  },
+  {
+    "name": "Power Elixir",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Receive an instant heal at low health. Consumed on use.",
+    "desc": "Taking damage to below {{Color|hp|25% health}} {{Color|u|consumes}} this item, {{Color|h|healing}} you for {{Color|h|75%}} of {{Color|h|maximum health}}.",
+    "category": [
+      "Healing",
+      "LowHealth",
+      "AIBlacklist",
+      "FoodRelated",
+      "CanBeTemporary",
+      "ExtractorUnitBlacklist"
+    ],
+    "id": "HealingPotion",
+    "dlc": 1
+  },
+  {
+    "name": "Empty Bottle",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "An empty container for an Elixir. Does nothing.",
+    "desc": "An empty container for an Elixir. Does nothing.",
+    "category": [
+      "Healing",
+      "AllowedForUseAsCraftingIngredient"
+    ],
+    "id": "HealingPotionConsumed",
+    "dlc": 1
+  },
+  {
+    "name": "Ben's Raincoat",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Prevent debuffs, instead gaining a temporary barrier.  Recharges over time.",
+    "desc": "Prevents {{Color|u|1 {{Stack|(+1 per stack)}}}} {{Color|d|debuff}} and instead grants a {{Color|h|temporary barrier}} for {{Color|h|10%}} of {{Color|h|maximum health}}. Recharges every {{Color|u|5}} seconds}}.",
+    "category": [
+      "Utility",
+      "Healing",
+      "CanBeTemporary"
+    ],
+    "id": "ImmuneToDebuff",
+    "dlc": 1
+  },
+  {
+    "name": "Egocentrism",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Gain multiple orbiting bombs. <color=#FF7F7F>Every minute, assimilate another item into Egocentrism.</color>",
+    "desc": "Every {{Color|u|3}}{{Stack|(-50% per stack)}} seconds, gain an {{Color|d|orbiting bomb}} that detonates on impact for {{Color|d|360%}} damage, up to a maximum of {{Color|u|3{{Stack|(+1 per stack)}} bombs}}. Every {{Color|u|60}} seconds, a random item is {{Color|u|converted}} into this item.",
+    "category": [
+      "Utility"
+    ],
+    "id": "LunarSun",
+    "dlc": 1
+  },
+  {
+    "name": "Blessings of Terafirmae",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "PLACEHOLDER PICKUP DESCRIPTION",
+    "desc": "PLACEHOLDER DESCRIPTION",
+    "category": [
+      "Utility"
+    ],
+    "id": "LunarWings",
+    "dlc": 1
+  },
+  {
+    "name": "Defense Nucleus",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Summon an Alpha Construct on killing an elite.",
+    "desc": "Killing elite monsters spawns an {{Color|d|Alpha Construct}} with bonus {{Color|d|300%}} damage and {{Color|h|300% health}}. Limited to {{Color|u|4}} {{Stack|(+4 per stack)}}.",
+    "category": [
+      "OnKillEffect",
+      "CanBeTemporary"
+    ],
+    "id": "MinorConstructOnKill",
+    "dlc": 1
+  },
+  {
+    "name": "Plasma Shrimp",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "While you have shield, fire missiles on every hit. {{Color|v|Corrupts all AtG Missile Mk. 1s}}.",
+    "desc": "Gain a {{Color|h|shield}} equal to {{Color|h|10%}} of your maximum health. While you have a {{Color|h|shield}}, hitting an enemy fires a missile that deals {{Color|d|40%}} {{Stack|(+50% per stack)}} TOTAL damage. {{Color|v|Corrupts all AtG Missile Mk. 1s}}.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "MissileVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Pocket I.C.B.M.",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "All Missile items deal more damage and fire an additional two missiles.",
+    "desc": "All missile items and equipment fire an additional {{Color|d|2}} {{Color|d|missiles}}. Increase missile damage by {{Color|d|0%}} {{Stack|(+50% per stack)}}",
+    "category": [
+      "Damage",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "MoreMissile",
+    "dlc": 1
+  },
+  {
+    "name": "Hunter's Harpoon",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Killing an enemy gives you a burst of movement speed.",
+    "desc": "Killing an enemy increases {{Color|u|movement speed}} by {{Color|u|125%}}, fading over {{Color|u|1}} {{Stack|(+0.5 per stack)}} seconds.",
+    "category": [
+      "Utility",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "MoveSpeedOnKill",
+    "dlc": 1
+  },
+  {
+    "name": "Weeping Fungus",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Heal while sprinting. {{Color|v|Corrupts all Bustling Fungi}}.",
+    "desc": "{{Color|h|Heals}} for {{Color|h|2%}} {{Stack|(+2% per stack)}} of your {{Color|h|health}} every second {{Color|u|while sprinting}}. {{Color|v|Corrupts all Bustling Fungi}}.",
+    "category": [
+      "Healing",
+      "FoodRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "MushroomVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Oddly-shaped Opal",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Reduce damage the first time you are hit.",
+    "desc": "{{Color|h|Increase armor}} by {{Color|h|100}} {{Stack|(+100 per stack)}} while out of danger.",
+    "category": [
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "OutOfCombatArmor",
+    "dlc": 1
+  },
+  {
+    "name": "Symbiotic Scorpion",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Permanently reduce armor on hit.",
+    "desc": "{{Color|d|100%}} chance on hit to reduce {{Color|d|armor}} by {{Color|d|2}} {{Stack|(+2 per stack)}} {{Color|d|permanently}}.",
+    "category": [
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "PermanentDebuffOnHit",
+    "dlc": 1
+  },
+  {
+    "name": "Shuriken",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Activating your Primary skill also throws a shuriken. Recharges over time.",
+    "desc": "Activating your {{Color|u|Primary skill}} also throws a {{Color|d|shuriken}} that deals {{Color|d|400%}} {{Stack|(+100% per stack)}} base damage. You can hold up to {{Color|u|3}} {{Stack|(+1 per stack)}} {{Color|d|shurikens}} which all reload over {{Color|u|10}} seconds.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "PrimarySkillShuriken",
+    "dlc": 1
+  },
+  {
+    "name": "Bottled Chaos",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Activating your Equipment triggers an additional, random Equipment effect.",
+    "desc": "Trigger a {{Color|d|random equipment}} effect {{Color|d|1}} {{Stack|(+1 per stack)}} time(s).",
+    "category": [
+      "Utility",
+      "EquipmentRelated",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "RandomEquipmentTrigger",
+    "dlc": 1
+  },
+  {
+    "name": "Eulogy Zero",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Items and equipment have a small chance to transform into a Lunar item instead.",
+    "desc": "Items have a {{Color|u|5% {{Stack|(+5% per stack)}}}} chance to become a {{Color|lunar|Lunar}} item instead.",
+    "category": [
+      "Utility",
+      "BrotherBlacklist",
+      "RebirthBlacklist"
+    ],
+    "id": "RandomlyLunar",
+    "dlc": 1
+  },
+  {
+    "name": "Regenerating Scrap",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Prioritized when used with {{Color|h|Uncommon}} 3D Printers. Usable once per stage.",
+    "desc": "Does nothing. Prioritized when used with {{Color|h|Uncommon}} 3D Printers. At the start of each stage, it regenerates.",
+    "category": [
+      "Utility",
+      "PriorityScrap",
+      "CannotDuplicate",
+      "OnStageBeginEffect",
+      "CommandArtifactBlacklist",
+      "AIBlacklist"
+    ],
+    "id": "RegeneratingScrap",
+    "dlc": 1
+  },
+  {
+    "name": "Regenerating Scrap (Consumed)",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "At the start of each stage, it transforms into Regenerating Scrap.",
+    "desc": "At the start of each stage, it transforms into Regenerating Scrap.",
+    "category": [
+      "Utility",
+      "OnStageBeginEffect"
+    ],
+    "id": "RegeneratingScrapConsumed",
+    "dlc": 1
+  },
+  {
+    "name": "Strange Scrap, Green",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapGreenSuppressed",
+    "dlc": 1
+  },
+  {
+    "name": "Strange Scrap, Red",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapRedSuppressed",
+    "dlc": 1
+  },
+  {
+    "name": "Strange Scrap, White",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "Does nothing. Prioritized when used with 3D Printers.",
+    "desc": "Does nothing. Prioritized when used with 3D Printers.",
+    "category": [
+      "WorldUnique",
+      "Scrap"
+    ],
+    "id": "ScrapWhiteSuppressed",
+    "dlc": 1
+  },
+  {
+    "name": "Tentabauble",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Chance to root enemies on hit. {{Color|v|Corrupts all Chronobaubles}}.",
+    "desc": "{{Color|u|5%}} {{Stack|(+5% per stack)}} chance on hit to {{Color|d|root}} enemies for {{Color|u|1s}} {{Stack|(+1s per stack)}}. {{Color|v|Corrupts all Chronobaubles}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "SlowOnHitVoid",
+    "dlc": 1
+  },
+  {
+    "name": "Ignition Tank",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Your ignite effects deal quadruple damage.",
+    "desc": "Ignite effects deal {{Color|d|+300%}} {{Stack|(+300% per stack)}} more damage over time.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "StrengthenBurn",
+    "dlc": 1
+  },
+  {
+    "name": "Encrusted Key",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Gain access to an Encrusted Cache that contains a void item. {{Color|v|Corrupts all Rusted Keys}}.",
+    "desc": "A {{Color|u|hidden cache}} containing an item (60%/{{Color|h|30%}}/{{Color|hp|10%}}) will appear in a random location {{Color|u|on each stage}}. Opening the cache {{Color|u|consumes}} this item. {{Color|v|Corrupts all Rusted Keys}}.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "OnStageBeginEffect",
+      "CanBeTemporary"
+    ],
+    "id": "TreasureCacheVoid",
+    "dlc": 1
+  },
+  {
+    "name": "",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "",
+    "desc": "",
+    "category": [],
+    "id": "VoidmanPassiveItem",
+    "dlc": 1
+  },
+  {
+    "name": "Newly Hatched Zoea",
+    "rarity": "Void",
+    "type": "item",
+    "quote": "Periodically recruit allies from the {{Color|v|Void}}.  {{Color|v|Corrupts all }}<style=cIsTierBoss>yellow items}}{{Color|v|}}.",
+    "desc": "Every {{Color|u|60}}{{Stack|(-50% per stack)}} seconds, gain a random {{Color|v|Void}} ally. Can have up to {{Color|u|1}}{{Stack|(+1 per stack)}} allies at a time. {{Color|v|Corrupts all }}<style=cIsTierBoss>yellow items}}{{Color|v|}}.",
+    "category": [
+      "Utility",
+      "CannotCopy",
+      "FoodRelated",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "VoidMegaCrabItem",
+    "dlc": 1
+  },
+  {
+    "name": "Bolstering Lantern",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Increases your attack speed for every nearby enemy and ally.",
+    "desc": "Increase your {{Color|d|attack speed}} by {{Color|d|10%}} {{Stack|(+3.5 per stack)}} for up to {{Color|u|3}} {{Stack|(+1 per stack)}} enemies and allies within {{Color|u|20}} meters.",
+    "category": [
+      "Damage",
+      "HalcyoniteShrine",
+      "CanBeTemporary"
+    ],
+    "id": "AttackSpeedPerNearbyAllyOrEnemy",
+    "dlc": 2
+  },
+  {
+    "name": "War Bonds",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Bombard boss events with missiles. The more gold earned, the more UES support is granted.",
+    "desc": "During boss events, {{Color|u|5}} missiles bombard the area, dealing {{Color|d|2.5% {{Stack|(+2.5% per stack)}} of boss' Max Health in damage}}. Before the boss event, gain additional missiles, up to a maximum of {{Color|u|20}} {{Stack|(+5 per stack)}}, per {{Color|u|50}} gold gained. {{Color|u|Gold requirement scales over time.}}",
+    "category": [
+      "Damage",
+      "HalcyoniteShrine",
+      "AIBlacklist",
+      "Technology",
+      "CanBeTemporary"
+    ],
+    "id": "BarrageOnBoss",
+    "dlc": 2
+  },
+  {
+    "name": "Growth Nectar",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Your buffs grant an increase to ALL of your stats.",
+    "desc": "Grants {{Color|u|4%}} increase to {{Color|u|ALL stats}} for each buff, up to a maximum of {{Color|u|4}} {{Stack|(+4 per stack)}}.",
+    "category": [
+      "Utility",
+      "HalcyoniteShrine",
+      "FoodRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "BoostAllStats",
+    "dlc": 2
+  },
+  {
+    "name": "Warped Echo",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Incoming damage is reduced and dealt over time.",
+    "desc": "The next source of damage is {{Color|h|reduced}} by {{Color|h|20%}} and {{Color|h|spread}} into {{Color|u|3 {{Stack|(+1 per stack)}} hits}}. All echoed damage is {{Color|u|non-lethal}} except for the final hit. Recharges every {{Color|u|15s}}.",
+    "category": [
+      "Utility",
+      "HalcyoniteShrine",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "DelayedDamage",
+    "dlc": 2
+  },
+  {
+    "name": "Chance Doll",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Gain 40% chance to increase item rarity at Shrines of Chance.",
+    "desc": "On Shrine of Chance success, {{Color|u|40%}} {{Stack|(+10% per stack)}} chance to get higher rarity items.",
+    "category": [
+      "CannotDuplicate",
+      "Utility",
+      "HalcyoniteShrine",
+      "AIBlacklist",
+      "SacrificeBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "ExtraShrineItem",
+    "dlc": 2
+  },
+  {
+    "name": "Prayer Beads",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Gains experience alongside you. Upon removal, grants bonus stats.",
+    "desc": "Grows by gaining experience, storing {{Color|u|20%}} {{Stack|(+5% per stack)}} bonus stats ({{Color|h|health}}, {{Color|h|regeneration}}, and {{Color|d|damage}}). On removal, gain all stored stats.",
+    "category": [
+      "Utility",
+      "HalcyoniteShrine",
+      "CannotDuplicate",
+      "AIBlacklist"
+    ],
+    "id": "ExtraStatsOnLevelUp",
+    "dlc": 2
+  },
+  {
+    "name": "Chronic Expansion",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Deal bonus damage for each enemy killed.",
+    "desc": "Killing an enemy increases your damage by {{Color|d|3.5%}} {{Stack|(+1% per stack)}}, up to {{Color|u|10}} {{Stack|(+5 per stack)}}, for {{Color|u|7s}}. Dealing damage refreshes the timer.",
+    "category": [
+      "Damage",
+      "OnKillEffect",
+      "HalcyoniteShrine",
+      "CanBeTemporary"
+    ],
+    "id": "IncreaseDamageOnMultiKill",
+    "dlc": 2
+  },
+  {
+    "name": "Luminous Shot",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Activating your Secondary skill charges your Primary skill with powerful lightning strikes. Requires 3 charges.",
+    "desc": "Activating {{Color|u|Secondary skill}} stores up to {{Color|u|5 charges}} {{Stack|(+1 per stack)}}. Requires {{Color|u|3 charges}} for your {{Color|u|Primary skill}} to fire lightning strikes, dealing {{Color|d|175% TOTAL damage}} {{Stack|(+50% per stack)}} each. {{Color|u|Reduces Secondary skill cooldown by 20%}}.",
+    "category": [
+      "Damage",
+      "Utility",
+      "HalcyoniteShrine",
+      "DevotionBlacklist",
+      "AIBlacklist",
+      "Technology",
+      "CanBeTemporary"
+    ],
+    "id": "IncreasePrimaryDamage",
+    "dlc": 2
+  },
+  {
+    "name": "Sonorous Whispers",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Upon large or elite monster kill chance to drop items.",
+    "desc": "When a large monster is killed it will always drop an item. All elites have a {{Color|u|4%}} chance of dropping an item {{Stack|(+1% per stack)}}.",
+    "category": [
+      "Utility",
+      "CannotDuplicate",
+      "HalcyoniteShrine",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "ItemDropChanceOnKill",
+    "dlc": 2
+  },
+  {
+    "name": "Breaching Fin",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Grounded enemies hit with any skill are launched and take bonus damage.",
+    "desc": "Grounded enemies hit with any {{Color|u|skill}} are {{Color|u|launched}} and {{Color|u|stunned}}. Enemies hit while airborne are {{Color|u|launched}} again up to {{Color|u|2 times}} {{Stack|(+1 per stack)}}. Launched enemies take increased damage by {{Color|d|10%}} from all sources per launch. Recharges after {{Color|u|15s}}.",
+    "category": [
+      "Utility",
+      "HalcyoniteShrine",
+      "AIBlacklist",
+      "Damage",
+      "DevotionBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "KnockBackHitEnemies",
+    "dlc": 2
+  },
+  {
+    "name": "Sale Star",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "First chest bought yields more than one reward. Usable once per stage.",
+    "desc": "Gain an extra item on the first chest opened per stage. {{Stack|Each additional Sale Star increases the chance of getting more items by 5%}}.",
+    "category": [
+      "CannotDuplicate",
+      "Utility",
+      "HalcyoniteShrine",
+      "AIBlacklist"
+    ],
+    "id": "LowerPricedChests",
+    "dlc": 2
+  },
+  {
+    "name": "Sale Star (Consumed)",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "At the start of each stage, it transforms into Sale Star.",
+    "desc": "At the start of each stage, it transforms into Sale Star.",
+    "category": [
+      "Utility",
+      "OnStageBeginEffect"
+    ],
+    "id": "LowerPricedChestsConsumed",
+    "dlc": 2
+  },
+  {
+    "name": "Runic Lens",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Chance to call down a meteor. Damage and chance are increased with higher damage hits.",
+    "desc": "{{Color|d|3%}} chance on hit to call a meteor strike, dealing {{Color|d|2000%}} base damage. Every {{Color|d|100%}} attack damage dealt increases the activation chance by {{Color|d|3%}} {{Stack|(+3% per stack)}} and damage by {{Color|d|150%}} {{Stack|(+50% per stack)}}.",
+    "category": [
+      "Damage",
+      "HalcyoniteShrine",
+      "CanBeTemporary"
+    ],
+    "id": "MeteorAttackOnHighDamage",
+    "dlc": 2
+  },
+  {
+    "name": "Longstanding Solitude",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "Free purchases on level up... <color=#FF7F7F>BUT gold converts to experience.</color>",
+    "desc": "{{Color|u|On level up}} gain a free unlock for the next purchase {{Stack|(+1 per stack)}} but all gold is converted to experience. Anything that costs gold is {{Color|u|increased by 50%}} {{Stack|(+50% per stack)}}.",
+    "category": [
+      "HalcyoniteShrine",
+      "Utility",
+      "Damage"
+    ],
+    "id": "OnLevelUpFreeUnlock",
+    "dlc": 2
+  },
+  {
+    "name": "Elusive Antlers",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Spawns orbs of energy that give bonus movement speed.",
+    "desc": "Spawns orbs of energy nearby every {{Color|u|10s}} {{Stack|(-10% per stack)}}, giving {{Color|u|+12% movement speed}} up to {{Color|u|3}} {{Stack|(+3 per stack)}} {{Color|u|times}} for {{Color|u|12s}}.",
+    "category": [
+      "Utility",
+      "HalcyoniteShrine",
+      "AIBlacklist",
+      "FoodRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "SpeedBoostPickup",
+    "dlc": 2
+  },
+  {
+    "name": "Electric Boomerang",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "On hit chance to throw a stunning boomerang.",
+    "desc": "{{Color|d|15%}} chance on hit to fire an electric boomerang that slices through enemies dealing {{Color|d|120% base damage}} and deals an additional {{Color|d|120%}} {{Stack|(+120% per stack)}} {{Color|d|base damage per second}} and {{Color|d|stuns}} all enemies hit. Can {{Color|d|strike}} enemies on the way back.",
+    "category": [
+      "Damage",
+      "HalcyoniteShrine",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "StunAndPierce",
+    "dlc": 2
+  },
+  {
+    "name": "Unstable Transmitter",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Gain a temporary barrier and a dimensional aura on low health.",
+    "desc": "Falling below {{Color|hp|25% health}} gives you a {{Color|h|temporary barrier}} and a dimensional aura that {{Color|d|bleeds}} and {{Color|u|teleports}} away enemies for {{Color|u|8s}}. {{Color|d|Enemies killed}} by the aura {{Color|u|extend}} the duration by {{Color|u|1s}}. At the start of each stage, it regenerates.",
+    "category": [
+      "Utility",
+      "HalcyoniteShrine",
+      "LowHealth",
+      "AIBlacklist",
+      "CanBeTemporary",
+      "ExtractorUnitBlacklist",
+      "Technology"
+    ],
+    "id": "TeleportOnLowHealth",
+    "dlc": 2
+  },
+  {
+    "name": "Unstable Transmitter (Consumed)",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "At the start of each stage, it transforms into Unstable Transmitter.",
+    "desc": "At the start of each stage, it transforms into Unstable Transmitter.",
+    "category": [
+      "Utility",
+      "OnStageBeginEffect"
+    ],
+    "id": "TeleportOnLowHealthConsumed",
+    "dlc": 2
+  },
+  {
+    "name": "Noxious Thorn",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Killing an enemy transfers debuffs to a nearby enemy.",
+    "desc": "Gain {{Color|d|10%}} chance to {{Color|d|bleed}} an enemy. On killing an enemy, {{Color|d|transfer 33%}} of every debuff stack to {{Color|d|1 enemy}} {{Stack|(+1 per stack)}} within {{Color|u|20m}} {{Stack|(+5m per stack)}}.",
+    "category": [
+      "HalcyoniteShrine",
+      "Damage",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "TriggerEnemyDebuffs",
+    "dlc": 2
+  },
+  {
+    "name": "Eclipse Lite",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Gain a small temporary barrier when a skill comes off cooldown.",
+    "desc": "When a skill comes off cooldown, gain a {{Color|d|temporary barrier}} for {{Color|h|1% {{Stack|(+0.25% per stack)}}}} of your maximum health per second of the skill's base cooldown.",
+    "category": [
+      "Healing",
+      "FoodRelated",
+      "CanBeTemporary"
+    ],
+    "id": "BarrierOnCooldown",
+    "dlc": 3
+  },
+  {
+    "name": "Quick Fix",
+    "rarity": "Meal",
+    "type": "item",
+    "quote": "Increases bonus health and regen gains. Does not benefit from leveling up bonuses. Full of minerals.",
+    "desc": "Increases {{Color|h|bonus health and regeneration gains}} by {{Color|h|50% {{Stack|(+15% per stack)}}}}. Does not affect bonuses from leveling up.",
+    "category": [
+      "AIBlacklist",
+      "Healing",
+      "CannotCopy",
+      "ExtractorUnitBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "BonusHealthBoost",
+    "dlc": 3
+  },
+  {
+    "name": "Seared Steak",
+    "rarity": "Meal",
+    "type": "item",
+    "quote": "Gain 50 max health plus a percentage of your max health. Cooked to perfection.",
+    "desc": "Increases {{Color|h|maximum health}} by {{Color|h|50 {{Stack|(+50 per stack)}}}}, plus an additional {{Color|h|5% {{Stack|(+5% per stack)}}}} of your {{Color|h|max health}}.",
+    "category": [
+      "Healing",
+      "WorldUnique",
+      "CannotDuplicate",
+      "AIBlacklist",
+      "CanBeTemporary"
+    ],
+    "id": "CookedSteak",
+    "dlc": 3
+  },
+  {
+    "name": "Hiker's Boots",
+    "rarity": "Common",
+    "type": "item",
+    "quote": "Striking enemies from a higher elevation grants critical strike chance and damage.",
+    "desc": "Striking enemies from a higher elevation grants {{Color|d|+1% {{Stack|(+1% per stack)}} critical strike chance}} and {{Color|d|critical strike damage}}, up to {{Color|u|10 times}}. Lasts 10 seconds.",
+    "category": [
+      "Damage",
+      "CanBeTemporary"
+    ],
+    "id": "CritAtLowerElevation",
+    "dlc": 3
+  },
+  {
+    "name": "ITEM_DESTRUCTIBLESPAWNER_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_DESTRUCTIBLESPAWNER_PICKUP",
+    "desc": "ITEM_DESTRUCTIBLESPAWNER_DESC",
+    "category": [
+      "Damage",
+      "Technology"
+    ],
+    "id": "DestructibleSpawner",
+    "dlc": 3
+  },
+  {
+    "name": "ITEM_DRONEDYNAMITEDISPLAY_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_DRONEDYNAMITEDISPLAY_PICKUP",
+    "desc": "ITEM_DRONEDYNAMITEDISPLAY_DESC",
+    "category": [],
+    "id": "DroneDynamiteDisplay",
+    "dlc": 3
+  },
+  {
+    "name": "Box of Dynamite",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Your drones periodically drop dynamite.",
+    "desc": "Gain {{Color|d|Lt. Droneboy}}. While in combat, your drones drop sticks of dynamite that detonate for {{Color|d|240% damage {{Stack|(+85% per stack)}}}}, stunning enemies. Recharges after {{Color|u|10}} seconds.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "BrotherBlacklist",
+      "ExtractorUnitBlacklist",
+      "CannotCopy",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "DronesDropDynamite",
+    "dlc": 3
+  },
+  {
+    "name": "",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "",
+    "desc": "",
+    "category": [
+      "CannotSteal",
+      "CannotCopy",
+      "ExtractorUnitBlacklist",
+      "HiddenForDroneBuffIcon"
+    ],
+    "id": "DroneUpgradeHidden",
+    "dlc": 3
+  },
+  {
+    "name": "Substandard Duplicator",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Picking up an item grants a temporary copy.",
+    "desc": "{{Color|u|Picking up an item}} gives you a <style=cIsTemporary>temporary copy}} of itself. Temporary items last an additional {{Color|d|10 {{Stack|(+10 per stack)}} seconds}}.",
+    "category": [
+      "Utility",
+      "CanBeTemporary",
+      "Technology",
+      "AIBlacklist",
+      "DevotionBlacklist"
+    ],
+    "id": "Duplicator",
+    "dlc": 3
+  },
+  {
+    "name": "Functional Coupler",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Hold an additional equipment.",
+    "desc": "Hold {{Color|u|1 additional equipment}} {{Stack|(+1 per stack)}}. Press the {{Color|u|interact}} and {{Color|u|equipment}} buttons to cycle through held equipment.",
+    "category": [
+      "EquipmentRelated",
+      "AIBlacklist",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "ExtraEquipment",
+    "dlc": 3
+  },
+  {
+    "name": "Faraday Spur",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Moving around builds up movement speed and jump height. At 25% charge or higher, jump to discharge into an electric blast.",
+    "desc": "Moving around builds up {{Color|u|charge}}, granting up to {{Color|u|+160% movement speed}} and {{Color|u|+200% jump height}} at 100%. At 25% charge or higher, jumping triggers an {{Color|d|explosive discharge}} for {{Color|d|400% {{Stack|(+280% per stack)}} damage}} in a 5m to 32.3m {{Stack|(+7.5m per stack)}} area.",
+    "category": [
+      "Damage",
+      "SprintRelated",
+      "MobilityRelated",
+      "CanBeTemporary",
+      "Technology",
+      "AIBlacklist",
+      "DevotionBlacklist"
+    ],
+    "id": "JumpDamageStrike",
+    "dlc": 3
+  },
+  {
+    "name": "Junk",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "Used by the Drifter to activate her skills",
+    "desc": "Increases the Junk meter by {{Color|u|1}}.",
+    "category": [
+      "CannotSteal",
+      "CannotCopy",
+      "CannotDuplicate",
+      "RebirthBlacklist",
+      "BrotherBlacklist"
+    ],
+    "id": "Junk",
+    "dlc": 3
+  },
+  {
+    "name": "Encrypted Cerebellum",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Contains encrypted remnants of the Collective network. Needs to be decrypted.",
+    "desc": "Contains encrypted remnants of the Collective network. Needs to be decrypted before it can be returned.",
+    "category": [
+      "CannotSteal",
+      "ExtractorUnitBlacklist",
+      "CannotDuplicate",
+      "WorldUnique",
+      "CannotCopy",
+      "AIBlacklist",
+      "BrotherBlacklist",
+      "AllowedForUseAsCraftingIngredient",
+      "ObjectiveRelated"
+    ],
+    "id": "MasterBattery",
+    "dlc": 3
+  },
+  {
+    "name": "Exposed Cerebellum",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "A swarming data nexus representing the Collective network. Can be given to a powerful entity.",
+    "desc": "A swarming data nexus representing the Collective network. Can be given to a powerful entity.",
+    "category": [
+      "CannotSteal",
+      "ExtractorUnitBlacklist",
+      "CannotDuplicate",
+      "WorldUnique",
+      "CannotCopy",
+      "AIBlacklist",
+      "BrotherBlacklist",
+      "ObjectiveRelated",
+      "RebirthBlacklist"
+    ],
+    "id": "MasterCore",
+    "dlc": 3
+  },
+  {
+    "name": "Ominous Loan Note",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "At the beginning of every stage, receive a lump sum of cash. {{Color|hp|All further gold goes towards paying off your debt}}.",
+    "desc": "At the beginning of every stage, receive {{Color|d|$200 {{Stack|(+$200 per stack, scales over time)}}}}, but also gain an equal amount of {{Color|hp|debt}}. {{Color|hp|All further gold gained goes towards paying off your debt}}. Paying off your debt destroys this item.",
+    "category": [],
+    "id": "MoneyLoan",
+    "dlc": 3
+  },
+  {
+    "name": "Orphaned Core",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Gain a buddy who launches itself at enemies to deal damage. Inherits your movement-related items.",
+    "desc": "Gain a {{Color|h|friendly Solus unit}} that launches itself at enemies for {{Color|d|400% {{Stack|(+400% per stack)}} damage}}. The unit inherits your {{Color|u|movement speed items}} and deals {{Color|d|more damage the faster it moves}}. The unit can be pet to {{Color|h|cleanse negative effects}}. Recharges after 15 seconds.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "ExtractorUnitBlacklist",
+      "CannotSteal",
+      "BrotherBlacklist",
+      "CannotCopy",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "PhysicsProjectile",
+    "dlc": 3
+  },
+  {
+    "name": "Prison Matrix",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Gain {{Color|u|+50% armor}}. Can be placed in a Matrix Terminal.",
+    "desc": "Gain {{Color|u|+50% armor}}. Can be placed in a Matrix Terminal.",
+    "category": [
+      "ExtractorUnitBlacklist",
+      "WorldUnique",
+      "IgnoreForDropList",
+      "CannotCopy",
+      "AIBlacklist",
+      "CommandArtifactBlacklist",
+      "AllowedForUseAsCraftingIngredient",
+      "ObjectiveRelated"
+    ],
+    "id": "PowerCube",
+    "dlc": 3
+  },
+  {
+    "name": "Ocular Battery",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "Gain +15% attack speed. Can be placed somewhere...",
+    "desc": "Gain {{Color|d|+15% attack speed}}. Can be placed in a Ocular Vault.",
+    "category": [
+      "ExtractorUnitBlacklist",
+      "IgnoreForDropList",
+      "WorldUnique",
+      "ObjectiveRelated"
+    ],
+    "id": "PowerOrbSphere",
+    "dlc": 3
+  },
+  {
+    "name": "Sentry Key",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Gain {{Color|u|+15% move speed}}. Can be placed in a Sentry Terminal.",
+    "desc": "Gain {{Color|u|+15% move speed}}. Can be placed in a Sentry Terminal or used for decryption.",
+    "category": [
+      "ExtractorUnitBlacklist",
+      "IgnoreForDropList",
+      "WorldUnique",
+      "CannotCopy",
+      "AllowedForUseAsCraftingIngredient",
+      "CanBeTemporary",
+      "ObjectiveRelated"
+    ],
+    "id": "PowerPyramid",
+    "dlc": 3
+  },
+  {
+    "name": "Networked Suffering",
+    "rarity": "Legendary",
+    "type": "item",
+    "quote": "Inflict a computer virus on hit that spreads a portion of all damage dealt between infected enemies. Affects up to 4 enemies.",
+    "desc": "Infect up to {{Color|u|4 {{Stack|(+2 per stack)}}}} enemies with a computer virus that duplicates {{Color|d|50% of all damage taken}} and sends it to a global damage pool. Every 3 seconds, ALL infected enemies suffer {{Color|d|100% pooled damage}}.",
+    "category": [
+      "Damage",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "SharedSuffering",
+    "dlc": 3
+  },
+  {
+    "name": "Kinetic Dampener",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Gain bonus armor while you have a shield. When shield breaks, release a stunning pulse that deals more damage the more shield you have.",
+    "desc": "Increases armor by {{Color|u|30{{Stack| (+30 per stack)}}}} while you have a shield. When shield breaks, release a stunning pulse for {{Color|d|100% damage}} plus an amount {{Color|d|equal to 100% {{Stack|(+10% per stack)}} of your max shield}}. Grants a shield for {{Color|h|4% of your max health}}.",
+    "category": [
+      "Healing",
+      "Utility",
+      "CanBeTemporary"
+    ],
+    "id": "ShieldBooster",
+    "dlc": 3
+  },
+  {
+    "name": "Faulty Conductor",
+    "rarity": "Boss",
+    "type": "item",
+    "quote": "Occasionally release a pulse of electricity that energizes allies and makes enemies more susceptible to electric damage.",
+    "desc": "Every {{Color|u|15 {{Stack|(-20% per stack)}} seconds}}, release a wave of electricity that {{Color|h|energizes}} nearby allies for {{Color|u|7}} seconds. Energized allies gain {{Color|d|+30% attack and movement speed}}, and ALWAYS land {{Color|d|critical strikes}} with {{Color|u|electric}} items and attacks.",
+    "category": [
+      "Damage",
+      "Utility",
+      "CanBeTemporary",
+      "Technology"
+    ],
+    "id": "ShockDamageAura",
+    "dlc": 3
+  },
+  {
+    "name": "Collector's Compulsion",
+    "rarity": "Uncommon",
+    "type": "item",
+    "quote": "Pickups grant a stacking bonus to all stats. Open a barrel to find a minor pick-up.",
+    "desc": "Picking up {{Color|d|an item or other collectible}} increases {{Color|u|all stats}} by {{Color|u|+3%}} for 20 seconds, up to {{Color|u|3 {{Stack|(+2 per stack)}} times}}. Barrels grant minor pickups.",
+    "category": [
+      "Utility",
+      "AIBlacklist",
+      "InteractableRelated",
+      "MobilityRelated",
+      "CanBeTemporary"
+    ],
+    "id": "SpeedOnPickup",
+    "dlc": 3
+  },
+  {
+    "name": "ITEM_STATSFROMSCRAP_NAME",
+    "rarity": "Untiered",
+    "type": "item",
+    "quote": "ITEM_STATSFROMSCRAP_PICKUP",
+    "desc": "ITEM_STATSFROMSCRAP_DESC",
+    "category": [
+      "Any"
+    ],
+    "id": "StatsFromScrap",
+    "dlc": 3
+  },
+  {
+    "name": "Hearty Stew",
+    "rarity": "Meal",
+    "type": "item",
+    "quote": "Increases health regeneration and converts it into damage at full health. A single sip leaves you feeling warm and fuzzy inside.",
+    "desc": "Increases {{Color|h|regeneration}} by {{Color|h|+2.5 {{Stack|(+2.5 per stack)}} HP/s}}. At full health, your regeneration is added to your {{Color|d|base damage}}.",
+    "category": [
+      "Utility",
+      "Healing",
+      "AIBlacklist",
+      "WorldUnique",
+      "CanBeTemporary"
+    ],
+    "id": "Stew",
+    "dlc": 3
+  },
+  {
+    "name": "Neutronium Weight",
+    "rarity": "Lunar",
+    "type": "item",
+    "quote": "{{Color|hp|Reduces all stats while in combat}}, but can be sent to an enemy on hit.",
+    "desc": "{{Color|hp|Reduces your stats while in combat}}, but {{Color|u|send this item to an enemy}} on hit. On death, this item will be sent to its holder's killer.\n\nReduces {{Color|d|damage}} by 30% {{Stack|(+10% per stack)}}, {{Color|d|attack speed}} by 30% {{Stack|(+10% per stack)}}, {{Color|u|movement speed}} by 30% {{Stack|(+10% per stack)}}, and {{Color|u|armor}} by 35 {{Stack|(+15 per stack)}}.",
+    "category": [
+      "Utility",
+      "OnKillEffect",
+      "Cleansable",
+      "BrotherBlacklist",
+      "CannotSteal",
+      "CannotCopy",
+      "ExtractorUnitBlacklist",
+      "AIBlacklist",
+      "RebirthBlacklist"
+    ],
+    "id": "TransferDebuffOnHit",
+    "dlc": 3
+  },
+  {
+    "name": "Ultimate Meal",
+    "rarity": "Meal",
+    "type": "item",
+    "quote": "At full health, you become lucky. The pinnacle of culinary arts.",
+    "desc": "At full health, all random effects are rolled {{Color|h|+2 {{Stack|(+2 per stack)}}}} extra times for a better outcome.",
+    "category": [
+      "Healing",
+      "AIBlacklist",
+      "WorldUnique",
+      "CanBeTemporary"
+    ],
+    "id": "UltimateMeal",
+    "dlc": 3
+  },
+  {
+    "name": "Sautéed Worms",
+    "rarity": "Meal",
+    "type": "item",
+    "quote": "Chance on hit to summon a spectral wyrm that seeks out and damages enemies. Tastes like glass frogs and starseed.",
+    "desc": "On hit, {{Color|u|10% chance}} to summon a spectral wyrm that seeks out and damages and ignites enemies for {{Color|d|500% {{Stack|(+500% per stack)}} TOTAL damage per second}} for {{Color|u|10 seconds}}.",
+    "category": [
+      "Damage",
+      "AIBlacklist",
+      "WorldUnique",
+      "CannotDuplicate",
+      "CanBeTemporary"
+    ],
+    "id": "WyrmOnHit",
+    "dlc": 3
+  },
+  {
+    "name": "Preon Accumulator",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Fire a ball of energy that electrocutes nearby enemies before detonating.",
+    "desc": "Fires preon tendrils, zapping enemies within 35m for up to {{Color|d|600% damage/second}}. On contact, detonate in an enormous 20m explosion for {{Color|d|4000% damage}}.",
+    "category": [],
+    "id": "BFG",
+    "dlc": 0
+  },
+  {
+    "name": "Primordial Cube",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Fire a black hole that draws enemies in.",
+    "desc": "Fire a black hole that {{Color|u|draws enemies within 30m into its center}}. Lasts 10 seconds.",
+    "category": [],
+    "id": "Blackhole",
+    "dlc": 0
+  },
+  {
+    "name": "Helfire Tincture",
+    "rarity": "Lunar Equipment",
+    "type": "equipment",
+    "quote": "Ignite everything nearby... <color=#FF7F7F>including you and allies.</color>",
+    "desc": "{{Color|d|Ignite}} ALL characters within 15m. Deal {{Color|d|5% of your maximum health/second as burning}} to yourself. The burn is {{Color|d|0.5x}} stronger on allies, and {{Color|d|24x}} stronger on enemies.",
+    "category": [],
+    "id": "BurnNearby",
+    "dlc": 0
+  },
+  {
+    "name": "Blast Shower",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Cleanse all negative effects.",
+    "desc": "{{Color|u|Cleanse}} all negative effects. Includes debuffs, damage over time, stuns, freezes, and nearby projectiles.",
+    "category": [],
+    "id": "Cleanse",
+    "dlc": 0
+  },
+  {
+    "name": "Disposable Missile Launcher",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Fire a swarm of missiles.",
+    "desc": "Fire a swarm of {{Color|d|12}} missiles that deal {{Color|d|12x300% damage}}.",
+    "category": [],
+    "id": "CommandMissile",
+    "dlc": 0
+  },
+  {
+    "name": "Effigy of Grief",
+    "rarity": "Lunar Equipment",
+    "type": "equipment",
+    "quote": "Drop a permanent effigy that cripples ALL characters inside. Can place up to 5..",
+    "desc": "ALL characters within are {{Color|u|slowed by 50%}} and have their {{Color|d|armor reduced by 20}}. Can place up to {{Color|u|5}}.",
+    "category": [],
+    "id": "CrippleWard",
+    "dlc": 0
+  },
+  {
+    "name": "Ocular HUD",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Gain 100% Critical Strike Chance for 8 seconds.",
+    "desc": "Gain {{Color|d|+100% Critical Strike Chance}} for 8 seconds.",
+    "category": [],
+    "id": "CritOnUse",
+    "dlc": 0
+  },
+  {
+    "name": "Forgive Me Please",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Throw a cursed doll that repeatedly triggers your 'On Kill' effects.",
+    "desc": "Throw a cursed doll out that {{Color|d|triggers}} any {{Color|d|On-Kill}} effects you have every {{Color|u|1}} second for {{Color|u|8}} seconds.",
+    "category": [],
+    "id": "DeathProjectile",
+    "dlc": 0
+  },
+  {
+    "name": "The Back-up",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Call drones for back up. Lasts 25 seconds.",
+    "desc": "Call {{Color|d|4 Strike Drones}} to fight for you. Lasts 25 seconds.",
+    "category": [],
+    "id": "DroneBackup",
+    "dlc": 0
+  },
+  {
+    "name": "Ifrit's Distinction",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of fire.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteFireEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "Spectral Circlet",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of incorporeality.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteHauntedEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "Her Biting Embrace",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of ice.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteIceEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "Silence Between Two Strikes",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of lightning.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteLightningEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "Shared Design",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of perfection.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteLunarEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "N'kuhana's Retort",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of corruption.",
+    "desc": "???",
+    "category": [],
+    "id": "ElitePoisonEquipment",
+    "dlc": 0
+  },
+  {
+    "name": "Volcanic Egg",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Transform into a speeding draconic fireball, dealing damage as you pass through enemies.",
+    "desc": "Turn into a {{Color|d|draconic fireball}} for {{Color|d|5}} seconds. Deal {{Color|d|500% damage}} on impact. Detonates at the end for {{Color|d|800% damage}}.",
+    "category": [],
+    "id": "FireBallDash",
+    "dlc": 0
+  },
+  {
+    "name": "Foreign Fruit",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Heal on use.",
+    "desc": "Instantly heal for {{Color|h|50% of your maximum health}}.",
+    "category": [],
+    "id": "Fruit",
+    "dlc": 0
+  },
+  {
+    "name": "Jade Elephant",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Gain massive armor for 5 seconds.",
+    "desc": "Gain {{Color|d|500 armor}} for {{Color|u|5 seconds.}}",
+    "category": [],
+    "id": "GainArmor",
+    "dlc": 0
+  },
+  {
+    "name": "Eccentric Vase",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Create a quantum tunnel between two locations.",
+    "desc": "Create a {{Color|u|quantum tunnel}} of up to {{Color|u|1000m}} in length. Lasts 30 seconds.",
+    "category": [],
+    "id": "Gateway",
+    "dlc": 0
+  },
+  {
+    "name": "The Crowdfunder",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Toggle to fire. Costs gold per bullet.",
+    "desc": "Fires a continuous barrage that deals {{Color|d|100% damage per bullet}}. Costs $1 per bullet. Cost increases over time.",
+    "category": [],
+    "id": "GoldGat",
+    "dlc": 0
+  },
+  {
+    "name": "Milky Chrysalis",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Gain temporary flight.",
+    "desc": "Sprout wings and {{Color|u|fly for 15 seconds}}. Gain {{Color|u|+20% movement speed}} for the duration.",
+    "category": [],
+    "id": "Jetpack",
+    "dlc": 0
+  },
+  {
+    "name": "Super Massive Leech",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Heal for a percentage of the damage you deal for 8 seconds.",
+    "desc": "{{Color|h|Heal}} for {{Color|h|20%}} of the {{Color|d|damage}} you deal. Lasts {{Color|h|8}} seconds.",
+    "category": [],
+    "id": "LifestealOnHit",
+    "dlc": 0
+  },
+  {
+    "name": "Royal Capacitor",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Call down a lightning strike on a targeted monster.",
+    "desc": "Call down a lightning strike on a targeted monster, dealing {{Color|d|3000% damage}} and {{Color|d|stunning}} nearby monsters.",
+    "category": [],
+    "id": "Lightning",
+    "dlc": 0
+  },
+  {
+    "name": "EQUIPMENT_LUNARPOTION_NAME",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "EQUIPMENT_LUNARPOTION_NAME",
+    "desc": "EQUIPMENT_LUNARPOTION_DESC",
+    "category": [],
+    "id": "LunarPotion",
+    "dlc": 0
+  },
+  {
+    "name": "Glowing Meteorite",
+    "rarity": "Lunar Equipment",
+    "type": "equipment",
+    "quote": "Rain meteors from the sky, <color=#FF7F7F>hurting both enemies and allies.</color>",
+    "desc": "{{Color|d|Rain meteors}} from the sky, damaging ALL characters for {{Color|d|600% damage per blast}}. Lasts 20 seconds.",
+    "category": [],
+    "id": "Meteor",
+    "dlc": 0
+  },
+  {
+    "name": "Gnarled Woodsprite",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Heal over time. Activate to send to an ally.",
+    "desc": "Gain a Woodsprite follower that heals a friendly target for {{Color|h|10% of their maximum health}} instantly, then {{Color|h|1.5% of your maximum health}} every second. \n\nActivating the equipment assigns a new target, or yourself if there are no targets available.",
+    "category": [],
+    "id": "PassiveHealing",
+    "dlc": 0
+  },
+  {
+    "name": "Fuel Array",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Looks like it could power something. <color=#FF7F7F>EXTREMELY unstable...</color>",
+    "desc": "A volatile battery that will explode if too much damage is taken.",
+    "category": [],
+    "id": "QuestVolatileBattery",
+    "dlc": 0
+  },
+  {
+    "name": "Recycler",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Transform an Item or Equipment into a different one. Can only recycle once.",
+    "desc": "{{Color|u|Transform}} an Item or Equipment into a different one. {{Color|u|Can only be converted into the same tier one time}}.",
+    "category": [],
+    "id": "Recycle",
+    "dlc": 0
+  },
+  {
+    "name": "Sawmerang",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Throw a fan of buzzing saws that come back to you.",
+    "desc": "Throw {{Color|d|three large saw blades}} that slice through enemies for {{Color|d|3x400%}} damage. Also deals an additional {{Color|d|3x100% damage per second}} while {{Color|d|bleeding}} enemies. Can {{Color|d|strike}} enemies again on the way back.",
+    "category": [],
+    "id": "Saw",
+    "dlc": 0
+  },
+  {
+    "name": "Radar Scanner",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Reveal all nearby interactables.",
+    "desc": "{{Color|u|Reveal}} all interactables within 500m for {{Color|u|10 seconds}}.",
+    "category": [],
+    "id": "Scanner",
+    "dlc": 0
+  },
+  {
+    "name": "Gorag's Opus",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "You and all your allies enter a frenzy.",
+    "desc": "All allies enter a {{Color|d|frenzy}} for {{Color|u|7}} seconds. Increases {{Color|u|movement speed}} by {{Color|u|50%}} and {{Color|d|attack speed}} by {{Color|d|100%}}.",
+    "category": [],
+    "id": "TeamWarCry",
+    "dlc": 0
+  },
+  {
+    "name": "Spinel Tonic",
+    "rarity": "Lunar Equipment",
+    "type": "equipment",
+    "quote": "Gain a massive boost to ALL stats. <color=#FF7F7F>Chance to gain an affliction that reduces ALL stats.</color>",
+    "desc": "Drink the Tonic, gaining a boost for 20 seconds. Increases {{Color|d|damage}} by {{Color|d|+100%}}. Increases {{Color|d|attack speed}} by {{Color|d|+70%}}. Increases {{Color|d|armor}} by {{Color|d|+20}}. Increases {{Color|h|maximum health}} by {{Color|h|+50%}}. Increases {{Color|h|passive health regeneration}} by {{Color|h|+300%}}. Increases {{Color|u|movespeed}} by {{Color|u|+30%}}.\n\nWhen the Tonic wears off, you have a {{Color|hp|20%}} chance to gain a {{Color|hp|Tonic Affliction, reducing all of your stats}} by {{Color|hp|-5%}} {{Stack|(-5% per stack)}}.",
+    "category": [],
+    "id": "Tonic",
+    "dlc": 0
+  },
+  {
+    "name": "Trophy Hunter's Tricorn",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Execute a large monster and claim its {{Color|d|trophy}}. Consumed on use.",
+    "desc": "{{Color|d|Execute}} any enemy capable of spawning a {{Color|d|unique reward}}, and it will drop that {{Color|d|item}}. Equipment is {{Color|u|consumed}} on use.",
+    "category": [],
+    "id": "BossHunter",
+    "dlc": 1
+  },
+  {
+    "name": "Trophy Hunter's Tricorn (Consumed)",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Looks kinda cool, but that's about it.",
+    "desc": "Looks kinda cool, but that's about it.",
+    "category": [],
+    "id": "BossHunterConsumed",
+    "dlc": 1
+  },
+  {
+    "name": "His Reassurance",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of earth.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteEarthEquipment",
+    "dlc": 1
+  },
+  {
+    "name": "Beyond the Limits",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of speed.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteSecretSpeedEquipment",
+    "dlc": 1
+  },
+  {
+    "name": "EQUIPMENT_AFFIXVOID_NAME",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "EQUIPMENT_AFFIXVOID_PICKUP",
+    "desc": "EQUIPMENT_AFFIXVOID_DESC",
+    "category": [],
+    "id": "EliteVoidEquipment",
+    "dlc": 1
+  },
+  {
+    "name": "Goobo Jr.",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Create a clone of you for 30 seconds.",
+    "desc": "Spawn a gummy clone that has {{Color|d|300% damage}} and {{Color|h|300% health}}. Expires in {{Color|u|30}} seconds.",
+    "category": [],
+    "id": "GummyClone",
+    "dlc": 1
+  },
+  {
+    "name": "Overloading Excavator",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Fire a laser that irradiates the target, causing damage to nearby enemies.",
+    "desc": "Fire a laser that irradiates targets for {{Color|u|8}} seconds, causing {{Color|d|3x100%}} damage to nearby enemies every {{Color|d|8}} seconds.",
+    "category": [],
+    "id": "IrradiatingLaser",
+    "dlc": 1
+  },
+  {
+    "name": "Elegy of Extinction",
+    "rarity": "Lunar Equipment",
+    "type": "equipment",
+    "quote": "Prepare a {{Color|lunar|Lunar Portal}} on use.",
+    "desc": "Prepare a {{Color|lunar|Lunar Portal}} to be created at the teleportation site, rendering the stone idol useless.",
+    "category": [],
+    "id": "LunarPortalOnUse",
+    "dlc": 1
+  },
+  {
+    "name": "Molotov (6-Pack)",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Throw 6 flaming molotovs that ignite enemies upon shattering.",
+    "desc": "Throw {{Color|d|6}} molotov cocktails that {{Color|d|ignites}} enemies for {{Color|d|500% base damage}}. Each molotov leaves a burning area for {{Color|d|200% damage per second}}.",
+    "category": [],
+    "id": "Molotov",
+    "dlc": 1
+  },
+  {
+    "name": "Executive Card",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Gain 10% cash back on all purchases. Multishops remain open.",
+    "desc": "Whenever you make a gold purchase, get {{Color|u|10%}} of the spent gold back. If the purchase is a {{Color|u|multishop}} terminal, the other terminals will {{Color|u|remain open}}.",
+    "category": [],
+    "id": "MultiShopCard",
+    "dlc": 1
+  },
+  {
+    "name": "EQUIPMENT_ORBONUSE_NAME",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "EQUIPMENT_ORBONUSE_PICKUP",
+    "desc": "EQUIPMENT_ORBONUSE_DESC",
+    "category": [],
+    "id": "OrbOnUse",
+    "dlc": 1
+  },
+  {
+    "name": "Remote Caffeinator",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Request a healing soda machine.",
+    "desc": "Request an {{Color|d|Eclipse Zero Vending Machine}} from the {{Color|d|UES Safe Travels}}. Delivery guaranteed in {{Color|u|5 seconds}}, dealing {{Color|d|2000% damage}}. {{Color|h|Heal}} up to 3 targets for {{Color|h|25% of their maximum health}}.",
+    "category": [],
+    "id": "VendingMachine",
+    "dlc": 1
+  },
+  {
+    "name": "Aurelionite's Blessing",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of radiance.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteAurelioniteEquipment",
+    "dlc": 2
+  },
+  {
+    "name": "His Spiteful Boon",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of spite.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteBeadEquipment",
+    "dlc": 2
+  },
+  {
+    "name": "Seed of Life",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Revives the user when killed or dead allies on activation. Consumed on use.",
+    "desc": "{{Color|h|Revive}} {{Color|u|dead, friendly Survivors}} upon activation. {{Color|u|Dying}} while holding this equipment {{Color|h|returns only you to life}}. {{Color|h|Reviving}} gives {{Color|h|3s of invulnerability}} and {{Color|u|consumes}} the equipment.",
+    "category": [],
+    "id": "HealAndRevive",
+    "dlc": 2
+  },
+  {
+    "name": "Seed of Life (Consumed)",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "On activation places a sprout that drops healing orbs.",
+    "desc": "Plant a sprout at the target location which drops {{Color|h|healing orbs}} that heals for {{Color|h|2% life}}.",
+    "category": [],
+    "id": "HealAndReviveConsumed",
+    "dlc": 2
+  },
+  {
+    "name": "Faulty Conductor",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Survivor and drone attacks apply the Electrocuted debuff on hit, which can spread to nearby enemies when they are damaged.",
+    "desc": "{{Color|d|Electrocutes}} enemies hit by the survivor or their drones for {{Color|d|+300%}} damage every {{Color|u|1s}}. Lasts {{Color|u|5s}}. Electrocuted enemies have a small chance of {{Color|d|Electrocuting}} nearby enemies when taking damage. Electrical damage increases this chance.",
+    "category": [],
+    "id": "DroneShockDamage",
+    "dlc": 3
+  },
+  {
+    "name": "Of One Mind",
+    "rarity": "Elite Equipment",
+    "type": "equipment",
+    "quote": "Become an aspect of the Collective.",
+    "desc": "???",
+    "category": [],
+    "id": "EliteCollectiveEquipment",
+    "dlc": 3
+  },
+  {
+    "name": "G-Force Accelerator",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Bring enemies down to the ground, dealing damage and slowing nearby enemies.",
+    "desc": "Bring enemies within a {{Color|u|10m}} radius down to the ground and {{Color|u|slow}} them. If falling distance is greater than {{Color|u|2.5m}}, does {{Color|d|10% damage}} for each meter of falling. Lasts for {{Color|u|10s}}.",
+    "category": [],
+    "id": "GroundEnemies",
+    "dlc": 3
+  },
+  {
+    "name": "Deus Ex Machina",
+    "rarity": "Equipment",
+    "type": "equipment",
+    "quote": "Counter any damage. Successful counters {{Color|boss|bless}} your next attack, ensuring your on-hit effects ALWAYS activate.",
+    "desc": "Briefly enter a countering stance that lets you parry {{Color|u|any and ALL}} damage. A successful parry {{Color|h|nullifies incoming damage}}, reduces your equipment cooldown by {{Color|d|75%}}, and grants {{Color|boss|Blessing}}, causing your next attack to ALWAYS activate your on-hit effects.",
+    "category": [],
+    "id": "Parry",
+    "dlc": 3
+  }
+]

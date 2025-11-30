@@ -1,0 +1,108 @@
+equipments["Trophy Hunter's Tricorn"] = {
+	Rarity = "Equipment",
+	Quote = "Execute a large monster and claim its {{Color|d|trophy}}. Consumed on use.",
+	Desc = "{{Color|d|Execute}} any enemy capable of spawning a {{Color|d|unique reward}}, and it will drop that {{Color|d|item}}. Equipment is {{Color|u|consumed}} on use.",
+	ID = "BossHunter",
+	Cooldown = 0,
+	LocalizationInternalName = "EQUIPMENT_BOSSHUNTER",
+	Expansion = "SotV",
+	}
+equipments["Trophy Hunter's Tricorn (Consumed)"] = {
+	Rarity = "Equipment",
+	Quote = "Looks kinda cool, but that's about it.",
+	Desc = "Looks kinda cool, but that's about it.",
+	ID = "BossHunterConsumed",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_BOSSHUNTERCONSUMED",
+	Expansion = "SotV",
+	}
+equipments["His Reassurance"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of earth.",
+	Desc = "???",
+	ID = "EliteEarthEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXEARTH",
+	Expansion = "SotV",
+	}
+equipments["Beyond the Limits"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of speed.",
+	Desc = "???",
+	ID = "EliteSecretSpeedEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXSECRETSPEED",
+	Expansion = "SotV",
+	}
+equipments["EQUIPMENT_AFFIXVOID_NAME"] = {
+	Rarity = "Equipment",
+	Quote = "EQUIPMENT_AFFIXVOID_PICKUP",
+	Desc = "EQUIPMENT_AFFIXVOID_DESC",
+	ID = "EliteVoidEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXVOID",
+	Expansion = "SotV",
+	}
+equipments["Goobo Jr."] = {
+	Rarity = "Equipment",
+	Quote = "Create a clone of you for 30 seconds.",
+	Desc = "Spawn a gummy clone that has {{Color|d|300% damage}} and {{Color|h|300% health}}. Expires in {{Color|u|30}} seconds.",
+	ID = "GummyClone",
+	Cooldown = 100,
+	LocalizationInternalName = "EQUIPMENT_GUMMYCLONE",
+	Expansion = "SotV",
+	}
+equipments["Overloading Excavator"] = {
+	Rarity = "Equipment",
+	Quote = "Fire a laser that irradiates the target, causing damage to nearby enemies.",
+	Desc = "Fire a laser that irradiates targets for {{Color|u|8}} seconds, causing {{Color|d|3x100%}} damage to nearby enemies every {{Color|d|8}} seconds.",
+	ID = "IrradiatingLaser",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_IRRADIATINGLASER",
+	Expansion = "SotV",
+	}
+equipments["Elegy of Extinction"] = {
+	Rarity = "Lunar Equipment",
+	Quote = "Prepare a {{Color|lunar|Lunar Portal}} on use.",
+	Desc = "Prepare a {{Color|lunar|Lunar Portal}} to be created at the teleportation site, rendering the stone idol useless.",
+	ID = "LunarPortalOnUse",
+	Cooldown = 140,
+	LocalizationInternalName = "EQUIPMENT_LUNARPORTALONUSE",
+	Expansion = "SotV",
+	}
+equipments["Molotov (6-Pack)"] = {
+	Rarity = "Equipment",
+	Quote = "Throw 6 flaming molotovs that ignite enemies upon shattering.",
+	Desc = "Throw {{Color|d|6}} molotov cocktails that {{Color|d|ignites}} enemies for {{Color|d|500% base damage}}. Each molotov leaves a burning area for {{Color|d|200% damage per second}}.",
+	ID = "Molotov",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_MOLOTOV",
+	Expansion = "SotV",
+	}
+equipments["Executive Card"] = {
+	Rarity = "Equipment",
+	Quote = "Gain 10% cash back on all purchases. Multishops remain open.",
+	Desc = "Whenever you make a gold purchase, get {{Color|u|10%}} of the spent gold back. If the purchase is a {{Color|u|multishop}} terminal, the other terminals will {{Color|u|remain open}}.",
+	ID = "MultiShopCard",
+	Cooldown = 0.1,
+	LocalizationInternalName = "EQUIPMENT_MULTISHOPCARD",
+	Expansion = "SotV",
+	}
+equipments["EQUIPMENT_ORBONUSE_NAME"] = {
+	Rarity = "Equipment",
+	Quote = "EQUIPMENT_ORBONUSE_PICKUP",
+	Desc = "EQUIPMENT_ORBONUSE_DESC",
+	ID = "OrbOnUse",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_ORBONUSE",
+	Expansion = "SotV",
+	}
+equipments["Remote Caffeinator"] = {
+	Rarity = "Equipment",
+	Quote = "Request a healing soda machine.",
+	Desc = "Request an {{Color|d|Eclipse Zero Vending Machine}} from the {{Color|d|UES Safe Travels}}. Delivery guaranteed in {{Color|u|5 seconds}}, dealing {{Color|d|2000% damage}}. {{Color|h|Heal}} up to 3 targets for {{Color|h|25% of their maximum health}}.",
+	ID = "VendingMachine",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_VENDINGMACHINE",
+	Expansion = "SotV",
+	}

@@ -1,0 +1,477 @@
+items["Eclipse Lite"] = {
+	Rarity = "Common",
+	Quote = "Gain a small temporary barrier when a skill comes off cooldown.",
+	Desc = "When a skill comes off cooldown, gain a {{Color|d|temporary barrier}} for {{Color|h|1% {{Stack|(+0.25% per stack)}}}} of your maximum health per second of the skill's base cooldown.",
+	Category = { "Healing","FoodRelated","CanBeTemporary" },
+	ID = "BarrierOnCooldown",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BARRIERONCOOLDOWN",
+	Expansion = "AC",
+	}
+items["Quick Fix"] = {
+	Rarity = "Untiered",
+	Quote = "Increases bonus health and regen gains. Does not benefit from leveling up bonuses. Full of minerals.",
+	Desc = "Increases {{Color|h|bonus health and regeneration gains}} by {{Color|h|50% {{Stack|(+15% per stack)}}}}. Does not affect bonuses from leveling up.",
+	Category = { "AIBlacklist","Healing","CannotCopy","ExtractorUnitBlacklist","CanBeTemporary" },
+	ID = "BonusHealthBoost",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BONUSHEALTHBOOST",
+	Expansion = "AC",
+	}
+items["Seared Steak"] = {
+	Rarity = "Untiered",
+	Quote = "Gain 50 max health plus a percentage of your max health. Cooked to perfection.",
+	Desc = "Increases {{Color|h|maximum health}} by {{Color|h|50 {{Stack|(+50 per stack)}}}}, plus an additional {{Color|h|5% {{Stack|(+5% per stack)}}}} of your {{Color|h|max health}}.",
+	Category = { "Healing","WorldUnique","CannotDuplicate","AIBlacklist","CanBeTemporary" },
+	ID = "CookedSteak",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_COOKEDSTEAK",
+	Expansion = "AC",
+	}
+items["Hiker's Boots"] = {
+	Rarity = "Common",
+	Quote = "Striking enemies from a higher elevation grants critical strike chance and damage.",
+	Desc = "Striking enemies from a higher elevation grants {{Color|d|+1% {{Stack|(+1% per stack)}} critical strike chance}} and {{Color|d|critical strike damage}}, up to {{Color|u|10 times}}. Lasts 10 seconds.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "CritAtLowerElevation",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CRITATLOWERELEVATION",
+	Expansion = "AC",
+	}
+items["ITEM_DESTRUCTIBLESPAWNER_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_DESTRUCTIBLESPAWNER_PICKUP",
+	Desc = "ITEM_DESTRUCTIBLESPAWNER_DESC",
+	Category = { "Damage","Technology" },
+	ID = "DestructibleSpawner",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DESTRUCTIBLESPAWNER",
+	Expansion = "AC",
+	}
+items["ITEM_DRONEDYNAMITEDISPLAY_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_DRONEDYNAMITEDISPLAY_PICKUP",
+	Desc = "ITEM_DRONEDYNAMITEDISPLAY_DESC",
+	Category = {  },
+	ID = "DroneDynamiteDisplay",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRONEDYNAMITEDISPLAY",
+	Expansion = "AC",
+	}
+items["Box of Dynamite"] = {
+	Rarity = "Uncommon",
+	Quote = "Your drones periodically drop dynamite.",
+	Desc = "Gain {{Color|d|Lt. Droneboy}}. While in combat, your drones drop sticks of dynamite that detonate for {{Color|d|240% damage {{Stack|(+85% per stack)}}}}, stunning enemies. Recharges after {{Color|u|10}} seconds.",
+	Category = { "Damage","AIBlacklist","BrotherBlacklist","ExtractorUnitBlacklist","CannotCopy","CanBeTemporary","Technology" },
+	ID = "DronesDropDynamite",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRONESDROPDYNAMITE",
+	Expansion = "AC",
+	}
+items[""] = {
+	Rarity = "Untiered",
+	Quote = "",
+	Desc = "",
+	Category = { "CannotSteal","CannotCopy","ExtractorUnitBlacklist","HiddenForDroneBuffIcon" },
+	ID = "DroneUpgradeHidden",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "",
+	Expansion = "AC",
+	}
+items["Substandard Duplicator"] = {
+	Rarity = "Legendary",
+	Quote = "Picking up an item grants a temporary copy.",
+	Desc = "{{Color|u|Picking up an item}} gives you a <style=cIsTemporary>temporary copy}} of itself. Temporary items last an additional {{Color|d|10 {{Stack|(+10 per stack)}} seconds}}.",
+	Category = { "Utility","CanBeTemporary","Technology","AIBlacklist","DevotionBlacklist" },
+	ID = "Duplicator",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DUPLICATOR",
+	Expansion = "AC",
+	}
+items["Functional Coupler"] = {
+	Rarity = "Boss",
+	Quote = "Hold an additional equipment.",
+	Desc = "Hold {{Color|u|1 additional equipment}} {{Stack|(+1 per stack)}}. Press the {{Color|u|interact}} and {{Color|u|equipment}} buttons to cycle through held equipment.",
+	Category = { "EquipmentRelated","AIBlacklist","CanBeTemporary","Technology" },
+	ID = "ExtraEquipment",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRAEQUIPMENT",
+	Expansion = "AC",
+	}
+items["Faraday Spur"] = {
+	Rarity = "Uncommon",
+	Quote = "Moving around builds up movement speed and jump height. At 25% charge or higher, jump to discharge into an electric blast.",
+	Desc = "Moving around builds up {{Color|u|charge}}, granting up to {{Color|u|+160% movement speed}} and {{Color|u|+200% jump height}} at 100%. At 25% charge or higher, jumping triggers an {{Color|d|explosive discharge}} for {{Color|d|400% {{Stack|(+280% per stack)}} damage}} in a 5m to 32.3m {{Stack|(+7.5m per stack)}} area.",
+	Category = { "Damage","SprintRelated","MobilityRelated","CanBeTemporary","Technology","AIBlacklist","DevotionBlacklist" },
+	ID = "JumpDamageStrike",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_JUMPDAMAGESTRIKE",
+	Expansion = "AC",
+	}
+items["Junk"] = {
+	Rarity = "Untiered",
+	Quote = "Used by the Drifter to activate her skills",
+	Desc = "Increases the Junk meter by {{Color|u|1}}.",
+	Category = { "CannotSteal","CannotCopy","CannotDuplicate","RebirthBlacklist","BrotherBlacklist" },
+	ID = "Junk",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_JUNK",
+	}
+items["Encrypted Cerebellum"] = {
+	Rarity = "Boss",
+	Quote = "Contains encrypted remnants of the Collective network. Needs to be decrypted.",
+	Desc = "Contains encrypted remnants of the Collective network. Needs to be decrypted before it can be returned.",
+	Category = { "CannotSteal","ExtractorUnitBlacklist","CannotDuplicate","WorldUnique","CannotCopy","AIBlacklist","BrotherBlacklist","AllowedForUseAsCraftingIngredient","ObjectiveRelated" },
+	ID = "MasterBattery",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MASTERBATTERY",
+	Expansion = "AC",
+	}
+items["Exposed Cerebellum"] = {
+	Rarity = "Boss",
+	Quote = "A swarming data nexus representing the Collective network. Can be given to a powerful entity.",
+	Desc = "A swarming data nexus representing the Collective network. Can be given to a powerful entity.",
+	Category = { "CannotSteal","ExtractorUnitBlacklist","CannotDuplicate","WorldUnique","CannotCopy","AIBlacklist","BrotherBlacklist","ObjectiveRelated","RebirthBlacklist" },
+	ID = "MasterCore",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MASTERCORE",
+	Expansion = "AC",
+	}
+items["Ominous Loan Note"] = {
+	Rarity = "Untiered",
+	Quote = "At the beginning of every stage, receive a lump sum of cash. {{Color|hp|All further gold goes towards paying off your debt}}.",
+	Desc = "At the beginning of every stage, receive {{Color|d|$200 {{Stack|(+$200 per stack, scales over time)}}}}, but also gain an equal amount of {{Color|hp|debt}}. {{Color|hp|All further gold gained goes towards paying off your debt}}. Paying off your debt destroys this item.",
+	Category = {  },
+	ID = "MoneyLoan",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MONEYLOAN",
+	Expansion = "AC",
+	}
+items["Orphaned Core"] = {
+	Rarity = "Legendary",
+	Quote = "Gain a buddy who launches itself at enemies to deal damage. Inherits your movement-related items.",
+	Desc = "Gain a {{Color|h|friendly Solus unit}} that launches itself at enemies for {{Color|d|400% {{Stack|(+400% per stack)}} damage}}. The unit inherits your {{Color|u|movement speed items}} and deals {{Color|d|more damage the faster it moves}}. The unit can be pet to {{Color|h|cleanse negative effects}}. Recharges after 15 seconds.",
+	Category = { "Damage","AIBlacklist","ExtractorUnitBlacklist","CannotSteal","BrotherBlacklist","CannotCopy","CanBeTemporary","Technology" },
+	ID = "PhysicsProjectile",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PHYSICSPROJECTILE",
+	Expansion = "AC",
+	}
+items["Prison Matrix"] = {
+	Rarity = "Boss",
+	Quote = "Gain {{Color|u|+50% armor}}. Can be placed in a Matrix Terminal.",
+	Desc = "Gain {{Color|u|+50% armor}}. Can be placed in a Matrix Terminal.",
+	Category = { "ExtractorUnitBlacklist","WorldUnique","IgnoreForDropList","CannotCopy","AIBlacklist","CommandArtifactBlacklist","AllowedForUseAsCraftingIngredient","ObjectiveRelated" },
+	ID = "PowerCube",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_POWERCUBE",
+	Expansion = "AC",
+	}
+items["Ocular Battery"] = {
+	Rarity = "Untiered",
+	Quote = "Gain +15% attack speed. Can be placed somewhere...",
+	Desc = "Gain {{Color|d|+15% attack speed}}. Can be placed in a Ocular Vault.",
+	Category = { "ExtractorUnitBlacklist","IgnoreForDropList","WorldUnique","ObjectiveRelated" },
+	ID = "PowerOrbSphere",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_POWERORB",
+	Expansion = "AC",
+	}
+items["Sentry Key"] = {
+	Rarity = "Boss",
+	Quote = "Gain {{Color|u|+15% move speed}}. Can be placed in a Sentry Terminal.",
+	Desc = "Gain {{Color|u|+15% move speed}}. Can be placed in a Sentry Terminal or used for decryption.",
+	Category = { "ExtractorUnitBlacklist","IgnoreForDropList","WorldUnique","CannotCopy","AllowedForUseAsCraftingIngredient","CanBeTemporary","ObjectiveRelated" },
+	ID = "PowerPyramid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_POWERPYRAMID",
+	Expansion = "AC",
+	}
+items["Networked Suffering"] = {
+	Rarity = "Legendary",
+	Quote = "Inflict a computer virus on hit that spreads a portion of all damage dealt between infected enemies. Affects up to 4 enemies.",
+	Desc = "Infect up to {{Color|u|4 {{Stack|(+2 per stack)}}}} enemies with a computer virus that duplicates {{Color|d|50% of all damage taken}} and sends it to a global damage pool. Every 3 seconds, ALL infected enemies suffer {{Color|d|100% pooled damage}}.",
+	Category = { "Damage","CanBeTemporary","Technology" },
+	ID = "SharedSuffering",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SHAREDSUFFERING",
+	Expansion = "AC",
+	}
+items["Kinetic Dampener"] = {
+	Rarity = "Uncommon",
+	Quote = "Gain bonus armor while you have a shield. When shield breaks, release a stunning pulse that deals more damage the more shield you have.",
+	Desc = "Increases armor by {{Color|u|30{{Stack| (+30 per stack)}}}} while you have a shield. When shield breaks, release a stunning pulse for {{Color|d|100% damage}} plus an amount {{Color|d|equal to 100% {{Stack|(+10% per stack)}} of your max shield}}. Grants a shield for {{Color|h|4% of your max health}}.",
+	Category = { "Healing","Utility","CanBeTemporary" },
+	ID = "ShieldBooster",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SHIELDBOOSTER",
+	Expansion = "AC",
+	}
+items["Faulty Conductor"] = {
+	Rarity = "Boss",
+	Quote = "Occasionally release a pulse of electricity that energizes allies and makes enemies more susceptible to electric damage.",
+	Desc = "Every {{Color|u|15 {{Stack|(-20% per stack)}} seconds}}, release a wave of electricity that {{Color|h|energizes}} nearby allies for {{Color|u|7}} seconds. Energized allies gain {{Color|d|+30% attack and movement speed}}, and ALWAYS land {{Color|d|critical strikes}} with {{Color|u|electric}} items and attacks.",
+	Category = { "Damage","Utility","CanBeTemporary","Technology" },
+	ID = "ShockDamageAura",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SHOCKDAMAGEAURA",
+	Expansion = "AC",
+	}
+items["Collector's Compulsion"] = {
+	Rarity = "Uncommon",
+	Quote = "Pickups grant a stacking bonus to all stats. Open a barrel to find a minor pick-up.",
+	Desc = "Picking up {{Color|d|an item or other collectible}} increases {{Color|u|all stats}} by {{Color|u|+3%}} for 20 seconds, up to {{Color|u|3 {{Stack|(+2 per stack)}} times}}. Barrels grant minor pickups.",
+	Category = { "Utility","AIBlacklist","InteractableRelated","MobilityRelated","CanBeTemporary" },
+	ID = "SpeedOnPickup",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SPEEDONPICKUP",
+	Expansion = "AC",
+	}
+items["ITEM_STATSFROMSCRAP_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_STATSFROMSCRAP_PICKUP",
+	Desc = "ITEM_STATSFROMSCRAP_DESC",
+	Category = { "Any" },
+	ID = "StatsFromScrap",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_STATSFROMSCRAP",
+	Expansion = "AC",
+	}
+items["Hearty Stew"] = {
+	Rarity = "Untiered",
+	Quote = "Increases health regeneration and converts it into damage at full health. A single sip leaves you feeling warm and fuzzy inside.",
+	Desc = "Increases {{Color|h|regeneration}} by {{Color|h|+2.5 {{Stack|(+2.5 per stack)}} HP/s}}. At full health, your regeneration is added to your {{Color|d|base damage}}.",
+	Category = { "Utility","Healing","AIBlacklist","WorldUnique","CanBeTemporary" },
+	ID = "Stew",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_STEW",
+	Expansion = "AC",
+	}
+items["Neutronium Weight"] = {
+	Rarity = "Lunar",
+	Quote = "{{Color|hp|Reduces all stats while in combat}}, but can be sent to an enemy on hit.",
+	Desc = "{{Color|hp|Reduces your stats while in combat}}, but {{Color|u|send this item to an enemy}} on hit. On death, this item will be sent to its holder's killer.
+
+Reduces {{Color|d|damage}} by 30% {{Stack|(+10% per stack)}}, {{Color|d|attack speed}} by 30% {{Stack|(+10% per stack)}}, {{Color|u|movement speed}} by 30% {{Stack|(+10% per stack)}}, and {{Color|u|armor}} by 35 {{Stack|(+15 per stack)}}.",
+	Category = { "Utility","OnKillEffect","Cleansable","BrotherBlacklist","CannotSteal","CannotCopy","ExtractorUnitBlacklist","AIBlacklist","RebirthBlacklist" },
+	ID = "TransferDebuffOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TRANSFERDEBUFFONHIT",
+	Expansion = "AC",
+	}
+items["Ultimate Meal"] = {
+	Rarity = "Untiered",
+	Quote = "At full health, you become lucky. The pinnacle of culinary arts.",
+	Desc = "At full health, all random effects are rolled {{Color|h|+2 {{Stack|(+2 per stack)}}}} extra times for a better outcome.",
+	Category = { "Healing","AIBlacklist","WorldUnique","CanBeTemporary" },
+	ID = "UltimateMeal",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ULTIMATEMEAL",
+	Expansion = "AC",
+	}
+items["Sautéed Worms"] = {
+	Rarity = "Untiered",
+	Quote = "Chance on hit to summon a spectral wyrm that seeks out and damages enemies. Tastes like glass frogs and starseed.",
+	Desc = "On hit, {{Color|u|10% chance}} to summon a spectral wyrm that seeks out and damages and ignites enemies for {{Color|d|500% {{Stack|(+500% per stack)}} TOTAL damage per second}} for {{Color|u|10 seconds}}.",
+	Category = { "Damage","AIBlacklist","WorldUnique","CannotDuplicate","CanBeTemporary" },
+	ID = "WyrmOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_WYRMONHIT",
+	Expansion = "AC",
+	}

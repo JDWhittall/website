@@ -1,0 +1,274 @@
+equipments["Preon Accumulator"] = {
+	Rarity = "Equipment",
+	Quote = "Fire a ball of energy that electrocutes nearby enemies before detonating.",
+	Desc = "Fires preon tendrils, zapping enemies within 35m for up to {{Color|d|600% damage/second}}. On contact, detonate in an enormous 20m explosion for {{Color|d|4000% damage}}.",
+	ID = "BFG",
+	Cooldown = 140,
+	LocalizationInternalName = "EQUIPMENT_BFG",
+	Unlock = "[REDACTED]",
+	}
+equipments["Primordial Cube"] = {
+	Rarity = "Equipment",
+	Quote = "Fire a black hole that draws enemies in.",
+	Desc = "Fire a black hole that {{Color|u|draws enemies within 30m into its center}}. Lasts 10 seconds.",
+	ID = "Blackhole",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_BLACKHOLE",
+	}
+equipments["Helfire Tincture"] = {
+	Rarity = "Lunar Equipment",
+	Quote = "Ignite everything nearby... <color=#FF7F7F>including you and allies.</color>
+",
+	Desc = "{{Color|d|Ignite}} ALL characters within 15m. Deal {{Color|d|5% of your maximum health/second as burning}} to yourself. The burn is {{Color|d|0.5x}} stronger on allies, and {{Color|d|24x}} stronger on enemies.",
+	ID = "BurnNearby",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_BURNNEARBY",
+	Unlock = "Multikill!",
+	}
+equipments["Blast Shower"] = {
+	Rarity = "Equipment",
+	Quote = "Cleanse all negative effects.",
+	Desc = "{{Color|u|Cleanse}} all negative effects. Includes debuffs, damage over time, stuns, freezes, and nearby projectiles.",
+	ID = "Cleanse",
+	Cooldown = 20,
+	LocalizationInternalName = "EQUIPMENT_CLEANSE",
+	Unlock = "Warm For Life",
+	}
+equipments["Disposable Missile Launcher"] = {
+	Rarity = "Equipment",
+	Quote = "Fire a swarm of missiles.",
+	Desc = "Fire a swarm of {{Color|d|12}} missiles that deal {{Color|d|12x300% damage}}.",
+	ID = "CommandMissile",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_COMMANDMISSILE",
+	}
+equipments["Effigy of Grief"] = {
+	Rarity = "Lunar Equipment",
+	Quote = "Drop a permanent effigy that cripples ALL characters inside. Can place up to 5..",
+	Desc = "ALL characters within are {{Color|u|slowed by 50%}} and have their {{Color|d|armor reduced by 20}}. Can place up to {{Color|u|5}}.",
+	ID = "CrippleWard",
+	Cooldown = 15,
+	LocalizationInternalName = "EQUIPMENT_CRIPPLEWARD",
+	}
+equipments["Ocular HUD"] = {
+	Rarity = "Equipment",
+	Quote = "Gain 100% Critical Strike Chance for 8 seconds.",
+	Desc = "Gain {{Color|d|+100% Critical Strike Chance}} for 8 seconds.",
+	ID = "CritOnUse",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_CRITONUSE",
+	}
+equipments["Forgive Me Please"] = {
+	Rarity = "Equipment",
+	Quote = "Throw a cursed doll that repeatedly triggers your 'On Kill' effects.",
+	Desc = "Throw a cursed doll out that {{Color|d|triggers}} any {{Color|d|On-Kill}} effects you have every {{Color|u|1}} second for {{Color|u|8}} seconds.",
+	ID = "DeathProjectile",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_DEATHPROJECTILE",
+	Unlock = "I Love Dying!",
+	}
+equipments["The Back-up"] = {
+	Rarity = "Equipment",
+	Quote = "Call drones for back up. Lasts 25 seconds.",
+	Desc = "Call {{Color|d|4 Strike Drones}} to fight for you. Lasts 25 seconds.",
+	ID = "DroneBackup",
+	Cooldown = 100,
+	LocalizationInternalName = "EQUIPMENT_DRONEBACKUP",
+	Unlock = "Mechanic",
+	}
+equipments["Ifrit's Distinction"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of fire.",
+	Desc = "???",
+	ID = "EliteFireEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXRED",
+	}
+equipments["Spectral Circlet"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of incorporeality.",
+	Desc = "???",
+	ID = "EliteHauntedEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXHAUNTED",
+	}
+equipments["Her Biting Embrace"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of ice.",
+	Desc = "???",
+	ID = "EliteIceEquipment",
+	Cooldown = 25,
+	LocalizationInternalName = "EQUIPMENT_AFFIXWHITE",
+	}
+equipments["Silence Between Two Strikes"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of lightning.",
+	Desc = "???",
+	ID = "EliteLightningEquipment",
+	Cooldown = 25,
+	LocalizationInternalName = "EQUIPMENT_AFFIXBLUE",
+	}
+equipments["Shared Design"] = {
+	Rarity = "Lunar Equipment",
+	Quote = "Become an aspect of perfection.",
+	Desc = "???",
+	ID = "EliteLunarEquipment",
+	Cooldown = 25,
+	LocalizationInternalName = "EQUIPMENT_AFFIXLUNAR",
+	}
+equipments["N'kuhana's Retort"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of corruption.",
+	Desc = "???",
+	ID = "ElitePoisonEquipment",
+	Cooldown = 10,
+	LocalizationInternalName = "EQUIPMENT_AFFIXPOISON",
+	}
+equipments["Volcanic Egg"] = {
+	Rarity = "Equipment",
+	Quote = "Transform into a speeding draconic fireball, dealing damage as you pass through enemies.",
+	Desc = "Turn into a {{Color|d|draconic fireball}} for {{Color|d|5}} seconds. Deal {{Color|d|500% damage}} on impact. Detonates at the end for {{Color|d|800% damage}}.",
+	ID = "FireBallDash",
+	Cooldown = 30,
+	LocalizationInternalName = "EQUIPMENT_FIREBALLDASH",
+	}
+equipments["Foreign Fruit"] = {
+	Rarity = "Equipment",
+	Quote = "Heal on use.",
+	Desc = "Instantly heal for {{Color|h|50% of your maximum health}}.",
+	ID = "Fruit",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_FRUIT",
+	}
+equipments["Jade Elephant"] = {
+	Rarity = "Equipment",
+	Quote = "Gain massive armor for 5 seconds.",
+	Desc = "Gain {{Color|d|500 armor}} for {{Color|u|5 seconds.}}",
+	ID = "GainArmor",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_GAINARMOR",
+	}
+equipments["Eccentric Vase"] = {
+	Rarity = "Equipment",
+	Quote = "Create a quantum tunnel between two locations.",
+	Desc = "Create a {{Color|u|quantum tunnel}} of up to {{Color|u|1000m}} in length. Lasts 30 seconds.",
+	ID = "Gateway",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_GATEWAY",
+	Unlock = "Blackout",
+	}
+equipments["The Crowdfunder"] = {
+	Rarity = "Equipment",
+	Quote = "Toggle to fire. Costs gold per bullet.",
+	Desc = "Fires a continuous barrage that deals {{Color|d|100% damage per bullet}}. Costs $1 per bullet. Cost increases over time.",
+	ID = "GoldGat",
+	Cooldown = 5,
+	LocalizationInternalName = "EQUIPMENT_GOLDGAT",
+	Unlock = "Funded!",
+	}
+equipments["Milky Chrysalis"] = {
+	Rarity = "Equipment",
+	Quote = "Gain temporary flight.",
+	Desc = "Sprout wings and {{Color|u|fly for 15 seconds}}. Gain {{Color|u|+20% movement speed}} for the duration.",
+	ID = "Jetpack",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_JETPACK",
+	}
+equipments["Super Massive Leech"] = {
+	Rarity = "Equipment",
+	Quote = "Heal for a percentage of the damage you deal for 8 seconds.",
+	Desc = "{{Color|h|Heal}} for {{Color|h|20%}} of the {{Color|d|damage}} you deal. Lasts {{Color|h|8}} seconds.",
+	ID = "LifestealOnHit",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_LIFESTEALONHIT",
+	}
+equipments["Royal Capacitor"] = {
+	Rarity = "Equipment",
+	Quote = "Call down a lightning strike on a targeted monster.",
+	Desc = "Call down a lightning strike on a targeted monster, dealing {{Color|d|3000% damage}} and {{Color|d|stunning}} nearby monsters.",
+	ID = "Lightning",
+	Cooldown = 20,
+	LocalizationInternalName = "EQUIPMENT_LIGHTNING",
+	Unlock = "Ascendant",
+	}
+equipments["EQUIPMENT_LUNARPOTION_NAME"] = {
+	Rarity = "Equipment",
+	Quote = "EQUIPMENT_LUNARPOTION_NAME",
+	Desc = "EQUIPMENT_LUNARPOTION_DESC",
+	ID = "LunarPotion",
+	Cooldown = 5,
+	LocalizationInternalName = "EQUIPMENT_LUNARPOTION",
+	}
+equipments["Glowing Meteorite"] = {
+	Rarity = "Lunar Equipment",
+	Quote = "Rain meteors from the sky, <color=#FF7F7F>hurting both enemies and allies.</color>",
+	Desc = "{{Color|d|Rain meteors}} from the sky, damaging ALL characters for {{Color|d|600% damage per blast}}. Lasts 20 seconds.",
+	ID = "Meteor",
+	Cooldown = 140,
+	LocalizationInternalName = "EQUIPMENT_METEOR",
+	Unlock = "Moon Worshipper",
+	}
+equipments["Gnarled Woodsprite"] = {
+	Rarity = "Equipment",
+	Quote = "Heal over time. Activate to send to an ally.",
+	Desc = "Gain a Woodsprite follower that heals a friendly target for {{Color|h|10% of their maximum health}} instantly, then {{Color|h|1.5% of your maximum health}} every second. 
+
+Activating the equipment assigns a new target, or yourself if there are no targets available.",
+	ID = "PassiveHealing",
+	Cooldown = 15,
+	LocalizationInternalName = "EQUIPMENT_PASSIVEHEALING",
+	Unlock = "One with the Woods",
+	}
+equipments["Fuel Array"] = {
+	Rarity = "Equipment",
+	Quote = "Looks like it could power something. <color=#FF7F7F>EXTREMELY unstable...</color>",
+	Desc = "A volatile battery that will explode if too much damage is taken.",
+	ID = "QuestVolatileBattery",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_QUESTVOLATILEBATTERY",
+	}
+equipments["Recycler"] = {
+	Rarity = "Equipment",
+	Quote = "Transform an Item or Equipment into a different one. Can only recycle once.",
+	Desc = "{{Color|u|Transform}} an Item or Equipment into a different one. {{Color|u|Can only be converted into the same tier one time}}.",
+	ID = "Recycle",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_RECYCLER",
+	Unlock = "Cleanup Duty",
+	}
+equipments["Sawmerang"] = {
+	Rarity = "Equipment",
+	Quote = "Throw a fan of buzzing saws that come back to you.",
+	Desc = "Throw {{Color|d|three large saw blades}} that slice through enemies for {{Color|d|3x400%}} damage. Also deals an additional {{Color|d|3x100% damage per second}} while {{Color|d|bleeding}} enemies. Can {{Color|d|strike}} enemies again on the way back.",
+	ID = "Saw",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_SAWMERANG",
+	}
+equipments["Radar Scanner"] = {
+	Rarity = "Equipment",
+	Quote = "Reveal all nearby interactables.",
+	Desc = "{{Color|u|Reveal}} all interactables within 500m for {{Color|u|10 seconds}}.",
+	ID = "Scanner",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_SCANNER",
+	Unlock = "Bookworm",
+	}
+equipments["Gorag's Opus"] = {
+	Rarity = "Equipment",
+	Quote = "You and all your allies enter a frenzy.",
+	Desc = "All allies enter a {{Color|d|frenzy}} for {{Color|u|7}} seconds. Increases {{Color|u|movement speed}} by {{Color|u|50%}} and {{Color|d|attack speed}} by {{Color|d|100%}}.",
+	ID = "TeamWarCry",
+	Cooldown = 45,
+	LocalizationInternalName = "EQUIPMENT_TEAMWARCRY",
+	}
+equipments["Spinel Tonic"] = {
+	Rarity = "Lunar Equipment",
+	Quote = "Gain a massive boost to ALL stats. <color=#FF7F7F>Chance to gain an affliction that reduces ALL stats.</color>",
+	Desc = "Drink the Tonic, gaining a boost for 20 seconds. Increases {{Color|d|damage}} by {{Color|d|+100%}}. Increases {{Color|d|attack speed}} by {{Color|d|+70%}}. Increases {{Color|d|armor}} by {{Color|d|+20}}. Increases {{Color|h|maximum health}} by {{Color|h|+50%}}. Increases {{Color|h|passive health regeneration}} by {{Color|h|+300%}}. Increases {{Color|u|movespeed}} by {{Color|u|+30%}}.
+
+When the Tonic wears off, you have a {{Color|hp|20%}} chance to gain a {{Color|hp|Tonic Affliction, reducing all of your stats}} by {{Color|hp|-5%}} {{Stack|(-5% per stack)}}.",
+	ID = "Tonic",
+	Cooldown = 60,
+	LocalizationInternalName = "EQUIPMENT_TONIC",
+	Unlock = "Cosmic Explorer",
+	}

@@ -1,0 +1,2004 @@
+items["ITEM_ADAPTIVEARMOR_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_ADAPTIVEARMOR_PICKUP",
+	Desc = "ITEM_ADAPTIVEARMOR_DESC",
+	Category = { "Utility" },
+	ID = "AdaptiveArmor",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ADAPTIVEARMOR",
+	}
+items["Alien Head"] = {
+	Rarity = "Legendary",
+	Quote = "Reduces cooldowns for your skills.",
+	Desc = "{{Color|u|Reduce skill cooldowns}} by {{Color|u|25%}} {{Stack|(+25% per stack)}}.",
+	Category = { "Utility","FoodRelated","CanBeTemporary" },
+	ID = "AlienHead",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ALIENHEAD",
+	}
+items["Repulsion Armor Plate"] = {
+	Rarity = "Common",
+	Quote = "Receive flat damage reduction from all attacks.",
+	Desc = "Reduce all {{Color|d|incoming damage}} by {{Color|d|5{{Stack| (+5 per stack)}}}}. Cannot be reduced below {{Color|d|1}}.",
+	Category = { "Utility","CanBeTemporary","Technology" },
+	ID = "ArmorPlate",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_REPULSIONARMORPLATE",
+	}
+items["Shattering Justice"] = {
+	Rarity = "Legendary",
+	Quote = "Reduce the armor of enemies after repeatedly striking them.",
+	Desc = "After hitting an enemy {{Color|d|5}} times, reduce their {{Color|d|armor}} by {{Color|d|60}} for {{Color|d|8}}{{Stack| (+8 per stack)}} seconds.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "ArmorReductionOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ARMORREDUCTIONONHIT",
+	}
+items["Artifact Key"] = {
+	Rarity = "Boss",
+	Quote = "A stone shard with immense power.",
+	Desc = "A stone shard with immense power.",
+	Category = { "WorldUnique","CanBeTemporary","ObjectiveRelated" },
+	ID = "ArtifactKey",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ARTIFACTKEY",
+	}
+items["Predatory Instincts"] = {
+	Rarity = "Uncommon",
+	Quote = "'Critical Strikes' increase attack speed. Stacks 3 times.",
+	Desc = "{{Color|d|Critical strikes}} increase {{Color|d|attack speed}} by {{Color|d|12%}}. Maximum cap of {{Color|d|36% {{Stack|(+24% per stack)}} attack speed}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "AttackSpeedOnCrit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ATTACKSPEEDONCRIT",
+	Unlock = "Rapidfire",
+	}
+items["Gesture of the Drowned"] = {
+	Rarity = "Lunar",
+	Quote = "Dramatically reduce Equipment cooldown... <color=#FF7F7F>BUT it automatically activates.</color>",
+	Desc = "{{Color|u|Reduce Equipment cooldown}} by {{Color|u|50%}} {{Stack|(+15% per stack)}}. Forces your Equipment to {{Color|u|activate}} whenever it is off {{Color|u|cooldown}}.",
+	Category = { "Utility","EquipmentRelated" },
+	ID = "AutoCastEquipment",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_AUTOCASTEQUIPMENT",
+	Unlock = "The Demons And The Crabs",
+	}
+items["Bandolier"] = {
+	Rarity = "Uncommon",
+	Quote = "Chance on kill to drop an ammo pack that resets all skill cooldowns.",
+	Desc = "{{Color|u|18%}} {{Stack|(+10% per stack)}} chance on kill to drop an ammo pack that {{Color|u|resets all skill cooldowns}}.",
+	Category = { "Utility","OnKillEffect","CanBeTemporary","Technology" },
+	ID = "Bandolier",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BANDOLIER",
+	}
+items["Topaz Brooch"] = {
+	Rarity = "Common",
+	Quote = "Gain a temporary barrier on kill.",
+	Desc = "Gain a {{Color|h|temporary barrier}} on kill for {{Color|h|15 health {{Stack|(+15 per stack)}}}}.",
+	Category = { "Utility","Healing","OnKillEffect","CanBeTemporary" },
+	ID = "BarrierOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BARRIERONKILL",
+	}
+items["Aegis"] = {
+	Rarity = "Legendary",
+	Quote = "Healing past full grants you a temporary barrier.",
+	Desc = "Healing past full grants you a {{Color|h|temporary barrier}} for {{Color|h|50% {{Stack|(+50% per stack)}}}} of the amount you {{Color|h|healed}}.",
+	Category = { "Utility","Healing","CanBeTemporary" },
+	ID = "BarrierOnOverHeal",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BARRIERONOVERHEAL",
+	}
+items["Tougher Times"] = {
+	Rarity = "Common",
+	Quote = "Chance to block incoming damage.",
+	Desc = "{{Color|h|15%}} {{Stack|(+15% per stack)}} chance to {{Color|h|block}} incoming damage. {{Color|u|Unaffected by luck}}.",
+	Category = { "Utility","BrotherBlacklist","RebirthBlacklist","CanBeTemporary" },
+	ID = "Bear",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BEAR",
+	Unlock = "Learning Process",
+	}
+items["Queen's Gland"] = {
+	Rarity = "Boss",
+	Quote = "Recruit a Beetle Guard.",
+	Desc = "Every 30 seconds, {{Color|u|summon a Beetle Guard}} with bonus {{Color|d|300%}} damage and {{Color|h|100% health}}. Can have up to {{Color|u|1}} {{Stack|(+1 per stack)}} Guards at a time.",
+	Category = { "Utility","CannotCopy","FoodRelated","ExtractorUnitBlacklist","CanBeTemporary" },
+	ID = "BeetleGland",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BEETLEGLAND",
+	}
+items["Brilliant Behemoth"] = {
+	Rarity = "Legendary",
+	Quote = "All your attacks explode!",
+	Desc = "All your {{Color|d|attacks explode}} in a {{Color|d|4m }} {{Stack|(+1.5m per stack)}} radius for a bonus {{Color|d|60%}} TOTAL damage to nearby enemies.",
+	Category = { "Damage","CanBeTemporary","Technology" },
+	ID = "Behemoth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BEHEMOTH",
+	}
+items["Tri-Tip Dagger"] = {
+	Rarity = "Common",
+	Quote = "Gain +10% chance to bleed enemies on hit.",
+	Desc = "{{Color|d|10%}} {{Stack|(+10% per stack)}} chance to {{Color|d|bleed}} an enemy for {{Color|d|240%}} base damage.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "BleedOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BLEEDONHIT",
+	}
+items["Shatterspleen"] = {
+	Rarity = "Boss",
+	Quote = "Critical strikes always bleed enemies. Bleeding enemies now explode.",
+	Desc = "{{Color|d|Critical Strikes bleed}} enemies for {{Color|d|240%}} base damage. {{Color|d|Bleeding}} enemies {{Color|d|explode}} on death for {{Color|d|400%}} {{Stack|(+400% per stack)}} damage, plus an additional {{Color|d|15%}} {{Stack|(+15% per stack)}} of their maximum health.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "BleedOnHitAndExplode",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BLEEDONHITANDEXPLODE",
+	}
+items["Ghor's Tome"] = {
+	Rarity = "Uncommon",
+	Quote = "Chance on kill to drop a treasure.",
+	Desc = "{{Color|u|4%}} {{Stack|(+4% per stack)}} chance on kill to drop a treasure worth {{Color|u|25 gold}}. {{Color|u|Scales over time.}}",
+	Category = { "Utility","OnKillEffect","CanBeTemporary" },
+	ID = "BonusGoldPackOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BONUSGOLDPACKONKILL",
+	}
+items["ITEM_BOOSTATTACKSPEED_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_BOOSTATTACKSPEED_PICKUP",
+	Desc = "ITEM_BOOSTATTACKSPEED_DESC",
+	Category = { "Damage" },
+	ID = "BoostAttackSpeed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOOSTATTACKSPEED",
+	}
+items["ITEM_BOOSTDAMAGE_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_BOOSTDAMAGE_PICKUP",
+	Desc = "ITEM_BOOSTDAMAGE_DESC",
+	Category = { "Damage" },
+	ID = "BoostDamage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOOSTDAMAGE",
+	}
+items["ITEM_BOOSTEQUIPMENTRECHARGE_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_BOOSTEQUIPMENTRECHARGE_PICKUP",
+	Desc = "ITEM_BOOSTEQUIPMENTRECHARGE_DESC",
+	Category = { "EquipmentRelated","HiddenForDroneBuffIcon" },
+	ID = "BoostEquipmentRecharge",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOOSTEQUIPMENTRECHARGE",
+	}
+items["ITEM_BOOSTHP_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_BOOSTHP_PICKUP",
+	Desc = "ITEM_BOOSTHP_DESC",
+	Category = { "Utility" },
+	ID = "BoostHp",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOOSTHP",
+	}
+items["Armor-Piercing Rounds"] = {
+	Rarity = "Common",
+	Quote = "Deal extra damage to bosses.",
+	Desc = "Deal an additional {{Color|d|20%}} damage {{Stack|(+20% per stack)}} to bosses.",
+	Category = { "Damage","AIBlacklist","CanBeTemporary","Technology" },
+	ID = "BossDamageBonus",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOSSDAMAGEBONUS",
+	Unlock = "Advancement",
+	}
+items["Sentient Meat Hook"] = {
+	Rarity = "Legendary",
+	Quote = "Chance to hook all nearby enemies.",
+	Desc = "{{Color|d|20%}} {{Stack|(+20% per stack)}} chance on hit to {{Color|d|fire homing hooks}} at up to {{Color|d|10}} {{Stack|(+5 per stack)}} enemies for {{Color|d|100%}} TOTAL damage.",
+	Category = { "Damage","CanBeTemporary","Technology" },
+	ID = "BounceNearby",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOUNCENEARBY",
+	Unlock = "Deja Vu?",
+	}
+items["Defensive Microbots"] = {
+	Rarity = "Legendary",
+	Quote = "Shoot down nearby projectiles. Recharge rate scales with attack speed.",
+	Desc = "Shoot down {{Color|d|1}} {{Stack|(+1 per stack)}} projectiles within {{Color|d|20m}} every {{Color|d|0.5 seconds}}. {{Color|u|Recharge rate scales with attack speed}}.",
+	Category = { "Utility","WorldUnique","RebirthBlacklist","CanBeTemporary","Technology" },
+	ID = "CaptainDefenseMatrix",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CAPTAINDEFENSEMATRIX",
+	}
+items["Ukulele"] = {
+	Rarity = "Uncommon",
+	Quote = "...and his music was electric.",
+	Desc = "{{Color|d|25%}} chance to fire {{Color|d|chain lightning}} for {{Color|d|80%}} TOTAL damage on up to {{Color|d|3 {{Stack|(+2 per stack)}}}} targets within {{Color|d|20m}} {{Stack|(+2m per stack)}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "ChainLightning",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CHAINLIGHTNING",
+	}
+items["57 Leaf Clover"] = {
+	Rarity = "Legendary",
+	Quote = "Luck is on your side.",
+	Desc = "All random effects are rolled {{Color|u|+1}} {{Stack|(+1 per stack)}}times for a {{Color|u|favorable outcome}}.",
+	Category = { "Utility","FoodRelated","CanBeTemporary" },
+	ID = "Clover",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CLOVER",
+	Unlock = "The Long Road",
+	}
+items["ITEM_CRIPPLEWARDONLEVEL_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_CRIPPLEWARDONLEVEL_PICKUP",
+	Desc = "ITEM_CRIPPLEWARDONLEVEL_DESC",
+	Category = { "Utility","CannotCopy" },
+	ID = "CrippleWardOnLevel",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CRIPPLEWARDONLEVEL",
+	}
+items["Lens-Maker's Glasses"] = {
+	Rarity = "Common",
+	Quote = "Gain 10% chance for hits to 'Critically Strike', dealing double damage.",
+	Desc = "Your attacks have a {{Color|d|10%}} {{Stack|(+10% per stack)}} chance to '{{Color|d|Critically Strike}}', dealing {{Color|d|double damage}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "CritGlasses",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CRITGLASSES",
+	}
+items["Crowbar"] = {
+	Rarity = "Common",
+	Quote = "Deal bonus damage to enemies above 90% health.",
+	Desc = "Deal {{Color|d|+75%}} {{Stack|(+75% per stack)}} damage to enemies above {{Color|d|90% health}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "Crowbar",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CROWBAR",
+	Unlock = "The Basics",
+	}
+items["ITEM_CUTHP_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_CUTHP_PICKUP",
+	Desc = "ITEM_CUTHP_DESC",
+	Category = {  },
+	ID = "CutHp",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_CUTHP",
+	}
+items["Ceremonial Dagger"] = {
+	Rarity = "Legendary",
+	Quote = "Killing an enemy releases homing daggers.",
+	Desc = "Killing an enemy fires out {{Color|d|3}} {{Color|d|homing daggers}} that deal {{Color|d|150%}} {{Stack|(+150% per stack)}} base damage.",
+	Category = { "Damage","OnKillEffect","AIBlacklist","CanBeTemporary" },
+	ID = "Dagger",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DAGGER",
+	}
+items["Death Mark"] = {
+	Rarity = "Uncommon",
+	Quote = "Enemies with 4 or more debuffs are marked for death, taking bonus damage.",
+	Desc = "Enemies with {{Color|d|4}} or more debuffs are {{Color|d|marked for death}}, increasing damage taken by {{Color|d|50%}} from all sources for {{Color|u|7}} {{Stack|(+7 per stack)}} seconds.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "DeathMark",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DEATHMARK",
+	}
+items["ITEM_DRIZZLEPLAYERHELPER_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_DRIZZLEPLAYERHELPER_PICKUP",
+	Desc = "ITEM_DRIZZLEPLAYERHELPER_DESC",
+	Category = {  },
+	ID = "DrizzlePlayerHelper",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DRIZZLEPLAYERHELPER",
+	}
+items["War Horn"] = {
+	Rarity = "Uncommon",
+	Quote = "Activating your Equipment gives you a burst of attack speed.",
+	Desc = "Activating your Equipment gives you {{Color|d|+70% attack speed}} for {{Color|d|8s}} {{Stack|(+4s per stack)}}.",
+	Category = { "Damage","EquipmentRelated","AIBlacklist","CanBeTemporary" },
+	ID = "EnergizedOnEquipmentUse",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ENERGIZEDONEQUIPMENTUSE",
+	Unlock = "Warmonger",
+	}
+items["Fuel Cell"] = {
+	Rarity = "Uncommon",
+	Quote = "Hold an additional equipment charge. Reduce equipment cooldown.",
+	Desc = "Hold an {{Color|u|additional equipment charge}} {{Stack|(+1 per stack)}}. {{Color|u|Reduce equipment cooldown}} by {{Color|u|15%}} {{Stack|(+15% per stack)}}.",
+	Category = { "Utility","EquipmentRelated","AIBlacklist","Technology","CanBeTemporary" },
+	ID = "EquipmentMagazine",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EQUIPMENTMAGAZINE",
+	Unlock = "Experimenting",
+	}
+items["Old Guillotine"] = {
+	Rarity = "Uncommon",
+	Quote = "Instantly kill low health Elite monsters.",
+	Desc = "Instantly kill Elite monsters below {{Color|hp|13% {{Stack|(+13% per stack)}} health}}.",
+	Category = { "Damage","AIBlacklist","CanBeTemporary" },
+	ID = "ExecuteLowHealthElite",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXECUTELOWHEALTHELITE",
+	Unlock = "Cut Down",
+	}
+items["Will-o'-the-wisp"] = {
+	Rarity = "Uncommon",
+	Quote = "Detonate enemies on kill.",
+	Desc = "On killing an enemy, spawn a {{Color|d|lava pillar}} in a {{Color|d|12m}} {{Stack|(+2.4m per stack)}} radius for {{Color|d|350%}} {{Stack|(+280% per stack)}} base damage.",
+	Category = { "Damage","OnKillEffect","CanBeTemporary" },
+	ID = "ExplodeOnDeath",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXPLODEONDEATH",
+	}
+items["Dio's Best Friend"] = {
+	Rarity = "Legendary",
+	Quote = "Cheat death. Consumed on use.",
+	Desc = "{{Color|u|Upon death}}, this item will be {{Color|u|consumed}} and you will {{Color|h|return to life}} with {{Color|h|3 seconds of invulnerability}}.",
+	Category = { "Utility","ExtractorUnitBlacklist","CanBeTemporary" },
+	ID = "ExtraLife",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRALIFE",
+	Unlock = "The Lone Survivor",
+	}
+items["Dio's Best Friend (Consumed)"] = {
+	Rarity = "Untiered",
+	Quote = "A spent item with no remaining power.",
+	Desc = "A spent item with no remaining power.",
+	Category = { "Utility","AllowedForUseAsCraftingIngredient" },
+	ID = "ExtraLifeConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRALIFECONSUMED",
+	}
+items["H3AD-5T v2"] = {
+	Rarity = "Legendary",
+	Quote = "Increase jump height. Hold 'Interact' to slam down to the ground.",
+	Desc = "Increase {{Color|u|jump height}}. Creates a {{Color|d|5m-100m}} radius {{Color|d|kinetic explosion}} on hitting the ground, dealing {{Color|d|1000%-10000%}} base damage that scales up with {{Color|d|fall distance}}. Recharges in {{Color|d|10}} {{Stack|(-50% per stack)}} seconds.",
+	Category = { "Utility","Damage","AIBlacklist","MobilityRelated","CanBeTemporary","Technology" },
+	ID = "FallBoots",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FALLBOOTS",
+	}
+items["Hopoo Feather"] = {
+	Rarity = "Uncommon",
+	Quote = "Gain an extra jump.",
+	Desc = "Gain {{Color|u|+1}} {{Stack|(+1 per stack)}} maximum {{Color|u|jump count}}.",
+	Category = { "Utility","AIBlacklist","MobilityRelated","CanBeTemporary" },
+	ID = "Feather",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FEATHER",
+	}
+items["Molten Perforator"] = {
+	Rarity = "Boss",
+	Quote = "Chance on hit to fire magma balls.",
+	Desc = "{{Color|d|10%}} chance on hit to call forth {{Color|d|3 magma balls}} from an enemy, dealing {{Color|d|300%}} {{Stack|(+300% per stack)}} damage and {{Color|d|igniting}} all enemies.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "FireballsOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FIREBALLSONHIT",
+	}
+items["Kjaro's Band"] = {
+	Rarity = "Uncommon",
+	Quote = "High damage hits also blasts enemies with a runic flame tornado. Recharges over time.",
+	Desc = "Hits that deal {{Color|d|more than 400% damage}} also blasts enemies with a {{Color|d|runic flame tornado}}, dealing {{Color|d|300%}} {{Stack|(+300% per stack)}} TOTAL damage over time. Recharges every {{Color|u|10}} seconds.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "FireRing",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FIRERING",
+	Unlock = "Death Do Us Part",
+	}
+items["Bundle of Fireworks"] = {
+	Rarity = "Common",
+	Quote = "Activating an interactable launches fireworks at nearby enemies.",
+	Desc = "Activating an interactable {{Color|d|launches 8 {{Stack|(+4 per stack)}} fireworks}} that deal {{Color|d|300%}} base damage.",
+	Category = { "Damage","AIBlacklist","InteractableRelated","CanBeTemporary" },
+	ID = "Firework",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FIREWORK",
+	Unlock = "...Maybe One More.",
+	}
+items["Bison Steak"] = {
+	Rarity = "Common",
+	Quote = "Gain 25 max health.",
+	Desc = "Increases {{Color|h|maximum health}} by {{Color|h|25}} {{Stack|(+25 per stack)}}.",
+	Category = { "Healing","OnKillEffect","FoodRelated","CanBeTemporary" },
+	ID = "FlatHealth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FLATHEALTH",
+	}
+items["Focused Convergence"] = {
+	Rarity = "Lunar",
+	Quote = "Increase the speed of Teleporter charging... <color=#FF7F7F>BUT reduce the size of the zone</color>.",
+	Desc = "Teleporters charge {{Color|u|30% {{Stack|(+30% per stack)}} faster}}, but the size of the Teleporter zone is {{Color|hp|50%}} {{Stack|(-50% per stack)}} smaller. ",
+	Category = { "Utility","AIBlacklist","CannotCopy","HoldoutZoneRelated" },
+	ID = "FocusConvergence",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_FOCUSEDCONVERGENCE",
+	Unlock = "Never Back Down",
+	}
+items["ITEM_GHOST_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_GHOST_PICKUP",
+	Desc = "ITEM_GHOST_DESC",
+	Category = {  },
+	ID = "Ghost",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_GHOST",
+	}
+items["Happiest Mask"] = {
+	Rarity = "Legendary",
+	Quote = "Chance on killing an enemy to summon a ghost.",
+	Desc = "Killing enemies has a {{Color|d|7%}} chance to {{Color|d|spawn a ghost}} of the killed enemy with {{Color|d|1500%}} damage. Lasts {{Color|d|30s}} {{Stack|(+30s per stack)}}.",
+	Category = { "Utility","Damage","OnKillEffect","CanBeTemporary" },
+	ID = "GhostOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_GHOSTONKILL",
+	}
+items["Brittle Crown"] = {
+	Rarity = "Lunar",
+	Quote = "Gain gold on hit... <color=#FF7F7F>BUT lose gold on getting hit.</color>
+",
+	Desc = "{{Color|u|30% chance on hit}} to gain {{Color|u|2{{Stack| (+2 per stack)}} gold}}. {{Color|u|Scales over time.}}
+
+On taking damage, {{Color|hp|lose gold}} equal to {{Color|hp|100%{{Stack| (+100% per stack)}}}} of the {{Color|hp|maximum health percentage you lost}}.",
+	Category = { "Utility" },
+	ID = "GoldOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_GOLDONHIT",
+	}
+items["Wake of Vultures"] = {
+	Rarity = "Legendary",
+	Quote = "Temporarily steal the power of slain elites.",
+	Desc = "Gain the {{Color|d|power}} of any killed elite monster for {{Color|d|8s}} {{Stack|(+5s per stack)}}.",
+	Category = { "Utility","Damage","AIBlacklist","OnKillEffect","FoodRelated","CanBeTemporary" },
+	ID = "HeadHunter",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HEADHUNTER",
+	}
+items["Harvester's Scythe"] = {
+	Rarity = "Uncommon",
+	Quote = "'Critical Strikes' heal you.",
+	Desc = "Gain {{Color|d|5% critical chance}}. {{Color|d|Critical strikes}} {{Color|h|heal}} for {{Color|h|8}} {{Stack|(+4 per stack)}} {{Color|h|health}}.",
+	Category = { "Healing","CanBeTemporary" },
+	ID = "HealOnCrit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HEALONCRIT",
+	Unlock = "Prismatically Aligned",
+	}
+items["ITEM_HEALTHDECAY_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_HEALTHDECAY_PICKUP",
+	Desc = "ITEM_HEALTHDECAY_DESC",
+	Category = {  },
+	ID = "HealthDecay",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HEALTHDECAY",
+	}
+items["Cautious Slug"] = {
+	Rarity = "Common",
+	Quote = "Rapidly heal outside of danger.",
+	Desc = "Increases {{Color|h|base health regeneration}} by {{Color|h|+3 hp/s}} {{Stack|(+3 hp/s per stack)}}while outside of combat.",
+	Category = { "Healing","FoodRelated","CanBeTemporary" },
+	ID = "HealWhileSafe",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HEALWHILESAFE",
+	}
+items["Paul's Goat Hoof"] = {
+	Rarity = "Common",
+	Quote = "Increase movement speed.",
+	Desc = "Increases {{Color|u|movement speed}} by {{Color|u|14%}} {{Stack|(+14% per stack)}}.",
+	Category = { "Utility","MobilityRelated","CanBeTemporary" },
+	ID = "Hoof",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_HOOF",
+	Unlock = ""Is This Bugged?"",
+	}
+items["Runald's Band"] = {
+	Rarity = "Uncommon",
+	Quote = "High damage hits also blasts enemies with runic ice. Recharges over time.",
+	Desc = "Hits that deal {{Color|d|more than 400% damage}} also blasts enemies with a {{Color|d|runic ice blast}}, {{Color|u|slowing}} them by {{Color|u|80%}} for {{Color|u|3s}} {{Stack|(+3s per stack)}} and dealing {{Color|d|250%}} {{Stack|(+250% per stack)}} TOTAL damage. Recharges every {{Color|u|10}} seconds.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "IceRing",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ICERING",
+	Unlock = "Death Do Us Part",
+	}
+items["Frost Relic"] = {
+	Rarity = "Legendary",
+	Quote = "Killing enemies surrounds you with an ice storm.",
+	Desc = "Killing an enemy surrounds you with an {{Color|d|ice storm}} that deals {{Color|d|1200% damage per second}} and {{Color|u|slows}} enemies by {{Color|u|80%}} for {{Color|u|1.5s}}. The storm {{Color|d|grows with every kill}}, increasing its radius by {{Color|d|2m}}. Stacks up to {{Color|d|18m}} {{Stack|(+12m per stack)}}.",
+	Category = { "Damage","OnKillEffect","FoodRelated","CanBeTemporary" },
+	ID = "Icicle",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ICICLE",
+	}
+items["Gasoline"] = {
+	Rarity = "Common",
+	Quote = "Killing an enemy ignites other nearby enemies.",
+	Desc = "Killing an enemy {{Color|d|ignites}} all enemies within {{Color|d|12m}} {{Stack|(+4m per stack)}} for {{Color|d|150%}} base damage. Additionally, enemies {{Color|d|burn}} for {{Color|d|150%}} {{Stack|(+75% per stack)}} base damage.",
+	Category = { "Damage","OnKillEffect","CanBeTemporary" },
+	ID = "IgniteOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_IGNITEONKILL",
+	}
+items["Rejuvenation Rack"] = {
+	Rarity = "Legendary",
+	Quote = "Double the strength of healing.",
+	Desc = "{{Color|h|Heal +100%}} {{Stack|(+100% per stack)}} more.",
+	Category = { "Healing","FoodRelated","CanBeTemporary" },
+	ID = "IncreaseHealing",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_INCREASEHEALING",
+	Unlock = "Naturopath",
+	}
+items["Infusion"] = {
+	Rarity = "Uncommon",
+	Quote = "Killing an enemy permanently increases your maximum health, up to 100.",
+	Desc = "Killing an enemy increases your {{Color|h|health permanently}} by {{Color|h|1}} {{Stack|(+1 per stack)}}, up to a {{Color|h|maximum}} of {{Color|h|100 {{Stack|(+100 per stack)}} health}}.",
+	Category = { "Utility","Healing","OnKillEffect","CanBeTemporary" },
+	ID = "Infusion",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_INFUSION",
+	Unlock = "Slaughter",
+	}
+items["ITEM_INVADINGDOPPELGANGER_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_INVADINGDOPPELGANGER_PICKUP",
+	Desc = "ITEM_INVADINGDOPPELGANGER_DESC",
+	Category = {  },
+	ID = "InvadingDoppelganger",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_INVADINGDOPPELGANGER",
+	}
+items["Wax Quail"] = {
+	Rarity = "Uncommon",
+	Quote = "Jumping while sprinting boosts you forward.",
+	Desc = "{{Color|u|Jumping}} while {{Color|u|sprinting}} boosts you forward by {{Color|u|10m}}{{Stack|(+10m per stack)}}.",
+	Category = { "Utility","SprintRelated","MobilityRelated","CanBeTemporary" },
+	ID = "JumpBoost",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_JUMPBOOST",
+	Unlock = "Going Fast Recommended",
+	}
+items["Brainstalks"] = {
+	Rarity = "Legendary",
+	Quote = "Skills have NO cooldowns for a short period after killing an elite.",
+	Desc = "Upon killing an elite monster, {{Color|d|enter a frenzy}} for {{Color|d|4s}} {{Stack|(+4s per stack)}} where {{Color|u|skills have no cooldowns}}.",
+	Category = { "Utility","AIBlacklist","OnKillEffect","FoodRelated","CanBeTemporary" },
+	ID = "KillEliteFrenzy",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_KILLELITEFRENZY",
+	Unlock = "Deicide",
+	}
+items["Titanic Knurl"] = {
+	Rarity = "Boss",
+	Quote = "Boosts health and regeneration.",
+	Desc = "{{Color|h|Increase maximum health}} by {{Color|h|40}} {{Stack|(+40 per stack)}} and {{Color|h|base health regeneration}} by {{Color|h|+1.6 hp/s{{Stack|(+1.6 hp/s per stack)}}.",
+	Category = { "Utility","Healing","CanBeTemporary" },
+	ID = "Knurl",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_KNURL",
+	}
+items["Resonance Disc"] = {
+	Rarity = "Legendary",
+	Quote = "Obtain a Resonance Disc charged by killing enemies. Fires automatically when fully charged.",
+	Desc = "Killing {{Color|d|4}} enemies in {{Color|u|7 seconds}} charges the Resonance Disc. The disc launches itself toward a target for {{Color|d|300%}} base damage {{Stack|(+300% per stack)}}, piercing all enemies it doesn't kill, and then explodes for {{Color|d|1000%}} base damage {{Stack|(+1000% per stack)}}. Returns to the user, striking all enemies along the way for {{Color|d|300%}} base damage {{Stack|(+300% per stack)}}.",
+	Category = { "Damage","OnKillEffect","CanBeTemporary","Technology" },
+	ID = "LaserTurbine",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LASERTURBINE",
+	}
+items["ITEM_LEVELBONUS_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_LEVELBONUS_PICKUP",
+	Desc = "ITEM_LEVELBONUS_DESC",
+	Category = { "Utility" },
+	ID = "LevelBonus",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LEVELBONUS",
+	}
+items["Charged Perforator"] = {
+	Rarity = "Boss",
+	Quote = "Chance on hit to call down a lightning strike.",
+	Desc = "{{Color|d|10%}} chance on hit to call down a lightning strike, dealing {{Color|d|500%}} {{Stack|(+500% per stack)}} damage.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "LightningStrikeOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LIGHTNINGSTRIKEONHIT",
+	}
+items["Purity"] = {
+	Rarity = "Lunar",
+	Quote = "Reduce your skill cooldowns by 2 seconds. <color=#FF7F7F>You are unlucky.</color>",
+	Desc = "All skill cooldowns are reduced by {{Color|u|2}} {{Stack|(+1 per stack)}} seconds. All random effects are rolled {{Color|u|+1}} {{Stack|(+1 per stack)}} times for an {{Color|hp|unfavorable outcome}}.",
+	Category = { "Utility","FoodRelated" },
+	ID = "LunarBadLuck",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARBADLUCK",
+	Unlock = "The Calm",
+	}
+items["Shaped Glass"] = {
+	Rarity = "Lunar",
+	Quote = "Double your damage... <color=#FF7F7F>BUT halve your health.</color>
+",
+	Desc = "Increase base damage by {{Color|d|100%}} {{Stack|(+100% per stack)}}. {{Color|h|Reduce maximum health by 50%}} {{Stack|(+50% per stack)}}.",
+	Category = { "Damage" },
+	ID = "LunarDagger",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARDAGGER",
+	}
+items["Visions of Heresy"] = {
+	Rarity = "Lunar",
+	Quote = "Replace your Primary Skill with 'Hungering Gaze'.",
+	Desc = "{{Color|u|Replace your Primary Skill}} with {{Color|u|Hungering Gaze}}. 
+
+Fire a flurry of {{Color|u|tracking shards}} that detonate after a delay, dealing {{Color|d|120%}} base damage. Hold up to 12 charges {{Stack|(+12 per stack)}} that reload after 2 seconds {{Stack|(+2 per stack)}}.",
+	Category = { "Damage","AIBlacklist","CannotSteal","FoodRelated","ExtractorUnitBlacklist" },
+	ID = "LunarPrimaryReplacement",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARPRIMARYREPLACEMENT",
+	Unlock = "Blockade Breaker",
+	}
+items["Hooks of Heresy"] = {
+	Rarity = "Lunar",
+	Quote = "Replace your Secondary Skill with 'Slicing Maelstrom'.",
+	Desc = "{{Color|u|Replace your Secondary Skill }} with {{Color|u|Slicing Maelstrom}}. 
+
+Charge up a projectile that deals {{Color|d|875% damage per second}} to nearby enemies, exploding after {{Color|u|3}} seconds to deal {{Color|d|700% damage}} and {{Color|d|root}} enemies for {{Color|u|3}} {{Stack|(+3 per stack)}} seconds. Recharges after 5 {{Stack|(+5 per stack)}} seconds.",
+	Category = { "Damage","AIBlacklist","CannotSteal","FoodRelated","ExtractorUnitBlacklist" },
+	ID = "LunarSecondaryReplacement",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARSECONDARYREPLACEMENT",
+	Unlock = "Blockade Breaker",
+	}
+items["Essence of Heresy"] = {
+	Rarity = "Lunar",
+	Quote = "Replace your Special Skill with 'Ruin'.",
+	Desc = "{{Color|u|Replace your Special Skill}} with {{Color|u|Ruin}}. 
+
+Dealing damage adds a stack of {{Color|d|Ruin}} for 10 {{Stack|(+10 per stack)}} seconds. Activating the skill {{Color|d|detonates}} all Ruin stacks at unlimited range, dealing {{Color|d|300% damage}} plus {{Color|d|120% damage per stack of Ruin}}. Recharges after 8 {{Stack|(+8 per stack)}} seconds.",
+	Category = { "Damage","AIBlacklist","CannotSteal","FoodRelated","ExtractorUnitBlacklist" },
+	ID = "LunarSpecialReplacement",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARSPECIALREPLACEMENT",
+	Unlock = "Blockade Breaker",
+	}
+items["Beads of Fealty"] = {
+	Rarity = "Lunar",
+	Quote = "Seems to do nothing... <color=#FF7F7F>but...</color>
+",
+	Desc = "Seems to do nothing... <color=#FF7F7F>but...</color>
+",
+	Category = { "ObliterationRelated" },
+	ID = "LunarTrinket",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARTRINKET",
+	Unlock = "True Respite",
+	}
+items["Strides of Heresy"] = {
+	Rarity = "Lunar",
+	Quote = "Replace your Utility Skill with 'Shadowfade'.",
+	Desc = "{{Color|u|Replace your Utility Skill}} with {{Color|u|Shadowfade}}. 
+
+Fade away, becoming {{Color|u|intangible}} and gaining {{Color|u|+30% movement speed}}. {{Color|h|Heal}} for {{Color|h|25% {{Stack|(+25% per stack)}} of your maximum health}}. Lasts 3 {{Stack|(+3 per stack)}} seconds.",
+	Category = { "Utility","AIBlacklist","CannotSteal","FoodRelated","ExtractorUnitBlacklist" },
+	ID = "LunarUtilityReplacement",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LUNARUTILITYREPLACEMENT",
+	Unlock = "Blockade Breaker",
+	}
+items["Medkit"] = {
+	Rarity = "Common",
+	Quote = "Receive a delayed heal after taking damage.",
+	Desc = "2 seconds after getting hurt, {{Color|h|heal}} for {{Color|h|20}} plus an additional {{Color|h|5% {{Stack|(+5% per stack)}}}} of {{Color|h|maximum health}}.",
+	Category = { "Healing","CanBeTemporary" },
+	ID = "Medkit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MEDKIT",
+	Unlock = "Elite Slayer",
+	}
+items[""] = {
+	Rarity = "Untiered",
+	Quote = "",
+	Desc = "",
+	Category = {  },
+	ID = "MinHealthPercentage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "",
+	}
+items["ITEM_MINIONLEASH_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_MINIONLEASH_PICKUP",
+	Desc = "ITEM_MINIONLEASH_DESC",
+	Category = { "HiddenForDroneBuffIcon" },
+	ID = "MinionLeash",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MINIONLEASH",
+	}
+items["AtG Missile Mk. 1"] = {
+	Rarity = "Uncommon",
+	Quote = "Chance to fire a missile.",
+	Desc = "{{Color|d|10%}} chance to fire a missile that deals {{Color|d|300%}} {{Stack|(+300% per stack)}} TOTAL damage.",
+	Category = { "Damage","CanBeTemporary","Technology" },
+	ID = "Missile",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MISSILE",
+	}
+items["ITEM_MONSOONPLAYERHELPER_NAME"] = {
+	Rarity = "Untiered",
+	Quote = "ITEM_MONSOONPLAYERHELPER_PICKUP",
+	Desc = "ITEM_MONSOONPLAYERHELPER_DESC",
+	Category = {  },
+	ID = "MonsoonPlayerHelper",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MONSOONPLAYERHELPER",
+	}
+items["Defiant Gouge"] = {
+	Rarity = "Lunar",
+	Quote = "Using a Shrine summons enemies nearby.",
+	Desc = "Using a Shrine summons {{Color|hp|enemies}} nearby. {{Color|u|Scales over time.}}",
+	Category = { "Utility","AIBlacklist" },
+	ID = "MonstersOnShrineUse",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MONSTERSONSHRINEUSE",
+	}
+items["Bustling Fungus"] = {
+	Rarity = "Common",
+	Quote = "Heal all nearby allies after standing still for 1 second.",
+	Desc = "After standing still for {{Color|h|1}} second, create a zone that {{Color|h|heals}} for {{Color|h|4.5%}} {{Stack|(+2.25% per stack)}} of your {{Color|h|health}} every second to all allies within {{Color|h|3m}} {{Stack|(+1.5m per stack)}}.",
+	Category = { "Healing","AIBlacklist","FoodRelated","CanBeTemporary" },
+	ID = "Mushroom",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_MUSHROOM",
+	}
+items["Focus Crystal"] = {
+	Rarity = "Common",
+	Quote = "Deal bonus damage to nearby enemies.",
+	Desc = "Increase damage to enemies within {{Color|d|13m}} by {{Color|d|20%}} {{Stack|(+20% per stack)}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "NearbyDamageBonus",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_NEARBYDAMAGEBONUS",
+	}
+items["N'kuhana's Opinion"] = {
+	Rarity = "Legendary",
+	Quote = "Fire haunting skulls when healed.",
+	Desc = "Store {{Color|h|100%}} {{Stack|(+100% per stack)}} of healing as {{Color|h|Soul Energy}}. After your {{Color|h|Soul Energy}} reaches {{Color|h|10%}} of your {{Color|h|maximum health}}, {{Color|d|fire a skull}} that deals {{Color|d|250%}} of your {{Color|h|Soul Energy}} as {{Color|d|damage}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "NovaOnHeal",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_NOVAONHEAL",
+	Unlock = "Her Concepts",
+	}
+items["Genesis Loop"] = {
+	Rarity = "Boss",
+	Quote = "Fire an electric nova at low health.",
+	Desc = "Falling below {{Color|hp|25% health}} causes you to explode, dealing {{Color|d|6000% base damage}}. Recharges every {{Color|u|30 seconds}} {{Stack|(-50% per stack)}}.",
+	Category = { "Damage","LowHealth","FoodRelated","CanBeTemporary" },
+	ID = "NovaOnLowHealth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_NOVAONLOWHEALTH",
+	}
+items["Planula"] = {
+	Rarity = "Boss",
+	Quote = "Receive flat healing when attacked.",
+	Desc = "Heal from {{Color|d|incoming damage}} for {{Color|h|15{{Stack| (+15 per stack)}}}}.",
+	Category = { "Damage","FoodRelated","CanBeTemporary" },
+	ID = "ParentEgg",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PARENTEGG",
+	}
+items["Pearl"] = {
+	Rarity = "Boss",
+	Quote = "Increase your maximum health.",
+	Desc = "Increases {{Color|h|maximum health}} by {{Color|h|10%}} {{Stack|(+10% per stack)}}.",
+	Category = { "Utility","WorldUnique","CanBeTemporary" },
+	ID = "Pearl",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PEARL",
+	}
+items["Personal Shield Generator"] = {
+	Rarity = "Common",
+	Quote = "Gain a recharging shield.",
+	Desc = "Gain a {{Color|h|shield}} equal to {{Color|h|8%}} {{Stack|(+8% per stack)}} of your maximum health. Recharges outside of danger.",
+	Category = { "Utility","CanBeTemporary","Technology" },
+	ID = "PersonalShield",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PERSONALSHIELD",
+	}
+items["Old War Stealthkit"] = {
+	Rarity = "Uncommon",
+	Quote = "Turn invisible at low health.",
+	Desc = "Falling below {{Color|hp|25% health}} causes you to gain {{Color|u|40% movement speed}} and {{Color|u|invisibility}} for {{Color|u|5s}}. Recharges every {{Color|u|30 seconds}} {{Stack|(-50% per stack)}}.",
+	Category = { "Utility","LowHealth","MobilityRelated","CanBeTemporary","Technology" },
+	ID = "Phasing",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_PHASING",
+	}
+items["Interstellar Desk Plant"] = {
+	Rarity = "Legendary",
+	Quote = "Plant a healing fruit on kill.",
+	Desc = "On kill, plant a {{Color|h|healing}} fruit seed that grows into a plant after {{Color|u|5}} seconds. 
+
+The plant {{Color|h|heals}} for {{Color|h|10%}} of {{Color|h|maximum health}} every second to all allies within {{Color|h|5m}} {{Stack|(+5m per stack)}}. Lasts {{Color|u|10}} seconds.",
+	Category = { "Healing","OnKillEffect","FoodRelated","CanBeTemporary" },
+	ID = "Plant",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_INTERSTELLARDESKPLANT",
+	}
+items["Mercurial Rachis"] = {
+	Rarity = "Lunar",
+	Quote = "Randomly create a Ward of Power. ALL characters deal bonus damage while in the Ward.",
+	Desc = "Creates a Ward of Power in a random location nearby that buffs both enemies and allies within {{Color|u|16m}} {{Stack|(+50% per stack)}}, causing them to deal {{Color|d|+50%}} damage.",
+	Category = { "Utility" },
+	ID = "RandomDamageZone",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_RANDOMDAMAGEZONE",
+	}
+items["Corpsebloom"] = {
+	Rarity = "Lunar",
+	Quote = "Double your healing... <color=#FF7F7F>BUT it's applied over time.</color>
+",
+	Desc = "{{Color|h|Heal +100%}} {{Stack|(+100% per stack)}} more. {{Color|h|All healing is applied over time}}. Can {{Color|h|heal}} for a {{Color|h|maximum}} of {{Color|h|10%}} {{Stack|(-50% per stack)}} of your {{Color|h|health per second}}.",
+	Category = { "Healing","FoodRelated" },
+	ID = "RepeatHeal",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_REPEATHEAL",
+	}
+items["Empathy Cores"] = {
+	Rarity = "Boss",
+	Quote = "Recruit a pair of Solus Probes that gain power with more allies.",
+	Desc = "Every 30 seconds, {{Color|u|summon two Solus Probes}} that gain {{Color|d|+100%}} {{Stack|(+100% per stack)}} damage per {{Color|u|ally on your team}}.",
+	Category = { "Utility","CannotCopy","ExtractorUnitBlacklist","CanBeTemporary","Technology" },
+	ID = "RoboBallBuddy",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ROBOBALLBUDDY",
+	}
+items["Item Scrap, Green"] = {
+	Rarity = "Uncommon",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapGreen",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPGREEN",
+	}
+items["Item Scrap, Red"] = {
+	Rarity = "Legendary",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapRed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPRED",
+	}
+items["Item Scrap, White"] = {
+	Rarity = "Common",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapWhite",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPWHITE",
+	}
+items["Item Scrap, Yellow"] = {
+	Rarity = "Boss",
+	Quote = "Does nothing. Prioritized when used with 3D Printers.",
+	Desc = "Does nothing. Prioritized when used with 3D Printers.",
+	Category = { "WorldUnique","Scrap" },
+	ID = "ScrapYellow",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SCRAPYELLOW",
+	}
+items["Backup Magazine"] = {
+	Rarity = "Common",
+	Quote = "Add an extra charge of your Secondary skill.",
+	Desc = "Add {{Color|u|+1}} {{Stack|(+1 per stack)}} charge of your {{Color|u|Secondary skill}}.",
+	Category = { "Utility","CanBeTemporary","Technology" },
+	ID = "SecondarySkillMagazine",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SECONDARYSKILLMAGAZINE",
+	Unlock = "Flawless",
+	}
+items["Leeching Seed"] = {
+	Rarity = "Uncommon",
+	Quote = "Dealing damage heals you.",
+	Desc = "Dealing damage {{Color|h|heals}} you for {{Color|h|1 {{Stack|(+1 per stack)}} health}}.",
+	Category = { "Healing","FoodRelated","CanBeTemporary" },
+	ID = "Seed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SEED",
+	}
+items["Transcendence"] = {
+	Rarity = "Lunar",
+	Quote = "Convert all your health into shield. Increase maximum health.",
+	Desc = "{{Color|h|Convert}} all but {{Color|h|1 health}} into {{Color|h|regenerating shields}}. {{Color|h|Gain 50% {{Stack|(+25% per stack)}} maximum health}}.",
+	Category = { "Utility","FoodRelated" },
+	ID = "ShieldOnly",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SHIELDONLY",
+	}
+items["Irradiant Pearl"] = {
+	Rarity = "Boss",
+	Quote = "Increase ALL of your stats.",
+	Desc = "Increases {{Color|u|ALL stats}} by {{Color|u|10%}} {{Stack|(+10% per stack)}}.",
+	Category = { "Damage","Healing","Utility","WorldUnique","MobilityRelated","CanBeTemporary" },
+	ID = "ShinyPearl",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SHINYPEARL",
+	}
+items["Unstable Tesla Coil"] = {
+	Rarity = "Legendary",
+	Quote = "Shock all nearby enemies every 10 seconds.",
+	Desc = "Fire out {{Color|d|lightning}} that hits {{Color|d|3}} {{Stack|(+2 per stack)}} enemies for {{Color|d|200%}} base damage every {{Color|d|0.5s}}. The Tesla Coil switches off every {{Color|d|10 seconds}}.",
+	Category = { "Damage","AIBlacklist","CanBeTemporary","Technology" },
+	ID = "ShockNearby",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SHOCKNEARBY",
+	Unlock = "Macho",
+	}
+items["Mired Urn"] = {
+	Rarity = "Boss",
+	Quote = "Siphon health from nearby enemies while in combat.",
+	Desc = "While in combat, the nearest 1{{Stack|(+1 per stack)}} enemies to you within {{Color|d|13m}} will be 'tethered' to you, dealing {{Color|d|100%}} damage per second, applying {{Color|d|tar}}, and {{Color|h|healing}} you for {{Color|h|100%}} of the damage dealt.",
+	Category = { "Healing","BrotherBlacklist","RebirthBlacklist","CanBeTemporary" },
+	ID = "SiphonOnLowHealth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SIPHONONLOWHEALTH",
+	}
+items["Chronobauble"] = {
+	Rarity = "Uncommon",
+	Quote = "Slow enemies on hit.",
+	Desc = "{{Color|u|Slow}} enemies on hit for {{Color|u|-60% movement speed}} for {{Color|u|2s}} {{Stack|(+2s per stack)}}.",
+	Category = { "Utility","CanBeTemporary" },
+	ID = "SlowOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SLOWONHIT",
+	}
+items["Rose Buckler"] = {
+	Rarity = "Uncommon",
+	Quote = "Reduce incoming damage while sprinting.",
+	Desc = "{{Color|h|Increase armor}} by {{Color|h|30}} {{Stack|(+30 per stack)}} {{Color|u|while sprinting}}.",
+	Category = { "Utility","SprintRelated","MobilityRelated","CanBeTemporary" },
+	ID = "SprintArmor",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SPRINTARMOR",
+	}
+items["Energy Drink"] = {
+	Rarity = "Common",
+	Quote = "Increase sprint speed by +25%.",
+	Desc = "{{Color|u|Sprint speed}} is improved by {{Color|u|25%}} {{Stack|(+25% per stack)}}.",
+	Category = { "Utility","SprintRelated","FoodRelated","MobilityRelated","CanBeTemporary" },
+	ID = "SprintBonus",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SPRINTBONUS",
+	}
+items["Red Whip"] = {
+	Rarity = "Uncommon",
+	Quote = "Move fast out of combat.",
+	Desc = "Leaving combat boosts your {{Color|u|movement speed}} by {{Color|u|30%}} {{Stack|(+30% per stack)}}.",
+	Category = { "Utility","MobilityRelated","CanBeTemporary" },
+	ID = "SprintOutOfCombat",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SPRINTOUTOFCOMBAT",
+	}
+items["Little Disciple"] = {
+	Rarity = "Boss",
+	Quote = "Fire tracking wisps while sprinting.",
+	Desc = "Fire a {{Color|d|tracking wisp}} for {{Color|d|300% {{Stack|(+300% per stack)}} damage}}. Fires every {{Color|u|1.6}} seconds while sprinting. Fire rate increases with {{Color|u|movement speed}}.",
+	Category = { "Damage","SprintRelated","MobilityRelated","CanBeTemporary" },
+	ID = "SprintWisp",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SPRINTWISP",
+	}
+items["Squid Polyp"] = {
+	Rarity = "Uncommon",
+	Quote = "Activating an interactable summons a Squid Turret nearby.",
+	Desc = "Activating an interactable summons a {{Color|d|Squid Turret}} that attacks nearby enemies at {{Color|d|100% {{Stack|(+100% per stack)}} attack speed}}. Lasts {{Color|u|30}} seconds.",
+	Category = { "Damage","AIBlacklist","InteractableRelated","FoodRelated","CanBeTemporary" },
+	ID = "Squid",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SQUIDTURRET",
+	Unlock = "Automation Activation",
+	}
+items["Sticky Bomb"] = {
+	Rarity = "Common",
+	Quote = "Chance on hit to attach a bomb to enemies.",
+	Desc = "{{Color|d|5%}} {{Stack|(+5% per stack)}} chance on hit to attach a {{Color|d|bomb}} to an enemy, detonating for {{Color|d|180%}} TOTAL damage.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "StickyBomb",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_STICKYBOMB",
+	}
+items["Stun Grenade"] = {
+	Rarity = "Common",
+	Quote = "Chance to stun on hit.",
+	Desc = "{{Color|u|5%}} {{Stack|(+5% per stack)}} chance on hit to {{Color|u|stun}} enemies for {{Color|u|2 seconds}}.",
+	Category = { "Utility","AIBlacklist","CanBeTemporary","Technology" },
+	ID = "StunChanceOnHit",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_STUNCHANCEONHIT",
+	}
+items["Soldier's Syringe"] = {
+	Rarity = "Common",
+	Quote = "Increase attack speed.",
+	Desc = "Increases {{Color|d|attack speed}} by {{Color|d|15% {{Stack|(+15% per stack)}}}}.",
+	Category = { "Damage","CanBeTemporary" },
+	ID = "Syringe",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SYRINGE",
+	}
+items["Soulbound Catalyst"] = {
+	Rarity = "Legendary",
+	Quote = "Kills reduce equipment cooldown.",
+	Desc = "{{Color|d|Kills reduce}} {{Color|u|equipment cooldown}} by {{Color|u|4s}} {{Stack|(+2s per stack)}}.",
+	Category = { "Utility","OnKillEffect","EquipmentRelated","AIBlacklist","CanBeTemporary" },
+	ID = "Talisman",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TALISMAN",
+	Unlock = "Newtist",
+	}
+items[""] = {
+	Rarity = "Untiered",
+	Quote = "",
+	Desc = "",
+	Category = { "Damage" },
+	ID = "TeamSizeDamageBonus",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "",
+	}
+items[""] = {
+	Rarity = "Untiered",
+	Quote = "",
+	Desc = "",
+	Category = {  },
+	ID = "TeleportWhenOob",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "",
+	}
+items["Razorwire"] = {
+	Rarity = "Uncommon",
+	Quote = "Retaliate in a burst of razors on taking damage.",
+	Desc = "Getting hit causes you to explode in a burst of razors, dealing {{Color|d|160% damage}}. Hits up to {{Color|d|5}} {{Stack|(+2 per stack)}} targets in a {{Color|d|25m}} {{Stack|(+10m per stack)}} radius",
+	Category = { "Damage","AIBlacklist","CanBeTemporary" },
+	ID = "Thorns",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_THORNS",
+	}
+items["Halcyon Seed"] = {
+	Rarity = "Boss",
+	Quote = "Summon Aurelionite during the Teleporter event.",
+	Desc = "Summon {{Color|d|Aurelionite}} during the teleporter event. It has {{Color|d|100% {{Stack|(+50% per stack)}} damage}} and {{Color|h|100% {{Stack|(+100% per stack)}} health}}.",
+	Category = { "Utility","WorldUnique","CannotSteal","CannotCopy","HoldoutZoneRelated","CanBeTemporary","ExtractorUnitBlacklist" },
+	ID = "TitanGoldDuringTP",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TITANGOLDDURINGTP",
+	}
+items["Tonic Affliction"] = {
+	Rarity = "Untiered",
+	Quote = "<color=#FF7F7F>Reduce ALL stats when not under the effects of Spinel Tonic.</color>",
+	Desc = "Reduces ALL stats by {{Color|hp|-5%}} {{Stack|(-5% per stack)}}",
+	Category = { "Cleansable" },
+	ID = "TonicAffliction",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TONICAFFLICTION",
+	}
+items["Monster Tooth"] = {
+	Rarity = "Common",
+	Quote = "Drop a healing orb on kill.",
+	Desc = "Killing an enemy spawns a {{Color|h|healing orb}} that heals for {{Color|h|8}} plus an additional {{Color|h|2% {{Stack|(+2% per stack)}}}} of {{Color|h|maximum health}}.",
+	Category = { "Healing","OnKillEffect","FoodRelated","CanBeTemporary" },
+	ID = "Tooth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TOOTH",
+	}
+items["Lepton Daisy"] = {
+	Rarity = "Uncommon",
+	Quote = "Periodically release a healing nova during the Teleporter event.",
+	Desc = "Release a {{Color|h|healing nova }}during the Teleporter event, {{Color|h|healing}} all nearby allies for {{Color|h|50%}} of their maximum health. Occurs {{Color|h|1}} {{Stack|(+1 per stack)}} times.",
+	Category = { "Healing","AIBlacklist","CannotCopy","HoldoutZoneRelated","FoodRelated","CanBeTemporary" },
+	ID = "TPHealingNova",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TPHEALINGNOVA",
+	}
+items["Rusted Key"] = {
+	Rarity = "Common",
+	Quote = "Gain access to a Rusty Lockbox that contains a powerful item.",
+	Desc = "A {{Color|u|hidden cache}} containing an item ({{Color|h|80%}}/{{Color|hp|20%}}) will appear in a random location {{Color|u|on each stage}}. Opening the cache {{Color|u|consumes}} this item.",
+	Category = { "Utility","AIBlacklist","OnStageBeginEffect","CanBeTemporary" },
+	ID = "TreasureCache",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TREASURECACHE",
+	Unlock = "Keyed Up",
+	}
+items[""] = {
+	Rarity = "Untiered",
+	Quote = "",
+	Desc = "",
+	Category = { "CannotSteal","CannotCopy","HiddenForDroneBuffIcon" },
+	ID = "UseAmbientLevel",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "",
+	}
+items["Hardlight Afterburner"] = {
+	Rarity = "Legendary",
+	Quote = "Add 2 extra charges of your Utility skill. Reduce Utility skill cooldown.",
+	Desc = "Add {{Color|u|+2}} {{Stack|(+2 per stack)}} charges of your {{Color|u|Utility skill}}. {{Color|u|Reduces Utility skill cooldown}} by {{Color|u|33%}}.",
+	Category = { "Utility","CanBeTemporary" },
+	ID = "UtilitySkillMagazine",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_UTILITYSKILLMAGAZINE",
+	}
+items["Berzerker's Pauldron"] = {
+	Rarity = "Uncommon",
+	Quote = "Enter a frenzy after killing 4 enemies in quick succession.",
+	Desc = "{{Color|d|Killing 4 enemies}} within {{Color|d|1}} second sends you into a {{Color|d|frenzy}} for {{Color|d|6s}} {{Stack|(+4s per stack)}}. Increases {{Color|u|movement speed}} by {{Color|u|50%}} and {{Color|d|attack speed}} by {{Color|d|100%}}.",
+	Category = { "Damage","OnKillEffect","MobilityRelated","CanBeTemporary" },
+	ID = "WarCryOnMultiKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_WARCRYONMULTIKILL",
+	Unlock = "Glorious Battle",
+	}
+items["Warbanner"] = {
+	Rarity = "Common",
+	Quote = "Drop a Warbanner on level up or starting the Teleporter event. Grants allies attack and movement speed.",
+	Desc = "On {{Color|u|level up}} or starting the {{Color|u|Teleporter event}}, drop a banner that strengthens all allies within {{Color|u|16m}} {{Stack|(+8m per stack)}}. Raise {{Color|d|attack}} and {{Color|u|movement speed}} by {{Color|d|30%}}.",
+	Category = { "Utility","AIBlacklist","CannotCopy","MobilityRelated","CanBeTemporary" },
+	ID = "WardOnLevel",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_WARDONLEVEL",
+	}

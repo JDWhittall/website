@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoR2 JSON Viewer | Debug</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="debug-body">
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Risk of Rain 2</p>
+      <h1>JSON Viewer & Icon Debugger</h1>
+      <p class="lede">Inspect the full exported list, spot missing icons, toggle enabled, and export an updated JSON.</p>
+    </div>
+    <div class="hero-card">
+      <p class="card-label">Dataset</p>
+      <div class="stat-line"><span data-total-count>0</span><small>total entries</small></div>
+      <div class="stat-line"><span data-visible-count>0</span><small>visible now</small></div>
+      <div class="stat-line missing-line"><span data-missing-count>0</span><small>missing icons</small></div>
+      <div class="stat-line enabled-line"><span data-enabled-count>0</span><small>enabled</small></div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="filters debug-filters">
+      <div class="filter-block">
+        <label for="debug-search">Search</label>
+        <div class="search-bar">
+          <input id="debug-search" type="search" placeholder="Search by name, quote, desc, id...">
+          <span class="kbd">Ctrl + F</span>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <label>Rarity</label>
+        <div class="chips" id="debug-rarity"></div>
+      </div>
+
+      <div class="filter-block">
+        <label>Type</label>
+        <div class="chips" id="debug-type"></div>
+      </div>
+
+      <div class="filter-block">
+        <label>Icon status</label>
+        <div class="chips" id="debug-icon">
+          <button class="chip is-active" data-icon="all">All</button>
+          <button class="chip" data-icon="found">Found</button>
+          <button class="chip" data-icon="missing">Missing</button>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <label for="debug-sort">Sort</label>
+        <div class="select-wrap">
+          <select id="debug-sort">
+            <option value="rarity-id">Rarity order (ID within rarity)</option>
+            <option value="name-asc">Name A -> Z</option>
+            <option value="id-asc">ID A -> Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <label>Enabled filter</label>
+        <div class="chips" id="debug-enabled">
+          <button class="chip is-active" data-enabled="all">All</button>
+          <button class="chip" data-enabled="enabled">Enabled</button>
+          <button class="chip" data-enabled="disabled">Disabled</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid debug-grid" id="debug-grid" aria-live="polite">
+      <div class="loading">Loading ror2_items_and_equipments.json...</div>
+    </section>
+
+    <section class="actions">
+      <button class="primary-btn" id="export-json">Download updated JSON</button>
+    </section>
+  </main>
+
+  <template id="debug-card-template">
+    <article class="item-card debug-card" role="button" tabindex="0">
+      <div class="item-icon" aria-hidden="true"></div>
+      <div class="debug-label">
+        <p class="debug-name"></p>
+        <p class="debug-meta"></p>
+      </div>
+    </article>
+  </template>
+
+  <script>
+    const rarityConfig = {
+      common: { color: '#dfe6ed', accent: '#a5b7c6' },
+      uncommon: { color: '#c7f5c4', accent: '#5cd475' },
+      legendary: { color: '#ffd6d9', accent: '#f4555d' },
+      boss: { color: '#fff3c4', accent: '#f4c84a' },
+      lunar: { color: '#d6e9ff', accent: '#6ab7ff' },
+      void: { color: '#ead9ff', accent: '#a175ff' },
+      equipment: { color: '#ffe0c2', accent: '#ff7a42' },
+      'lunar equipment': { color: '#d6e9ff', accent: '#4c9aff' },
+      'elite equipment': { color: '#ffe0c2', accent: '#ff4d42' },
+      meal: { color: '#ffe0c2', accent: '#ff9b42' },
+      untiered: { color: '#e2e8f0', accent: '#94a3b8' },
+      default: { color: '#e2e8f0', accent: '#94a3b8' },
+    };
+
+    const rarityOrder = [
+      'Common',
+      'Uncommon',
+      'Legendary',
+      'Boss',
+      'Void',
+      'Meal',
+      'Lunar',
+      'Lunar Equipment',
+      'Equipment',
+      'Elite Equipment',
+    ];
+
+    const toKey = (value = '') => value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+    const state = {
+      search: '',
+      rarity: 'all',
+      type: 'all',
+      icon: 'all',
+      sort: 'rarity-id',
+      enabled: 'all',
+    };
+
+    let items = [];
+    const iconStatusMap = new Map();
+
+    const grid = document.getElementById('debug-grid');
+    const searchInput = document.getElementById('debug-search');
+    const rarityContainer = document.getElementById('debug-rarity');
+    const typeContainer = document.getElementById('debug-type');
+    const iconContainer = document.getElementById('debug-icon');
+    const enabledContainer = document.getElementById('debug-enabled');
+    const cardTemplate = document.getElementById('debug-card-template');
+    const exportButton = document.getElementById('export-json');
+
+    const setActiveChip = (container, key, value) => {
+      Array.from(container.querySelectorAll('.chip')).forEach((chip) => {
+        chip.classList.toggle('is-active', chip.dataset[key] === value);
+      });
+    };
+
+    const buildIconPath = (name = '') => `icons/${name.replace(/\s+/g, '_')}.png`;
+
+    const updateStats = () => {
+      const total = items.length;
+      const missing = Array.from(iconStatusMap.values()).filter((v) => v === 'missing').length;
+      const visible = grid.querySelectorAll('.debug-card').length;
+      const enabledCount = items.filter((i) => i.enabled !== false).length;
+
+      document.querySelector('[data-total-count]').textContent = total;
+      document.querySelector('[data-visible-count]').textContent = visible;
+      document.querySelector('[data-missing-count]').textContent = missing;
+      document.querySelector('[data-enabled-count]').textContent = enabledCount;
+    };
+
+    const buildChips = (container, dataAttr, values) => {
+      container.innerHTML = '';
+      const allChip = document.createElement('button');
+      allChip.className = 'chip is-active';
+      allChip.dataset[dataAttr] = 'all';
+      allChip.textContent = 'All';
+      container.appendChild(allChip);
+
+      Array.from(values).sort().forEach((value) => {
+        const btn = document.createElement('button');
+        btn.className = 'chip';
+        btn.dataset[dataAttr] = value;
+        btn.textContent = value;
+        container.appendChild(btn);
+      });
+    };
+
+    const renderItems = () => {
+      if (!items.length) {
+        grid.innerHTML = '<p class="inline-error">No data loaded.</p>';
+        updateStats();
+        return;
+      }
+
+      const filtered = items.filter((item) => {
+        const searchHaystack = `${item.name} ${item.quote || ''} ${item.desc || ''} ${item.id || ''}`.toLowerCase();
+        const matchesSearch = !state.search || searchHaystack.includes(state.search);
+        const matchesRarity = state.rarity === 'all' || item.rarity === state.rarity;
+        const matchesType = state.type === 'all' || item.type === state.type;
+        const matchesEnabled =
+          state.enabled === 'all' ||
+          (state.enabled === 'enabled' && item.enabled !== false) ||
+          (state.enabled === 'disabled' && item.enabled === false);
+        const iconStatus = iconStatusMap.get(item.id || item.name) || 'unknown';
+        const matchesIcon =
+          state.icon === 'all' ||
+          (state.icon === 'found' && iconStatus === 'found') ||
+          (state.icon === 'missing' && iconStatus === 'missing');
+
+        return matchesSearch && matchesRarity && matchesType && matchesIcon && matchesEnabled;
+      }).sort((a, b) => {
+        if (state.sort === 'name-asc') return a.name.localeCompare(b.name);
+        if (state.sort === 'id-asc') return (a.id || a.name).localeCompare(b.id || b.name);
+        const rank = (r) => {
+          const idx = rarityOrder.indexOf(r);
+          return idx === -1 ? rarityOrder.length : idx;
+        };
+        const rarityDiff = rank(a.rarity) - rank(b.rarity);
+        if (rarityDiff !== 0) return rarityDiff;
+        return (a.id || a.name).localeCompare(b.id || b.name);
+      });
+
+      grid.innerHTML = '';
+      const frag = document.createDocumentFragment();
+
+      filtered.forEach((item) => {
+        const card = cardTemplate.content.cloneNode(true);
+        const article = card.querySelector('.debug-card');
+        const icon = card.querySelector('.item-icon');
+        const nameEl = card.querySelector('.debug-name');
+        const metaEl = card.querySelector('.debug-meta');
+
+        const statusBadge = document.createElement('span');
+        statusBadge.className = 'status-pill';
+        statusBadge.textContent = item.enabled === false ? 'Disabled' : 'Enabled';
+        article.appendChild(statusBadge);
+
+        const key = item.id || item.name;
+        article.dataset.key = key;
+        article.dataset.rarity = item.rarity;
+        article.dataset.type = item.type;
+        article.dataset.iconStatus = iconStatusMap.get(key) || 'unknown';
+        article.dataset.enabled = item.enabled === false ? 'false' : 'true';
+        article.title = item.name;
+
+        const rareKey = toKey(item.rarity);
+        const colors = rarityConfig[rareKey] || rarityConfig.default;
+        article.style.setProperty('--rarity-color', colors.color);
+        article.style.setProperty('--rarity-accent', colors.accent);
+
+        const img = document.createElement('img');
+        img.src = buildIconPath(item.name);
+        img.alt = `${item.name} icon`;
+
+        img.onload = () => {
+          if (article.dataset.iconStatus === 'missing') return;
+          iconStatusMap.set(key, 'found');
+          article.dataset.iconStatus = 'found';
+          updateStats();
+        };
+
+        img.onerror = () => {
+          if (article.dataset.iconStatus === 'missing') return;
+          iconStatusMap.set(key, 'missing');
+          article.dataset.iconStatus = 'missing';
+          img.src = 'icons/.png';
+          updateStats();
+        };
+
+        icon.appendChild(img);
+
+        nameEl.textContent = item.name;
+        metaEl.textContent = `${item.rarity} - ${item.type}${item.dlc ? ` - DLC ${item.dlc}` : ''}`;
+
+        if (item.enabled === false) {
+          article.classList.add('is-disabled');
+        }
+
+        frag.appendChild(card);
+      });
+
+      if (!filtered.length) {
+        grid.innerHTML = '<p class="inline-error">No items match these filters yet.</p>';
+        updateStats();
+        return;
+      }
+
+      grid.appendChild(frag);
+      updateStats();
+    };
+
+    const toggleEnabled = (key) => {
+      const target = items.find((i) => (i.id || i.name) === key);
+      if (!target) return;
+      target.enabled = target.enabled === false ? true : false;
+      renderItems();
+    };
+
+    const attachFilterHandlers = () => {
+      rarityContainer.addEventListener('click', (event) => {
+        const chip = event.target.closest('.chip[data-rarity]');
+        if (!chip) return;
+        state.rarity = chip.dataset.rarity;
+        setActiveChip(rarityContainer, 'rarity', state.rarity);
+        renderItems();
+      });
+
+      typeContainer.addEventListener('click', (event) => {
+        const chip = event.target.closest('.chip[data-type]');
+        if (!chip) return;
+        state.type = chip.dataset.type;
+        setActiveChip(typeContainer, 'type', state.type);
+        renderItems();
+      });
+
+      iconContainer.addEventListener('click', (event) => {
+        const chip = event.target.closest('.chip[data-icon]');
+        if (!chip) return;
+        state.icon = chip.dataset.icon;
+        setActiveChip(iconContainer, 'icon', state.icon);
+        renderItems();
+      });
+
+      enabledContainer.addEventListener('click', (event) => {
+        const chip = event.target.closest('.chip[data-enabled]');
+        if (!chip) return;
+        state.enabled = chip.dataset.enabled;
+        setActiveChip(enabledContainer, 'enabled', state.enabled);
+        renderItems();
+      });
+
+      searchInput.addEventListener('input', (event) => {
+        state.search = event.target.value.trim().toLowerCase();
+        renderItems();
+      });
+
+      document.getElementById('debug-sort').addEventListener('change', (event) => {
+        state.sort = event.target.value;
+        renderItems();
+      });
+
+      grid.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          const card = event.target.closest('.debug-card');
+          if (!card) return;
+          event.preventDefault();
+          toggleEnabled(card.dataset.key);
+        }
+      });
+
+      grid.addEventListener('click', (event) => {
+        const card = event.target.closest('.debug-card');
+        if (!card) return;
+        toggleEnabled(card.dataset.key);
+      });
+
+      exportButton.addEventListener('click', () => {
+        const blob = new Blob([JSON.stringify(items, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'ror2_items_and_equipments_enabled.json';
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    };
+
+    const loadData = async () => {
+      try {
+        const response = await fetch('ror2_items_and_equipments.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        items = (Array.isArray(data) ? data : []).map((item) => ({
+          ...item,
+          enabled: item.enabled === false ? false : true,
+        }));
+
+        const rarities = new Set(items.map((i) => i.rarity).filter(Boolean));
+        const types = new Set(items.map((i) => i.type).filter(Boolean));
+
+        buildChips(rarityContainer, 'rarity', rarities);
+        buildChips(typeContainer, 'type', types);
+        attachFilterHandlers();
+
+        renderItems();
+      } catch (error) {
+        grid.innerHTML = `<p class="inline-error">Could not load ror2_items_and_equipments.json (${error.message}).</p>`;
+      }
+    };
+
+    loadData();
+  </script>
+</body>
+</html>

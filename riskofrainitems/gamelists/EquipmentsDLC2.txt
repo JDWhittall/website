@@ -1,0 +1,37 @@
+equipments["Aurelionite's Blessing"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of radiance.",
+	Desc = "???",
+	ID = "EliteAurelioniteEquipment",
+	Cooldown = 25,
+	LocalizationInternalName = "EQUIPMENT_AFFIXAURELIONITE",
+	Expansion = "SotS",
+	}
+equipments["His Spiteful Boon"] = {
+	Rarity = "Equipment",
+	Quote = "Become an aspect of spite.",
+	Desc = "???",
+	ID = "EliteBeadEquipment",
+	Cooldown = 25,
+	LocalizationInternalName = "EQUIPMENT_AFFIXBEAD",
+	Expansion = "SotS",
+	}
+equipments["Seed of Life"] = {
+	Rarity = "Equipment",
+	Quote = "Revives the user when killed or dead allies on activation. Consumed on use.",
+	Desc = "{{Color|h|Revive}} {{Color|u|dead, friendly Survivors}} upon activation. {{Color|u|Dying}} while holding this equipment {{Color|h|returns only you to life}}. {{Color|h|Reviving}} gives {{Color|h|3s of invulnerability}} and {{Color|u|consumes}} the equipment.",
+	ID = "HealAndRevive",
+	Cooldown = 0,
+	LocalizationInternalName = "EQUIPMENT_HEALANDREVIVE",
+	Unlock = "King of the Hill",
+	Expansion = "SotS",
+	}
+equipments["Seed of Life (Consumed)"] = {
+	Rarity = "Equipment",
+	Quote = "On activation places a sprout that drops healing orbs.",
+	Desc = "Plant a sprout at the target location which drops {{Color|h|healing orbs}} that heals for {{Color|h|2% life}}.",
+	ID = "HealAndReviveConsumed",
+	Cooldown = 15,
+	LocalizationInternalName = "EQUIPMENT_HEALANDREVIVECONSUMED",
+	Expansion = "SotS",
+	}

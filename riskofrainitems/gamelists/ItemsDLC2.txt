@@ -1,0 +1,323 @@
+items["Bolstering Lantern"] = {
+	Rarity = "Common",
+	Quote = "Increases your attack speed for every nearby enemy and ally.",
+	Desc = "Increase your {{Color|d|attack speed}} by {{Color|d|10%}} {{Stack|(+3.5 per stack)}} for up to {{Color|u|3}} {{Stack|(+1 per stack)}} enemies and allies within {{Color|u|20}} meters.",
+	Category = { "Damage","HalcyoniteShrine","CanBeTemporary" },
+	ID = "AttackSpeedPerNearbyAllyOrEnemy",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ATTACKSPEEDPERNEARBYALLYORENEMY",
+	Expansion = "SotS",
+	}
+items["War Bonds"] = {
+	Rarity = "Legendary",
+	Quote = "Bombard boss events with missiles. The more gold earned, the more UES support is granted.",
+	Desc = "During boss events, {{Color|u|5}} missiles bombard the area, dealing {{Color|d|2.5% {{Stack|(+2.5% per stack)}} of boss' Max Health in damage}}. Before the boss event, gain additional missiles, up to a maximum of {{Color|u|20}} {{Stack|(+5 per stack)}}, per {{Color|u|50}} gold gained. {{Color|u|Gold requirement scales over time.}}",
+	Category = { "Damage","HalcyoniteShrine","AIBlacklist","Technology","CanBeTemporary" },
+	ID = "BarrageOnBoss",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BARRAGEONBOSS",
+	Expansion = "SotS",
+	}
+items["Growth Nectar"] = {
+	Rarity = "Legendary",
+	Quote = "Your buffs grant an increase to ALL of your stats.",
+	Desc = "Grants {{Color|u|4%}} increase to {{Color|u|ALL stats}} for each buff, up to a maximum of {{Color|u|4}} {{Stack|(+4 per stack)}}.",
+	Category = { "Utility","HalcyoniteShrine","FoodRelated","MobilityRelated","CanBeTemporary" },
+	ID = "BoostAllStats",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_BOOSTALLSTATS",
+	Expansion = "SotS",
+	}
+items["Warped Echo"] = {
+	Rarity = "Common",
+	Quote = "Incoming damage is reduced and dealt over time.",
+	Desc = "The next source of damage is {{Color|h|reduced}} by {{Color|h|20%}} and {{Color|h|spread}} into {{Color|u|3 {{Stack|(+1 per stack)}} hits}}. All echoed damage is {{Color|u|non-lethal}} except for the final hit. Recharges every {{Color|u|15s}}.",
+	Category = { "Utility","HalcyoniteShrine","CanBeTemporary","Technology" },
+	ID = "DelayedDamage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_DELAYEDDAMAGE",
+	Expansion = "SotS",
+	}
+items["Chance Doll"] = {
+	Rarity = "Uncommon",
+	Quote = "Gain 40% chance to increase item rarity at Shrines of Chance.",
+	Desc = "On Shrine of Chance success, {{Color|u|40%}} {{Stack|(+10% per stack)}} chance to get higher rarity items.",
+	Category = { "CannotDuplicate","Utility","HalcyoniteShrine","AIBlacklist","SacrificeBlacklist","CanBeTemporary" },
+	ID = "ExtraShrineItem",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRASHRINEITEM",
+	Expansion = "SotS",
+	}
+items["Prayer Beads"] = {
+	Rarity = "Uncommon",
+	Quote = "Gains experience alongside you. Upon removal, grants bonus stats.",
+	Desc = "Grows by gaining experience, storing {{Color|u|20%}} {{Stack|(+5% per stack)}} bonus stats ({{Color|h|health}}, {{Color|h|regeneration}}, and {{Color|d|damage}}). On removal, gain all stored stats.",
+	Category = { "Utility","HalcyoniteShrine","CannotDuplicate","AIBlacklist" },
+	ID = "ExtraStatsOnLevelUp",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_EXTRASTATSONLEVELUP",
+	Expansion = "SotS",
+	}
+items["Chronic Expansion"] = {
+	Rarity = "Common",
+	Quote = "Deal bonus damage for each enemy killed.",
+	Desc = "Killing an enemy increases your damage by {{Color|d|3.5%}} {{Stack|(+1% per stack)}}, up to {{Color|u|10}} {{Stack|(+5 per stack)}}, for {{Color|u|7s}}. Dealing damage refreshes the timer.",
+	Category = { "Damage","OnKillEffect","HalcyoniteShrine","CanBeTemporary" },
+	ID = "IncreaseDamageOnMultiKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_INCREASEDAMAGEONMULTIKILL",
+	Expansion = "SotS",
+	}
+items["Luminous Shot"] = {
+	Rarity = "Uncommon",
+	Quote = "Activating your Secondary skill charges your Primary skill with powerful lightning strikes. Requires 3 charges.",
+	Desc = "Activating {{Color|u|Secondary skill}} stores up to {{Color|u|5 charges}} {{Stack|(+1 per stack)}}. Requires {{Color|u|3 charges}} for your {{Color|u|Primary skill}} to fire lightning strikes, dealing {{Color|d|175% TOTAL damage}} {{Stack|(+50% per stack)}} each. {{Color|u|Reduces Secondary skill cooldown by 20%}}.",
+	Category = { "Damage","Utility","HalcyoniteShrine","DevotionBlacklist","AIBlacklist","Technology","CanBeTemporary" },
+	ID = "IncreasePrimaryDamage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_INCREASEPRIMARYDAMAGE",
+	Expansion = "SotS",
+	}
+items["Sonorous Whispers"] = {
+	Rarity = "Legendary",
+	Quote = "Upon large or elite monster kill chance to drop items.",
+	Desc = "When a large monster is killed it will always drop an item. All elites have a {{Color|u|4%}} chance of dropping an item {{Stack|(+1% per stack)}}.",
+	Category = { "Utility","CannotDuplicate","HalcyoniteShrine","AIBlacklist","CanBeTemporary" },
+	ID = "ItemDropChanceOnKill",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ITEMDROPCHANCEONKILL",
+	Expansion = "SotS",
+	}
+items["Breaching Fin"] = {
+	Rarity = "Uncommon",
+	Quote = "Grounded enemies hit with any skill are launched and take bonus damage.",
+	Desc = "Grounded enemies hit with any {{Color|u|skill}} are {{Color|u|launched}} and {{Color|u|stunned}}. Enemies hit while airborne are {{Color|u|launched}} again up to {{Color|u|2 times}} {{Stack|(+1 per stack)}}. Launched enemies take increased damage by {{Color|d|10%}} from all sources per launch. Recharges after {{Color|u|15s}}.",
+	Category = { "Utility","HalcyoniteShrine","AIBlacklist","Damage","DevotionBlacklist","CanBeTemporary" },
+	ID = "KnockBackHitEnemies",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_KNOCKBACKHITENEMIES",
+	Expansion = "SotS",
+	}
+items["Sale Star"] = {
+	Rarity = "Uncommon",
+	Quote = "First chest bought yields more than one reward. Usable once per stage.",
+	Desc = "Gain an extra item on the first chest opened per stage. {{Stack|Each additional Sale Star increases the chance of getting more items by 5%}}.",
+	Category = { "CannotDuplicate","Utility","HalcyoniteShrine","AIBlacklist" },
+	ID = "LowerPricedChests",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LOWERPRICEDCHESTS",
+	Expansion = "SotS",
+	}
+items["Sale Star (Consumed)"] = {
+	Rarity = "Untiered",
+	Quote = "At the start of each stage, it transforms into Sale Star.",
+	Desc = "At the start of each stage, it transforms into Sale Star.",
+	Category = { "Utility","OnStageBeginEffect" },
+	ID = "LowerPricedChestsConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_LOWERPRICEDCHESTSCONSUMED",
+	Expansion = "SotS",
+	}
+items["Runic Lens"] = {
+	Rarity = "Legendary",
+	Quote = "Chance to call down a meteor. Damage and chance are increased with higher damage hits.",
+	Desc = "{{Color|d|3%}} chance on hit to call a meteor strike, dealing {{Color|d|2000%}} base damage. Every {{Color|d|100%}} attack damage dealt increases the activation chance by {{Color|d|3%}} {{Stack|(+3% per stack)}} and damage by {{Color|d|150%}} {{Stack|(+50% per stack)}}.",
+	Category = { "Damage","HalcyoniteShrine","CanBeTemporary" },
+	ID = "MeteorAttackOnHighDamage",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_METEORATTACKONHIGHDAMAGE",
+	Expansion = "SotS",
+	}
+items["Longstanding Solitude"] = {
+	Rarity = "Lunar",
+	Quote = "Free purchases on level up... <color=#FF7F7F>BUT gold converts to experience.</color>",
+	Desc = "{{Color|u|On level up}} gain a free unlock for the next purchase {{Stack|(+1 per stack)}} but all gold is converted to experience. Anything that costs gold is {{Color|u|increased by 50%}} {{Stack|(+50% per stack)}}.",
+	Category = { "HalcyoniteShrine","Utility","Damage" },
+	ID = "OnLevelUpFreeUnlock",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_ONLEVELUPFREEUNLOCK",
+	Expansion = "SotS",
+	}
+items["Elusive Antlers"] = {
+	Rarity = "Common",
+	Quote = "Spawns orbs of energy that give bonus movement speed.",
+	Desc = "Spawns orbs of energy nearby every {{Color|u|10s}} {{Stack|(-10% per stack)}}, giving {{Color|u|+12% movement speed}} up to {{Color|u|3}} {{Stack|(+3 per stack)}} {{Color|u|times}} for {{Color|u|12s}}.",
+	Category = { "Utility","HalcyoniteShrine","AIBlacklist","FoodRelated","MobilityRelated","CanBeTemporary" },
+	ID = "SpeedBoostPickup",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_SPEEDBOOSTPICKUP",
+	Expansion = "SotS",
+	}
+items["Electric Boomerang"] = {
+	Rarity = "Legendary",
+	Quote = "On hit chance to throw a stunning boomerang.",
+	Desc = "{{Color|d|15%}} chance on hit to fire an electric boomerang that slices through enemies dealing {{Color|d|120% base damage}} and deals an additional {{Color|d|120%}} {{Stack|(+120% per stack)}} {{Color|d|base damage per second}} and {{Color|d|stuns}} all enemies hit. Can {{Color|d|strike}} enemies on the way back.",
+	Category = { "Damage","HalcyoniteShrine","CanBeTemporary","Technology" },
+	ID = "StunAndPierce",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_STUNANDPIERCE",
+	Expansion = "SotS",
+	}
+items["Unstable Transmitter"] = {
+	Rarity = "Uncommon",
+	Quote = "Gain a temporary barrier and a dimensional aura on low health.",
+	Desc = "Falling below {{Color|hp|25% health}} gives you a {{Color|h|temporary barrier}} and a dimensional aura that {{Color|d|bleeds}} and {{Color|u|teleports}} away enemies for {{Color|u|8s}}. {{Color|d|Enemies killed}} by the aura {{Color|u|extend}} the duration by {{Color|u|1s}}. At the start of each stage, it regenerates.",
+	Category = { "Utility","HalcyoniteShrine","LowHealth","AIBlacklist","CanBeTemporary","ExtractorUnitBlacklist","Technology" },
+	ID = "TeleportOnLowHealth",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TELEPORTONLOWHEALTH",
+	Expansion = "SotS",
+	}
+items["Unstable Transmitter (Consumed)"] = {
+	Rarity = "Untiered",
+	Quote = "At the start of each stage, it transforms into Unstable Transmitter.",
+	Desc = "At the start of each stage, it transforms into Unstable Transmitter.",
+	Category = { "Utility","OnStageBeginEffect" },
+	ID = "TeleportOnLowHealthConsumed",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TELEPORTONLOWHEALTHCONSUMED",
+	Expansion = "SotS",
+	}
+items["Noxious Thorn"] = {
+	Rarity = "Uncommon",
+	Quote = "Killing an enemy transfers debuffs to a nearby enemy.",
+	Desc = "Gain {{Color|d|10%}} chance to {{Color|d|bleed}} an enemy. On killing an enemy, {{Color|d|transfer 33%}} of every debuff stack to {{Color|d|1 enemy}} {{Stack|(+1 per stack)}} within {{Color|u|20m}} {{Stack|(+5m per stack)}}.",
+	Category = { "HalcyoniteShrine","Damage","FoodRelated","CanBeTemporary" },
+	ID = "TriggerEnemyDebuffs",
+	Stats = {
+		 {
+			Stat = "",
+			Value = "",
+			Stack = "",
+			Add = ""
+		}
+	},
+	LocalizationInternalName = "ITEM_TRIGGERENEMYDEBUFFS",
+	Expansion = "SotS",
+	}

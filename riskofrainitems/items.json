@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Soldier's Syringe",
+    "rarity": "White / Common",
+    "type": "passive",
+    "description": "Increase attack speed. Classic starter item and easy stack for most survivors.",
+    "icon": ""
+  },
+  {
+    "name": "Hopoo Feather",
+    "rarity": "Green / Uncommon",
+    "type": "passive",
+    "description": "Gain an extra jump. Great mobility pick that stacks well with parkour-focused survivors.",
+    "icon": ""
+  },
+  {
+    "name": "57 Leaf Clover",
+    "rarity": "Red / Legendary",
+    "type": "passive",
+    "description": "Luck bending: reroll most random effects in your favor. A must-have late game.",
+    "icon": ""
+  },
+  {
+    "name": "Titanic Knurl",
+    "rarity": "Yellow / Boss & Planet",
+    "type": "passive",
+    "description": "Boost health and regen. Boss/planet drop template for defensive stacking.",
+    "icon": ""
+  },
+  {
+    "name": "Shaped Glass",
+    "rarity": "Blue / Lunar",
+    "type": "passive",
+    "description": "Double damage, halve health. Lunar risk-reward template entry.",
+    "icon": ""
+  },
+  {
+    "name": "Plasma Shrimp",
+    "rarity": "Purple / Void",
+    "type": "passive",
+    "description": "Replace primary with homing missiles when shielded. Void corruption template.",
+    "icon": ""
+  },
+  {
+    "name": "Field Ration",
+    "rarity": "Orange / Meal",
+    "type": "passive",
+    "description": "Placeholder for meal-type orange drops. Swap this with your own meal entry.",
+    "icon": ""
+  },
+  {
+    "name": "Preon Accumulator",
+    "rarity": "Orange / Equipment",
+    "type": "active",
+    "description": "Fire a devastating electric orb. Template for standard equipment (active items).",
+    "icon": ""
+  },
+  {
+    "name": "Effigy of Grief",
+    "rarity": "Blue / Lunar Equipment",
+    "type": "active",
+    "description": "Create a slowing, armor-shredding zone. Template for lunar equipment.",
+    "icon": ""
+  },
+  {
+    "name": "Ifrit's Distinction",
+    "rarity": "Orange / Elite Equipment",
+    "type": "active",
+    "description": "Become an overloading elite variant. Template for elite equipment drops.",
+    "icon": ""
+  }
+]
