@@ -14,7 +14,7 @@
     <div>
       <p class="eyebrow">Risk of Rain 2</p>
       <h1>Item Cheat Sheet</h1>
-      <p class="lede">All items on one screen. Filters plus modal details. Disabled items stay hidden.</p>
+      <p class="lede">All items on one screen. Toggle filters, hide disabled entries, click any icon for details.</p>
     </div>
     <div class="hero-card">
       <p class="card-label">Quick Stats</p>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="filter-block">
-        <label>Rarity</label>
+        <label>Rarity (toggle)</label>
         <div class="chips" id="rarityFilters">
           <button class="chip is-active" data-rarity="all">All</button>
           <button class="chip" data-rarity="Common">Common</button>
@@ -51,7 +51,7 @@
       </div>
 
       <div class="filter-block">
-        <label>Item type</label>
+        <label>Type (toggle)</label>
         <div class="chips" id="typeFilters">
           <button class="chip is-active" data-type="all">All</button>
           <button class="chip" data-type="item">Items</button>
@@ -60,13 +60,11 @@
       </div>
 
       <div class="filter-block">
-        <label for="sort">Sort</label>
-        <div class="select-wrap">
-          <select id="sort">
-            <option value="rarity-id">Rarity order (ID within rarity)</option>
-            <option value="name-asc">Name A → Z</option>
-            <option value="id-asc">ID A → Z</option>
-          </select>
+        <label>Sort (toggle)</label>
+        <div class="chips" id="sortToggles">
+          <button class="chip is-active" data-sort="rarity">Rarity order</button>
+          <button class="chip" data-sort="name">Name A → Z</button>
+          <button class="chip" data-sort="id">ID A → Z</button>
         </div>
       </div>
     </section>
@@ -127,17 +125,17 @@
     ];
 
     const state = {
-      rarity: 'all',
-      type: 'all',
+      raritySelection: new Set(),
+      typeSelection: new Set(),
       search: '',
-      sort: 'rarity-id',
+      sort: { rarity: true, key: 'id' }, // rarity toggle + secondary key (name or id)
     };
 
     const itemsGrid = document.getElementById('itemsGrid');
     const rarityFilters = document.getElementById('rarityFilters');
     const typeFilters = document.getElementById('typeFilters');
+    const sortToggles = document.getElementById('sortToggles');
     const searchInput = document.getElementById('search');
-    const sortSelect = document.getElementById('sort');
     const cardTemplate = document.getElementById('itemCardTemplate');
     const modal = document.getElementById('itemModal');
     const modalTitle = modal.querySelector('.modal-title');
@@ -151,19 +149,42 @@
     const slugify = (value = '') => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     const buildIconPath = (name = '') => `icons/${name.replace(/\s+/g, '_')}.png`;
 
-    const setActiveChip = (container, value, key) => {
-      Array.from(container.querySelectorAll('.chip')).forEach((chip) => {
-        const match = chip.dataset[key] === value;
-        chip.classList.toggle('is-active', match);
-      });
-    };
-
     const rarityToKey = (rarity = '') => {
       const raw = slugify(rarity).replace(/-/g, ' ');
       return raw || 'default';
     };
 
     const describeType = (type) => (type === 'equipment' ? 'Equipment' : 'Item');
+
+    const syncChipStates = () => {
+      // Rarity chips
+      rarityFilters.querySelectorAll('.chip').forEach((chip) => {
+        if (chip.dataset.rarity === 'all') {
+          chip.classList.toggle('is-active', state.raritySelection.size === 0);
+        } else {
+          chip.classList.toggle('is-active', state.raritySelection.has(chip.dataset.rarity));
+        }
+      });
+
+      // Type chips
+      typeFilters.querySelectorAll('.chip').forEach((chip) => {
+        if (chip.dataset.type === 'all') {
+          chip.classList.toggle('is-active', state.typeSelection.size === 0);
+        } else {
+          chip.classList.toggle('is-active', state.typeSelection.has(chip.dataset.type));
+        }
+      });
+
+      // Sort toggles
+      sortToggles.querySelectorAll('.chip').forEach((chip) => {
+        const key = chip.dataset.sort;
+        if (key === 'rarity') {
+          chip.classList.toggle('is-active', state.sort.rarity);
+        } else {
+          chip.classList.toggle('is-active', state.sort.key === key);
+        }
+      });
+    };
 
     const openModal = (item) => {
       modalTitle.textContent = item.name;
@@ -192,6 +213,26 @@
       modal.classList.add('is-hidden');
     };
 
+    const sortComparator = (a, b) => {
+      const secondary = state.sort.key === 'name'
+        ? a.name.localeCompare(b.name)
+        : (a.id || a.name).localeCompare(b.id || b.name);
+
+      if (state.sort.rarity) {
+        const rank = (r) => {
+          const idx = rarityOrder.indexOf(r);
+          return idx === -1 ? rarityOrder.length : idx;
+        };
+        const rarityDiff = rank(a.rarity) - rank(b.rarity);
+        if (rarityDiff !== 0) return rarityDiff;
+        if (secondary !== 0) return secondary;
+        return (a.id || a.name).localeCompare(b.id || b.name);
+      }
+
+      if (secondary !== 0) return secondary;
+      return (a.id || a.name).localeCompare(b.id || b.name);
+    };
+
     const renderItems = () => {
       if (!items.length) {
         itemsGrid.innerHTML = '<p class="inline-error">No items found. Ensure ror2_items_and_equipments.json is present.</p>';
@@ -202,8 +243,10 @@
 
       const filtered = items
         .filter((item) => {
-          const matchesRarity = state.rarity === 'all' || item.rarity === state.rarity;
-          const matchesType = state.type === 'all' || item.type === state.type;
+          const matchesRarity =
+            state.raritySelection.size === 0 || state.raritySelection.has(item.rarity);
+          const matchesType =
+            state.typeSelection.size === 0 || state.typeSelection.has(item.type);
           const matchesSearch =
             !state.search ||
             item.name.toLowerCase().includes(state.search) ||
@@ -212,17 +255,7 @@
           const isEnabled = item.enabled !== false;
           return matchesRarity && matchesType && matchesSearch && isEnabled;
         })
-        .sort((a, b) => {
-          if (state.sort === 'name-asc') return a.name.localeCompare(b.name);
-          if (state.sort === 'id-asc') return (a.id || a.name).localeCompare(b.id || b.name);
-          const rank = (r) => {
-            const idx = rarityOrder.indexOf(r);
-            return idx === -1 ? rarityOrder.length : idx;
-          };
-          const rarityDiff = rank(a.rarity) - rank(b.rarity);
-          if (rarityDiff !== 0) return rarityDiff;
-          return (a.id || a.name).localeCompare(b.id || b.name);
-        });
+        .sort(sortComparator);
 
       document.querySelector('[data-result-count]').textContent = filtered.length;
       document.querySelector('[data-active-count]').textContent = filtered.filter((i) => i.type === 'equipment').length;
@@ -266,28 +299,50 @@
 
     const attachFilters = () => {
       rarityFilters.addEventListener('click', (event) => {
-        const target = event.target.closest('.chip[data-rarity]');
-        if (!target) return;
-        state.rarity = target.dataset.rarity;
-        setActiveChip(rarityFilters, state.rarity, 'rarity');
+        const chip = event.target.closest('.chip[data-rarity]');
+        if (!chip) return;
+        const value = chip.dataset.rarity;
+        if (value === 'all') {
+          state.raritySelection.clear();
+        } else if (state.raritySelection.has(value)) {
+          state.raritySelection.delete(value);
+        } else {
+          state.raritySelection.add(value);
+        }
+        syncChipStates();
         renderItems();
       });
 
       typeFilters.addEventListener('click', (event) => {
-        const target = event.target.closest('.chip[data-type]');
-        if (!target) return;
-        state.type = target.dataset.type;
-        setActiveChip(typeFilters, state.type, 'type');
+        const chip = event.target.closest('.chip[data-type]');
+        if (!chip) return;
+        const value = chip.dataset.type;
+        if (value === 'all') {
+          state.typeSelection.clear();
+        } else if (state.typeSelection.has(value)) {
+          state.typeSelection.delete(value);
+        } else {
+          state.typeSelection.add(value);
+        }
+        syncChipStates();
+        renderItems();
+      });
+
+      sortToggles.addEventListener('click', (event) => {
+        const chip = event.target.closest('.chip[data-sort]');
+        if (!chip) return;
+        const key = chip.dataset.sort;
+        if (key === 'rarity') {
+          state.sort.rarity = !state.sort.rarity;
+        } else {
+          state.sort.key = key; // choose one secondary sort
+        }
+        syncChipStates();
         renderItems();
       });
 
       searchInput.addEventListener('input', (event) => {
         state.search = event.target.value.trim().toLowerCase();
-        renderItems();
-      });
-
-      sortSelect.addEventListener('change', (event) => {
-        state.sort = event.target.value;
         renderItems();
       });
 
@@ -340,6 +395,7 @@
           ...item,
           enabled: item.enabled === false ? false : true,
         }));
+        syncChipStates();
         renderItems();
       } catch (error) {
         itemsGrid.innerHTML = `<p class="inline-error">Couldn't load ror2_items_and_equipments.json (${error.message}).</p>`;
