@@ -156,6 +156,18 @@
 
     const describeType = (type) => (type === 'equipment' ? 'Equipment' : 'Item');
 
+    const formatRichText = (value = '') => {
+      const esc = (str) => str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      let output = esc(value);
+      output = output.replace(/{{Color\|([^|]+)\|([^}]+)}}/gi, (_, tone, text) => {
+        const key = tone.toLowerCase();
+        const cls = `text-${key}`;
+        return `<span class="${cls}">${esc(text)}</span>`;
+      });
+      output = output.replace(/{{Stack\|([^}]+)}}/gi, (_, text) => `<span class="text-stack">${esc(text)}</span>`);
+      return output;
+    };
+
     const syncChipStates = () => {
       // Rarity chips
       rarityFilters.querySelectorAll('.chip').forEach((chip) => {
@@ -188,7 +200,8 @@
 
     const openModal = (item) => {
       modalTitle.textContent = item.name;
-      modalDesc.textContent = item.desc || item.quote || item.description || 'No description provided yet.';
+      const raw = item.desc || item.quote || item.description || 'No description provided yet.';
+      modalDesc.innerHTML = formatRichText(raw);
       modalRarity.textContent = item.rarity;
       modalType.textContent = describeType(item.type);
 

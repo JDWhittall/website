@@ -328,6 +328,27 @@ h1 {
   line-height: 1.5;
 }
 
+.text-d {
+  color: #f4c84a;
+}
+
+.text-u {
+  color: #6ab7ff;
+}
+
+.text-hp {
+  color: #ff6b6b;
+}
+
+.text-h {
+  color: #77dd77;
+}
+
+.text-stack {
+  color: #8a94a6;
+  font-style: italic;
+}
+
 /* Debug viewer */
 .debug-body {
   padding-bottom: 64px;
