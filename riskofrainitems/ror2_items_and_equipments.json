@@ -1039,8 +1039,8 @@
     "name": "Beads of Fealty",
     "rarity": "Lunar",
     "type": "item",
-    "quote": "Seems to do nothing... <color=#FF7F7F>but...</color>",
-    "desc": "Seems to do nothing... <color=#FF7F7F>but...</color>",
+    "quote": "Seems to do nothing... {{Color|r|but...}}",
+    "desc": "Seems to do nothing... {{Color|r|but...}}",
     "category": [
       "ObliterationRelated"
     ],
@@ -2527,7 +2527,7 @@
     "rarity": "Void",
     "type": "item",
     "quote": "Periodically recruit allies from the {{Color|v|Void}}.  {{Color|v|Corrupts all }}<style=cIsTierBoss>yellow items}}{{Color|v|}}.",
-    "desc": "Every {{Color|u|60}}{{Stack|(-50% per stack)}} seconds, gain a random {{Color|v|Void}} ally. Can have up to {{Color|u|1}}{{Stack|(+1 per stack)}} allies at a time. {{Color|v|Corrupts all }}<style=cIsTierBoss>yellow items}}{{Color|v|}}.",
+    "desc": "Every {{Color|u|60}}{{Stack|(-50% per stack)}} seconds, gain a random {{Color|v|Void}} ally. Can have up to {{Color|u|1}}{{Stack|(+1 per stack)}} allies at a time. {{Color|v|Corrupts all }}{{Color|b|yellow items}}{{Color|v|}}.",
     "category": [
       "Utility",
       "CannotCopy",
