@@ -191,7 +191,6 @@ h2{
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 8px;
-  
 }
 
 .sidebar {
@@ -562,6 +561,9 @@ h2{
 }
 .text-r{
   color: #FF7F7F;
+}
+.text-t{
+  color: #8BC7D5;
 }
 /* Debug viewer */
 .debug-body {
