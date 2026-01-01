@@ -26,21 +26,41 @@ function doPost(e) {
       data.avatarUrl || '',
     ]);
   } else {
-    // Existing behaviour for "Games" plus ExpansionOf column
-    // Columns: Name, Description, Owners, PlayerCount, Playtime, Genre, Notes, ImageUrl, ScoreSheet, ExpansionOf, Timestamp
-    gamesSheet.appendRow([
-      data.name         || '',
-      data.description  || '',
-      data.owners       || '',
-      data.playerCount  || '',
-      data.playtime     || '',
-      data.genre        || '',
-      data.notes        || '',
-      data.imageUrl     || '',
-      data.scoreSheet   || '',
-      data.expansionOf  || '',
-      data.timestamp    || ''
-    ]);
+    // Determine whether the sheet already has an ExpansionOf column by checking headers
+    const headerRow = gamesSheet.getDataRange().getValues()[0] || [];
+    const headerNames = headerRow.map(h => String(h || '').toLowerCase());
+    const hasExpansionCol = headerNames.some(h => h.indexOf('expansion') !== -1);
+
+    if (hasExpansionCol) {
+      // Columns include ExpansionOf
+      gamesSheet.appendRow([
+        data.name         || '',
+        data.description  || '',
+        data.owners       || '',
+        data.playerCount  || '',
+        data.playtime     || '',
+        data.genre        || '',
+        data.notes        || '',
+        data.imageUrl     || '',
+        data.scoreSheet   || '',
+        data.expansionOf  || '',
+        data.timestamp    || ''
+      ]);
+    } else {
+      // Older sheet layout: append without ExpansionOf (preserve timestamp position)
+      gamesSheet.appendRow([
+        data.name        || '',
+        data.description || '',
+        data.owners      || '',
+        data.playerCount || '',
+        data.playtime    || '',
+        data.genre       || '',
+        data.notes       || '',
+        data.imageUrl    || '',
+        data.scoreSheet  || '',
+        data.timestamp   || ''
+      ]);
+    }
   }
 
   return ContentService
@@ -77,21 +97,41 @@ function doGet(e) {
     const range  = gamesSheet.getDataRange();
     const values = range.getValues();
 
+    // Inspect headers to see where ExpansionOf/timestamp live. This makes the API resilient
+    const headers = values[0] || [];
+    const headerLower = headers.map(h => String(h || '').toLowerCase());
+    const expansionIdx = headerLower.findIndex(h => h.indexOf('expansion') !== -1);
+    const timestampIdx = headerLower.findIndex(h => h.indexOf('timestamp') !== -1);
+
     const rows = values.slice(1)
       .filter(r => r[0])
-      .map(r => ({
-        gameName:   r[0],
-        description:r[1],
-        owners:     r[2],
-        players:    r[3],
-        playtime:   r[4],
-        genre:      r[5],
-        notes:      r[6],
-        imageUrl:   r[7],
-        scoreSheet: r[8],
-        expansionOf:r[9] || '',
-        timestamp:  r[10] || ''
-      }));
+      .map(r => {
+        const base = {
+          gameName:   r[0],
+          description:r[1],
+          owners:     r[2],
+          players:    r[3],
+          playtime:   r[4],
+          genre:      r[5],
+          notes:      r[6],
+          imageUrl:   r[7],
+          scoreSheet: r[8],
+        };
+        // If ExpansionOf column exists in header, use that index; otherwise assume older layout (timestamp at index 9)
+        if (expansionIdx >= 0) {
+          base.expansionOf = r[expansionIdx] || '';
+        } else {
+          base.expansionOf = '';
+        }
+
+        if (timestampIdx >= 0) {
+          base.timestamp = r[timestampIdx] || '';
+        } else {
+          base.timestamp = r[9] || '';
+        }
+
+        return base;
+      });
 
     return ContentService
       .createTextOutput(JSON.stringify(rows))

@@ -268,7 +268,28 @@ async function loadGames() {
     );
 
     populateOwnerFilter(owners);
-    gamesCache = games;
+    gamesCache = games || [];
+
+    // Build expansions map and baseGames list defensively: only treat a row as an
+    // expansion when its ExpansionOf matches an existing game name.
+    const nameSet = new Set((gamesCache || []).map(g => normalizeName(g.gameName)));
+    expansionsMap = new Map();
+    baseGames = [];
+    gamesCache.forEach((g) => {
+      const parent = getParentName(g);
+      const parentNorm = normalizeName(parent);
+      if (parent && nameSet.has(parentNorm)) {
+        const parentObj = gamesCache.find(x => normalizeName(x.gameName) === parentNorm) || { gameName: parent };
+        const key = (parentObj.gameName || parent).trim();
+        if (!expansionsMap.has(key)) expansionsMap.set(key, []);
+        expansionsMap.get(key).push(g);
+      } else {
+        baseGames.push(g);
+      }
+    });
+
+    console.log('Loaded games:', gamesCache);
+    console.log('Expansions map keys:', Array.from(expansionsMap.keys()));
 
     renderGames();
   } catch (err) {
