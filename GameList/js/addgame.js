@@ -1,4 +1,4 @@
-const BASE_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec";
+const BASE_URL = "https://script.google.com/macros/s/AKfycbw32ei_sPa1yhE9OuKnBAxAvnBcrF_eoipqbUTlNkJJfiZwtNFrI1EjVKgN0B0ZJt8HRA/exec";
 const GAME_URL = `${BASE_URL}?type=games`;
 const OWNERS_URL = `${BASE_URL}?type=owners`;
 

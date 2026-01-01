@@ -1,5 +1,5 @@
 // Same base URL, but point to type=owners
-const OWNER_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4zkOiKK95bobxKaCDgfzQU0kPmn3QFKZj24cO6x2BXImM2U8w/exec?type=owners";
+const OWNER_URL = "https://script.google.com/macros/s/AKfycbw32ei_sPa1yhE9OuKnBAxAvnBcrF_eoipqbUTlNkJJfiZwtNFrI1EjVKgN0B0ZJt8HRA/exec?type=owners";
 
 document.getElementById("owner-form").addEventListener("submit", async (e) => {
   e.preventDefault();

@@ -26,77 +26,22 @@ function doPost(e) {
       data.avatarUrl || '',
     ]);
   } else {
-    // Map incoming JSON fields to sheet columns using header names when possible.
-    // This is more robust than relying on a fixed column order and prevents
-    // misplacing values (e.g. timestamp appearing in ExpansionOf).
-    const headerRow = gamesSheet.getDataRange().getValues()[0] || [];
-    const headerLower = headerRow.map(h => String(h || '').toLowerCase());
-
-    function findHeader(patterns) {
-      for (var i = 0; i < headerLower.length; i++) {
-        for (var j = 0; j < patterns.length; j++) {
-          if (headerLower[i].indexOf(patterns[j]) !== -1) return i;
-        }
-      }
-      return -1;
-    }
-
-    if (headerRow.length) {
-      var row = new Array(headerRow.length).fill('');
-
-      var idx;
-      idx = findHeader(['game', 'game name', 'gamename']);
-      if (idx === -1) idx = findHeader(['name']);
-      if (idx !== -1) row[idx] = data.name || '';
-
-      idx = findHeader(['description']);
-      if (idx !== -1) row[idx] = data.description || '';
-
-      idx = findHeader(['owner']);
-      if (idx !== -1) row[idx] = data.owners || '';
-
-      // player count vs playtime: prefer header patterns to differentiate
-      idx = findHeader(['player count', 'playercount', 'players', 'player(s)']);
-      if (idx !== -1) row[idx] = data.playerCount || data.players || '';
-
-      idx = findHeader(['playtime', 'play time', 'duration', 'time']);
-      if (idx !== -1) row[idx] = data.playtime || '';
-
-      idx = findHeader(['genre']);
-      if (idx !== -1) row[idx] = data.genre || '';
-
-      idx = findHeader(['note']);
-      if (idx !== -1) row[idx] = data.notes || '';
-
-      idx = findHeader(['image', 'cover']);
-      if (idx !== -1) row[idx] = data.imageUrl || '';
-
-      idx = findHeader(['score', 'scoresheet']);
-      if (idx !== -1) row[idx] = data.scoreSheet || '';
-
-      idx = findHeader(['expansion']);
-      if (idx !== -1) row[idx] = data.expansionOf || '';
-
-      idx = findHeader(['timestamp', 'time', 'created', 'added']);
-      if (idx !== -1) row[idx] = data.timestamp || '';
-
-      gamesSheet.appendRow(row);
-    } else {
-      // No headers found — fall back to the previous fixed-order append
-      gamesSheet.appendRow([
-        data.name        || '',
-        data.description || '',
-        data.owners      || '',
-        data.playerCount || data.players || '',
-        data.playtime    || '',
-        data.genre       || '',
-        data.notes       || '',
-        data.imageUrl    || '',
-        data.scoreSheet  || '',
-        data.expansionOf || '',
-        data.timestamp   || ''
-      ]);
-    }
+    // Fixed-order append to match the sheet columns:
+    // Game Name, Description, Owner(s), Players, Playtime, Genre, Notes,
+    // Image Url, Scoresheet, ExpansionOf, Timestamp
+    gamesSheet.appendRow([
+      data.name        || '',
+      data.description || '',
+      data.owners      || '',
+      data.playerCount || data.players || '',
+      data.playtime    || '',
+      data.genre       || '',
+      data.notes       || '',
+      data.imageUrl    || '',
+      data.scoreSheet  || '',
+      data.expansionOf || '',
+      data.timestamp   || ''
+    ]);
   }
 
   return ContentService
@@ -129,66 +74,25 @@ function doGet(e) {
       .setMimeType(ContentService.MimeType.JSON);
 
   } else {
-    // Existing behaviour for games
+    // Fixed-order mapping for games
     const range  = gamesSheet.getDataRange();
     const values = range.getValues();
 
-    // Inspect headers to see where ExpansionOf/timestamp live. Prefer header mapping,
-    // but fall back to heuristics when headers are missing or ambiguous so that
-    // an ExpansionOf value doesn't accidentally become the timestamp.
-    const headers = values[0] || [];
-    const headerLower = headers.map(h => String(h || '').toLowerCase());
-    const hasExpansionHeader = headerLower.some(h => h.indexOf('expansion') !== -1);
-
     const rows = values.slice(1)
       .filter(r => r[0])
-      .map(r => {
-        const base = {
-          gameName:   r[0],
-          description:r[1],
-          owners:     r[2],
-          players:    r[3],
-          playtime:   r[4],
-          genre:      r[5],
-          notes:      r[6],
-          imageUrl:   r[7],
-          scoreSheet: r[8],
-          expansionOf: '',
-          timestamp: ''
-        };
-
-        if (hasExpansionHeader) {
-          // Headers indicate an explicit ExpansionOf column; assume columns align
-          base.expansionOf = r[9] || '';
-          base.timestamp = r[10] || '';
-        } else {
-          // No explicit header. Use row length and content heuristics:
-          // - If row has 11+ columns, assume expansionOf at 9 and timestamp at 10
-          // - If row has exactly 10 columns, decide based on whether the last
-          //   cell looks like a timestamp (numeric or parseable date). If it
-          //   looks like a timestamp, treat as timestamp; otherwise treat as expansionOf.
-          if (r.length >= 11) {
-            base.expansionOf = r[9] || '';
-            base.timestamp = r[10] || '';
-          } else if (r.length === 10) {
-            const last = String(r[9] || '').trim();
-            const isNumeric = /^[0-9]+$/.test(last);
-            const isDate = !isNaN(Date.parse(last));
-            if (isNumeric || isDate) {
-              base.timestamp = last;
-              base.expansionOf = '';
-            } else {
-              base.expansionOf = last;
-              base.timestamp = '';
-            }
-          } else {
-            base.expansionOf = '';
-            base.timestamp = '';
-          }
-        }
-
-        return base;
-      });
+      .map(r => ({
+        gameName:    r[0],
+        description:r[1],
+        owners:     r[2],
+        players:    r[3],
+        playtime:   r[4],
+        genre:      r[5],
+        notes:      r[6],
+        imageUrl:   r[7],
+        scoreSheet: r[8],
+        expansionOf: r[9] || '',
+        timestamp:  r[10] || ''
+      }));
 
     return ContentService
       .createTextOutput(JSON.stringify(rows))
