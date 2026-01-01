@@ -92,8 +92,11 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     description: formData.get("description") || "",
     owners: ownerList.join(", "),
     expansionOf: formData.get("expansionOf") || "",
-    playerCount: formData.get("playerCount") || "",
-    playtime: formData.get("playtime") || "",
+    // Send both `playerCount` and `players` as plain text to be compatible
+    // with different sheet headers and parsers.
+    playerCount: String(formData.get("playerCount") || ""),
+    players: String(formData.get("playerCount") || ""),
+    playtime: String(formData.get("playtime") || ""),
     genre: formData.get("genre") || "",
     notes: formData.get("notes") || "",
     imageUrl: formData.get("imageUrl") || "",

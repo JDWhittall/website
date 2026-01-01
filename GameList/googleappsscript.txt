@@ -26,38 +26,74 @@ function doPost(e) {
       data.avatarUrl || '',
     ]);
   } else {
-    // Determine whether the sheet already has an ExpansionOf column by checking headers
+    // Map incoming JSON fields to sheet columns using header names when possible.
+    // This is more robust than relying on a fixed column order and prevents
+    // misplacing values (e.g. timestamp appearing in ExpansionOf).
     const headerRow = gamesSheet.getDataRange().getValues()[0] || [];
-    const headerNames = headerRow.map(h => String(h || '').toLowerCase());
-    const hasExpansionCol = headerNames.some(h => h.indexOf('expansion') !== -1);
+    const headerLower = headerRow.map(h => String(h || '').toLowerCase());
 
-    if (hasExpansionCol) {
-      // Columns include ExpansionOf
-      gamesSheet.appendRow([
-        data.name         || '',
-        data.description  || '',
-        data.owners       || '',
-        data.playerCount  || '',
-        data.playtime     || '',
-        data.genre        || '',
-        data.notes        || '',
-        data.imageUrl     || '',
-        data.scoreSheet   || '',
-        data.expansionOf  || '',
-        data.timestamp    || ''
-      ]);
+    function findHeader(patterns) {
+      for (var i = 0; i < headerLower.length; i++) {
+        for (var j = 0; j < patterns.length; j++) {
+          if (headerLower[i].indexOf(patterns[j]) !== -1) return i;
+        }
+      }
+      return -1;
+    }
+
+    if (headerRow.length) {
+      var row = new Array(headerRow.length).fill('');
+
+      var idx;
+      idx = findHeader(['game', 'game name', 'gamename']);
+      if (idx === -1) idx = findHeader(['name']);
+      if (idx !== -1) row[idx] = data.name || '';
+
+      idx = findHeader(['description']);
+      if (idx !== -1) row[idx] = data.description || '';
+
+      idx = findHeader(['owner']);
+      if (idx !== -1) row[idx] = data.owners || '';
+
+      // player count vs playtime: prefer header patterns to differentiate
+      idx = findHeader(['player count', 'playercount', 'players', 'player(s)']);
+      if (idx !== -1) row[idx] = data.playerCount || data.players || '';
+
+      idx = findHeader(['playtime', 'play time', 'duration', 'time']);
+      if (idx !== -1) row[idx] = data.playtime || '';
+
+      idx = findHeader(['genre']);
+      if (idx !== -1) row[idx] = data.genre || '';
+
+      idx = findHeader(['note']);
+      if (idx !== -1) row[idx] = data.notes || '';
+
+      idx = findHeader(['image', 'cover']);
+      if (idx !== -1) row[idx] = data.imageUrl || '';
+
+      idx = findHeader(['score', 'scoresheet']);
+      if (idx !== -1) row[idx] = data.scoreSheet || '';
+
+      idx = findHeader(['expansion']);
+      if (idx !== -1) row[idx] = data.expansionOf || '';
+
+      idx = findHeader(['timestamp', 'time', 'created', 'added']);
+      if (idx !== -1) row[idx] = data.timestamp || '';
+
+      gamesSheet.appendRow(row);
     } else {
-      // Older sheet layout: append without ExpansionOf (preserve timestamp position)
+      // No headers found — fall back to the previous fixed-order append
       gamesSheet.appendRow([
         data.name        || '',
         data.description || '',
         data.owners      || '',
-        data.playerCount || '',
+        data.playerCount || data.players || '',
         data.playtime    || '',
         data.genre       || '',
         data.notes       || '',
         data.imageUrl    || '',
         data.scoreSheet  || '',
+        data.expansionOf || '',
         data.timestamp   || ''
       ]);
     }
