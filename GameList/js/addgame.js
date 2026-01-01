@@ -87,6 +87,9 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     return;
   }
 
+  const rawPlayers = String(formData.get("playerCount") || "").trim();
+  const playersText = rawPlayers ? `'${rawPlayers}` : "";
+
   const payload = {
     name: formData.get("gameName") || "",
     description: formData.get("description") || "",
@@ -94,8 +97,8 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     expansionOf: formData.get("expansionOf") || "",
     // Send both `playerCount` and `players` as plain text to be compatible
     // with different sheet headers and parsers.
-    playerCount: String(formData.get("playerCount") || ""),
-    players: String(formData.get("playerCount") || ""),
+    playerCount: playersText,
+    players: playersText,
     playtime: String(formData.get("playtime") || ""),
     genre: formData.get("genre") || "",
     notes: formData.get("notes") || "",
