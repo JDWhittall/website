@@ -199,17 +199,32 @@
     .expansions-container.show {
       display: block;
     }
-    .expansion-card {
+    .expansion-thumb-link {
       display: inline-block;
-      vertical-align: top;
-      margin-right: 0.75rem;
-      width: 140px;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
     }
-    .expansion-card .game-cover {
-      width: 140px;
-      height: 140px;
+    .expansion-thumb {
+      width: 84px;
+      height: 84px;
+      object-fit: cover;
       border-radius: 8px;
       box-shadow: 0 0 0 3px rgba(139,92,246,0.18);
+      border: 2px solid rgba(139,92,246,0.15);
+      display: block;
+    }
+    .expansions-header {
+      margin-top: 1rem;
+      color: #e5e7eb;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .expansion-card-full .game-cover {
+      box-shadow: 0 0 0 3px rgba(139,92,246,0.18);
+    }
+    .highlight {
+      outline: 3px solid rgba(99,102,241,0.85);
+      transition: outline 0.15s ease-in-out;
     }
 @media (max-width: 768px) {
   main {

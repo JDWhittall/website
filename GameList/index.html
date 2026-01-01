@@ -226,24 +226,32 @@ function renderGames() {
   </div>
 `;
 
-    // Create expansions container (hidden by default)
+    // Create expansions container (hidden by default) containing thumbnails
     const exContainer = document.createElement('div');
     exContainer.className = 'expansions-container';
 
     const exList = (expansionsMap.get((item.gameName || '').trim()) || []).filter(matchesFilters);
     exList.forEach((exp) => {
-      const exCard = document.createElement('div');
-      exCard.className = 'game-card expansion-card';
-      exCard.innerHTML = `
-        <div class="cover-div">
-          <img src="${exp.imageUrl}" class="game-cover expansion" alt="Expansion cover for ${exp.gameName}">
-        </div>
-        <div class="game-description">
-          <h3>${exp.gameName}</h3>
-          <div class="meta">${exp.description || ''}</div>
-        </div>
-      `;
-      exContainer.appendChild(exCard);
+      const thumb = document.createElement('a');
+      thumb.href = '#game-' + normalizeName(exp.gameName);
+      thumb.className = 'expansion-thumb-link';
+      thumb.title = exp.gameName;
+      const img = document.createElement('img');
+      img.src = exp.imageUrl || '';
+      img.alt = `Expansion: ${exp.gameName}`;
+      img.className = 'expansion-thumb';
+      thumb.appendChild(img);
+      thumb.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        const id = 'game-' + normalizeName(exp.gameName);
+        const target = document.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          target.classList.add('highlight');
+          setTimeout(() => target.classList.remove('highlight'), 2000);
+        }
+      });
+      exContainer.appendChild(thumb);
     });
 
     card.addEventListener('click', (e) => {
@@ -255,6 +263,36 @@ function renderGames() {
     elements.list.appendChild(card);
     elements.list.appendChild(exContainer);
   });
+
+  // Render expansions as full cards (so they also appear like regular games)
+  const allExpansions = [];
+  expansionsMap.forEach((arr) => arr.forEach((e) => allExpansions.push(e)));
+  const matchingExpansions = allExpansions.filter(matchesFilters);
+  if (matchingExpansions.length) {
+    const header = document.createElement('h3');
+    header.textContent = 'Expansions';
+    header.className = 'expansions-header';
+    elements.list.appendChild(header);
+
+    matchingExpansions.forEach((exp) => {
+      const full = document.createElement('div');
+      full.className = 'game-card expansion-card-full';
+      full.id = 'game-' + normalizeName(exp.gameName);
+      full.innerHTML = `
+        <div class="cover-div">
+          <img src="${exp.imageUrl}" class="game-cover expansion" alt="Cover image for ${exp.gameName}">
+        </div>
+        <div class="game-description">
+          <h2>${exp.gameName}</h2>
+          <p>${exp.description || ''}</p>
+          <div class="other-info">
+            <div class="owner-list">${renderOwners(exp.owners, ownersMap)}</div>
+          </div>
+        </div>
+      `;
+      elements.list.appendChild(full);
+    });
+  }
 }
 
 async function loadGames() {
