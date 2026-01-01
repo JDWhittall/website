@@ -97,11 +97,12 @@ function doGet(e) {
     const range  = gamesSheet.getDataRange();
     const values = range.getValues();
 
-    // Inspect headers to see where ExpansionOf/timestamp live. This makes the API resilient
+    // Inspect headers to see where ExpansionOf/timestamp live. Prefer header mapping,
+    // but fall back to heuristics when headers are missing or ambiguous so that
+    // an ExpansionOf value doesn't accidentally become the timestamp.
     const headers = values[0] || [];
     const headerLower = headers.map(h => String(h || '').toLowerCase());
-    const expansionIdx = headerLower.findIndex(h => h.indexOf('expansion') !== -1);
-    const timestampIdx = headerLower.findIndex(h => h.indexOf('timestamp') !== -1);
+    const hasExpansionHeader = headerLower.some(h => h.indexOf('expansion') !== -1);
 
     const rows = values.slice(1)
       .filter(r => r[0])
@@ -116,18 +117,38 @@ function doGet(e) {
           notes:      r[6],
           imageUrl:   r[7],
           scoreSheet: r[8],
+          expansionOf: '',
+          timestamp: ''
         };
-        // If ExpansionOf column exists in header, use that index; otherwise assume older layout (timestamp at index 9)
-        if (expansionIdx >= 0) {
-          base.expansionOf = r[expansionIdx] || '';
-        } else {
-          base.expansionOf = '';
-        }
 
-        if (timestampIdx >= 0) {
-          base.timestamp = r[timestampIdx] || '';
+        if (hasExpansionHeader) {
+          // Headers indicate an explicit ExpansionOf column; assume columns align
+          base.expansionOf = r[9] || '';
+          base.timestamp = r[10] || '';
         } else {
-          base.timestamp = r[9] || '';
+          // No explicit header. Use row length and content heuristics:
+          // - If row has 11+ columns, assume expansionOf at 9 and timestamp at 10
+          // - If row has exactly 10 columns, decide based on whether the last
+          //   cell looks like a timestamp (numeric or parseable date). If it
+          //   looks like a timestamp, treat as timestamp; otherwise treat as expansionOf.
+          if (r.length >= 11) {
+            base.expansionOf = r[9] || '';
+            base.timestamp = r[10] || '';
+          } else if (r.length === 10) {
+            const last = String(r[9] || '').trim();
+            const isNumeric = /^[0-9]+$/.test(last);
+            const isDate = !isNaN(Date.parse(last));
+            if (isNumeric || isDate) {
+              base.timestamp = last;
+              base.expansionOf = '';
+            } else {
+              base.expansionOf = last;
+              base.timestamp = '';
+            }
+          } else {
+            base.expansionOf = '';
+            base.timestamp = '';
+          }
         }
 
         return base;

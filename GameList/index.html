@@ -270,6 +270,24 @@ async function loadGames() {
     populateOwnerFilter(owners);
     gamesCache = games || [];
 
+    // Normalize backend rows: sometimes ExpansionOf ends up in `timestamp`.
+    // If `expansionOf` is empty but `timestamp` is non-numeric and not a date,
+    // treat it as `expansionOf` and clear timestamp. Log any corrections.
+    gamesCache.forEach((g) => {
+      g.expansionOf = (g.expansionOf || g.ExpansionOf || '').trim();
+      g.timestamp = (g.timestamp || '').toString();
+      if (!g.expansionOf && g.timestamp) {
+        const t = g.timestamp.trim();
+        const isNumeric = /^[0-9]+$/.test(t);
+        const isDate = !isNaN(Date.parse(t));
+        if (!isNumeric && !isDate) {
+          console.warn('Normalizing mis-assigned timestamp -> expansionOf for', g.gameName, 'value:', t);
+          g.expansionOf = t;
+          g.timestamp = '';
+        }
+      }
+    });
+
     // Build expansions map and baseGames list defensively: only treat a row as an
     // expansion when its ExpansionOf matches an existing game name.
     const nameSet = new Set((gamesCache || []).map(g => normalizeName(g.gameName)));
