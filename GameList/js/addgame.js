@@ -31,6 +31,31 @@ async function loadOwnersOptions() {
 
 loadOwnersOptions();
 
+// Load base games to populate the ExpansionOf datalist
+async function loadParentOptions() {
+  try {
+    const res = await fetch(GAME_URL);
+    const games = await res.json();
+    const datalist = document.getElementById("parentOptions");
+    datalist.innerHTML = "";
+
+    (games || [])
+      .filter(g => !(g.expansionOf || g.ExpansionOf))
+      .forEach(g => {
+        const name = (g.gameName || '').trim();
+        if (!name) return;
+        const opt = document.createElement('option');
+        opt.value = name;
+        datalist.appendChild(opt);
+      });
+  } catch (err) {
+    // Non-fatal
+    console.error('Error loading parent game options', err);
+  }
+}
+
+loadParentOptions();
+
 document.getElementById("game-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -66,6 +91,7 @@ document.getElementById("game-form").addEventListener("submit", async (e) => {
     name: formData.get("gameName") || "",
     description: formData.get("description") || "",
     owners: ownerList.join(", "),
+    expansionOf: formData.get("expansionOf") || "",
     playerCount: formData.get("playerCount") || "",
     playtime: formData.get("playtime") || "",
     genre: formData.get("genre") || "",

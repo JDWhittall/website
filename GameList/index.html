@@ -50,6 +50,8 @@ const BASE_URL = "https://script.google.com/macros/s/AKfycbxURFaWZ8gz-TZ-Jtep-4z
 
 let ownersMap = new Map();
 let gamesCache = [];
+let expansionsMap = new Map();
+let baseGames = [];
 
 const filters = {
   search: "",
@@ -62,13 +64,16 @@ const elements = {
   list: document.getElementById("games-list"),
   search: document.getElementById("search-input"),
   ownerFilter: document.getElementById("owner-filter"),
-  playersMin: document.getElementById("players-min"),
   playersMax: document.getElementById("players-max"),
   clearBtn: document.getElementById("clear-filters")
 };
 
 function normalizeName(name) {
   return (name || "").trim().toLowerCase();
+}
+ 
+function getParentName(game) {
+  return (game.expansionOf || game.ExpansionOf || "").trim();
 }
 
 async function fetchOwners() {
@@ -107,15 +112,14 @@ function renderOwners(rawOwners, ownersMap) {
   return names
     .map((name) => {
       const avatar = ownersMap.get(name.toLowerCase());
+      const initial = (name.charAt(0) || "?").toUpperCase();
       if (avatar) {
-        return `<span class="owner-chip owner-chip--avatar" title="${name}">
-          <img src="${avatar}" alt="${name} avatar">
-        </span>`;
+        return `
+          <span class="owner-chip owner-chip--avatar" title="${name}">
+            <img src="${avatar}" alt="${name} avatar" onerror="this.onerror=null; this.style.display='none'; const p=this.parentElement; p.className='owner-chip owner-chip--missing'; p.innerHTML='<span class=\\'owner-initial\\'>${initial}</span>'">
+          </span>`;
       }
-      const initial = name.charAt(0).toUpperCase() || "?";
-      return `<span class="owner-chip owner-chip--missing" title="${name}">
-        <span class="owner-initial">${initial}</span>
-      </span>`;
+      return `<span class="owner-chip owner-chip--missing" title="${name}"><span class="owner-initial">${initial}</span></span>`;
     })
     .join("");
 }
@@ -180,16 +184,22 @@ function matchesFilters(game) {
 function renderGames() {
   elements.list.innerHTML = "";
 
-  const filtered = gamesCache.filter((game) => matchesFilters(game));
+  // Filter base games to include those where either the base or one of its expansions matches
+  const filteredBase = baseGames.filter((base) => {
+    const baseMatches = matchesFilters(base);
+    const exps = expansionsMap.get((base.gameName || '').trim()) || [];
+    const anyExpMatches = exps.some((e) => matchesFilters(e));
+    return baseMatches || anyExpMatches;
+  });
 
-  if (!filtered.length) {
+  if (!filteredBase.length) {
     elements.status.textContent = "No games match these filters.";
     return;
   }
 
   elements.status.textContent = "";
 
-  filtered.forEach((item) => {
+  filteredBase.forEach((item) => {
     const card = document.createElement("div");
     card.className = "game-card";
 
@@ -216,7 +226,34 @@ function renderGames() {
   </div>
 `;
 
+    // Create expansions container (hidden by default)
+    const exContainer = document.createElement('div');
+    exContainer.className = 'expansions-container';
+
+    const exList = (expansionsMap.get((item.gameName || '').trim()) || []).filter(matchesFilters);
+    exList.forEach((exp) => {
+      const exCard = document.createElement('div');
+      exCard.className = 'game-card expansion-card';
+      exCard.innerHTML = `
+        <div class="cover-div">
+          <img src="${exp.imageUrl}" class="game-cover expansion" alt="Expansion cover for ${exp.gameName}">
+        </div>
+        <div class="game-description">
+          <h3>${exp.gameName}</h3>
+          <div class="meta">${exp.description || ''}</div>
+        </div>
+      `;
+      exContainer.appendChild(exCard);
+    });
+
+    card.addEventListener('click', (e) => {
+      // Don't toggle when clicking links
+      if (e.target.tagName.toLowerCase() === 'a') return;
+      exContainer.classList.toggle('show');
+    });
+
     elements.list.appendChild(card);
+    elements.list.appendChild(exContainer);
   });
 }
 
@@ -267,7 +304,6 @@ elements.clearBtn.addEventListener("click", () => {
 
   elements.search.value = "";
   elements.ownerFilter.value = "";
-  elements.playersMin.value = "";
   elements.playersMax.value = "";
 
   renderGames();

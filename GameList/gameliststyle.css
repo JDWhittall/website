@@ -3,7 +3,7 @@
       margin: 0;
       padding: 0;
       background: #252529;
-      color: #111827;
+      color: #e5e7eb;
     }
     header {
       background: #3f1313;
@@ -191,6 +191,25 @@
     .owner-initial {
       font-weight: 700;
       font-size: 0.95rem;
+    }
+    .expansions-container {
+      display: none;
+      margin: 0.5rem 0 1rem 0;
+    }
+    .expansions-container.show {
+      display: block;
+    }
+    .expansion-card {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 0.75rem;
+      width: 140px;
+    }
+    .expansion-card .game-cover {
+      width: 140px;
+      height: 140px;
+      border-radius: 8px;
+      box-shadow: 0 0 0 3px rgba(139,92,246,0.18);
     }
 @media (max-width: 768px) {
   main {

@@ -1,0 +1,100 @@
+//Not the actual apps script, just a copy of it
+
+function doPost(e) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const gamesSheet  = ss.getSheetByName('Games');
+  const ownersSheet = ss.getSheetByName('Owners'); // <- new sheet
+
+  const type = (e.parameter && e.parameter.type) || 'games'; // default
+
+  Logger.log('Event object: ' + JSON.stringify(e));
+  Logger.log('Raw postData: ' + (e.postData && e.postData.contents));
+
+  let data = {};
+  try {
+    data = JSON.parse(e.postData.contents || '{}');
+  } catch (err) {
+    Logger.log('JSON parse error: ' + err);
+  }
+
+  Logger.log('Parsed data: ' + JSON.stringify(data));
+
+  if (type === 'owners') {
+    // Sheet "Owners": A: Name, B: Avatar URL
+    ownersSheet.appendRow([
+      data.name      || '',
+      data.avatarUrl || '',
+    ]);
+  } else {
+    // Existing behaviour for "Games" plus ExpansionOf column
+    // Columns: Name, Description, Owners, PlayerCount, Playtime, Genre, Notes, ImageUrl, ScoreSheet, ExpansionOf, Timestamp
+    gamesSheet.appendRow([
+      data.name         || '',
+      data.description  || '',
+      data.owners       || '',
+      data.playerCount  || '',
+      data.playtime     || '',
+      data.genre        || '',
+      data.notes        || '',
+      data.imageUrl     || '',
+      data.scoreSheet   || '',
+      data.expansionOf  || '',
+      data.timestamp    || ''
+    ]);
+  }
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: 'success' }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+
+function doGet(e) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const gamesSheet  = ss.getSheetByName('Games');
+  const ownersSheet = ss.getSheetByName('Owners');
+
+  const type = (e.parameter && e.parameter.type) || 'games'; // default
+
+  if (type === 'owners') {
+    // Return owners
+    const range  = ownersSheet.getDataRange();
+    const values = range.getValues(); // [ [header...], [row1...], ... ]
+
+    const rows = values.slice(1)       // skip header
+      .filter(r => r[0])              // skip empty name
+      .map(r => ({
+        name:      r[0],
+        avatarUrl: r[1],
+      }));
+
+    return ContentService
+      .createTextOutput(JSON.stringify(rows))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } else {
+    // Existing behaviour for games
+    const range  = gamesSheet.getDataRange();
+    const values = range.getValues();
+
+    const rows = values.slice(1)
+      .filter(r => r[0])
+      .map(r => ({
+        gameName:   r[0],
+        description:r[1],
+        owners:     r[2],
+        players:    r[3],
+        playtime:   r[4],
+        genre:      r[5],
+        notes:      r[6],
+        imageUrl:   r[7],
+        scoreSheet: r[8],
+        expansionOf:r[9] || '',
+        timestamp:  r[10] || ''
+      }));
+
+    return ContentService
+      .createTextOutput(JSON.stringify(rows))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
