@@ -1,0 +1,132 @@
+{
+  "GPU": [
+    {
+      "name": "RTX 5080",
+      "price": 1199.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/05ESCwhy",
+      "notes": "Best",
+      "image": ""
+    },
+    {
+      "name": "RTX 5070ti",
+      "price": 799.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/0cVX6Tw7",
+      "notes": "Mid",
+      "image": ""
+    },
+    {
+      "name": "RX 9070 XT",
+      "price": 599.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/01Eo8hj1",
+      "notes": "Alternate Mid",
+      "image": ""
+    }
+  ],
+  "CPU": [
+    {
+      "name": "R7 9800X 3D",
+      "price": 388.94,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/05RR6cUt",
+      "notes": "Best - With 3D vcache, great for RTS, great all around",
+      "image": ""
+    },
+    {
+      "name": "R7 7800X 3D",
+      "price": 333.94,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/0eS5x5NN",
+      "notes": "Alternate Best (last gen) - With 3D vcache, great for RTS, great all around",
+      "image": ""
+    },
+    {
+      "name": "R7 9700X",
+      "price": 268.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/01rqHv3U",
+      "notes": "Top Mid - Without 3D vcache, good all around",
+      "image": ""
+    },
+    {
+      "name": "R5 9600X",
+      "price": 187.00,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/00aSfM8r",
+      "notes": "Mid - Pretty decent all around",
+      "image": ""
+    }
+  ],
+  "RAM": [
+    {
+      "name": "DDR5 48GB",
+      "price": 465.00,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/0itZXGIm",
+      "notes": "",
+      "image": ""
+    },
+    {
+      "name": "DDR5 32GB",
+      "price": 339.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/01vnc1uF",
+      "notes": "",
+      "image": ""
+    }
+  ],
+  "Motherboard": [
+    {
+      "name": "ITX B650E-I (small)",
+      "price": 207.00,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/0hf30m4P",
+      "notes": "",
+      "image": ""
+    },
+    {
+      "name": "ITX B850-I (small)",
+      "price": 257.59,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/07NNF8KQ",
+      "notes": "",
+      "image": ""
+    },
+    {
+      "name": "ATX B650 (large)",
+      "price": 144.97,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/01WaJz4P",
+      "notes": "",
+      "image": ""
+    },
+    {
+      "name": "ATX B850 (large)",
+      "price": 185.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/01RGtkRZ",
+      "notes": "",
+      "image": ""
+    }
+  ],
+  "Storage": [
+    {
+      "name": "2TB",
+      "price": 226.35,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/03krm2i5",
+      "notes": "",
+      "image": ""
+    },
+    {
+      "name": "4TB",
+      "price": 399.99,
+      "store": "Amazon",
+      "link": "https://amzn.eu/d/09i9VjHT",
+      "notes": "",
+      "image": ""
+    }
+  ]
+}

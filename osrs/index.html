@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OSRS Herblore Potions Visual</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap");
+
+    :root {
+      --bg: #0f1411;
+      --bg-accent: #1b241d;
+      --parchment: #f2e6c7;
+      --ink: #1e1b16;
+      --gold: #c9a44c;
+      --green: #2e5b3b;
+      --green-2: #3c6e49;
+      --muted: #c7b99a;
+      --chip: #2a3a2f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 500px at 20% -10%, #243226 0%, transparent 60%),
+        radial-gradient(900px 400px at 120% 0%, #1f2c22 0%, transparent 55%),
+        var(--bg);
+      color: var(--parchment);
+      font-family: "Source Sans 3", sans-serif;
+    }
+
+    header {
+      padding: 32px 20px 18px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 70%);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-family: "Cinzel", serif;
+      letter-spacing: 1px;
+      font-size: clamp(26px, 4vw, 42px);
+      color: var(--gold);
+    }
+
+    .subtitle {
+      margin: 0 auto;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .toolbar {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
+      max-width: 1100px;
+      margin: 18px auto 0;
+      padding: 0 20px 8px;
+    }
+
+    .search {
+      position: relative;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 12px 14px 12px 40px;
+      border-radius: 12px;
+      border: 1px solid #2b3b2f;
+      background: #121a14;
+      color: var(--parchment);
+      font-size: 15px;
+      outline: none;
+    }
+
+    .search span {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #6f7d6f;
+      font-size: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .chip {
+      border: 1px solid #2f3f34;
+      background: var(--chip);
+      color: #d7caa8;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 120ms ease;
+    }
+
+    .chip.active {
+      background: var(--green-2);
+      border-color: #4c7d59;
+      color: #f4e8c4;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 18px auto 60px;
+      padding: 0 20px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background: linear-gradient(180deg, #1a241d, #141c16 70%);
+      border: 1px solid #2c3a30;
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(200px 120px at 10% 0%, rgba(255,255,255,0.07), transparent 70%);
+      pointer-events: none;
+    }
+
+    .herb-name {
+      font-family: "Cinzel", serif;
+      color: var(--gold);
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .potion {
+      background: #101611;
+      border: 1px solid #2a362d;
+      border-radius: 12px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .potion:last-child { margin-bottom: 0; }
+
+    .potion-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #f1e2bb;
+    }
+
+    .potion-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      image-rendering: pixelated;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+    }
+
+    .icon.small {
+      width: 22px;
+      height: 22px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #2b3c31;
+      color: #c9ddb3;
+      border: 1px solid #3c4f41;
+      white-space: nowrap;
+    }
+
+    .ingredients {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #c6bba2;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ingredients .label {
+      color: #e4d6b0;
+      font-weight: 600;
+    }
+
+    .empty {
+      text-align: center;
+      color: #c1b395;
+      padding: 40px 10px;
+      border: 1px dashed #3a4a3f;
+      border-radius: 12px;
+    }
+
+    .note {
+      margin: 20px auto 0;
+      max-width: 900px;
+      color: #b9ab8d;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (min-width: 860px) {
+      .toolbar {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+
+      .chips {
+        justify-content: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Herblore Potion Visual</h1>
+    <p class="subtitle">Search by herb, potion, or ingredient. Each card shows one herb and the potions you can finish with its secondary ingredients.</p>
+  </header>
+
+  <section class="toolbar">
+    <label class="search">
+      <span>??</span>
+      <input id="search" type="text" placeholder="Search herbs, potions, or ingredients..." />
+    </label>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <main>
+    <div class="grid" id="grid"></div>
+    <p class="note">Note: Images are pulled from the OSRS Wiki using file names. Add <code>icon</code> and <code>secondaryIcon</code> file names to each potion in <code>herbData</code> to display icons.</p>
+  </main>
+
+  <script>
+    const wikiFileUrl = (fileName) => {
+      if (!fileName) return "";
+      return `https://oldschool.runescape.wiki/w/Special:FilePath/${encodeURIComponent(fileName)}`;
+    };
+
+    const herbData = [
+      {
+        herb: "Guam",
+        potions: [
+          {
+            name: "Attack potion",
+            secondary: "Eye of newt",
+            tags: ["Combat"],
+            icon: "Attack potion(1) (beta).png",
+            secondaryIcon: "Eye of newt.png"
+          }
+        ]
+      },
+      {
+        herb: "Marrentill",
+        potions: [
+          { name: "Antipoison", secondary: "Unicorn horn dust", tags: ["Cures"] }
+        ]
+      },
+      {
+        herb: "Tarromin",
+        potions: [
+          { name: "Strength potion", secondary: "Limpwurt root", tags: ["Combat"] },
+          { name: "Serum 207", secondary: "Ashes", tags: ["Quest"] }
+        ]
+      },
+      {
+        herb: "Harralander",
+        potions: [
+          { name: "Restore potion", secondary: "Red spiders' eggs", tags: ["Recovery"] },
+          { name: "Energy potion", secondary: "Chocolate dust", tags: ["Utility"] }
+        ]
+      },
+      {
+        herb: "Ranarr",
+        potions: [
+          { name: "Defence potion", secondary: "White berries", tags: ["Combat"] },
+          { name: "Prayer potion", secondary: "Snape grass", tags: ["Recovery"] }
+        ]
+      },
+      {
+        herb: "Irit",
+        potions: [
+          { name: "Super attack", secondary: "Eye of newt", tags: ["Combat"] },
+          { name: "Superantipoison", secondary: "Unicorn horn dust", tags: ["Cures"] }
+        ]
+      },
+      {
+        herb: "Avantoe",
+        potions: [
+          { name: "Fishing potion", secondary: "Snape grass", tags: ["Skilling"] },
+          { name: "Super energy", secondary: "Mort myre fungus", tags: ["Utility"] }
+        ]
+      },
+      {
+        herb: "Kwuarm",
+        potions: [
+          { name: "Super strength", secondary: "Limpwurt root", tags: ["Combat"] },
+          { name: "Weapon poison", secondary: "Dragon scale dust", tags: ["Combat"] }
+        ]
+      },
+      {
+        herb: "Cadantine",
+        potions: [
+          { name: "Super defence", secondary: "White berries", tags: ["Combat"] },
+          { name: "Antidote+", secondary: "Yew roots", tags: ["Cures"] }
+        ]
+      },
+      {
+        herb: "Lantadyme",
+        potions: [
+          { name: "Antifire", secondary: "Dragon scale dust", tags: ["Utility"] },
+          { name: "Magic potion", secondary: "Potato cactus", tags: ["Combat"] }
+        ]
+      },
+      {
+        herb: "Dwarf weed",
+        potions: [
+          { name: "Ranging potion", secondary: "Wine of zamorak", tags: ["Combat"] }
+        ]
+      },
+      {
+        herb: "Toadflax",
+        potions: [
+          { name: "Agility potion", secondary: "Toad's legs", tags: ["Skilling"] },
+          { name: "Saradomin brew", secondary: "Crushed nest", tags: ["Recovery"] }
+        ]
+      },
+      {
+        herb: "Snapdragon",
+        potions: [
+          { name: "Super restore", secondary: "Red spiders' eggs", tags: ["Recovery"] }
+        ]
+      },
+      {
+        herb: "Torstol",
+        potions: [
+          { name: "Zamorak brew", secondary: "Jangerberries", tags: ["Combat"] }
+        ]
+      }
+    ];
+
+    const grid = document.getElementById("grid");
+    const search = document.getElementById("search");
+    const chips = document.getElementById("chips");
+
+    const allTags = Array.from(
+      new Set(herbData.flatMap((h) => h.potions.flatMap((p) => p.tags)))
+    ).sort();
+
+    let activeTag = "All";
+
+    function renderChips() {
+      const tags = ["All", ...allTags];
+      chips.innerHTML = "";
+      tags.forEach((tag) => {
+        const button = document.createElement("button");
+        button.className = "chip" + (activeTag === tag ? " active" : "");
+        button.textContent = tag;
+        button.addEventListener("click", () => {
+          activeTag = tag;
+          renderChips();
+          renderCards();
+        });
+        chips.appendChild(button);
+      });
+    }
+
+    function matchesSearch(herb, potion, term) {
+      const haystack = [
+        herb.herb,
+        potion.name,
+        potion.secondary,
+        ...(potion.tags || [])
+      ].join(" ").toLowerCase();
+      return haystack.includes(term);
+    }
+
+    function renderCards() {
+      const term = search.value.trim().toLowerCase();
+      grid.innerHTML = "";
+      let any = false;
+
+      herbData.forEach((herb) => {
+        const potions = herb.potions.filter((p) => {
+          const tagMatch = activeTag === "All" || (p.tags || []).includes(activeTag);
+          const searchMatch = term === "" || matchesSearch(herb, p, term);
+          return tagMatch && searchMatch;
+        });
+
+        if (!potions.length) return;
+        any = true;
+
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <h2 class="herb-name">${herb.herb}</h2>
+          ${potions.map((p) => `
+            <div class="potion">
+              <div class="potion-title">
+                <div class="potion-info">
+                  ${p.icon ? `<img class="icon" src="${wikiFileUrl(p.icon)}" alt="${p.name}" loading="lazy" decoding="async" />` : ""}
+                  <span>${p.name}</span>
+                </div>
+                <span class="tag">${(p.tags || ["Potion"])[0]}</span>
+              </div>
+              <div class="ingredients">
+                ${p.secondaryIcon ? `<img class="icon small" src="${wikiFileUrl(p.secondaryIcon)}" alt="${p.secondary}" loading="lazy" decoding="async" />` : ""}
+                <span class="label">Secondary:</span>
+                <span>${p.secondary}</span>
+              </div>
+            </div>
+          `).join("")}
+        `;
+        grid.appendChild(card);
+      });
+
+      if (!any) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "No matches. Try clearing filters or search.";
+        grid.appendChild(empty);
+      }
+    }
+
+    search.addEventListener("input", renderCards);
+
+    renderChips();
+    renderCards();
+  </script>
+</body>
+</html>
+
