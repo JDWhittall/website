@@ -1,7 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PC Builder</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
 <h1>PC Builder</h1>
 
 <div id="builder"></div>
 
-<h2>Total: £<span id="total">0</span></h2>
+<div class="totalBox">
+Total: £<span id="total">0</span>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modalContent">
+    <h2 id="modalTitle"></h2>
+    <div id="partList" class="cardGrid"></div>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
 
 <script src="app.js"></script>
+
+</body>
+</html>

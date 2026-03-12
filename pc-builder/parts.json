@@ -6,7 +6,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/05ESCwhy",
       "notes": "Best",
-      "image": ""
+      "image": "images/5080.jpg"
     },
     {
       "name": "RTX 5070ti",
@@ -14,7 +14,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/0cVX6Tw7",
       "notes": "Mid",
-      "image": ""
+      "image": "images/5070ti.jpg"
     },
     {
       "name": "RX 9070 XT",
@@ -22,7 +22,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/01Eo8hj1",
       "notes": "Alternate Mid",
-      "image": ""
+      "image": "images/9070xt.jpg"
     }
   ],
   "CPU": [
@@ -32,7 +32,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/05RR6cUt",
       "notes": "Best - With 3D vcache, great for RTS, great all around",
-      "image": ""
+      "image": "images/9800x3d.jpg"
     },
     {
       "name": "R7 7800X 3D",
@@ -40,7 +40,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/0eS5x5NN",
       "notes": "Alternate Best (last gen) - With 3D vcache, great for RTS, great all around",
-      "image": ""
+      "image": "images/7800x3d.jpg"
     },
     {
       "name": "R7 9700X",
@@ -48,7 +48,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/01rqHv3U",
       "notes": "Top Mid - Without 3D vcache, good all around",
-      "image": ""
+      "image": "images/9700x.jpg"
     },
     {
       "name": "R5 9600X",
@@ -56,7 +56,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/00aSfM8r",
       "notes": "Mid - Pretty decent all around",
-      "image": ""
+      "image": "images/9600x.jpg"
     }
   ],
   "RAM": [
@@ -66,7 +66,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/0itZXGIm",
       "notes": "",
-      "image": ""
+      "image": "images/48gbram.jpg"
     },
     {
       "name": "DDR5 32GB",
@@ -74,7 +74,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/01vnc1uF",
       "notes": "",
-      "image": ""
+      "image": "images/32gbram.jpg"
     }
   ],
   "Motherboard": [
@@ -84,7 +84,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/0hf30m4P",
       "notes": "",
-      "image": ""
+      "image": "images/asusb650ei.jpg"
     },
     {
       "name": "ITX B850-I (small)",
@@ -92,7 +92,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/07NNF8KQ",
       "notes": "",
-      "image": ""
+      "image": "images/asusb850i.jpg"
     },
     {
       "name": "ATX B650 (large)",
@@ -100,7 +100,7 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/01WaJz4P",
       "notes": "",
-      "image": ""
+      "image": "images/asusb650.jpg"
     },
     {
       "name": "ATX B850 (large)",
@@ -108,25 +108,51 @@
       "store": "Amazon",
       "link": "https://amzn.eu/d/01RGtkRZ",
       "notes": "",
-      "image": ""
+      "image": "images/gigabyteb850.jpg"
     }
   ],
   "Storage": [
     {
-      "name": "2TB",
+      "name": "2TB Gen 5",
       "price": 226.35,
       "store": "Amazon",
       "link": "https://amzn.eu/d/03krm2i5",
       "notes": "",
-      "image": ""
+      "image": "images/2TBGen5.jpg"
     },
     {
-      "name": "4TB",
+      "name": "4TB Gen 5",
       "price": 399.99,
       "store": "Amazon",
       "link": "https://amzn.eu/d/09i9VjHT",
       "notes": "",
-      "image": ""
-    }
+      "image": "images/4TBGen5.jpg"
+    },
+	{
+	  "name": "4TB Gen 4",
+	  "price": 299.99,
+	  "store": "Amazon",
+	  "link": "https://amzn.eu/d/0gYDLiah",
+	  "notes": "",
+	  "image": "images/4TBGen4.jpg"
+	},
+	{
+	  "name": "2TB Gen 4",
+	  "price": 199.99,
+	  "store": "Amazon",
+	  "link": "https://amzn.eu/d/0aX38bai",
+	  "notes": "",
+	  "image": "images/2TBGen4.jpg"
+	}
+  ],
+  "Cooler": [
+	{
+	  "name": "Thermalright Phantom Spirit 120",
+	  "price": 26.40,
+	  "store": "Amazon",
+	  "link": "https://amzn.eu/d/0jd5DZ2L",
+	  "notes": "",
+	  "image": "images/cooler.jpg"
+	}
   ]
 }

@@ -1,0 +1,150 @@
+body
+{
+    font-family: Arial, sans-serif;
+    background:#1e1e1e;
+    color:white;
+    max-width:1000px;
+    margin:auto;
+}
+
+h1
+{
+    text-align:center;
+}
+
+.componentRow
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-bottom:1px solid #444;
+}
+
+button
+{
+    background:#3b82f6;
+    border:none;
+    padding:10px 15px;
+    color:white;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+button:hover
+{
+    background:#2563eb;
+}
+
+.totalBox
+{
+    font-size:24px;
+    text-align:right;
+    padding:20px;
+}
+
+.modal
+{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(0,0,0,0.8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hidden
+{
+    display:none;
+}
+
+.modalContent
+{
+    background:#2b2b2b;
+    padding:25px;
+    border-radius:10px;
+    max-width:900px;
+}
+
+.cardGrid
+{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, 180px);
+    gap:15px;
+}
+
+.partCard
+{
+    background:#3a3a3a;
+    padding:10px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.partCard img
+{
+    width:100%;
+    height:120px;
+    object-fit:contain;
+}
+
+.partCard:hover
+{
+    background:#505050;
+}
+
+.price
+{
+    color:#7dd3fc;
+}
+.selectedPart
+{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.selectedPart img
+{
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    background:#2b2b2b;
+    border-radius:6px;
+}
+
+.partInfo
+{
+    display:flex;
+    flex-direction:column;
+}
+
+.partPrice
+{
+    color:#7dd3fc;
+    font-weight:bold;
+}
+
+.buyLink
+{
+    font-size:12px;
+    color:#a5f3fc;
+    text-decoration:none;
+}
+
+.buyLink:hover
+{
+    text-decoration:underline;
+}
+.componentRow
+{
+    display:grid;
+    grid-template-columns:120px 140px 1fr;
+    align-items:center;
+    gap:15px;
+    padding:15px;
+    border-bottom:1px solid #444;
+}
