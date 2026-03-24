@@ -443,6 +443,8 @@ function driveResponseForm(entry, response) {
     karakter.value = '';
     renderAll();
   };
+}
+
 function exportAllLevels() {
   if (state.levels.length === 0) {
     alert('No levels to export.');
