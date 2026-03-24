@@ -1,0 +1,33 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f7f8fc; color: #2c3440; }
+header { padding: 16px; border-bottom: 1px solid #dce2f0; background: #ffffff; }
+header h1 { margin: 0 0 4px; font-size: 1.5rem; }
+header p { margin: 0; color: #59627f; }
+.layout { display: grid; grid-template-columns: 320px 1fr; min-height: calc(100vh - 84px); }
+.panel { padding: 12px; overflow-y: auto; }
+#sidebar { background: #ffffff; border-right: 1px solid #dce2f0; }
+#details { background: #f2f4fb; }
+section { margin-bottom: 16px; }
+section h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.form-inline { display: flex; gap: 8px; margin-bottom: 10px; }
+.form-inline input { flex: 1; padding: 6px 8px; border: 1px solid #c2cbe6; border-radius: 4px; }
+button { border: 1px solid #9ea8d4; border-radius: 4px; background: #5a6bc0; color: #fff; padding: 7px 10px; cursor: pointer; }
+button:hover { background: #4c5cb0; }
+button:disabled { background: #9ea8d4; cursor: not-allowed; }
+.file-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; color: #1a285f; text-decoration: underline; }
+.file-label input { display: none; }
+.list-root, .nested-list { list-style: none; margin: 0; padding: 0 0 0 12px; }
+.list-item { border: 1px solid #dfe2f2; border-radius: 5px; background: #ffffff; padding: 6px; margin-bottom: 8px; }
+.list-item button { margin-left: 6px; min-width: 36px; }
+.list-item .item-title { font-weight: 600; vertical-align: middle; }
+.list-item .child-actions { margin-top: 5px; display: flex; gap: 5px; flex-wrap: wrap; }
+.info-panel, .entry-panel { padding: 12px; border: 1px solid #dce2f0; background: #fff; border-radius: 6px; }
+.hidden { display: none; }
+.entry-panel h3 { margin-top: 0; }
+.response-card { border: 1px solid #d0d7eb; padding: 10px; border-radius: 6px; margin-bottom: 10px; background: #fff; }
+.response-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.response-actions button { margin-left: 6px; }
+.response-body div { margin-bottom: 4px; }
+.textarea-small { width: 100%; min-height: 70px; border: 1px solid #c2cbe6; border-radius: 4px; padding: 8px; }
+.card-section { border: 1px solid #dce2f0; border-radius: 6px; background: #fff; padding: 10px; margin-bottom: 12px; }
+.card-section h4 { margin-top: 0; }
