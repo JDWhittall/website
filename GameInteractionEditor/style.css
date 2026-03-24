@@ -30,4 +30,10 @@ button:disabled { background: #9ea8d4; cursor: not-allowed; }
 .response-body div { margin-bottom: 4px; }
 .textarea-small { width: 100%; min-height: 70px; border: 1px solid #c2cbe6; border-radius: 4px; padding: 8px; }
 .card-section { border: 1px solid #dce2f0; border-radius: 6px; background: #fff; padding: 10px; margin-bottom: 12px; }
-.card-section h4 { margin-top: 0; }
+.entry-card { margin-bottom: 20px; }
+.entry-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.responses-wrap { margin-bottom: 10px; }
+.response-form { border-top: 1px solid #dce2f0; padding-top: 10px; }
+.response-form h5 { margin: 0 0 8px; }
+.form-input, .form-select { width: 100%; padding: 6px 8px; border: 1px solid #c2cbe6; border-radius: 4px; margin-bottom: 8px; }
+.form-select { height: 32px; }

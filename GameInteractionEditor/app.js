@@ -34,6 +34,10 @@ function computeEntryId(levelName, areaName, entryName) {
   return `${sanitizeName(levelName)}_${sanitizeName(areaName)}_${sanitizeName(entryName)}`;
 }
 
+function computeResponseId(entryId, responseName, index) {
+  return `${entryId}_${sanitizeName(responseName)}_${index}`;
+}
+
 function recomputeIds() {
   state.levels.forEach(level => {
     level.id = sanitizeName(level.name);
@@ -41,8 +45,15 @@ function recomputeIds() {
       area.id = `${level.id}_${sanitizeName(area.name)}`;
       area.entries.forEach(entry => {
         entry.id = `${area.id}_${sanitizeName(entry.name)}`;
-        entry.responses.forEach((resp, index) => {
-          resp.id = `${entry.id}_${index + 1}`;
+        const nameGroups = {};
+        entry.responses.forEach(resp => {
+          if (!nameGroups[resp.name]) nameGroups[resp.name] = [];
+          nameGroups[resp.name].push(resp);
+        });
+        Object.keys(nameGroups).forEach(name => {
+          nameGroups[name].forEach((resp, idx) => {
+            resp.id = computeResponseId(entry.id, name, idx + 1);
+          });
         });
       });
     });
@@ -123,59 +134,8 @@ function renderLevels() {
       areaBtns.appendChild(selArea);
       areaBtns.appendChild(delArea);
 
-      const entriesUl = document.createElement('ul');
-      entriesUl.className = 'nested-list';
-
-      area.entries.forEach(entry => {
-        const entryLi = document.createElement('li');
-        entryLi.className = 'list-item';
-        entryLi.innerHTML = `<span class="item-title">Entry: ${entry.name}</span>`;
-        const entryBtns = document.createElement('span');
-
-        const selEntry = document.createElement('button'); selEntry.textContent = 'Select';
-        const delEntry = document.createElement('button'); delEntry.textContent = 'Delete';
-
-        selEntry.onclick = () => {
-          state.selectedLevelId = level.id;
-          state.selectedAreaId = area.id;
-          state.selectedEntryId = entry.id;
-          state.selectedResponseId = null;
-          renderAll();
-        };
-        delEntry.onclick = () => {
-          if (!confirm(`Delete entry ${entry.name}?`)) return;
-          area.entries = area.entries.filter(e => e !== entry);
-          if (state.selectedEntryId === entry.id) {
-            state.selectedEntryId = null;
-            state.selectedResponseId = null;
-          }
-          renderAll();
-        };
-
-        entryBtns.appendChild(selEntry);
-        entryBtns.appendChild(delEntry);
-        entryLi.appendChild(entryBtns);
-        entriesUl.appendChild(entryLi);
-      });
-
-      const areaControls = document.createElement('div');
-      areaControls.className = 'child-actions';
-      const addEntryBtn = document.createElement('button');
-      addEntryBtn.textContent = 'Add Entry';
-      addEntryBtn.onclick = () => {
-        const name = prompt('Entry name');
-        if (!name) return;
-        const newEntry = { id: `${area.id}_${sanitizeName(name)}`, name, responses: [] };
-        area.entries.push(newEntry);
-        recomputeIds();
-        renderAll();
-      };
-      areaControls.appendChild(addEntryBtn);
-
       areaLi.appendChild(areaLabel);
       areaLi.appendChild(areaBtns);
-      areaLi.appendChild(entriesUl);
-      areaLi.appendChild(areaControls);
       areaUl.appendChild(areaLi);
     });
 
@@ -222,18 +182,17 @@ function renderCharacters() {
   charList.appendChild(ul);
 }
 
-function renderEntryPanel() {
+function renderAreaPanel() {
   const infoPanel = document.getElementById('infoPanel');
   const entryPanel = document.getElementById('entryPanel');
 
   const level = getLevelById(state.selectedLevelId);
   const area = getAreaById(level, state.selectedAreaId);
-  const entry = getEntryById(area, state.selectedEntryId);
 
-  if (!level || !area || !entry) {
+  if (!level || !area) {
     infoPanel.classList.remove('hidden');
     entryPanel.classList.add('hidden');
-    infoPanel.textContent = 'Choose a level > area > entry in the left panel to edit responses.';
+    infoPanel.textContent = 'Choose a level > area in the left panel to view entries.';
     return;
   }
 
@@ -244,99 +203,194 @@ function renderEntryPanel() {
   const header = document.createElement('div');
   header.className = 'card-section';
   const h3 = document.createElement('h3');
-  h3.textContent = `Entry: ${entry.name}`;
+  h3.textContent = `Area: ${area.name}`;
   const path = document.createElement('p');
-  path.textContent = `Path ID prefix: ${entry.id}`;
+  path.textContent = `Area ID: ${area.id}`;
   header.appendChild(h3);
   header.appendChild(path);
 
-  const responsesWrap = document.createElement('div');
-  responsesWrap.className = 'card-section';
-  const rh = document.createElement('h4'); rh.textContent = 'Responses';
-  responsesWrap.appendChild(rh);
-
-  if (entry.responses.length === 0) {
-    const noneText = document.createElement('p');
-    noneText.textContent = 'No responses yet.';
-    responsesWrap.appendChild(noneText);
-  } else {
-    entry.responses.forEach((resp, index) => {
-      const t = document.getElementById('responseCardTemplate').content.cloneNode(true);
-      t.querySelector('.response-id').textContent = resp.id;
-      t.querySelector('.resp-character').textContent = resp.characterId ? (state.characters.find(c => c.id === resp.characterId)?.name || '(unknown)') : '(none)';
-      t.querySelector('.resp-text').textContent = resp.text;
-      t.querySelector('.resp-audio').textContent = resp.audioPath || '(none)';
-      const editBtn = t.querySelector('.edit-response');
-      const deleteBtn = t.querySelector('.delete-response');
-
-      editBtn.onclick = () => {
-        driveResponseForm(entry, resp); // opens fields and edits
-      };
-      deleteBtn.onclick = () => {
-        if (!confirm(`Delete response ${resp.id}?`)) return;
-        entry.responses.splice(index, 1);
-        recomputeIds();
-        renderAll();
-      };
-      responsesWrap.appendChild(t);
-    });
-  }
-
-  const form = document.createElement('div');
-  form.className = 'card-section';
-  const formHeader = document.createElement('h4');
-  formHeader.textContent = 'Add New Response';
-
-  const karakter = document.createElement('select');
-  karakter.id = 'responseCharacter';
-  const emptyOption = document.createElement('option');
-  emptyOption.value = ''; emptyOption.textContent = '-- select optional character --';
-  karakter.appendChild(emptyOption);
-  state.characters.forEach(c => {
-    const opt = document.createElement('option'); opt.value = c.id; opt.textContent = c.name; karakter.appendChild(opt);
-  });
-
-  const textArea = document.createElement('textarea');
-  textArea.id = 'responseText';
-  textArea.placeholder = 'Display text for this response';
-  textArea.className = 'textarea-small';
-
-  const audioInput = document.createElement('input');
-  audioInput.id = 'responseAudio';
-  audioInput.type = 'text';
-  audioInput.placeholder = 'Audio file path (optional)';
-
-  const addBtn = document.createElement('button');
-  addBtn.textContent = 'Add Response';
-  addBtn.onclick = () => {
-    const text = textArea.value.trim();
-    if (!text) {
-      alert('Response text cannot be empty.');
-      return;
-    }
-    const response = {
-      id: '',
-      text,
-      characterId: karakter.value || null,
-      audioPath: audioInput.value.trim() || ''
-    };
-    entry.responses.push(response);
+  const addEntryBtn = document.createElement('button');
+  addEntryBtn.textContent = 'Add Entry';
+  addEntryBtn.onclick = () => {
+    const name = prompt('Entry name (e.g., cell_door)');
+    if (!name) return;
+    const newEntry = { id: `${area.id}_${sanitizeName(name)}`, name, responses: [] };
+    area.entries.push(newEntry);
     recomputeIds();
-    textArea.value = '';
-    audioInput.value = '';
-    karakter.value = '';
     renderAll();
   };
-
-  form.appendChild(formHeader);
-  form.appendChild(karakter);
-  form.appendChild(textArea);
-  form.appendChild(audioInput);
-  form.appendChild(addBtn);
+  header.appendChild(addEntryBtn);
 
   entryPanel.appendChild(header);
-  entryPanel.appendChild(responsesWrap);
-  entryPanel.appendChild(form);
+
+  area.entries.forEach(entry => {
+    const entryCard = document.createElement('div');
+    entryCard.className = 'entry-card card-section';
+
+    const entryHeader = document.createElement('div');
+    entryHeader.className = 'entry-header';
+    const entryTitle = document.createElement('h4');
+    entryTitle.textContent = `Entry: ${entry.name} (ID: ${entry.id})`;
+    const delEntryBtn = document.createElement('button');
+    delEntryBtn.textContent = 'Delete Entry';
+    delEntryBtn.onclick = () => {
+      if (!confirm(`Delete entry ${entry.name}?`)) return;
+      area.entries = area.entries.filter(e => e !== entry);
+      renderAll();
+    };
+    entryHeader.appendChild(entryTitle);
+    entryHeader.appendChild(delEntryBtn);
+
+    const responsesWrap = document.createElement('div');
+    responsesWrap.className = 'responses-wrap';
+
+    if (entry.responses.length === 0) {
+      const noneText = document.createElement('p');
+      noneText.textContent = 'No responses yet.';
+      responsesWrap.appendChild(noneText);
+    } else {
+      entry.responses.forEach((resp, index) => {
+        const t = document.getElementById('responseCardTemplate').content.cloneNode(true);
+        t.querySelector('.response-id').textContent = resp.id;
+        t.querySelector('.resp-name').textContent = resp.name;
+        t.querySelector('.resp-character').textContent = resp.characterId ? (state.characters.find(c => c.id === resp.characterId)?.name || '(unknown)') : '(none)';
+        t.querySelector('.resp-text').textContent = resp.text;
+        t.querySelector('.resp-audio').textContent = resp.audioPath || '(none)';
+        const editBtn = t.querySelector('.edit-response');
+        const deleteBtn = t.querySelector('.delete-response');
+
+        editBtn.onclick = () => {
+          // Populate the form in this entry card
+          const card = editBtn.closest('.entry-card');
+          const form = card.querySelector('.response-form');
+          const nameIn = form.querySelector('input[placeholder*="name"]');
+          const charSel = form.querySelector('select');
+          const textAr = form.querySelector('textarea');
+          const audioIn = form.querySelector('input[placeholder*="audio"]');
+          const btn = form.querySelector('button');
+
+          nameIn.value = resp.name;
+          charSel.value = resp.characterId || '';
+          textAr.value = resp.text;
+          audioIn.value = resp.audioPath || '';
+          btn.textContent = 'Update Response';
+          btn.onclick = () => {
+            const name = nameIn.value.trim();
+            const text = textAr.value.trim();
+            if (!name || !text) {
+              alert('Response name and text cannot be empty.');
+              return;
+            }
+            resp.name = name;
+            resp.text = text;
+            resp.characterId = charSel.value || null;
+            resp.audioPath = audioIn.value.trim() || '';
+            recomputeIds();
+            nameIn.value = '';
+            textAr.value = '';
+            audioIn.value = '';
+            charSel.value = '';
+            btn.textContent = 'Add Response';
+            btn.onclick = () => {
+              const name2 = nameIn.value.trim();
+              const text2 = textAr.value.trim();
+              if (!name2 || !text2) {
+                alert('Response name and text cannot be empty.');
+                return;
+              }
+              const response = {
+                id: '',
+                name: name2,
+                text: text2,
+                characterId: charSel.value || null,
+                audioPath: audioIn.value.trim() || ''
+              };
+              entry.responses.push(response);
+              recomputeIds();
+              nameIn.value = '';
+              textAr.value = '';
+              audioIn.value = '';
+              charSel.value = '';
+              renderAll();
+            };
+            renderAll();
+          };
+        };
+        deleteBtn.onclick = () => {
+          if (!confirm(`Delete response ${resp.id}?`)) return;
+          entry.responses.splice(index, 1);
+          recomputeIds();
+          renderAll();
+        };
+        responsesWrap.appendChild(t);
+      });
+    }
+
+    const form = document.createElement('div');
+    form.className = 'response-form';
+    const formHeader = document.createElement('h5');
+    formHeader.textContent = 'Add/Edit Response';
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Response name (e.g., examine)';
+    nameInput.className = 'form-input';
+
+    const karakter = document.createElement('select');
+    karakter.className = 'form-select';
+    const emptyOption = document.createElement('option');
+    emptyOption.value = ''; emptyOption.textContent = '-- select optional character --';
+    karakter.appendChild(emptyOption);
+    state.characters.forEach(c => {
+      const opt = document.createElement('option'); opt.value = c.id; opt.textContent = c.name; karakter.appendChild(opt);
+    });
+
+    const textArea = document.createElement('textarea');
+    textArea.placeholder = 'Display text for this response';
+    textArea.className = 'textarea-small';
+
+    const audioInput = document.createElement('input');
+    audioInput.type = 'text';
+    audioInput.placeholder = 'Audio file path (optional)';
+    audioInput.className = 'form-input';
+
+    const addBtn = document.createElement('button');
+    addBtn.textContent = 'Add Response';
+    addBtn.onclick = () => {
+      const name = nameInput.value.trim();
+      const text = textArea.value.trim();
+      if (!name || !text) {
+        alert('Response name and text cannot be empty.');
+        return;
+      }
+      const response = {
+        id: '',
+        name,
+        text,
+        characterId: karakter.value || null,
+        audioPath: audioInput.value.trim() || ''
+      };
+      entry.responses.push(response);
+      recomputeIds();
+      nameInput.value = '';
+      textArea.value = '';
+      audioInput.value = '';
+      karakter.value = '';
+      renderAll();
+    };
+
+    form.appendChild(formHeader);
+    form.appendChild(nameInput);
+    form.appendChild(karakter);
+    form.appendChild(textArea);
+    form.appendChild(audioInput);
+    form.appendChild(addBtn);
+
+    entryCard.appendChild(entryHeader);
+    entryCard.appendChild(responsesWrap);
+    entryCard.appendChild(form);
+    entryPanel.appendChild(entryCard);
+  });
 }
 
 function driveResponseForm(entry, response) {
@@ -389,8 +443,6 @@ function driveResponseForm(entry, response) {
     karakter.value = '';
     renderAll();
   };
-}
-
 function exportAllLevels() {
   if (state.levels.length === 0) {
     alert('No levels to export.');
@@ -398,12 +450,34 @@ function exportAllLevels() {
   }
 
   state.levels.forEach(level => {
-    const structure = { level: { name: level.name, id: level.id, areas: level.areas } };
+    const structure = {
+      level: {
+        name: level.name,
+        id: level.id,
+        areas: level.areas.map(area => ({
+          name: area.name,
+          id: area.id,
+          entries: area.entries.map(entry => ({
+            name: entry.name,
+            id: entry.id,
+            responses: entry.responses.map(resp => ({
+              id: resp.id,
+              name: resp.name
+            }))
+          }))
+        }))
+      },
+      characters: state.characters
+    };
     const localization = {};
     level.areas.forEach(area => {
       area.entries.forEach(entry => {
         entry.responses.forEach(resp => {
-          localization[resp.id] = { text: resp.text, characterId: resp.characterId || null, audioPath: resp.audioPath || '' };
+          localization[resp.id] = {
+            text: resp.text,
+            characterId: resp.characterId,
+            audioPath: resp.audioPath
+          };
         });
       });
     });
@@ -441,16 +515,18 @@ function importStructureFile(file) {
             name: e.name,
             id: `${sanitizeName(lv.name)}_${sanitizeName(a.name)}_${sanitizeName(e.name)}`,
             responses: (e.responses || []).map(r => ({
-              id: r.id || '',
-              text: r.text || '',
-              characterId: r.characterId || null,
-              audioPath: r.audioPath || ''
+              id: r.id,
+              name: r.name,
+              text: '', // text comes from localization
+              characterId: null,
+              audioPath: ''
             }))
           }))
         }))
       };
       if (existingIndex >= 0) state.levels[existingIndex] = record;
       else state.levels.push(record);
+      if (parsed.characters) state.characters = parsed.characters;
       recomputeIds();
       renderAll();
       alert(`Imported level ${record.name}`);
@@ -466,7 +542,7 @@ function renderAll() {
   recomputeIds();
   renderLevels();
   renderCharacters();
-  renderEntryPanel();
+  renderAreaPanel();
 }
 
 function init() {
