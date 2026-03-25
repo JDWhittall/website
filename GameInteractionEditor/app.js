@@ -5,18 +5,31 @@ const state = {
   selectedAreaId: null,
   selectedEntryId: null,
   selectedResponseId: null,
-  selectedNodeId: null
+  selectedNodeId: null,
+  selectedNodeIds: [] // For multi-select
 };
 
 function sanitizeName(name) {
   return name.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
 }
 
-function makeDraggable(element, obj) {
+function makeDraggable(element, obj, allNodes) {
   let isDragging = false;
   let startX, startY, startLeft, startTop;
+  let draggedNodes = [];
 
   element.addEventListener('mousedown', (e) => {
+    // Determine which nodes are being dragged
+    if (state.selectedNodeIds.includes(obj.id)) {
+      // If clicking a selected node, drag all selected
+      draggedNodes = state.selectedNodeIds.map(id => 
+        allNodes.find(n => n.id === id)
+      ).filter(Boolean);
+    } else {
+      // Otherwise just drag this one
+      draggedNodes = [obj];
+    }
+
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
@@ -30,16 +43,24 @@ function makeDraggable(element, obj) {
     if (!isDragging) return;
     const dx = e.clientX - startX;
     const dy = e.clientY - startY;
-    element.style.left = (startLeft + dx) + 'px';
-    element.style.top = (startTop + dy) + 'px';
-    obj.x = startLeft + dx;
-    obj.y = startTop + dy;
+
+    draggedNodes.forEach(node => {
+      const nodeEl = document.querySelector(`[data-node-id="${node.id}"]`);
+      if (nodeEl) {
+        nodeEl.style.left = (node.x + dx) + 'px';
+        nodeEl.style.top = (node.y + dy) + 'px';
+      }
+    });
   });
 
   document.addEventListener('mouseup', () => {
     if (isDragging) {
       isDragging = false;
       element.style.cursor = 'grab';
+      draggedNodes.forEach(node => {
+        node.x = parseInt(document.querySelector(`[data-node-id="${node.id}"]`).style.left, 10);
+        node.y = parseInt(document.querySelector(`[data-node-id="${node.id}"]`).style.top, 10);
+      });
     }
   });
 }
@@ -297,21 +318,111 @@ function renderAreaPanel() {
   svg.style.pointerEvents = 'none';
   viewport.appendChild(svg);
 
+  // Selection box
+  const selectionBox = document.createElement('div');
+  selectionBox.className = 'selection-box';
+  selectionBox.style.display = 'none';
+  viewport.appendChild(selectionBox);
+
+  // Collect all nodes for reference
+  const allNodes = [];
+  area.entries.forEach(entry => {
+    allNodes.push(entry);
+    entry.responses.forEach(resp => allNodes.push(resp));
+  });
+
+  // Viewport selection logic
+  let isSelecting = false;
+  let selectStartX, selectStartY;
+
+  viewport.addEventListener('mousedown', (e) => {
+    if (e.target !== viewport) return; // Only if clicking on empty space
+    isSelecting = true;
+    selectStartX = e.clientX - viewport.getBoundingClientRect().left + viewport.scrollLeft;
+    selectStartY = e.clientY - viewport.getBoundingClientRect().top + viewport.scrollTop;
+    selectionBox.style.left = selectStartX + 'px';
+    selectionBox.style.top = selectStartY + 'px';
+    selectionBox.style.width = '0';
+    selectionBox.style.height = '0';
+    selectionBox.style.display = 'block';
+  });
+
+  viewport.addEventListener('mousemove', (e) => {
+    if (!isSelecting) return;
+    const currentX = e.clientX - viewport.getBoundingClientRect().left + viewport.scrollLeft;
+    const currentY = e.clientY - viewport.getBoundingClientRect().top + viewport.scrollTop;
+    const width = Math.abs(currentX - selectStartX);
+    const height = Math.abs(currentY - selectStartY);
+    selectionBox.style.left = Math.min(selectStartX, currentX) + 'px';
+    selectionBox.style.top = Math.min(selectStartY, currentY) + 'px';
+    selectionBox.style.width = width + 'px';
+    selectionBox.style.height = height + 'px';
+  });
+
+  viewport.addEventListener('mouseup', (e) => {
+    if (!isSelecting) return;
+    isSelecting = false;
+    selectionBox.style.display = 'none';
+
+    // Find nodes within selection box
+    const boxRect = selectionBox.getBoundingClientRect();
+    const viewportRect = viewport.getBoundingClientRect();
+    const selectedIds = [];
+
+    document.querySelectorAll('.node').forEach(nodeEl => {
+      const nodeRect = nodeEl.getBoundingClientRect();
+      const relNodeLeft = nodeRect.left - viewportRect.left + viewport.scrollLeft;
+      const relNodeTop = nodeRect.top - viewportRect.top + viewport.scrollTop;
+      const relNodeRight = relNodeLeft + nodeRect.width;
+      const relNodeBottom = relNodeTop + nodeRect.height;
+
+      const boxLeft = parseInt(selectionBox.style.left);
+      const boxTop = parseInt(selectionBox.style.top);
+      const boxRight = boxLeft + parseInt(selectionBox.style.width);
+      const boxBottom = boxTop + parseInt(selectionBox.style.height);
+
+      // Check if node overlaps with selection box
+      if (relNodeRight > boxLeft && relNodeLeft < boxRight &&
+          relNodeBottom > boxTop && relNodeTop < boxBottom) {
+        const nodeId = nodeEl.getAttribute('data-node-id');
+        if (nodeId) selectedIds.push(nodeId);
+      }
+    });
+
+    state.selectedNodeIds = selectedIds;
+    if (selectedIds.length > 0) state.selectedNodeId = selectedIds[0];
+    renderAll();
+  });
+
   area.entries.forEach(entry => {
     if (!entry.x) entry.x = 100;
     if (!entry.y) entry.y = 100;
 
     const entryNode = document.createElement('div');
     entryNode.className = 'node entry-node';
+    entryNode.setAttribute('data-node-id', entry.id);
     if (state.selectedNodeId === entry.id) entryNode.classList.add('selected');
+    if (state.selectedNodeIds.includes(entry.id)) entryNode.classList.add('multi-selected');
     entryNode.style.left = entry.x + 'px';
     entryNode.style.top = entry.y + 'px';
     entryNode.textContent = entry.name;
-    entryNode.onclick = () => {
-      state.selectedNodeId = entry.id;
+    entryNode.onclick = (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        // Toggle multi-select with Ctrl/Cmd click
+        const idx = state.selectedNodeIds.indexOf(entry.id);
+        if (idx >= 0) {
+          state.selectedNodeIds.splice(idx, 1);
+        } else {
+          state.selectedNodeIds.push(entry.id);
+        }
+      } else {
+        // Single select
+        state.selectedNodeId = entry.id;
+        state.selectedNodeIds = [entry.id];
+      }
       renderAll();
     };
-    makeDraggable(entryNode, entry);
+    makeDraggable(entryNode, entry, allNodes);
 
     viewport.appendChild(entryNode);
 
@@ -321,15 +432,29 @@ function renderAreaPanel() {
 
       const respNode = document.createElement('div');
       respNode.className = 'node response-node';
+      respNode.setAttribute('data-node-id', resp.id);
       if (state.selectedNodeId === resp.id) respNode.classList.add('selected');
+      if (state.selectedNodeIds.includes(resp.id)) respNode.classList.add('multi-selected');
       respNode.style.left = resp.x + 'px';
       respNode.style.top = resp.y + 'px';
       respNode.textContent = resp.name;
-      respNode.onclick = () => {
-        state.selectedNodeId = resp.id;
+      respNode.onclick = (e) => {
+        if (e.ctrlKey || e.metaKey) {
+          // Toggle multi-select with Ctrl/Cmd click
+          const idx = state.selectedNodeIds.indexOf(resp.id);
+          if (idx >= 0) {
+            state.selectedNodeIds.splice(idx, 1);
+          } else {
+            state.selectedNodeIds.push(resp.id);
+          }
+        } else {
+          // Single select
+          state.selectedNodeId = resp.id;
+          state.selectedNodeIds = [resp.id];
+        }
         renderAll();
       };
-      makeDraggable(respNode, resp);
+      makeDraggable(respNode, resp, allNodes);
 
       viewport.appendChild(respNode);
 

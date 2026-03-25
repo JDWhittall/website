@@ -547,6 +547,19 @@ button:disabled {
   box-shadow: 0 0 0 4px rgba(251, 133, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+.node.multi-selected {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(210, 155, 250, 0.4), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.selection-box {
+  position: absolute;
+  border: 2px dashed var(--accent-blue);
+  background: rgba(88, 166, 255, 0.1);
+  pointer-events: none;
+  z-index: 10;
+}
+
 .viewport {
   position: relative;
   width: 100%;
