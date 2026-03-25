@@ -4,16 +4,44 @@ const state = {
   selectedLevelId: null,
   selectedAreaId: null,
   selectedEntryId: null,
-  selectedResponseId: null
+  selectedResponseId: null,
+  selectedNodeId: null
 };
 
-function sanitizeName(value) {
-  return String(value || '')
-    .trim()
-    .toLowerCase()
-    .replace(/[\s\/\\]+/g, '_')
-    .replace(/[^a-z0-9_]/g, '')
-    .replace(/_+/g, '_');
+function sanitizeName(name) {
+  return name.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+}
+
+function makeDraggable(element, obj) {
+  let isDragging = false;
+  let startX, startY, startLeft, startTop;
+
+  element.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = parseInt(element.style.left, 10);
+    startTop = parseInt(element.style.top, 10);
+    element.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    element.style.left = (startLeft + dx) + 'px';
+    element.style.top = (startTop + dy) + 'px';
+    obj.x = startLeft + dx;
+    obj.y = startTop + dy;
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      element.style.cursor = 'grab';
+    }
+  });
 }
 
 function getLevelById(id) {
@@ -64,85 +92,43 @@ function renderLevels() {
   const levelList = document.getElementById('levelList');
   levelList.innerHTML = '';
 
-  const ul = document.createElement('ul');
-  ul.className = 'list-root';
+  if (state.levels.length === 0) {
+    levelList.innerHTML = '<p style="color: var(--text-secondary); font-size: 0.9rem; margin: 10px 0;">No levels yet. Add one above.</p>';
+    return;
+  }
 
   state.levels.forEach(level => {
-    const li = document.createElement('li');
-    li.className = 'list-item';
+    const levelContainer = document.createElement('div');
+    levelContainer.className = 'level-container';
 
-    const title = document.createElement('span');
-    title.className = 'item-title';
-    title.textContent = level.name;
-
-    const buttons = document.createElement('span');
-    const selectBtn = document.createElement('button'); selectBtn.textContent = 'Select';
-    const deleteBtn = document.createElement('button'); deleteBtn.textContent = 'Delete';
+    // Level header with collapse/expand
+    const levelHeader = document.createElement('div');
+    levelHeader.className = `level-header ${state.selectedLevelId === level.id ? 'active' : ''}`;
+    levelHeader.style.cursor = 'pointer';
+    
+    const levelTitle = document.createElement('div');
+    levelTitle.className = 'level-title';
+    levelTitle.textContent = `📍 ${level.name}`;
+    
+    const areaCount = document.createElement('span');
+    areaCount.className = 'area-count';
+    areaCount.textContent = `${level.areas.length} area${level.areas.length !== 1 ? 's' : ''}`;
+    
+    const levelButtonsDiv = document.createElement('div');
+    levelButtonsDiv.className = 'level-buttons';
+    levelButtonsDiv.onclick = e => e.stopPropagation();
+    
+    const selectBtn = document.createElement('button');
+    selectBtn.textContent = 'Open';
     selectBtn.onclick = () => {
       state.selectedLevelId = level.id;
       state.selectedAreaId = null;
-      state.selectedEntryId = null;
-      state.selectedResponseId = null;
       renderAll();
     };
-    deleteBtn.onclick = () => {
-      if (!confirm(`Delete level ${level.name}?`)) return;
-      state.levels = state.levels.filter(l => l !== level);
-      if (state.selectedLevelId === level.id) {
-        state.selectedLevelId = null;
-        state.selectedAreaId = null;
-        state.selectedEntryId = null;
-        state.selectedResponseId = null;
-      }
-      renderAll();
-    };
-    buttons.appendChild(selectBtn);
-    buttons.appendChild(deleteBtn);
-
-    li.appendChild(title);
-    li.appendChild(buttons);
-
-    const areaUl = document.createElement('ul');
-    areaUl.className = 'nested-list';
-
-    level.areas.forEach(area => {
-      const areaLi = document.createElement('li');
-      areaLi.className = 'list-item';
-      const areaLabel = document.createElement('span');
-      areaLabel.textContent = `Area: ${area.name}`;
-
-      const areaBtns = document.createElement('span');
-      const selArea = document.createElement('button'); selArea.textContent = 'Select';
-      const delArea = document.createElement('button'); delArea.textContent = 'Delete';
-      selArea.onclick = () => {
-        state.selectedLevelId = level.id;
-        state.selectedAreaId = area.id;
-        state.selectedEntryId = null;
-        state.selectedResponseId = null;
-        renderAll();
-      };
-      delArea.onclick = () => {
-        if (!confirm(`Delete area ${area.name}?`)) return;
-        level.areas = level.areas.filter(a => a !== area);
-        if (state.selectedAreaId === area.id) {
-          state.selectedAreaId = null;
-          state.selectedEntryId = null;
-          state.selectedResponseId = null;
-        }
-        renderAll();
-      };
-      areaBtns.appendChild(selArea);
-      areaBtns.appendChild(delArea);
-
-      areaLi.appendChild(areaLabel);
-      areaLi.appendChild(areaBtns);
-      areaUl.appendChild(areaLi);
-    });
-
-    const levelControls = document.createElement('div');
-    levelControls.className = 'child-actions';
+    
     const addAreaBtn = document.createElement('button');
-    addAreaBtn.textContent = 'Add Area';
+    addAreaBtn.textContent = '+';
+    addAreaBtn.title = 'Add Area';
     addAreaBtn.onclick = () => {
       const name = prompt('Area/Room name');
       if (!name) return;
@@ -151,14 +137,86 @@ function renderLevels() {
       recomputeIds();
       renderAll();
     };
-    levelControls.appendChild(addAreaBtn);
-
-    li.appendChild(areaUl);
-    li.appendChild(levelControls);
-    ul.appendChild(li);
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Delete Level';
+    deleteBtn.style.background = 'var(--accent-orange)';
+    deleteBtn.style.borderColor = 'var(--accent-orange)';
+    deleteBtn.onclick = () => {
+      if (!confirm(`Delete level ${level.name}?`)) return;
+      state.levels = state.levels.filter(l => l !== level);
+      if (state.selectedLevelId === level.id) {
+        state.selectedLevelId = null;
+        state.selectedAreaId = null;
+      }
+      renderAll();
+    };
+    
+    levelButtonsDiv.appendChild(selectBtn);
+    levelButtonsDiv.appendChild(addAreaBtn);
+    levelButtonsDiv.appendChild(deleteBtn);
+    
+    levelHeader.appendChild(levelTitle);
+    levelHeader.appendChild(areaCount);
+    levelHeader.appendChild(levelButtonsDiv);
+    
+    // Area list (collapsible)
+    const areasDiv = document.createElement('div');
+    areasDiv.className = 'areas-list';
+    
+    if (state.selectedLevelId === level.id) {
+      level.areas.forEach(area => {
+        const areaItem = document.createElement('div');
+        areaItem.className = `area-item ${state.selectedAreaId === area.id ? 'active' : ''}`;
+        
+        const areaName = document.createElement('div');
+        areaName.className = 'area-name';
+        areaName.textContent = `📂 ${area.name}`;
+        
+        const entryCount = document.createElement('span');
+        entryCount.className = 'entry-count';
+        entryCount.textContent = `${area.entries.length}`;
+        
+        const areaButtonsDiv = document.createElement('div');
+        areaButtonsDiv.className = 'area-buttons';
+        areaButtonsDiv.onclick = e => e.stopPropagation();
+        
+        const selectAreaBtn = document.createElement('button');
+        selectAreaBtn.textContent = 'View';
+        selectAreaBtn.onclick = () => {
+          state.selectedLevelId = level.id;
+          state.selectedAreaId = area.id;
+          renderAll();
+        };
+        
+        const deleteAreaBtn = document.createElement('button');
+        deleteAreaBtn.textContent = '×';
+        deleteAreaBtn.style.background = 'var(--accent-orange)';
+        deleteAreaBtn.style.borderColor = 'var(--accent-orange)';
+        deleteAreaBtn.onclick = () => {
+          if (!confirm(`Delete area ${area.name}?`)) return;
+          level.areas = level.areas.filter(a => a !== area);
+          if (state.selectedAreaId === area.id) {
+            state.selectedAreaId = null;
+          }
+          renderAll();
+        };
+        
+        areaButtonsDiv.appendChild(selectAreaBtn);
+        areaButtonsDiv.appendChild(deleteAreaBtn);
+        
+        areaItem.appendChild(areaName);
+        areaItem.appendChild(entryCount);
+        areaItem.appendChild(areaButtonsDiv);
+        areasDiv.appendChild(areaItem);
+      });
+    }
+    
+    levelContainer.appendChild(levelHeader);
+    levelContainer.appendChild(areasDiv);
+    levelList.appendChild(levelContainer);
   });
-
-  levelList.appendChild(ul);
 }
 
 function renderCharacters() {
@@ -214,7 +272,7 @@ function renderAreaPanel() {
   addEntryBtn.onclick = () => {
     const name = prompt('Entry name (e.g., cell_door)');
     if (!name) return;
-    const newEntry = { id: `${area.id}_${sanitizeName(name)}`, name, responses: [] };
+    const newEntry = { id: `${area.id}_${sanitizeName(name)}`, name, responses: [], x: 100, y: 100 };
     area.entries.push(newEntry);
     recomputeIds();
     renderAll();
@@ -223,174 +281,228 @@ function renderAreaPanel() {
 
   entryPanel.appendChild(header);
 
-  area.entries.forEach(entry => {
-    const entryCard = document.createElement('div');
-    entryCard.className = 'entry-card card-section';
+  const viewport = document.createElement('div');
+  viewport.className = 'viewport';
+  viewport.style.position = 'relative';
+  viewport.style.width = '100%';
+  viewport.style.height = '600px';
+  viewport.style.overflow = 'auto';
 
-    const entryHeader = document.createElement('div');
-    entryHeader.className = 'entry-header';
-    const entryTitle = document.createElement('h4');
-    entryTitle.textContent = `Entry: ${entry.name} (ID: ${entry.id})`;
-    const delEntryBtn = document.createElement('button');
-    delEntryBtn.textContent = 'Delete Entry';
-    delEntryBtn.onclick = () => {
-      if (!confirm(`Delete entry ${entry.name}?`)) return;
-      area.entries = area.entries.filter(e => e !== entry);
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.style.position = 'absolute';
+  svg.style.top = '0';
+  svg.style.left = '0';
+  svg.style.width = '100%';
+  svg.style.height = '100%';
+  svg.style.pointerEvents = 'none';
+  viewport.appendChild(svg);
+
+  area.entries.forEach(entry => {
+    if (!entry.x) entry.x = 100;
+    if (!entry.y) entry.y = 100;
+
+    const entryNode = document.createElement('div');
+    entryNode.className = 'node entry-node';
+    if (state.selectedNodeId === entry.id) entryNode.classList.add('selected');
+    entryNode.style.left = entry.x + 'px';
+    entryNode.style.top = entry.y + 'px';
+    entryNode.textContent = entry.name;
+    entryNode.onclick = () => {
+      state.selectedNodeId = entry.id;
       renderAll();
     };
-    entryHeader.appendChild(entryTitle);
-    entryHeader.appendChild(delEntryBtn);
+    makeDraggable(entryNode, entry);
 
-    const responsesWrap = document.createElement('div');
-    responsesWrap.className = 'responses-wrap';
+    viewport.appendChild(entryNode);
 
-    if (entry.responses.length === 0) {
-      const noneText = document.createElement('p');
-      noneText.textContent = 'No responses yet.';
-      responsesWrap.appendChild(noneText);
-    } else {
-      entry.responses.forEach((resp, index) => {
-        const t = document.getElementById('responseCardTemplate').content.cloneNode(true);
-        t.querySelector('.response-id').textContent = resp.id;
-        t.querySelector('.resp-name').textContent = resp.name;
-        t.querySelector('.resp-character').textContent = resp.characterId ? (state.characters.find(c => c.id === resp.characterId)?.name || '(unknown)') : '(none)';
-        t.querySelector('.resp-text').textContent = resp.text;
-        t.querySelector('.resp-audio').textContent = resp.audioPath || '(none)';
-        const editBtn = t.querySelector('.edit-response');
-        const deleteBtn = t.querySelector('.delete-response');
+    entry.responses.forEach(resp => {
+      if (!resp.x) resp.x = entry.x + 200;
+      if (!resp.y) resp.y = entry.y + Math.random() * 100;
 
-        editBtn.onclick = () => {
-          // Populate the form in this entry card
-          const card = editBtn.closest('.entry-card');
-          const form = card.querySelector('.response-form');
-          const nameIn = form.querySelector('input[placeholder*="name"]');
-          const charSel = form.querySelector('select');
-          const textAr = form.querySelector('textarea');
-          const audioIn = form.querySelector('input[placeholder*="audio"]');
-          const btn = form.querySelector('button');
+      const respNode = document.createElement('div');
+      respNode.className = 'node response-node';
+      if (state.selectedNodeId === resp.id) respNode.classList.add('selected');
+      respNode.style.left = resp.x + 'px';
+      respNode.style.top = resp.y + 'px';
+      respNode.textContent = resp.name;
+      respNode.onclick = () => {
+        state.selectedNodeId = resp.id;
+        renderAll();
+      };
+      makeDraggable(respNode, resp);
 
-          nameIn.value = resp.name;
-          charSel.value = resp.characterId || '';
-          textAr.value = resp.text;
-          audioIn.value = resp.audioPath || '';
-          btn.textContent = 'Update Response';
-          btn.onclick = () => {
-            const name = nameIn.value.trim();
-            const text = textAr.value.trim();
-            if (!name || !text) {
-              alert('Response name and text cannot be empty.');
-              return;
-            }
-            resp.name = name;
-            resp.text = text;
-            resp.characterId = charSel.value || null;
-            resp.audioPath = audioIn.value.trim() || '';
-            recomputeIds();
-            nameIn.value = '';
-            textAr.value = '';
-            audioIn.value = '';
-            charSel.value = '';
-            btn.textContent = 'Add Response';
-            btn.onclick = () => {
-              const name2 = nameIn.value.trim();
-              const text2 = textAr.value.trim();
-              if (!name2 || !text2) {
-                alert('Response name and text cannot be empty.');
-                return;
-              }
-              const response = {
-                id: '',
-                name: name2,
-                text: text2,
-                characterId: charSel.value || null,
-                audioPath: audioIn.value.trim() || ''
-              };
-              entry.responses.push(response);
-              recomputeIds();
-              nameIn.value = '';
-              textAr.value = '';
-              audioIn.value = '';
-              charSel.value = '';
-              renderAll();
-            };
-            renderAll();
-          };
+      viewport.appendChild(respNode);
+
+      // Draw line from entry to response
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('x1', entry.x + 50);
+      line.setAttribute('y1', entry.y + 25);
+      line.setAttribute('x2', resp.x + 50);
+      line.setAttribute('y2', resp.y + 25);
+      line.setAttribute('stroke', '#444c56');
+      line.setAttribute('stroke-width', '2');
+      svg.appendChild(line);
+    });
+  });
+
+  entryPanel.appendChild(viewport);
+
+  // Details panel
+  const selected = area.entries.find(e => e.id === state.selectedNodeId) || area.entries.flatMap(e => e.responses).find(r => r.id === state.selectedNodeId);
+  if (selected) {
+    const details = document.createElement('div');
+    details.className = 'card-section';
+    const detailsTitle = document.createElement('h3');
+    detailsTitle.textContent = `Selected: ${selected.name}`;
+    const detailsId = document.createElement('p');
+    detailsId.innerHTML = `<strong>ID:</strong> ${selected.id}`;
+    const clearSel = document.createElement('button');
+    clearSel.textContent = 'Clear selected';
+    clearSel.onclick = () => { state.selectedNodeId = null; renderAll(); };
+
+    details.appendChild(detailsTitle);
+    details.appendChild(detailsId);
+    details.appendChild(clearSel);
+
+    if (selected.responses) {
+      // It's an entry
+      const responseList = document.createElement('div');
+      responseList.className = 'responses-wrap';
+      selected.responses.forEach(resp => {
+        const card = document.createElement('div');
+        card.className = 'response-card';
+        card.innerHTML = `<div class='response-card-header'><strong>${resp.id}</strong><span class='response-actions'></span></div>`;
+
+        const body = document.createElement('div');
+        body.className = 'response-body';
+        body.innerHTML = `<div><strong>Name:</strong> ${resp.name}</div>` +
+                         `<div><strong>Character:</strong> ${resp.characterId ? (state.characters.find(c => c.id===resp.characterId)?.name || '(unknown)') : '(none)'}</div>` +
+                         `<div><strong>Text:</strong> ${resp.text}</div>` +
+                         `<div><strong>Audio:</strong> ${resp.audioPath || '(none)'}</div>`;
+
+        const actionArea = card.querySelector('.response-actions');
+        const edit = document.createElement('button'); edit.textContent = 'Edit';
+        const remove = document.createElement('button'); remove.textContent = 'Delete';
+
+        edit.onclick = () => {
+          nameField.value = resp.name;
+          charField.value = resp.characterId || '';
+          textField.value = resp.text;
+          audioField.value = resp.audioPath || '';
+          actionButton.textContent = 'Update Response';
+          editingResponse = resp;
         };
-        deleteBtn.onclick = () => {
+
+        remove.onclick = () => {
           if (!confirm(`Delete response ${resp.id}?`)) return;
-          entry.responses.splice(index, 1);
+          selected.responses.splice(selected.responses.indexOf(resp), 1);
           recomputeIds();
           renderAll();
         };
-        responsesWrap.appendChild(t);
+
+        actionArea.appendChild(edit);
+        actionArea.appendChild(remove);
+        card.appendChild(body);
+        responseList.appendChild(card);
       });
+
+      details.appendChild(responseList);
+
+      const form = document.createElement('div');
+      form.className = 'response-form';
+
+      const formHeader = document.createElement('h5');
+      formHeader.textContent = 'Add / Edit Response';
+
+      const nameField = document.createElement('input');
+      nameField.type = 'text';
+      nameField.placeholder = 'Response name (examine/success)';
+      nameField.className = 'form-input';
+
+      const charField = document.createElement('select');
+      charField.className = 'form-select';
+      const blankOpt = document.createElement('option');
+      blankOpt.value = '';
+      blankOpt.textContent = '-- optional character --';
+      charField.appendChild(blankOpt);
+      state.characters.forEach(ch => {
+        const o = document.createElement('option');
+        o.value = ch.id;
+        o.textContent = ch.name;
+        charField.appendChild(o);
+      });
+
+      const textField = document.createElement('textarea');
+      textField.className = 'textarea-small';
+      textField.placeholder = 'Response display text';
+
+      const audioField = document.createElement('input');
+      audioField.type = 'text';
+      audioField.placeholder = 'Audio path (optional)';
+      audioField.className = 'form-input';
+
+      let editingResponse = null;
+
+      const actionButton = document.createElement('button');
+      actionButton.textContent = 'Add Response';
+
+      actionButton.onclick = () => {
+        const nameValue = nameField.value.trim();
+        const textValue = textField.value.trim();
+        if (!nameValue || !textValue) {
+          alert('Response name and text required');
+          return;
+        }
+
+        if (editingResponse) {
+          editingResponse.name = nameValue;
+          editingResponse.text = textValue;
+          editingResponse.characterId = charField.value || null;
+          editingResponse.audioPath = audioField.value.trim() || '';
+          editingResponse = null;
+          actionButton.textContent = 'Add Response';
+        } else {
+          selected.responses.push({
+            id: '',
+            name: nameValue,
+            text: textValue,
+            characterId: charField.value || null,
+            audioPath: audioField.value.trim() || '',
+            x: selected.x + 200,
+            y: selected.y + Math.random() * 100
+          });
+        }
+
+        nameField.value = '';
+        textField.value = '';
+        charField.value = '';
+        audioField.value = '';
+
+        recomputeIds();
+        renderAll();
+      };
+
+      form.appendChild(formHeader);
+      form.appendChild(nameField);
+      form.appendChild(charField);
+      form.appendChild(textField);
+      form.appendChild(audioField);
+      form.appendChild(actionButton);
+
+      details.appendChild(form);
+    } else {
+      // It's a response
+      const body = document.createElement('div');
+      body.className = 'response-body';
+      body.innerHTML = `<div><strong>Name:</strong> ${selected.name}</div>` +
+                       `<div><strong>Character:</strong> ${selected.characterId ? (state.characters.find(c => c.id===selected.characterId)?.name || '(unknown)') : '(none)'}</div>` +
+                       `<div><strong>Text:</strong> ${selected.text}</div>` +
+                       `<div><strong>Audio:</strong> ${selected.audioPath || '(none)'}</div>`;
+      details.appendChild(body);
     }
 
-    const form = document.createElement('div');
-    form.className = 'response-form';
-    const formHeader = document.createElement('h5');
-    formHeader.textContent = 'Add/Edit Response';
-
-    const nameInput = document.createElement('input');
-    nameInput.type = 'text';
-    nameInput.placeholder = 'Response name (e.g., examine)';
-    nameInput.className = 'form-input';
-
-    const karakter = document.createElement('select');
-    karakter.className = 'form-select';
-    const emptyOption = document.createElement('option');
-    emptyOption.value = ''; emptyOption.textContent = '-- select optional character --';
-    karakter.appendChild(emptyOption);
-    state.characters.forEach(c => {
-      const opt = document.createElement('option'); opt.value = c.id; opt.textContent = c.name; karakter.appendChild(opt);
-    });
-
-    const textArea = document.createElement('textarea');
-    textArea.placeholder = 'Display text for this response';
-    textArea.className = 'textarea-small';
-
-    const audioInput = document.createElement('input');
-    audioInput.type = 'text';
-    audioInput.placeholder = 'Audio file path (optional)';
-    audioInput.className = 'form-input';
-
-    const addBtn = document.createElement('button');
-    addBtn.textContent = 'Add Response';
-    addBtn.onclick = () => {
-      const name = nameInput.value.trim();
-      const text = textArea.value.trim();
-      if (!name || !text) {
-        alert('Response name and text cannot be empty.');
-        return;
-      }
-      const response = {
-        id: '',
-        name,
-        text,
-        characterId: karakter.value || null,
-        audioPath: audioInput.value.trim() || ''
-      };
-      entry.responses.push(response);
-      recomputeIds();
-      nameInput.value = '';
-      textArea.value = '';
-      audioInput.value = '';
-      karakter.value = '';
-      renderAll();
-    };
-
-    form.appendChild(formHeader);
-    form.appendChild(nameInput);
-    form.appendChild(karakter);
-    form.appendChild(textArea);
-    form.appendChild(audioInput);
-    form.appendChild(addBtn);
-
-    entryCard.appendChild(entryHeader);
-    entryCard.appendChild(responsesWrap);
-    entryCard.appendChild(form);
-    entryPanel.appendChild(entryCard);
-  });
+    entryPanel.appendChild(details);
+  }
 }
 
 function driveResponseForm(entry, response) {
@@ -462,9 +574,13 @@ function exportAllLevels() {
           entries: area.entries.map(entry => ({
             name: entry.name,
             id: entry.id,
+            x: entry.x,
+            y: entry.y,
             responses: entry.responses.map(resp => ({
               id: resp.id,
-              name: resp.name
+              name: resp.name,
+              x: resp.x,
+              y: resp.y
             }))
           }))
         }))
@@ -499,6 +615,39 @@ function exportAllLevels() {
   });
 }
 
+function importLocalizationFile(file) {
+  const reader = new FileReader();
+  reader.onload = event => {
+    try {
+      const localization = JSON.parse(event.target.result);
+      if (!localization || typeof localization !== 'object') throw new Error('Invalid localization file');
+      
+      let mergedCount = 0;
+      state.levels.forEach(level => {
+        level.areas.forEach(area => {
+          area.entries.forEach(entry => {
+            entry.responses.forEach(response => {
+              if (localization[response.id]) {
+                response.text = localization[response.id].text || '';
+                response.characterId = localization[response.id].characterId || null;
+                response.audioPath = localization[response.id].audioPath || '';
+                mergedCount++;
+              }
+            });
+          });
+        });
+      });
+      
+      renderAll();
+      alert(`Merged ${mergedCount} localization entries`);
+    } catch (error) {
+      console.error(error);
+      alert('Failed to import localization JSON: ' + error.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
 function importStructureFile(file) {
   const reader = new FileReader();
   reader.onload = event => {
@@ -516,12 +665,16 @@ function importStructureFile(file) {
           entries: (a.entries || []).map(e => ({
             name: e.name,
             id: `${sanitizeName(lv.name)}_${sanitizeName(a.name)}_${sanitizeName(e.name)}`,
+            x: e.x || 100,
+            y: e.y || 100,
             responses: (e.responses || []).map(r => ({
               id: r.id,
               name: r.name,
               text: '', // text comes from localization
               characterId: null,
-              audioPath: ''
+              audioPath: '',
+              x: r.x || 200,
+              y: r.y || 200
             }))
           }))
         }))
@@ -553,8 +706,13 @@ function init() {
     const name = nameInput.value.trim();
     if (!name) { alert('Level name required'); return; }
     if (state.levels.some(l => l.name.toLowerCase() === name.toLowerCase())) { alert('Level name exists'); return; }
-    state.levels.push({ name, id: sanitizeName(name), areas: [] });
+    const newLevel = { name, id: sanitizeName(name), areas: [] };
+    state.levels.push(newLevel);
+    state.selectedLevelId = newLevel.id;
+    state.selectedAreaId = null;
+    state.selectedNodeId = null;
     nameInput.value = '';
+    alert('Level added: ' + name);
     renderAll();
   };
 
@@ -576,6 +734,14 @@ function init() {
     if (!f) return;
     importStructureFile(f);
     importFile.value = '';
+  };
+
+  const importLocFile = document.getElementById('importLocalizationFile');
+  importLocFile.onchange = e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    importLocalizationFile(f);
+    importLocFile.value = '';
   };
 
   renderAll();
