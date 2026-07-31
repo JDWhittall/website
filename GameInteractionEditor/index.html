@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Interaction Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Game Interaction Editor</h1>
+    <p>Manage levels, areas/rooms, entries and dialogue responses (card-based workflow). Select a level > area to view entries with their responses.</p>
+  </header>
+
+  <main class="layout">
+    <aside class="panel" id="sidebar">
+      <section>
+        <h2>Levels & Structure</h2>
+        <div class="form-inline">
+          <input type="text" id="newLevelName" placeholder="New level name" />
+          <button id="addLevelBtn">Add Level</button>
+        </div>
+        <div id="levelList"></div>
+      </section>
+
+      <section>
+        <h2>Characters</h2>
+        <div class="form-inline">
+          <input type="text" id="newCharacterName" placeholder="New character name" />
+          <button id="addCharacterBtn">Add Character</button>
+        </div>
+        <div id="characterList"></div>
+      </section>
+
+      <section>
+        <h2>JSON Import/Export</h2>
+        <div class="form-inline">
+          <button id="exportAllBtn">Export all</button>
+          <label class="file-label">
+            <span>📁 Structure</span>
+            <input type="file" id="importJsonFile" accept="application/json" />
+          </label>
+        </div>
+        <div class="form-inline">
+          <label class="file-label" style="width: 100%;">
+            <span>📝 Localization</span>
+            <input type="file" id="importLocalizationFile" accept="application/json" />
+          </label>
+        </div>
+      </section>
+    </aside>
+
+    <section class="panel" id="details">
+      <div id="infoPanel" class="info-panel">Choose a level > area > entry in the left panel to edit responses.</div>
+      <div id="entryPanel" class="entry-panel hidden"></div>
+    </section>
+  </main>
+
+  <template id="responseCardTemplate">
+    <div class="response-card">
+      <div class="response-card-header">
+        <strong class="response-id"></strong>
+        <span class="response-actions">
+          <button class="edit-response">Edit</button>
+          <button class="delete-response">Delete</button>
+        </span>
+      </div>
+      <div class="response-body">
+        <div><strong>Name:</strong> <span class="resp-name"></span></div>
+        <div><strong>Character:</strong> <span class="resp-character"></span></div>
+        <div><strong>Text:</strong> <span class="resp-text"></span></div>
+        <div><strong>Audio:</strong> <span class="resp-audio"></span></div>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
