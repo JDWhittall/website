@@ -37,12 +37,12 @@ td{
 .content{
 	position: absolute;
 	animation-name: slideInFromLeft;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 
 	color:#ededed;
 	background-color: #242424;
-	margin: 5%;
-	width: 90%;
+	margin-top: 5%;
+	width: 100%;
 	margin-left: 25%;
 	z-index: 1;
 }
@@ -51,7 +51,7 @@ td{
 	
 	width:10%;
 	height:100vh;
-	z-index: 4;
+	z-index: -1;
 	background-color: #242424;
 }
 .header{
@@ -110,6 +110,7 @@ td{
 	flex-flow: row wrap;
 	align-content: flex-end;
 	margin-bottom: 5%;
+	gap: 12px;
 	/*column-count: 3;*/
 }
 .image{
@@ -238,7 +239,7 @@ h2.gameHeader{
 
 /* Animations and stuff beyond this point */
 @keyframes slideInFromLeft{
-	0%{	transform: translateX(-100%); }
+	0%{	transform: translateX(-200%); }
 	100%{ transform: translateX(0%); }
 }
 

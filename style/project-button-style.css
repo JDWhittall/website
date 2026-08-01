@@ -1,0 +1,75 @@
+project-button {
+    display: block;
+    position: relative;
+}
+
+.project-button {
+    display: flex;
+    position:relative;
+    align-items: center;
+    gap: 12px;
+
+    width: 466px;
+    height: 466px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+
+    color: inherit;
+    text-decoration: none;
+    background: #FFAA00;
+
+    z-index: 0;
+
+    transition:transform 150ms ease
+}
+
+.project-button:hover {
+    transform: translateY(-2px);
+}
+
+.project-button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0) 60%
+    );
+
+    border-radius: 16px;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+.project-button__image {
+    display:block;
+    position: relative;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.project-button__content {
+    display:block;
+    position: absolute;
+    flex-direction: column;
+    bottom: 1rem;
+    left: 2rem;
+    z-index: 3;
+}
+
+.project-button__content h3 {
+
+}
+
+.project-button__content p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    z-index: 3;
+}
