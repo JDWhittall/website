@@ -1,0 +1,124 @@
+{
+  "rumble-raiders": {
+    "slug": "rumble-raiders",
+    "title": "Rumble Raiders",
+    "cover_image": "/resources/RumbleRaiders.png",
+    "trailer_embed": "<iframe src=\"https://player.vimeo.com/video/413978026?h=973e46328b\" width=\"910\" height=\"512\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen></iframe>",
+    "info": "Rumble Raiders is a pacman-esque multiplayer game - race against other players to collect the most loot and get the highest score, setting traps and stealing their points as you go. Avoid the enemies prowling the corridors as they try to hunt down what's rightfully theirs!\n\nPlay with up to 4 players online, setting boobie traps and using your abilities against them to steal their loot and raise your own score.\n\nGet in and get out! The timer is ticking, and the pressure is on - when the clock strikes, Doctor Jekyll changes and Mr Hyde comes out to play...\n\nLoot the place while setting and using traps against the enemy players - how will you play? Sneak around with strategic bear-traps? Or lure Hyde into their path? It's your choice!",
+    "about": "This project had a small team of five artists and a single programmer, with a large focus on creating a multiplayer experience that was specifically not couch co-op. This project was created over 5 months in my final year at university and faced a lot of technical challenges along the way. Overall I'm glad with the progress we made and the final game but I wish we had some extra time to polish it.\n\nWe had planned several arenas for players to pick from with different art styles and adversaries, more tools, abilities and traps, and more events and objectives through levels.\n\nMy first time developing for multiplayer was a journey filled with bugs and issues. Every time I implemented a new feature it turned into a 1 step forward 2 steps back issue. Eventually I found my footing and we managed to create a complete experience.",
+    "play_links": [
+      {
+        "label": "itch.io",
+        "url": "https://maddilriley.itch.io/rumble-raiders",
+        "badge_image": "/resources/badge-color.svg"
+      }
+    ],
+    "gallery": [
+      "/resources/rr1.png",
+      "/resources/rr2.png"
+    ],
+    "featured": true,
+    "published": true,
+    "order": 0
+  },
+  "twistnseek": {
+    "slug": "twistnseek",
+    "title": "Twist 'N Seek",
+    "cover_image": "/resources/Twistnseek.png",
+    "trailer_embed": "",
+    "info": "Introducing Twist 'N Seek, the exciting find the object game for young adventurers! Join Twist on a race against time to find all the items requested. With ever-changing procedurally placed objects, it's always a challenge. How fast can you find them all? Let the fun begin!",
+    "about": "Twist 'N Seek is a collaborative creation with twistonline.com, a digital adaptation of the physical version of the game, allowing players to enjoy it anywhere. Developed over a span of a couple of months, I proudly served as the sole developer, bringing this exciting experience to life.",
+    "play_links": [
+      {
+        "label": "Twist Online",
+        "url": "https://twistonline.co.uk/games/",
+        "badge_image": "/resources/twistonline.png"
+      }
+    ],
+    "gallery": [
+      "/resources/tns1.png",
+      "/resources/tns2.png"
+    ],
+    "featured": true,
+    "published": true,
+    "order": 1
+  },
+  "recreant": {
+    "slug": "recreant",
+    "title": "Recreant",
+    "cover_image": "/resources/RecreantLogo.png",
+    "trailer_embed": "<iframe style=\"border-radius: 25px; margin-left: 25px;\" width=\"910\" height=\"512\" src=\"https://www.youtube.com/embed/gh_CIVD2FuI?controls=0\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" allowfullscreen></iframe>",
+    "info": "Recreant is a first person stealth adventure game about a girl caught up in a dangerous world.\n\nThe game consists of a lot of environmental puzzles for the player to sneak around in their attempt to escape pursuit from an evil corporation.\n\nWith a heavy focus on interesting AI who would patrol the map in sectors.\n\nAble to communicate with each other and find reference to where the player may have been, able to switch patrol routes accordingly to create an interesting and ever changing puzzle.T\n\nhe player also has a few tricks up their sleeve. You carry around a drone with you which you can use to explore levels a bit better, tagging guards and watching patrol routes.",
+    "about": "On this project I was lead programmer and focused mainly on the AI for the project and worked with the artists to create shaders to fill out the visual style. The project took place over 3 months during my second year at university and considering the time constraint we had and the size of our team we were all very happy with how this game turned out.\n\nI also wrote and recorded the music used in the trailer.\n\nBeing a small team of 7 people including 3 artists, 2 designers and another programmer meant we worked very closely together to get a lot of tasks complete to create a game that was voted third best game that year.\n\nUnfortunately there is not a playable version available for download.",
+    "play_links": [],
+    "gallery": [
+      "/resources/recreant1.png",
+      "/resources/recreant2.png"
+    ],
+    "featured": false,
+    "published": true,
+    "order": 0
+  },
+  "paige": {
+    "slug": "paige",
+    "title": "Paige",
+    "cover_image": "/resources/Paige.png",
+    "trailer_embed": "",
+    "info": "Join Paige, a courageous girl on an extraordinary quest to save her beloved Teddy bear. Shrunken to miniature size, armed with a humble thimble as her weapon, she battles through hordes of rats. Traverse enchanting landscapes, uncover hidden secrets, and face off against the malevolent Rat King. Will you help Paige defeat her adversaries and reunite with Teddy? Prepare for a heartwarming adventure like no other!",
+    "about": "The final game from my first year at university, we had a fairly sizeable team on paper, but this project was mostly the work of myself, another programmer, a designer and an artist. With unfulfilled promises of work from various other members, Paige ended up being an extremely short experience missing tons of features from other team members who didn't show up.",
+    "play_links": [
+      {
+        "label": "Download",
+        "url": "/resources/Games/Paige.rar",
+        "badge_image": "/resources/download-icon-256.svg"
+      }
+    ],
+    "gallery": [
+      "/resources/p1.png",
+      "/resources/p2.png"
+    ],
+    "featured": false,
+    "published": true,
+    "order": 0
+  },
+  "castle-cruisers": {
+    "slug": "castle-cruisers",
+    "title": "Castle Cruisers",
+    "cover_image": "/resources/CastleCruisers.png",
+    "trailer_embed": "",
+    "info": "Experience the adrenaline-fueled thrill of Castle Cruisers, a fast-paced sci-fi racing game set in a cosmic castle. Pilot your space racer through treacherous tracks, firing lasers at opponents and collecting power-ups for an edge. Ignite your engines, defy gravity, and become the ultimate champion! ",
+    "about": "Castle Cruisers was the resulting game when the objective was to create a game based on drawing cards. Our team drew Racing, Sci-fi and Castle (or something along those lines I honestly can't remember). 4 weeks was not enough time for everything we had planned, predictably. My role was to create the controller for the car, making a hover vehicle meant I had to program all the physics for it from scratch. It was a fun little project that is sadly lacking a castle. ",
+    "play_links": [
+      {
+        "label": "Download",
+        "url": "/resources/Games/Castle Cruisers.rar",
+        "badge_image": "/resources/download-icon-256.svg"
+      }
+    ],
+    "gallery": [],
+    "featured": false,
+    "published": true,
+    "order": 0,
+    "controls": "To exit the game you can only use ALT+F4 or end the task in task manager\n\nControls are W, A, S and D to control the vehicle\nSpace to brake\nLeft Mouse Button to fire a laser"
+  },
+  "arcadia": {
+    "slug": "arcadia",
+    "title": "Arcadia",
+    "cover_image": "/resources/Arcadia.png",
+    "trailer_embed": "",
+    "info": "Unearth the secrets of a mysterious temple in Arcadia, a captivating 2D adventure game. Dive into the role of an archaeologist, exploring ancient artifacts and solving puzzles. Immerse yourself in an enchanting world of discovery and unlock the temple's hidden treasures. Will you unravel its ancient mysteries? Begin your archaeological journey in Arcadia today!",
+    "about": "The first university project. I have fond memories of working on this project for the 2 weeks we had to complete it. With a fairly large team all of which were involved in it's creation (Not a theme that continued through my academic career). I created a custom character controller for this one, and soon realised that moving platforms don't \"just work\".\n\nA terrifyingly simple 2d platformer with large walls of text for all the story and lore the writers made, it reminds me of a simpler time in gaming.",
+    "play_links": [
+      {
+        "label": "Download",
+        "url": "/resources/Games/Arcadia.rar",
+        "badge_image": "/resources/download-icon-256.svg"
+      }
+    ],
+    "gallery": [],
+    "featured": false,
+    "published": true,
+    "order": 0,
+    "controls": "To exit the game you can only use ALT+F4 or end the task in task manager\n\nControls are A and D to move left and right\nSpace to jump\nE to interact with an object\nF to stop interacting with an object"
+  }
+}

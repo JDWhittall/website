@@ -1,95 +1,34 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Paige — JDWhittall</title>
+  <meta name="description" content="My Superfun Portfolio Site Where I Have All My Things To Show">
+  <meta name="author" content="Josh Whittall">
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/style/stylesheet.css">
+  <link rel="icon" href="/favicon.ico">
+  <script>window.PROJECT_SLUG = "paige";</script>
+</head>
+<body>
+  <div class="sidebar">
+    <div w3-include-html="/external/sidebar.html"></div>
+    <script>w3.includeHTML();</script>
+  </div>
 
-	<head>
+  <div class="space"></div>
 
-		<title>JDWhittall</title>
+  <div class="main">
+    <div class="content" id="project-root">
+      <div w3-include-html="/external/project-page.html"></div>
+      <script>
+        // Re-run include for the nested project template
+        if (typeof w3 !== 'undefined') w3.includeHTML();
+      </script>
+    </div>
+  </div>
 
-		<meta name="description" content="My Superfun Portfolio Site Where I Have All My Things To Show">
-
-		<meta name="author" content="Josh Whittall">
-
-		<script src="https://www.w3schools.com/lib/w3.js"></script>
-
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-		<link rel="stylesheet" href="..\style\stylesheet.css">
-
-		<link rel="icon" href="../favicon.ico">
-
-	</head>
-
-
-
-	<body>
-		
-		<div class="sidebar">
-			<div w3-include-html="../external/sidebar.html"></div>
-			<script>
-				w3.includeHTML();
-			</script>
-		</div>
-
-		<div class="space">
-			
-		</div>
-
-		<div class="main">
-
-			<div class="content">
-
-				<center>
-				<img class="image" src="../resources/Paige.png" alt="" style="border-radius: 25px;">
-				<!--<iframe style=" height:512px; width: 910px; margin-left:5%; border-radius: 25px;" width="560" height="315" src="https://www.youtube.com/embed/gh_CIVD2FuI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
-				<h1 class="gameHeader" style="letter-spacing: 5px; text-align: center; font-family: Verdana;">Paige</h1>
-				<div style="padding-bottom: 4%; color:#F29D00;">______________________________________________________________________________________________________________________________</div>
-				</center>
-
-				<div class="row"></div>
-
-				<div class="gameInfo">
-
-					<h2 class="gameHeader">INFO</h2>
-					<div style="margin:2%;">
-						<p>
-							Join Paige, a courageous girl on an extraordinary quest to save her beloved Teddy bear. Shrunken to miniature size, armed with a humble thimble as her weapon, she battles through hordes of rats. Traverse enchanting landscapes, uncover hidden secrets, and face off against the malevolent Rat King. Will you help Paige defeat her adversaries and reunite with Teddy? Prepare for a heartwarming adventure like no other!
-						</p>
-					</div>
-				</div>
-
-				<div class="gameAbout">
-
-					<h2 class="gameHeader">ABOUT</h2>
-					<div style="margin:2%;">
-						<p>
-							The final game from my first year at university, we had a fairly sizeable team on paper, but this project was mostly the work of myself, another programmer, a designer and an artist. With unfulfilled promises of work from various other members, Paige ended up being an extremely short experience missing tons of features from other team members who didn't show up.
-						</p>
-					</div>
-				</div>
-
-				<div class="row"></div>
-
-				<div class="gameDownload">
-
-					<h2 class="gameHeader">PLAY</h2>
-					<p style="margin:2%;"></p>
-					<center>
-					<a class="download" href="../resources/Games/Paige.rar" download style="border-radius: 25px; text-align: center; vertical-align: middle; padding:2%; margin-bottom: 10%;">
-						<i class="material-icons" style="font-size:72px; text-align: center; vertical-align: middle;">file_download</i>
-					</a></center>
-					<br><br>
-				</div>
-				<div class="gameDownload">
-
-					<h2 class="gameHeader">GALLERY</h2>
-						<img class="image" src="../resources/p1.png" alt="" style="margin:20px; width:45%;">
-						<img class="image" src="../resources/p2.png" alt="" style="margin:20px; width:45%;">
-				</div>
-				<br>
-
-			</div>
-
-		</div>
-
-	</body>
-
+  <script src="/js/content-loader.js"></script>
+  <script src="/js/project-page.js"></script>
+</body>
 </html>

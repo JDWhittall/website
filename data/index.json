@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-07-31T23:44:31.741Z",
+  "collections": [
+    {
+      "slug": "home",
+      "path": "data/home.json",
+      "mode": "object"
+    },
+    {
+      "slug": "testimonials",
+      "path": "data/testimonials.json",
+      "mode": "array"
+    },
+    {
+      "slug": "skills",
+      "path": "data/skills.json",
+      "mode": "array"
+    },
+    {
+      "slug": "projects",
+      "path": "data/projects.json",
+      "mode": "keyed_by_slug"
+    },
+    {
+      "slug": "blog",
+      "path": "data/blog.json",
+      "mode": "array"
+    }
+  ]
+}
