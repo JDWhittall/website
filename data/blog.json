@@ -1,0 +1,15 @@
+[
+  {
+    "slug": "hello-cms",
+    "title": "Hello from the CMS",
+    "date": "2026-07-31",
+    "summary": "First post managed by the local portfolio CMS.",
+    "body": "## Welcome\n\nThis post was created as seed data. Edit it in the CMS, export, preview, then publish.",
+    "tags": [
+      "meta",
+      "cms"
+    ],
+    "cover_image": "",
+    "published": true
+  }
+]
