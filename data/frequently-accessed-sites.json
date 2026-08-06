@@ -75,5 +75,12 @@
     "icon": "/resources/Icons/logo_sheets_2026q2_color_2x_web_96dp.png",
     "url": "https://docs.google.com/spreadsheets/",
     "location": 0
+  },
+  {
+    "name": "GitHub",
+    "slug": "github",
+    "icon": "/resources/Icons/GitHub_Invertocat_White.png",
+    "url": "https://github.com/",
+    "location": 0
   }
 ]
