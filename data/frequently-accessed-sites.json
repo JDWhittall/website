@@ -2,7 +2,7 @@
   {
     "name": "Reddit",
     "slug": "reddit",
-    "icon": "/resources/icons/Reddit_Icon_FullColor.png",
+    "icon": "/resources/Icons/Reddit_Icon_FullColor.png",
     "url": "https://www.reddit.com/",
     "location": 0
   },
