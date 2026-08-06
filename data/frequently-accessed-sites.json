@@ -82,5 +82,26 @@
     "icon": "/resources/Icons/GitHub_Invertocat_White.png",
     "url": "https://github.com/",
     "location": 0
+  },
+  {
+    "name": "AMP",
+    "slug": "amp",
+    "icon": "/resources/Icons/cubecoders-amp.png",
+    "url": "http://192.168.50.157:8080/",
+    "location": 0
+  },
+  {
+    "name": "CMS",
+    "slug": "cms",
+    "icon": "/resources/Icons/CMS.png",
+    "url": "http://192.168.50.157:8787/",
+    "location": 0
+  },
+  {
+    "name": "DWService",
+    "slug": "dwservice",
+    "icon": "/resources/Icons/LogoDWService.png",
+    "url": "https://access.dwservice.net/",
+    "location": 0
   }
 ]
