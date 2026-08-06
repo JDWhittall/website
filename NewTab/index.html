@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="NewTab/style.css">
+    <script src="/js/site-icon.js"></script>
+    <script src="/js/frequent-sites.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="tab-header"><b>New<span>Tab</span></b></div>
+    <div class="search-panel">
+        <form class="search-box" action="https://www.google.com/search" method="get">
+            <img src="/resources/icons/GoogleG_256.png">
+            <input type="search" name="q" placeholder="Search Google..." aria-label="Search Google" autocomplete="off" autofocus required>
+        </form>
+    </div>
+
+    <div class="site-shortcuts" id="sites">
+        <div class="frequent-sites" id="frequent-sites-list"></div>
+        <div class="office-sites"></div>
+        <div class=""></div>
+    </div>
+
+    <div class="other-search-panel">
+        <form class="search-box" action="https://oldschool.runescape.wiki/" method="get">
+            <img src="/resources/icons/oswiki.png">
+            <input type="search" name="search" placeholder="Search OSRS Wiki..." aria-label="Search OSRS Wiki" autocomplete="off" autofocus required>
+        </form>
+
+        <form class="search-box" action="https://minecraft.wiki/" method="get">
+            <img src="/resources/icons/mcwiki_textless.png">
+            <input type="search" name="search" placeholder="Search Minecraft Wiki..." aria-label="Search Minecraft Wiki" autocomplete="off" autofocus required>
+        </form>
+
+        <form class="search-box" action="https://www.wowhead.com/search" method="get">
+            <img src="/resources/icons/wowhead-rocket-512.png">
+            <input type="search" name="q" placeholder="Search Wowhead..." aria-label="Search Wowhead" autocomplete="off" autofocus required>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
