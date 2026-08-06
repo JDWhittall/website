@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T23:44:31.741Z",
+  "generatedAt": "2026-08-06T14:24:29.673Z",
   "collections": [
     {
       "slug": "home",
@@ -9,6 +9,11 @@
     {
       "slug": "testimonials",
       "path": "data/testimonials.json",
+      "mode": "array"
+    },
+    {
+      "slug": "frequently-accessed-sites",
+      "path": "data/frequently-accessed-sites.json",
       "mode": "array"
     },
     {

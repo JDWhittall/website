@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Reddit",
+    "slug": "reddit",
+    "icon": "/resources/icons/Reddit_Icon_FullColor.png",
+    "url": "https://www.reddit.com/",
+    "location": 0
+  },
+  {
+    "name": "YouTube",
+    "slug": "youtube",
+    "icon": "/resources/Icons/logo_youtube_2024_q4_color_1x_web_512dp.width-1440.png",
+    "url": "https://www.youtube.com/",
+    "location": 0
+  },
+  {
+    "name": "ChatGPT",
+    "slug": "chatgpt",
+    "icon": "/resources/Icons/OAI_OpenAI-Blossom_White.png",
+    "url": "https://chatgpt.com/",
+    "location": 0
+  },
+  {
+    "name": "Plex",
+    "slug": "plex",
+    "icon": "/resources/Icons/plex.png",
+    "url": "https://app.plex.tv",
+    "location": 0
+  },
+  {
+    "name": "Netflix",
+    "slug": "netflix",
+    "icon": "/resources/Icons/Netflix_Symbol_RGB.png",
+    "url": "https://www.netflix.com/",
+    "location": 0
+  },
+  {
+    "name": "Disney+",
+    "slug": "disney-plus",
+    "icon": "/resources/Icons/disney-plus.png",
+    "url": "https://www.disneyplus.com/",
+    "location": 0
+  },
+  {
+    "name": "Prime Video",
+    "slug": "prime-video",
+    "icon": "/resources/Icons/amazon-prime-video.png",
+    "url": "https://www.primevideo.com/",
+    "location": 0
+  },
+  {
+    "name": "Gmail",
+    "slug": "gmail",
+    "icon": "/resources/Icons/logo_gmail_2026q2_color_2x_web_96dp.png",
+    "url": "https://mail.google.com/",
+    "location": 0
+  },
+  {
+    "name": "Google Drive",
+    "slug": "google-drive",
+    "icon": "/resources/Icons/logo_drive_2026q2_color_2x_web_96dp.png",
+    "url": "https://drive.google.com/",
+    "location": 0
+  },
+  {
+    "name": "Google Docs",
+    "slug": "google-docs",
+    "icon": "/resources/Icons/logo_docs_2026q2_color_2x_web_96dp.png",
+    "url": "https://docs.google.com/document",
+    "location": 0
+  },
+  {
+    "name": "Google Sheets",
+    "slug": "google-sheets",
+    "icon": "/resources/Icons/logo_sheets_2026q2_color_2x_web_96dp.png",
+    "url": "https://docs.google.com/spreadsheets/",
+    "location": 0
+  }
+]
