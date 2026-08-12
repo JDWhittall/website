@@ -103,5 +103,12 @@
     "icon": "/resources/Icons/LogoDWService.png",
     "url": "https://access.dwservice.net/",
     "location": 0
+  },
+  {
+    "name": "The Retirement Home",
+    "slug": "the-retirement-home",
+    "icon": "/resources/Icons/Brian_1_400x400.jpg",
+    "url": "https://theretirementhome.co.uk",
+    "location": 0
   }
 ]
