@@ -1,0 +1,18 @@
+{
+  "name": "Inkling Score Sheet",
+  "short_name": "Inkling Score",
+  "description": "A mobile-friendly score sheet for Inkling.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0c13",
+  "theme_color": "#11101a",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
